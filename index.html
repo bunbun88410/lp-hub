@@ -1819,18 +1819,19 @@
     .hub-hero-copy { max-width: 560px; }
     .hub-hero-copy .eyebrow { margin-bottom: 20px; }
     .hub-hero-h1 {
-      font-size: clamp(30px, 4.6vw, 52px);
+      font-size: var(--fs-display);
       font-weight: 900;
-      line-height: 1.22;
+      line-height: 1.05;
       letter-spacing: -0.01em;
       color: var(--navy);
-      margin: 0 0 22px;
+      margin: 0 0 32px;
     }
-    .hub-hero-h1 .em { color: #2D6A4F; white-space: nowrap; }
+    .hub-hero-h1 .em { color: var(--orange); white-space: nowrap; position: relative; display: inline-block; }
+    .hub-hero-h1 .em::after { content: ''; position: absolute; left: 0; bottom: 8px; width: 100%; height: 14px; background: var(--orange-soft); z-index: -1; }
     .hub-hero-sub {
-      font-size: clamp(15px, 1.5vw, 17px);
+      font-size: clamp(16px, 1.5vw, 19px);
       color: var(--text-muted);
-      line-height: 1.9;
+      line-height: 1.8;
       margin: 0 0 28px;
     }
     .hub-hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -1865,6 +1866,7 @@
 
     @media (max-width: 900px) {
       .hub-hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .hub-hero-h1 { font-size: clamp(36px, 9vw, 56px); }
       .hub-hero-copy { max-width: 640px; margin: 0 auto; }
       .hub-hero-copy .eyebrow { justify-content: center; }
       .hub-hero-ctas, .hub-hero-tracks { justify-content: center; }
@@ -1912,7 +1914,7 @@
       <div class="hub-hero-grid">
         <!-- 左：コピー -->
         <div class="hub-hero-copy">
-          <span class="eyebrow">数字の資格AIラボ</span>
+          <span class="hero-eyebrow">数字の資格AIラボ</span>
           <h1 class="hub-hero-h1">資格を、<span class="em">“使える武器”</span>に。</h1>
           <p class="hub-hero-sub">簿記・証券アナリスト、そしてAI実践。学んだ知識を「合格」だけで終わらせず、実務で使える力まで地続きにつなげる場所です。<br>偏差値40から4回落ちて合格した、凡人の正直な学びを。</p>
           <div class="hub-hero-ctas">
@@ -1931,6 +1933,15 @@
           <div class="hub-hero-card">
             <img src="assets/hub-hero.jpg" alt="会計・金融を学び、その知識をノートPCの分析（チャート）で実務に使う——学びが“使える力”に変わっていくイメージ" style="width:100%;height:auto;display:block;" loading="eager">
           </div>
+          <div class="hero-floating-card">
+            <div class="hero-floating-card-icon">
+              <svg viewBox="0 0 256 256" fill="currentColor"><path d="M137.54,186.36a8,8,0,0,1,0,11.31l-9.94,10A56,56,0,0,1,48.38,128.4l24.72-24.72a56,56,0,0,1,79.32,0,8,8,0,0,1-11.32,11.32,40,40,0,0,0-56.68,0L59.7,139.72a40,40,0,0,0,56.58,56.58l9.94-9.94A8,8,0,0,1,137.54,186.36Zm70.08-138a56.08,56.08,0,0,0-79.22,0l-9.94,9.95a8,8,0,0,0,11.32,11.31l9.94-9.94a40,40,0,0,1,56.58,56.58L172.3,141a40,40,0,0,1-56.68,0,8,8,0,0,0-11.32,11.32,56,56,0,0,0,79.32,0l24.72-24.72A56.08,56.08,0,0,0,207.62,48.38Z"/></svg>
+            </div>
+            <div class="hero-floating-card-text">
+              <strong>簿記・CMA・AI実践</strong>
+              一つの場所で、地続きに
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1945,24 +1956,24 @@
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1000px;margin:0 auto;">
         <!-- CMA -->
-        <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E5E9EF;border-radius:18px;padding:28px;box-shadow:0 6px 24px rgba(26,43,74,0.05);">
-          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#5A6A7A;">CMA Academy</div>
-          <h3 style="margin:8px 0 0;font-size:21px;color:#1A2B4A;">証券アナリスト(CMA)1次対策</h3>
-          <p style="margin:12px 0 0;color:#5A6A7A;font-size:14.5px;line-height:1.8;flex:1;">経済・ファンダメンタル分析・証券分析・数学を、丸暗記ではなく本質から。数学嫌いを置いていかない、理解重視の講座。</p>
+        <div style="display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 6px 24px rgba(15,44,68,0.05);">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--text-muted);">CMA Academy</div>
+          <h3 style="margin:8px 0 0;font-size:21px;color:var(--navy);">証券アナリスト(CMA)1次対策</h3>
+          <p style="margin:12px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.8;flex:1;">経済・ファンダメンタル分析・証券分析・数学を、丸暗記ではなく本質から。数学嫌いを置いていかない、理解重視の講座。</p>
           <a href="/cma.html" class="btn btn-outline" style="margin-top:20px;">CMA対策を見る →</a>
         </div>
         <!-- 簿記 -->
-        <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E5E9EF;border-radius:18px;padding:28px;box-shadow:0 6px 24px rgba(26,43,74,0.05);">
-          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#5A6A7A;">簿記ラボ</div>
-          <h3 style="margin:8px 0 0;font-size:21px;color:#1A2B4A;">簿記1級 合格伴走</h3>
-          <p style="margin:12px 0 0;color:#5A6A7A;font-size:14.5px;line-height:1.8;flex:1;">4回落ちて合格した凡人が、独学のあなたを合格まで伴走。お試し¥10,000から。3級・2級はココナラの個別サポートで。</p>
+        <div style="display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 6px 24px rgba(15,44,68,0.05);">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--text-muted);">簿記ラボ</div>
+          <h3 style="margin:8px 0 0;font-size:21px;color:var(--navy);">簿記1級 合格伴走</h3>
+          <p style="margin:12px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.8;flex:1;">4回落ちて合格した凡人が、独学のあなたを合格まで伴走。お試し¥10,000から。3級・2級はココナラの個別サポートで。</p>
           <a href="/boki.html" class="btn btn-outline" style="margin-top:20px;">簿記の伴走を見る →</a>
         </div>
         <!-- AI -->
         <div style="display:flex;flex-direction:column;background:#fff;border:2px solid #2D6A4F;border-radius:18px;padding:28px;box-shadow:0 10px 30px rgba(45,106,79,0.12);">
           <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#2D6A4F;">会計・金融AI実践編</div>
-          <h3 style="margin:8px 0 0;font-size:21px;color:#1A2B4A;">資格をAIで“武器”にする</h3>
-          <p style="margin:12px 0 0;color:#5A6A7A;font-size:14.5px;line-height:1.8;flex:1;">学んだ会計・金融をAIで実務の道具に。決算・株価分析や会計自動化のツールを、プログラミング未経験でも作れる。</p>
+          <h3 style="margin:8px 0 0;font-size:21px;color:var(--navy);">資格をAIで“武器”にする</h3>
+          <p style="margin:12px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.8;flex:1;">学んだ会計・金融をAIで実務の道具に。決算・株価分析や会計自動化のツールを、プログラミング未経験でも作れる。</p>
           <a href="/ai.html" class="btn btn-orange" style="margin-top:20px;">AI実践を見る →</a>
         </div>
       </div>
@@ -2006,12 +2017,12 @@
   </section>
 
   <!-- ===== なぜ資格×AI ===== -->
-  <section style="background:#1A2B4A;color:#fff;">
+  <section style="background:var(--navy);color:#fff;">
     <div class="container">
       <div style="max-width:760px;margin:0 auto;text-align:center;">
-        <span class="eyebrow" style="justify-content:center;color:#E8A24A;">CONCEPT</span>
+        <span class="eyebrow" style="justify-content:center;color:rgba(255,255,255,0.85);">CONCEPT</span>
         <h2 class="section-title" style="color:#fff;">受かって終わり、にしない。</h2>
-        <p style="margin:24px auto 0;line-height:1.95;color:#D7DEE8;">会計・金融の知識は、そのままAIへの“注文力”になります。「どこを見ればいいか」を知っている人ほど、AIで一気に実務が回る。<br>だから私たちは、資格対策から、その先の“使える力”までを一つの場所でつなげます。才能じゃない。最後まで机に向かった人が、受かる。</p>
+        <p style="margin:24px auto 0;line-height:1.95;color:rgba(255,255,255,0.82);">会計・金融の知識は、そのままAIへの“注文力”になります。「どこを見ればいいか」を知っている人ほど、AIで一気に実務が回る。<br>だから私たちは、資格対策から、その先の“使える力”までを一つの場所でつなげます。才能じゃない。最後まで机に向かった人が、受かる。</p>
       </div>
     </div>
   </section>
@@ -2021,12 +2032,12 @@
     <div class="container">
       <div style="max-width:820px;margin:0 auto;text-align:center;">
         <span class="eyebrow" style="justify-content:center;">運営者</span>
-        <img src="assets/bunbun-avatar.jpg" alt="運営者 ぶんぶん" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin:20px auto 0;display:block;box-shadow:0 8px 26px rgba(26,43,74,0.18);border:4px solid #fff;" loading="lazy">
+        <img src="assets/bunbun-avatar.jpg" alt="運営者 ぶんぶん" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin:20px auto 0;display:block;box-shadow:0 8px 26px rgba(15,44,68,0.18);border:4px solid #fff;" loading="lazy">
         <h2 class="section-title" style="margin-top:16px;">ぶんぶん</h2>
-        <p style="margin:6px 0 0;color:#5A6A7A;font-size:14px;">会計×AI ／ 簿記1級・証券アナリスト(CMA)　@a3aByulmQvDRNSU</p>
-        <div style="max-width:680px;margin:24px auto 0;color:#38455A;line-height:1.95;font-size:15px;text-align:left;">
+        <p style="margin:6px 0 0;color:var(--text-muted);font-size:14px;">会計×AI ／ 簿記1級・証券アナリスト(CMA)　@a3aByulmQvDRNSU</p>
+        <div style="max-width:680px;margin:24px auto 0;color:var(--text);line-height:1.95;font-size:15px;text-align:left;">
           <p>偏差値40の高卒で、発達障害の特性もあり、人並みのことができずに怒られ続けていました。取り柄も自信もなく、「自分は何をやってもダメだ」と思っていた社会人でした。</p>
-          <p>そんな私が、簿記に出会って変わり始めます。日商簿記1級には<strong style="color:#1A2B4A;">4回落ちて</strong>、28→55→68→70点。2年以上・約3,168時間をかけて、ようやく合格しました。その勢いで証券アナリスト(CMA)1次にも合格。いまは会計×AIをテーマに発信し、Kindleを3冊出版しています。</p>
+          <p>そんな私が、簿記に出会って変わり始めます。日商簿記1級には<strong style="color:var(--navy);">4回落ちて</strong>、28→55→68→70点。2年以上・約3,168時間をかけて、ようやく合格しました。その勢いで証券アナリスト(CMA)1次にも合格。いまは会計×AIをテーマに発信し、Kindleを3冊出版しています。</p>
           <p>才能はありませんでした。ただ、基準を下げず、ゼロの日を作らず、続けただけです。だからこそ、同じように「向いてない」と思っている人に、遠回りして掴んだ学び方をそのまま渡したい。それが、この<strong style="color:#2D6A4F;">「数字の資格AIラボ」</strong>です。</p>
         </div>
         <a href="https://x.com/a3aByulmQvDRNSU" target="_blank" rel="noopener" style="display:inline-block;margin-top:22px;font-size:14px;color:#2D6A4F;font-weight:700;">Xで日々の発信を見る（@a3aByulmQvDRNSU）→</a>
@@ -2064,7 +2075,11 @@
           </a>
           <a href="https://lin.ee/us7vbRy" target="_blank" rel="noopener" class="btn btn-line btn-large">
             <svg viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Z"/></svg>
-            証券アナリスト・AIを学ぶ方（CMA）
+            証券アナリストを学ぶ方（CMA）
+          </a>
+          <a href="https://lin.ee/O2xa9mP" target="_blank" rel="noopener" class="btn btn-line btn-large">
+            <svg viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Z"/></svg>
+            AI実践を学ぶ方（会計・金融AI）
           </a>
         </div>
         <p class="line-broadcast-note">※ 登録・相談はすべて無料です。不要になればブロックでいつでも停止できます。</p>
