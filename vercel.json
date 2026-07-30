@@ -4,6 +4,14 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        { "type": "host", "value": "lp-eta-tan.vercel.app" }
+      ],
+      "destination": "https://sujilab.net/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         { "type": "host", "value": "lp-eta-tan.vercel.app" }
