@@ -1,5 +1,15 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        { "type": "host", "value": "lp-eta-tan.vercel.app" }
+      ],
+      "destination": "https://sujilab.net/:path*",
+      "permanent": true
+    }
+  ]
 }
