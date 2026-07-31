@@ -2359,6 +2359,7 @@
             <span class="yen">¥</span><span class="num">29,800</span>
             <span class="tax">（税込）</span>
           </div>
+          <p style="margin:-2px 0 10px;font-size:14px;font-weight:800;color:var(--orange);letter-spacing:.02em;">先着30名 モニター価格</p>
           <p class="pricing-card-sub"><strong>β版パス・先行価格</strong>。制作途中の講座を含む先行版で、公開中の全講義＋今後の追加分がすべて見放題。完成後は通常価格（¥69,800予定）に移行します。</p>
           <ul class="pricing-features">
             <li class="pricing-feature">
@@ -2371,7 +2372,7 @@
             </li>
             <li class="pricing-feature">
               <svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
-              <span>手厚い伴走が欲しくなったら〈合格伴走パック〉へ移行できます</span>
+              <span>人の伴走が欲しくなったら〈＋1次合格サポート ¥19,800〉を追加できます</span>
             </li>
           </ul>
           <a href="https://buy.stripe.com/bJe00icl61REcjldvZgA80f" class="pricing-cta" target="_blank" rel="noopener">全講義 見放題パスを購入する</a>
@@ -2398,6 +2399,30 @@
           <span class="pricing-cta" style="background:#cfd4da;color:#6b7280;cursor:default;" aria-disabled="true">近日公開</span>
           <p style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:10px;">全科目がそろい次第、販売を開始します。まずは数学講座・確率統計講座からどうぞ。</p>
         </div>
+      </div>
+
+      <!-- 追加オプション：見放題パス購入者向けの「1次合格サポート」。
+           人が伴走する部分にだけ値段を付ける（AIチャットはパス本体に付属）。
+           対象＝1次のみ／期間＝次の1次試験まで／合格保証ではない、を明記する。
+           申込は手動オンボーディング前提で受講相談フォームへ。
+           専用の Stripe Payment Link（¥19,800）を作ったら、下の href を差し替える。 -->
+      <div style="max-width:1100px;margin:24px auto 0;background:var(--white);border:2px dashed var(--navy);border-radius:20px;padding:32px;box-shadow:var(--shadow-sm);">
+        <div style="display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between;">
+          <div style="flex:1 1 300px;min-width:280px;">
+            <div style="display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--white);background:var(--navy);border-radius:999px;padding:5px 13px;margin-bottom:14px;">オプション ／ 見放題パス購入者向け</div>
+            <h3 style="font-size:26px;margin:0 0 10px;color:var(--navy);">＋ 1次合格サポート</h3>
+            <div style="margin:0 0 8px;"><span style="font-size:20px;vertical-align:7px;color:var(--navy);">＋¥</span><span style="font-size:46px;font-weight:800;letter-spacing:-.02em;color:var(--navy);">19,800</span><span style="font-size:14px;color:var(--text-muted);margin-left:6px;">（税込）</span></div>
+            <p style="font-size:14px;font-weight:700;color:var(--navy);margin:0 0 20px;">次の1次試験まで ／ 1次対策のみ</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLA6kNNbs4yHSp2iRAEPeUZhI1Xxh-I9y6SQvo9GAiToLs4A/viewform" class="pricing-cta" target="_blank" rel="noopener" style="display:inline-block;width:auto;">サポートを申し込む</a>
+          </div>
+          <ul style="flex:1 1 330px;min-width:300px;list-style:none;margin:0;padding:0;display:grid;gap:14px;">
+            <li style="display:flex;gap:10px;font-size:14px;line-height:1.6;color:var(--text);"><span style="color:var(--orange);font-weight:800;">✓</span><span><strong>学習計画の初回設計</strong>：残り期間と現状から、合格までの進め方を一緒に組み立てます。</span></li>
+            <li style="display:flex;gap:10px;font-size:14px;line-height:1.6;color:var(--text);"><span style="color:var(--orange);font-weight:800;">✓</span><span><strong>つまずき相談</strong>：動画のAIチャットで解決しない悩みを、人がフォローします。</span></li>
+            <li style="display:flex;gap:10px;font-size:14px;line-height:1.6;color:var(--text);"><span style="color:var(--orange);font-weight:800;">✓</span><span><strong>対象は1次のみ</strong>：2次（記述）対策は含みません。2次伴走は別プランです。</span></li>
+            <li style="display:flex;gap:10px;font-size:14px;line-height:1.6;color:var(--text);"><span style="color:var(--orange);font-weight:800;">✓</span><span><strong>次の1次試験まで</strong>：直近の1次試験日までの期間をサポートします。</span></li>
+          </ul>
+        </div>
+        <p style="font-size:12px;line-height:1.75;color:var(--text-muted);margin:24px 0 0;border-top:1px solid var(--border);padding-top:16px;">全講義 見放題パスをご購入の方向けのオプションです。お申し込み後、初回のヒアリングをご案内します。<strong style="color:var(--text);">本サービスは学習をサポートするものであり、合格を保証するものではありません。</strong></p>
       </div>
 
       <!-- 最上位：合格伴走パック（全科目セット購入者限定・人的サポート付き）。全科目セット販売開始と同時に提供予定のため近日公開。 -->
@@ -2435,9 +2460,9 @@
             <tr><th>対象科目</th><td>購入した科目のみ</td><td>販売中の全科目（追加分も対象）</td><td>全4科目（近日公開）</td></tr>
             <tr><th>動画講義</th><td><span class="compare-check"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg></span></td><td><span class="compare-check"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg></span></td><td><span class="compare-check"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg></span></td></tr>
             <tr><th>AIチャット</th><td><span class="compare-check"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg></span></td><td><span class="compare-check"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg></span></td><td><span class="compare-check"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg></span></td></tr>
-            <tr><th>人的サポート（伴走）</th><td>—</td><td>—</td><td>＋¥29,800で追加可（＝合格伴走パック ¥109,800）</td></tr>
+            <tr><th>人的サポート（伴走）</th><td>—</td><td>＋¥19,800で追加可（1次合格サポート）</td><td>＋¥29,800で追加可（＝合格伴走パック ¥109,800）</td></tr>
             <tr><th>返金保証</th><td>30日間</td><td>30日間</td><td>30日間</td></tr>
-            <tr><th>価格（税込）</th><td>¥4,500〜（近日単品）</td><td>¥29,800（β版）</td><td>¥78,900（近日公開）</td></tr>
+            <tr><th>価格（税込）</th><td>¥4,500〜（近日単品）</td><td>¥29,800（β版・先着30名）</td><td>¥78,900（近日公開）</td></tr>
           </tbody>
         </table>
       </div>
@@ -2636,7 +2661,7 @@
           <dt>メールアドレス</dt>
           <dd><a href="mailto:cmaacademy.info@gmail.com">cmaacademy.info@gmail.com</a></dd>
           <dt>販売価格</dt>
-          <dd>各講座の販売ページに税込価格を表示します（例：全講義見放題β版パス ¥29,800（税込）／数学講座・確率統計講座 各 ¥4,500（税込）／簿記 ¥9,900（税込）／全科目セット ¥78,900（税込）／合格伴走パック ¥109,800（税込））。</dd>
+          <dd>各講座の販売ページに税込価格を表示します（例：全講義見放題β版パス ¥29,800（税込）／数学講座・確率統計講座 各 ¥4,500（税込）／簿記 ¥9,900（税込）／全科目セット ¥78,900（税込）／合格伴走パック ¥109,800（税込）／1次合格サポート ¥19,800（税込・見放題パス購入者向けオプション））。</dd>
           <dt>商品代金以外の必要料金</dt>
           <dd>インターネット接続料金・通信料金等はお客様のご負担となります。</dd>
           <dt>お支払い方法</dt>
