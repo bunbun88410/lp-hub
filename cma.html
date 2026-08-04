@@ -73,24 +73,24 @@
 
     /* CSS 変数 */
     :root {
-      --navy: #0F2C44;
-      --navy-soft: #1A3F5F;
-      --navy-deep: #08182A;
-      --orange: #FF6B35;
-      --orange-soft: #FFE8DD;
+      --navy: #16233A;        /* 深い紺 */
+      --navy-soft: #24344F;
+      --navy-deep: #0C1526;
+      --orange: #A87F2B;      /* 真鍮の金 */
+      --orange-soft: #EFE4C8;
       --green: #06C755;
       --green-dark: #04A547;
-      --cream: #F7F4ED;
-      --cream-deep: #EFE9DC;
+      --cream: #F3F5F8;       /* 方眼ノートの紙 */
+      --cream-deep: #E6EAF1;
       --white: #FFFFFF;
-      --text: #1F2937;
-      --text-muted: #6B7280;
-      --text-light: #9CA3AF;
-      --border: #E5E7EB;
-      --border-dark: #2A4866;
-      --shadow-sm: 0 2px 8px rgba(15, 44, 68, 0.08);
-      --shadow-md: 0 8px 24px rgba(15, 44, 68, 0.12);
-      --shadow-lg: 0 20px 50px rgba(15, 44, 68, 0.18);
+      --text: #26303F;
+      --text-muted: #61708A;
+      --text-light: #93A0B4;
+      --border: #D5DCE6;      /* 方眼の罫 */
+      --border-dark: #2E3F5C;
+      --shadow-sm: 0 1px 3px rgba(22, 35, 58, 0.07);
+      --shadow-md: 0 4px 16px rgba(22, 35, 58, 0.10);
+      --shadow-lg: 0 14px 38px rgba(22, 35, 58, 0.14);
 
       /* スペーシング（8px基準） */
       --space-1: 8px;  --space-2: 16px; --space-3: 24px;
@@ -98,9 +98,9 @@
       --space-7: 64px; --space-8: 80px; --space-9: 96px;
 
       /* 角丸 */
-      --radius-sm: 6px;
-      --radius-md: 10px;
-      --radius-lg: 12px;
+      --radius-sm: 4px;
+      --radius-md: 6px;
+      --radius-lg: 8px;
 
       /* カードpadding */
       --card-pad-compact: 28px 32px;
@@ -108,7 +108,7 @@
       --card-pad-showcase: 48px 40px;
 
       /* タイポグラフィ */
-      --fs-display: clamp(44px, 7vw, 88px);
+      --fs-display: clamp(32px, 4.6vw, 58px);
       --fs-h1: clamp(32px, 5vw, 56px);
       --fs-h2: clamp(20px, 2.4vw, 24px);
       --fs-h3: 16px;
@@ -1806,6 +1806,108 @@
       .sample-lesson { padding: 56px 0; }
       .sample-lesson-meta { gap: 16px; font-size: 13px; }
     }
+
+    /* ============================================================
+       LAB LAYER — 「研究室」（2026-08-05）
+       予備校の煽り（帯・実績の巨大な数字・締切）は入れない。
+       予備校が本当に強い「設計図が見えること」＝範囲と順番の見通しだけを借りる。
+       紺×金、方眼の地、数字は精密に。
+       この層を削り :root を元の値に戻せば旧デザインに戻る。
+       ============================================================ */
+
+    /* --- 地：方眼ノート。これがこのページの署名 --- */
+    body {
+      background-color: #F5F7FA;
+      background-image:
+        linear-gradient(rgba(22,35,58,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(22,35,58,.045) 1px, transparent 1px),
+        linear-gradient(rgba(22,35,58,.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(22,35,58,.022) 1px, transparent 1px);
+      background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+    }
+
+    /* --- 見出しは角ゴのまま（明朝は簿記側の記号なので使わない）。字間で精密さを出す --- */
+    .section-title, .method-title, .pricing-title, .final-cta-title,
+    .mission-title, .hero-title, .legal-title {
+      letter-spacing: -.005em;
+      line-height: 1.32;
+    }
+    .eyebrow {
+      color: var(--navy);
+      letter-spacing: .28em;
+      font-size: 12px;
+    }
+    .eyebrow::before {
+      width: 26px; height: 2px;
+      background: var(--orange);
+    }
+    .hero-title .em { color: var(--orange); }
+    .hero-title .em::after { bottom: 0; height: 3px; background: var(--orange); opacity: .9; }
+    .underline-mark { background: linear-gradient(transparent 66%, var(--orange-soft) 66%); color: #8A6720; }
+
+    /* --- 面：白い紙に細い罫。影より線で構造を見せる --- */
+    .problem-list, .method-card, .pricing-card, .faq-item, .legal-block,
+    .mission-steps, .how-to-step, .line-broadcast-inner, .pricing-compare-wrap,
+    .connections-list, .sample-lesson-video {
+      box-shadow: none;
+      border: 1px solid var(--border);
+    }
+    .problem-card { border-left: 3px solid var(--orange); }
+    .problem-icon, .method-icon, .trust-item-icon, .how-to-step-num {
+      border-radius: 3px;
+    }
+    .problem-icon { background: rgba(168,127,43,.10); color: #8A6720; }
+
+    /* --- 履修表：科目カタログを「何を・どの順で」が見える表に --- */
+    .pricing-list li {
+      border-bottom: 1px solid var(--border);
+      padding: 11px 0;
+    }
+    .pricing-list li.group {
+      background: rgba(22,35,58,.05);
+      border-left: 3px solid var(--navy);
+      padding-left: 10px;
+      margin-top: 18px;
+    }
+    .pricing-list li.group .subject { letter-spacing: .04em; }
+    .pricing-list .price { font-variant-numeric: tabular-nums; }
+    .num, .pricing-price .num { letter-spacing: -.02em; }
+
+    /* --- 暗い節は「設計図」。紺地に方眼を薄く重ねる --- */
+    .method, .pricing, .final-cta {
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 28px 28px, 28px 28px;
+    }
+    .method { background-color: var(--navy); }
+    .pricing { background-color: var(--navy); }
+    .final-cta { background-color: var(--navy-deep); }
+    .method-card { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.14); }
+    .method-icon { background: rgba(255,255,255,.10); }
+    /* 紺地の上では金が沈むので、そこだけ明るい金にする */
+    .method .em, .method-title .em,
+    .final-cta .em, .final-cta-title .em,
+    .pricing .em, .pricing-title .em,
+    .pricing-card.featured .em { color: #E3BE68; }
+
+    /* --- ボタン：金の枠と面。煽らない --- */
+    .btn { border-radius: 4px; letter-spacing: .03em; }
+    .btn-orange { background: var(--orange); }
+    .btn-orange:hover { background: #8A6720; }
+    .pricing-cta { border-radius: 4px; background: var(--orange); }
+    .pricing-cta:hover { background: #8A6720; }
+    .buy-mini { border-radius: 3px; }
+
+    /* --- ヘッダー・ロゴ --- */
+    .site-header { background: rgba(245,247,250,.92); backdrop-filter: blur(8px); }
+    .logo-mark { border-radius: 4px; background: var(--navy); box-shadow: inset 0 0 0 1px rgba(227,190,104,.45); color: #E3BE68; }
+
+    /* --- 動きを減らす設定の人には、入場アニメを出さない --- */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-eyebrow, .hero-title, .hero-sub, .hero-ctas, .hero-visual { animation: none !important; }
+      * { transition-duration: .01ms !important; }
+    }
   </style>
 </head>
 <body>
@@ -1851,8 +1953,8 @@
         <div class="hero-content">
           <span class="hero-eyebrow">CMA Academy ｜ by 数字の資格AIラボ</span>
           <h1 class="hero-title">
-            数学嫌いを、置いていかない。<br>
-            <span class="em">理解して進む、AI時代の学び方。</span>
+            数学嫌いを、<br>置いていかない。<br>
+            <span class="em">理解して進む、<br>AI時代の学び方。</span>
           </h1>
           <p class="hero-sub">
             合格だけでは終わらせない、証券アナリスト(CMA)1次試験対策講座。<br>
