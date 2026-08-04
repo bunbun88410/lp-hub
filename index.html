@@ -1872,6 +1872,224 @@
       .hub-hero-ctas, .hub-hero-tracks { justify-content: center; }
       .hub-hero-visual { max-width: 480px; margin: 0 auto; width: 100%; }
     }
+
+    /* ===== コース診断（入口＝ボタンのみ。本体は全画面の「ラボ」の中） ===== */
+    #shindan { position: relative; overflow: hidden; }
+    .dx-enter { text-align: center; }
+    .dx-enter-btn {
+      font: inherit; font-size: 17px; font-weight: 800; color: #fff;
+      background: linear-gradient(135deg, #2D6A4F, #3E9E77);
+      border: none; border-radius: 999px; padding: 18px 38px; cursor: pointer;
+      box-shadow: 0 12px 30px rgba(45,106,79,.34);
+      transition: transform .15s, box-shadow .15s;
+    }
+    .dx-enter-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(45,106,79,.42); }
+    .dx-enter-note { margin: 14px 0 0; font-size: 13px; color: var(--text-muted); }
+
+    .dx-guide {
+      position: absolute; left: max(12px, calc(50% - 620px)); bottom: 0;
+      width: 170px; height: auto; pointer-events: none;
+      filter: drop-shadow(0 18px 26px rgba(15,44,68,.18));
+    }
+    .dx-guide-bubble {
+      position: absolute; left: max(12px, calc(50% - 620px)); bottom: 329px;
+      width: 210px; background: #fff; border: 1.5px solid #CFE3D8; border-radius: 16px;
+      padding: 14px 16px; font-size: 13.5px; line-height: 1.8; color: #234;
+      box-shadow: 0 10px 26px rgba(15,44,68,.12); pointer-events: none;
+    }
+    .dx-guide-bubble::after {
+      content: ""; position: absolute; left: 34px; bottom: -9px; width: 16px; height: 16px;
+      background: #fff; border-right: 1.5px solid #CFE3D8; border-bottom: 1.5px solid #CFE3D8;
+      transform: rotate(45deg);
+    }
+    @media (max-width: 1180px) { .dx-guide, .dx-guide-bubble { display: none; } }
+
+    /* ===== ここから「別の世界」＝静かな研究所 =====
+       学校の記号（黒板・机）は置かない。深い藍の空間に、上からの光と同心円、
+       浮かぶ数式だけを配置して、集中できる神聖な場所として見せる。 */
+    .dxw {
+      position: fixed; inset: 0; z-index: 200; display: none;
+      background: #0A121B url("/assets/lab-bg.jpg") center/cover no-repeat;
+      overflow: hidden;
+    }
+    /* 背景を残したまま文字を読めるようにする、ごく薄い暗幕。真ん中は薄くして奥行きを見せる */
+    .dxw::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(70% 60% at 50% 45%, rgba(4,10,16,.10) 0%, rgba(4,10,16,.46) 100%),
+        linear-gradient(180deg, rgba(4,10,16,.34) 0%, rgba(4,10,16,.12) 40%, rgba(4,10,16,.52) 100%);
+    }
+    .dxw.is-open { display: block; }
+
+    /* 入場：暗転 → 明転（約1.2秒） */
+    .dxw-veil {
+      position: absolute; inset: 0; background: #04090F; z-index: 5;
+      animation: dxwVeil 1.2s ease forwards;
+    }
+    @keyframes dxwVeil {
+      0%   { opacity: 1; }
+      45%  { opacity: 1; }
+      100% { opacity: 0; visibility: hidden; }
+    }
+
+    /* 上から差す光の柱 */
+    .dxw-halo {
+      position: absolute; left: 50%; top: -18%; transform: translateX(-50%);
+      width: min(760px, 78vw); height: 78%;
+      background: linear-gradient(180deg, rgba(255,236,205,.34) 0%, rgba(255,236,205,.10) 45%, rgba(255,236,205,0) 100%);
+      clip-path: polygon(38% 0, 62% 0, 100% 100%, 0 100%);
+      filter: blur(2px); pointer-events: none;
+      animation: dxwFade 1.4s ease .5s both;
+    }
+    @keyframes dxwFade { from { opacity: 0; } to { opacity: 1; } }
+
+    /* 同心円（観測装置のような輪） */
+    .dxw-rings { position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%); pointer-events: none; }
+    .dxw-ring {
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+      border-radius: 50%; border: 1px solid rgba(232,196,138,.10);
+      animation: dxwFade 1.6s ease .6s both;
+    }
+    .dxw-ring:nth-child(1) { width: 420px; height: 420px; }
+    .dxw-ring:nth-child(2) { width: 700px; height: 700px; border-color: rgba(232,196,138,.07); }
+    .dxw-ring:nth-child(3) { width: 1020px; height: 1020px; border-color: rgba(232,196,138,.05); }
+    .dxw-ring:nth-child(4) { width: 1400px; height: 1400px; border-color: rgba(255,255,255,.035); }
+
+    /* 浮かぶ数式（チョークではなく、光で書かれている） */
+    .dxw-form {
+      position: absolute; color: rgba(214,232,245,.22); font-weight: 600;
+      font-family: "Courier New", monospace; letter-spacing: .04em;
+      text-shadow: 0 0 14px rgba(140,200,235,.28);
+      pointer-events: none; user-select: none;
+      animation: dxwFade 1.8s ease .7s both;
+    }
+    /* 遠くに散る記号 */
+    .dxw-num {
+      position: absolute; color: rgba(232,196,138,.16); font-weight: 800;
+      text-shadow: 0 0 18px rgba(232,162,74,.22);
+      pointer-events: none; user-select: none;
+      animation: dxwFade 1.8s ease .8s both;
+    }
+
+    /* 足元の台座（床の光） */
+    .dxw-floor {
+      position: absolute; left: 50%; bottom: -140px; transform: translateX(-50%);
+      width: min(1200px, 120vw); height: 320px; border-radius: 50%;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(232,162,74,.20) 0%, rgba(232,162,74,0) 70%);
+      pointer-events: none;
+      animation: dxwFade 1.6s ease .6s both;
+    }
+
+    /* 中身 */
+    .dxw-inner {
+      position: relative; z-index: 3; height: 100%;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 84px 20px 110px; overflow-y: auto;
+    }
+    .dxw-panel {
+      width: min(560px, 92vw);
+      background: linear-gradient(180deg, rgba(12,22,33,.62), rgba(8,16,25,.72));
+      -webkit-backdrop-filter: blur(9px) saturate(120%); backdrop-filter: blur(9px) saturate(120%);
+      border: 1px solid rgba(232,196,138,.42); border-radius: 20px; padding: 28px 28px 24px;
+      box-shadow: 0 26px 80px rgba(0,0,0,.55), 0 0 60px rgba(232,162,74,.10), inset 0 1px 0 rgba(255,255,255,.14);
+      animation: dxwIn .5s ease .55s both;
+    }
+    @keyframes dxwIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+    .dxw-top { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+    .dxw-step { font-size: 13px; font-weight: 800; color: #E8C48A; flex: none; }
+    .dxw-step b { font-size: 22px; }
+    .dxw-bar { flex: 1; height: 6px; border-radius: 99px; background: rgba(255,255,255,.16); overflow: hidden; }
+    .dxw-bar-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #E8A24A, #F3D6A0); width: 0; transition: width .35s cubic-bezier(.4,0,.2,1); }
+
+    .dxw-q { font-size: clamp(19px, 2.4vw, 23px); font-weight: 800; color: #F4F7FA; line-height: 1.55; margin: 0 0 20px; text-shadow: 0 2px 12px rgba(0,0,0,.5); }
+    .dxw-opts { display: grid; gap: 10px; }
+    .dxw-opt {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      width: 100%; text-align: left; font: inherit; font-size: 15.5px; color: #EAF1F7;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.20); border-radius: 13px;
+      padding: 16px 18px; cursor: pointer; transition: transform .12s, border-color .12s, box-shadow .12s, background .12s;
+    }
+    .dxw-opt:hover { border-color: rgba(232,162,74,.85); background: rgba(232,162,74,.14); transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,0,0,.4); }
+    .dxw-opt:focus-visible { outline: 2px solid #E8A24A; outline-offset: 2px; }
+    .dxw-opt.is-on { border-color: #E8A24A; background: rgba(232,162,74,.22); font-weight: 700; color: #fff; }
+    .dxw-opt i { flex: none; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.35); position: relative; }
+    .dxw-opt:hover i, .dxw-opt.is-on i { border-color: #E8A24A; }
+    .dxw-opt.is-on i::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: #E8A24A; }
+    .dxw-nav { margin-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .dxw-back { font: inherit; font-size: 14px; color: rgba(234,241,247,.7); background: none; border: none; cursor: pointer; }
+    .dxw-back:hover { color: #fff; text-decoration: underline; }
+    .dxw-back[hidden] { visibility: hidden; display: block; }
+    .dxw-hint { font-size: 12.5px; color: rgba(234,241,247,.55); }
+
+    /* ミニぶんぶんと吹き出し（世界の中） */
+    .dxw-chara {
+      position: absolute; right: max(16px, calc(50% - 600px)); bottom: 40px;
+      width: 190px; z-index: 4; pointer-events: none;
+      filter: drop-shadow(0 0 26px rgba(232,162,74,.30)) drop-shadow(0 18px 26px rgba(0,0,0,.5));
+      animation: dxwChara .6s ease .5s both;
+    }
+    @keyframes dxwChara { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+    .dxw-say {
+      position: absolute; right: max(16px, calc(50% - 600px)); bottom: 386px;
+      width: 250px; background: rgba(255,255,255,.97); border: 1px solid rgba(232,162,74,.5); border-radius: 18px;
+      padding: 16px 18px; font-size: 14.5px; line-height: 1.85; color: #234; z-index: 4;
+      box-shadow: 0 18px 40px rgba(0,0,0,.45), 0 0 40px rgba(232,162,74,.14); pointer-events: none;
+      animation: dxwIn .5s ease .8s both;
+    }
+    .dxw-say::after {
+      content: ""; position: absolute; right: 40px; bottom: -9px; width: 16px; height: 16px;
+      background: rgba(255,255,255,.97); border-right: 1px solid rgba(232,162,74,.5); border-bottom: 1px solid rgba(232,162,74,.5);
+      transform: rotate(45deg);
+    }
+    .dxw-say[hidden] { display: none; }
+
+    /* 結果 */
+    .dxw-lead { text-align: center; margin: 0 0 22px; }
+    .dxw-lead span { font-size: 12px; font-weight: 800; letter-spacing: .12em; color: #E8C48A; }
+    .dxw-lead h3 { margin: 8px 0 0; font-size: clamp(21px, 2.6vw, 26px); font-weight: 900; color: #F4F7FA; line-height: 1.5; text-shadow: 0 2px 12px rgba(0,0,0,.5); }
+    .dxw-alert { background: #FFF9E6; border: 1px solid #E8C84A; border-radius: 14px; padding: 16px 18px; font-size: 14px; color: #5A4A10; line-height: 1.85; margin-bottom: 16px; }
+    .dxw-card { border-radius: 18px; padding: 24px; margin-bottom: 12px; }
+    .dxw-card-1 { background: linear-gradient(160deg, rgba(20,42,64,.92), rgba(11,26,41,.94)); border: 1px solid rgba(232,162,74,.55); color: #fff; box-shadow: 0 18px 44px rgba(0,0,0,.5), 0 0 40px rgba(232,162,74,.12); }
+    .dxw-card-2 { background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.24); }
+    .dxw-card-3 { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.14); }
+    .dxw-rank { display: inline-flex; align-items: center; font-size: 11.5px; font-weight: 800; letter-spacing: .08em; padding: 5px 11px; border-radius: 99px; }
+    .dxw-card-1 .dxw-rank { background: #E8A24A; color: #2A1A00; }
+    .dxw-card-2 .dxw-rank { background: rgba(232,196,138,.22); color: #F0D9AE; }
+    .dxw-card-3 .dxw-rank { background: rgba(255,255,255,.12); color: rgba(234,241,247,.7); }
+    .dxw-name { margin: 12px 0 0; font-size: 22px; font-weight: 900; line-height: 1.4; }
+    .dxw-card-1 .dxw-name { color: #fff; }
+    .dxw-card-2 .dxw-name, .dxw-card-3 .dxw-name { color: #F4F7FA; }
+    .dxw-why { margin: 10px 0 0; font-size: 14.5px; line-height: 1.95; }
+    .dxw-card-1 .dxw-why { color: rgba(255,255,255,.86); }
+    .dxw-card-2 .dxw-why, .dxw-card-3 .dxw-why { color: rgba(234,241,247,.78); }
+    .dxw-route { margin-top: 18px; background: rgba(232,196,138,.10); border: 1px solid rgba(232,196,138,.30); border-radius: 16px; padding: 20px 22px; }
+    .dxw-route p { margin: 0; font-size: 14.5px; line-height: 1.95; color: rgba(240,246,251,.9); }
+    .dxw-route strong { color: #F0D9AE; }
+    /* ガラスのカードの上では、LP既定の濃紺ボタンが読めないので上書きする */
+    .dxw-card .btn-outline {
+      color: #F0D9AE; border-color: rgba(232,196,138,.6); background: rgba(232,196,138,.08);
+    }
+    .dxw-card .btn-outline:hover { color: #fff; border-color: #E8A24A; background: rgba(232,162,74,.22); }
+    .dxw-foot { margin-top: 18px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .dxw-foot button { font: inherit; font-size: 14px; color: rgba(234,241,247,.72); background: none; border: none; cursor: pointer; }
+    .dxw-foot button:hover { color: #fff; text-decoration: underline; }
+
+    @media (max-width: 1080px) { .dxw-chara, .dxw-say { display: none; } }
+    @media (max-width: 560px) {
+      .dxw-inner { padding: 60px 14px 80px; }
+      .dxw-panel { padding: 24px 18px 22px; border-radius: 18px; }
+      .dxw-halo { width: 108vw; }
+      .dxw-ring:nth-child(2), .dxw-ring:nth-child(3), .dxw-ring:nth-child(4) { display: none; }
+    }
+    /* 動きを減らす設定の人には、演出を出さない */
+    @media (prefers-reduced-motion: reduce) {
+      .dxw-veil { display: none; }
+      .dxw-panel, .dxw-chara, .dxw-say, .dxw-halo, .dxw-ring, .dxw-form, .dxw-num, .dxw-floor { animation: none; }
+      .dxw-bar-fill { transition: none; }
+      .dxw-opt { transition: none; }
+    }
+
   </style>
 </head>
 <body>
@@ -1916,16 +2134,16 @@
         <div class="hub-hero-copy">
           <span class="hero-eyebrow">数字の資格AIラボ</span>
           <h1 class="hub-hero-h1">資格を、<span class="em">“使える武器”</span>に。</h1>
-          <p class="hub-hero-sub">簿記・証券アナリスト、そしてAI実践。学んだ知識を「合格」だけで終わらせず、実務で使える力まで地続きにつなげる場所です。<br>偏差値40から4回落ちて合格した、凡人の正直な学びを。</p>
+          <p class="hub-hero-sub">簿記2級・3級を取ったけれど次に迷っている方、経理・財務で働く方へ。<strong>簿記1級・証券アナリスト・AI副業</strong>の3つから、あなたの目指すゴールに合う入口をご案内します。<br>偏差値40から4回落ちて合格した、凡人の正直な学びを。</p>
           <div class="hub-hero-ctas">
-            <a href="#tracks" class="btn btn-orange">3つの学びを見る</a>
+            <a href="#shindan" class="btn btn-orange">7つの質問で診断する</a>
             <a href="https://line.me/R/ti/p/@159qegdx" target="_blank" rel="noopener" class="btn btn-outline">LINEで無料相談</a>
           </div>
           <!-- 3トラックへのクイック導線 -->
           <div class="hub-hero-tracks">
             <a href="/boki.html" class="hub-hero-track"><i style="background:#2D6A4F;"></i>簿記1級 合格伴走</a>
             <a href="/cma.html" class="hub-hero-track"><i style="background:#0F2C44;"></i>証券アナリスト(CMA)</a>
-            <a href="/ai.html" class="hub-hero-track"><i style="background:#FF6B35;"></i>AIで実務に使う</a>
+            <a href="/ai.html" class="hub-hero-track"><i style="background:#FF6B35;"></i>知識をAIで収入に</a>
           </div>
         </div>
         <!-- 右：自作SVGビジュアル（資格→AI→使える武器への右肩上がり） -->
@@ -1947,35 +2165,292 @@
     </div>
   </section>
 
+  <!-- ===== コース診断（入口） ===== -->
+  <section id="shindan" style="background:var(--cream);">
+    <div class="container">
+      <div class="dx-guide-bubble">ぼくがミニぶんぶんです。<br>一緒に、いまの現在地を見にいこう。</div>
+      <img src="/assets/minibunbun-chibi.png" alt="案内役のミニぶんぶん" class="dx-guide" width="286" height="520" decoding="async">
+
+      <div style="text-align:center;max-width:760px;margin:0 auto 36px;">
+        <span class="eyebrow" style="justify-content:center;">DIAGNOSIS</span>
+        <h2 class="section-title">7つの質問で、<br>あなたの入口が決まります！</h2>
+        <p class="section-subtitle" style="margin:16px auto 0;">1つだけ勧めて終わりにはしません。<strong>今すぐ始める先／将来の候補／今は勧めない理由</strong>まで、ぜんぶ出します。登録も送信もなし。30秒で終わります。</p>
+      </div>
+
+      <div class="dx-enter">
+        <button type="button" class="dx-enter-btn" id="dxw-enter">診断をはじめる</button>
+        <p class="dx-enter-note">画面が切り替わります。答えはどこにも送られません。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 別の世界：明るいラボ ===== -->
+  <div class="dxw" id="dxw" role="dialog" aria-modal="true" aria-label="コース診断">
+    <div class="dxw-veil" id="dxw-veil"></div>
+    <div class="dxw-rings" aria-hidden="true"><span class="dxw-ring"></span><span class="dxw-ring"></span><span class="dxw-ring"></span><span class="dxw-ring"></span></div>
+    <div id="dxw-nums" aria-hidden="true"></div>
+
+    <div class="dxw-say" id="dxw-say" hidden></div>
+    <img src="/assets/minibunbun-chibi.png" alt="" class="dxw-chara" id="dxw-chara" width="286" height="520" decoding="async">
+
+    <div class="dxw-inner">
+      <div class="dxw-panel" id="dxw-panel"></div>
+    </div>
+  </div>
+
+  <script>
+  (function () {
+    // 診断の中身（設問・配点・判定）は、これまでの実装をそのまま引き継いでいる。
+    // 変わったのは「どこで答えるか」だけ。数字を触るときは 事業ハブ/コース診断_設計.md も直すこと。
+    var Q = [
+      { t: 'いま一番実現したいことは何ですか？', o: [
+        ['自分の知識を収入に変えたい', 0,0,3], ['経理で転職・昇進したい', 3,0,0],
+        ['財務・経営企画・IR・金融へ進みたい', 0,3,0], ['まだ決まっていない', 1,1,1]] },
+      { t: 'いつまでに成果が欲しいですか？', o: [
+        ['3か月以内', 0,0,3], ['1年以内', 0,2,1], ['2〜3年かけてもいい', 2,1,0]] },
+      { t: 'いま持っている資格は？', o: [
+        ['なし', 0,0,1], ['簿記3級', 1,0,1], ['簿記2級', 2,2,0], ['簿記1級', 0,3,2]] },
+      { t: '経理・財務の実務経験はありますか？', o: [
+        ['ない', 1,0,0], ['1〜3年', 2,0,1], ['3年以上', 0,1,2], ['別の職種だけど、数字は扱う', 0,0,1]] },
+      { t: '週に確保できる勉強時間は？', o: [
+        ['5時間より少ない', 0,0,2], ['5〜10時間', 0,2,1], ['10〜20時間', 2,1,0], ['20時間以上', 3,0,0]] },
+      { t: '勉強と実践、どっちを優先したいですか？', o: [
+        ['まず資格を取りたい', 2,2,0], ['まず動かして結果を出したい', 0,0,3], ['半々でいい', 0,1,1]] },
+      { t: '発信や営業に抵抗はありますか？', o: [
+        ['抵抗はない', 0,0,2], ['少しある', 0,0,1], ['できればやりたくない', 1,1,0]] }
+    ];
+    var C = {
+      B: { label: '簿記ラボ', name: '簿記1級 合格伴走', href: '/boki', cta: '簿記の伴走を見る',
+        r1: '経理・会計で専門性を高めたいという目的と、確保できる勉強時間がしっかり噛み合っています。',
+        r2: 'まず動かす側を優先して、専門性が足りないと感じたときに戻ってくるのが現実的です。',
+        r3: 'すぐに結果が欲しい状況だと、1年単位の試験勉強はどうしても噛み合いにくいからです。' },
+      C: { label: 'CMA Academy', name: '証券アナリスト(CMA)1次対策', href: '/cma', cta: 'CMA対策を見る',
+        r1: '分析する側へ進みたいという目的に合っていて、会計の基礎もすでにあります。',
+        r2: '会計の土台ができたあと、財務・投資まで広げる段階で効いてきます。',
+        r3: 'いまは金融分析より、会計の基盤を固めるほうが目的に近いからです。',
+        r3income: '収入をつくるのが目的なら、CMAは要りません。財務・IR・金融など、本業のポジションを動かしたくなったときに、はじめて意味が出てきます。' },
+      A: { label: 'AI実践編', name: '知識を、AIで収入に変える', href: '/ai', cta: 'AI実践を見る',
+        r1: '早く結果を出したいという条件と、いま持っている知識をそのまま使える点が合っています。',
+        r2: '資格でつくった専門性を、売れる形に変える段階で効いてきます。',
+        r3: 'まず土台になる知識をつくったほうが、結果的に早いと思います。' }
+    };
+    var SWAP = '簿記1級は、模擬試験で合格点を連発できてようやくスタートラインの試験です。いま確保できる時間から見ると、先にCMAへ進むほうが届きやすい！ CMAは簿記1級より目指しやすくて、財務・投資の知識は実務でそのまま使えます。';
+    var PREF = { 0: 'A', 1: 'B', 2: 'C' }, ORDER = ['B','C','A'];
+
+    var world = document.getElementById('dxw');
+    var panel = document.getElementById('dxw-panel');
+    var say   = document.getElementById('dxw-say');
+    var veil  = document.getElementById('dxw-veil');
+    var enter = document.getElementById('dxw-enter');
+    if (!world || !enter) return;
+
+    var step = 0, ans = [], scrollY = 0;
+
+    function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+    // 黒板の計算跡と、舞う数字を一度だけ置く（毎回作り直すと重い）
+    // 数式と記号は一度だけ置く（毎回作り直すと重い）
+    var decorated = false;
+    function decorate() {
+      if (decorated) return; decorated = true;
+      var wrap = document.getElementById('dxw-nums');
+      // 光で書かれた数式。学校の板書ではなく、空間に浮かんでいる想定
+      // 背景の黒板に数式が入ったので、空間に浮かべるのは少数だけにする
+      var forms = [
+        ['PV = Σ CF / (1+r)^t', 8, 66, 15],
+        ['σ² = E[(X−μ)²]', 74, 70, 14]
+      ];
+      forms.forEach(function (f) {
+        var el = document.createElement('div');
+        el.className = 'dxw-form'; el.textContent = f[0];
+        el.style.left = f[1] + '%'; el.style.top = f[2] + '%'; el.style.fontSize = f[3] + 'px';
+        wrap.appendChild(el);
+      });
+      var nums = [['1級',4,30,26],['70',88,20,30],['CMA',18,74,24],['28',80,80,28],['13週',46,10,20],['±0',92,56,22]];
+      nums.forEach(function (n) {
+        var el = document.createElement('div');
+        el.className = 'dxw-num'; el.textContent = n[0];
+        el.style.left = n[1] + '%'; el.style.top = n[2] + '%'; el.style.fontSize = n[3] + 'px';
+        wrap.appendChild(el);
+      });
+    }
+    function open() {
+      decorate();
+      scrollY = window.scrollY;
+      document.body.style.overflow = 'hidden';
+      world.classList.add('is-open');
+      // 入場の暗転をやり直す（2回目以降も同じ演出になるように）
+      veil.style.animation = 'none'; void veil.offsetWidth; veil.style.animation = '';
+      step = 0; ans = [];
+      render();
+      speak('ようこそ。7つ聞くね。ここからが面白い。');
+      world.focus && world.focus();
+      document.addEventListener('keydown', onKey);
+    }
+    function close() {
+      world.classList.remove('is-open');
+      document.body.style.overflow = '';
+      window.scrollTo(0, scrollY);
+      document.removeEventListener('keydown', onKey);
+    }
+    function onKey(e) { if (e.key === 'Escape') close(); }
+    enter.addEventListener('click', open);
+
+    function speak(text) {
+      if (!text) { say.hidden = true; return; }
+      say.textContent = text; say.hidden = false;
+      say.style.animation = 'none'; void say.offsetWidth; say.style.animation = '';
+    }
+
+    function render() {
+      var q = Q[step];
+      panel.innerHTML =
+        '<div class="dxw-top"><span class="dxw-step"><b>' + (step + 1) + '</b> / 7</span>'
+        + '<span class="dxw-bar"><span class="dxw-bar-fill" style="width:' + (step / Q.length * 100) + '%"></span></span></div>'
+        + '<h3 class="dxw-q">' + esc(q.t) + '</h3>'
+        + '<div class="dxw-opts">'
+        + q.o.map(function (o, i) {
+            return '<button type="button" class="dxw-opt' + (ans[step] === i ? ' is-on' : '') + '" data-i="' + i + '"><span>' + esc(o[0]) + '</span><i></i></button>';
+          }).join('')
+        + '</div>'
+        + '<div class="dxw-nav"><button type="button" class="dxw-back" id="dxw-back"' + (step === 0 ? ' hidden' : '') + '>← ひとつ戻る</button>'
+        + '<span class="dxw-hint">選ぶと次へ進みます</span></div>';
+
+      panel.querySelectorAll('.dxw-opt').forEach(function (b) {
+        b.addEventListener('click', function () { pick(+b.dataset.i); });
+      });
+      var back = document.getElementById('dxw-back');
+      if (back) back.addEventListener('click', function () { if (step > 0) { step--; render(); } });
+    }
+
+    function pick(i) {
+      ans[step] = i;
+      var nodes = panel.querySelectorAll('.dxw-opt');
+      for (var k = 0; k < nodes.length; k++) nodes[k].classList.toggle('is-on', k === i);
+      var fill = panel.querySelector('.dxw-bar-fill');
+      if (fill) fill.style.width = ((step + 1) / Q.length * 100) + '%';
+      setTimeout(function () {
+        if (step < Q.length - 1) { step++; render(); }
+        else { show(); }
+      }, 220);
+    }
+
+    function card(rank, key, why) {
+      var c = C[key];
+      var head = rank === 1 ? '★ 今すぐ始めるならここ' : (rank === 2 ? '次に効いてくる' : '今は急がなくていい');
+      var s = '<div class="dxw-card dxw-card-' + rank + '"><span class="dxw-rank">' + head + '</span>'
+        + '<p class="dxw-name">' + esc(c.name) + '</p><p class="dxw-why">' + why + '</p>';
+      if (rank !== 3) s += '<a href="' + c.href + '" class="btn ' + (rank === 1 ? 'btn-orange' : 'btn-outline') + '" style="margin-top:18px;">' + esc(c.cta) + ' →</a>';
+      return s + '</div>';
+    }
+
+    function show() {
+      var sc = { B: 0, C: 0, A: 0 };
+      ans.forEach(function (i, qi) { var o = Q[qi].o[i]; sc.B += o[1]; sc.C += o[2]; sc.A += o[3]; });
+
+      var pool = (ans[2] === 3) ? ['C','A'] : ORDER.slice();   // 簿記1級を持っている人にBは勧めない
+      var pref = PREF[ans[0]];
+      pool.sort(function (x, y) {
+        if (sc[y] !== sc[x]) return sc[y] - sc[x];
+        if (x === pref) return -1; if (y === pref) return 1;
+        return ORDER.indexOf(x) - ORDER.indexOf(y);
+      });
+      var swapped = false;
+      if (pool[0] === 'B' && (ans[4] === 0 || ans[1] === 0) && pool.indexOf('C') > 0) {
+        pool.splice(pool.indexOf('C'), 1); pool.unshift('C'); swapped = true;
+      }
+      // 収入が目的の人に、CMAを2番手として見せない（財務・金融を選んだ人は除く）
+      var incomeAxis = (pool[0] === 'A' && ans[0] !== 2);
+      if (incomeAxis) { pool = ['A', 'B', 'C']; }
+
+      var h = '<div class="dxw-lead"><span>YOUR ROUTE</span><h3>あなたは、ここから始めるのがいちばん早い！</h3></div>';
+      if (ans[2] === 0) {
+        h += '<div class="dxw-alert">まずは<strong>簿記3級・2級</strong>からいきましょう（<a href="https://coconala.com/services/3501081" target="_blank" rel="noopener" style="color:#F0D9AE;font-weight:700;">ココナラの個別サポート</a>）。下の結果は、その次に進む先として読んでください。</div>';
+      }
+      h += card(1, pool[0], swapped && pool[0] === 'C' ? SWAP : C[pool[0]].r1);
+      h += card(2, pool[1], C[pool[1]].r2);
+      if (pool[2]) h += card(3, pool[2], (incomeAxis && pool[2] === 'C') ? C.C.r3income : C[pool[2]].r3);
+
+      h += '<div class="dxw-route">';
+      if (pool[0] === 'A') {
+        if (incomeAxis) {
+          h += '<p><strong>まずは、収入をつくるところから。</strong><br>資格はいま要りません。案件や発信を進めるうちに「会計の知識が足りない」と感じたら、そのとき簿記1級へ戻ってくれば十分です。</p>';
+        } else {
+          h += '<p><strong>まずは、収入をつくるところから。</strong><br>ただし、あなたが進みたい財務・金融の方向では <strong>' + esc(C[pool[1]].name) + '</strong> が本線になります。先に収入をつくってから取りにいっても、並行しても構いません。</p>';
+        }
+      } else {
+        h += '<p>あなたの順番は <strong>' + esc(C[pool[0]].name) + '</strong> → <strong>知識を、AIで収入に変える</strong>。<br>資格で専門性をつくって、AIでそれを収入に変える。この向きだと、学んだことがそのまま指示力になります。</p>';
+      }
+      if (pool[0] === 'C') {
+        h += '<p style="margin:12px 0 0;font-size:13.5px;">CMAで学んだ指標を実際の決算で動かす「AI実践編（投資分析・全9回）」もあります。<a href="/ai" style="color:#F0D9AE;font-weight:700;">こちら</a></p>';
+      }
+      h += '<p style="margin:12px 0 0;font-size:13.5px;">迷ったら <a href="https://line.me/R/ti/p/@159qegdx" target="_blank" rel="noopener" style="color:#F0D9AE;font-weight:700;">LINEで相談</a>してください。いまの状況をうかがって、一緒に決めます！</p></div>'
+        + '<div class="dxw-foot"><button type="button" id="dxw-tochat">この結果、ちょっと違うかも？ ミニぶんぶんに相談する</button>'
+        + '<button type="button" id="dxw-again">もう一度やる</button>'
+        + '<button type="button" id="dxw-close">この世界を出る</button></div>';
+
+      panel.innerHTML = h;
+      panel.style.animation = 'none'; void panel.offsetWidth; panel.style.animation = '';
+      speak('あなたは、ここから始めるのが一番早い。焦らんでいい、順番に積んでいこう。');
+      panel.scrollIntoView({ block: 'start' });
+      document.getElementById('dxw-again').addEventListener('click', function () {
+        step = 0; ans = []; render(); speak('もう一回いこう。ここからが面白い。');
+      });
+      document.getElementById('dxw-close').addEventListener('click', close);
+      // 表で決めきれない人は、そのままミニぶんぶんとの会話へ渡す
+      document.getElementById('dxw-tochat').addEventListener('click', function () {
+        close();
+        if (window.cwOpen) setTimeout(window.cwOpen, 260);
+      });
+    }
+  })();
+  </script>
+
   <!-- ===== 3トラック振り分け ===== -->
   <section id="tracks">
     <div class="container">
       <div style="text-align:center;max-width:760px;margin:0 auto 40px;">
         <span class="eyebrow" style="justify-content:center;">COURSES</span>
         <h2 class="section-title">あなたに合う入口を選んでください</h2>
+        <p class="section-subtitle" style="margin:16px auto 0;">簿記2級・3級を取ったけれど次に迷っている方／経理・財務で働いている方／これから経理・財務を目指す方へ。<br><strong>目指すゴールで、3つに分かれます。</strong></p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1000px;margin:0 auto;">
-        <!-- CMA -->
-        <div style="display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 6px 24px rgba(15,44,68,0.05);">
-          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--text-muted);">CMA Academy</div>
-          <h3 style="margin:8px 0 0;font-size:21px;color:var(--navy);">証券アナリスト(CMA)1次対策</h3>
-          <p style="margin:12px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.8;flex:1;">経済・ファンダメンタル分析・証券分析・数学を、丸暗記ではなく本質から。数学嫌いを置いていかない、理解重視の講座。</p>
-          <a href="/cma.html" class="btn btn-outline" style="margin-top:20px;">CMA対策を見る →</a>
-        </div>
-        <!-- 簿記 -->
+        <!-- ① 簿記1級 -->
         <div style="display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 6px 24px rgba(15,44,68,0.05);">
           <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--text-muted);">簿記ラボ</div>
           <h3 style="margin:8px 0 0;font-size:21px;color:var(--navy);">簿記1級 合格伴走</h3>
-          <p style="margin:12px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.8;flex:1;">4回落ちて合格した凡人が、独学のあなたを合格まで伴走。お試し¥10,000から。3級・2級はココナラの個別サポートで。</p>
+          <p style="margin:10px 0 0;font-size:13px;font-weight:700;color:#2D6A4F;">処理する人 → 理解する人</p>
+          <p style="margin:12px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.8;flex:1;"><strong>経理・会計の専門性を、長期で積み上げたい方へ。</strong>4回落ちて合格した凡人が、講義 全51本と月2回の面談で合格まで伴走します（5名まで）。3級・2級はココナラの個別サポートで。</p>
           <a href="/boki.html" class="btn btn-outline" style="margin-top:20px;">簿記の伴走を見る →</a>
         </div>
-        <!-- AI -->
+        <!-- ② アナリスト -->
+        <div style="display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 6px 24px rgba(15,44,68,0.05);">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--text-muted);">CMA Academy</div>
+          <h3 style="margin:8px 0 0;font-size:21px;color:var(--navy);">証券アナリスト(CMA)1次対策</h3>
+          <p style="margin:10px 0 0;font-size:13px;font-weight:700;color:#2D6A4F;">作る人 → 分析する人</p>
+          <p style="margin:12px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.8;flex:1;"><strong>財務・経営企画・IR・金融へ広げたい方へ。</strong>経済・ファンダメンタル分析・証券分析・数学を、丸暗記ではなく本質から。数学嫌いを置いていきません。</p>
+          <a href="/cma.html" class="btn btn-outline" style="margin-top:20px;">CMA対策を見る →</a>
+        </div>
+        <!-- ③ AI副業 -->
         <div style="display:flex;flex-direction:column;background:#fff;border:2px solid #2D6A4F;border-radius:18px;padding:28px;box-shadow:0 10px 30px rgba(45,106,79,0.12);">
-          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#2D6A4F;">会計・金融AI実践編</div>
-          <h3 style="margin:8px 0 0;font-size:21px;color:var(--navy);">資格をAIで“武器”にする</h3>
-          <p style="margin:12px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.8;flex:1;">学んだ会計・金融をAIで実務の道具に。決算・株価分析や会計自動化のツールを、プログラミング未経験でも作れる。</p>
+          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#2D6A4F;">AI実践編</div>
+          <h3 style="margin:8px 0 0;font-size:21px;color:var(--navy);">知識を、AIで収入に変える</h3>
+          <p style="margin:10px 0 0;font-size:13px;font-weight:700;color:#2D6A4F;">知っている人 → 売れる人</p>
+          <p style="margin:12px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.8;flex:1;"><strong>資格より先に、実践で結果がほしい方へ。</strong>いま持っている知識と経験を、AIで売れる形に変えて最初の売上まで。プログラミングの知識は要りません。</p>
           <a href="/ai.html" class="btn btn-orange" style="margin-top:20px;">AI実践を見る →</a>
         </div>
+      </div>
+
+      <!-- 複合ルート -->
+      <div style="max-width:1000px;margin:36px auto 0;background:var(--cream);border-radius:18px;padding:28px;">
+        <p style="margin:0;text-align:center;font-weight:700;color:var(--navy);font-size:17px;">3つは、どれか1つを選んで終わりではありません。</p>
+        <p style="margin:10px auto 0;max-width:640px;text-align:center;color:var(--text-muted);font-size:14.5px;line-height:1.9;"><strong>資格で専門性をつくり、AIでそれを市場価値に変える。</strong>進む順番は、人によって変わります。</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:20px;">
+          <div style="background:#fff;border-radius:12px;padding:16px 18px;"><strong style="color:#1A2B4A;font-size:14px;">経理の専門型</strong><p style="margin:6px 0 0;color:var(--text-muted);font-size:13.5px;">簿記1級 → AI副業</p></div>
+          <div style="background:#fff;border-radius:12px;padding:16px 18px;"><strong style="color:#1A2B4A;font-size:14px;">財務キャリア型</strong><p style="margin:6px 0 0;color:var(--text-muted);font-size:13.5px;">簿記1級 → アナリスト</p></div>
+          <div style="background:#fff;border-radius:12px;padding:16px 18px;"><strong style="color:#1A2B4A;font-size:14px;">短期収入型</strong><p style="margin:6px 0 0;color:var(--text-muted);font-size:13.5px;">AI副業 → 足りないと感じたら簿記1級</p></div>
+        </div>
+        <p style="margin:18px auto 0;max-width:640px;text-align:center;color:var(--text-muted);font-size:13.5px;">迷ったら、<a href="https://line.me/R/ti/p/@159qegdx" target="_blank" rel="noopener" style="color:#2D6A4F;font-weight:600;">LINEでご相談</a>ください。今の状況をうかがって、どこから始めるかを一緒に決めます。</p>
       </div>
     </div>
   </section>
@@ -2040,7 +2515,7 @@
           <p>そんな私が、簿記に出会って変わり始めます。日商簿記1級には<strong style="color:var(--navy);">4回落ちて</strong>、28→55→68→70点。2年以上・約3,168時間をかけて、ようやく合格しました。その勢いで証券アナリスト(CMA)1次にも合格。いまは会計×AIをテーマに発信し、Kindleを3冊出版しています。</p>
           <p>才能はありませんでした。ただ、基準を下げず、ゼロの日を作らず、続けただけです。だからこそ、同じように「向いてない」と思っている人に、遠回りして掴んだ学び方をそのまま渡したい。それが、この<strong style="color:#2D6A4F;">「数字の資格AIラボ」</strong>です。</p>
         </div>
-        <a href="https://x.com/a3aByulmQvDRNSU" target="_blank" rel="noopener" style="display:inline-block;margin-top:22px;font-size:14px;color:#2D6A4F;font-weight:700;">Xで日々の発信を見る（@a3aByulmQvDRNSU）→</a>
+        <a href="https://x.com/a3aByulmQvDRNSU" target="_blank" rel="noopener" style="display:inline-block;margin-top:22px;font-size:14px;color:#F0D9AE;font-weight:700;">Xで日々の発信を見る（@a3aByulmQvDRNSU）→</a>
       </div>
     </div>
   </section>
@@ -2141,7 +2616,7 @@
           <dt>メールアドレス</dt>
           <dd><a href="mailto:cmaacademy.info@gmail.com">cmaacademy.info@gmail.com</a></dd>
           <dt>販売価格</dt>
-          <dd>各講座の販売ページに税込価格を表示します（例：全講義見放題β版パス ¥29,800（税込）／数学講座・確率統計講座 各 ¥4,500（税込）／簿記 ¥9,900（税込）／全科目セット ¥78,900（税込））。</dd>
+          <dd>各講座の販売ページに税込価格を表示します（例：数学講座・確率統計講座 各 ¥4,500／簿記 ¥9,900／全講義見放題β版パス ¥29,800／全科目セット ¥78,900／簿記1級 合格伴走 お試し1ヶ月 ¥10,000・合格伴走パック ¥98,000／AIビジネス基礎編 ¥19,800／金融AI実践編 ¥29,800／会計×AI実践編 ¥49,800／金融会計セット ¥69,800／ビジネス応用×AI実践編 ¥99,800。いずれも税込）。</dd>
           <dt>商品代金以外の必要料金</dt>
           <dd>インターネット接続料金・通信料金等はお客様のご負担となります。</dd>
           <dt>お支払い方法</dt>
@@ -2151,7 +2626,7 @@
           <dt>商品の引き渡し時期</dt>
           <dd>ご決済の確認後、受講生サイトへのログイン用のご案内メールをお送りします（通常は数分以内、遅くとも24時間以内）。</dd>
           <dt>返品・キャンセル</dt>
-          <dd>受講開始日から30日以内であれば、理由を問わず全額返金いたします。詳細は本ページ内「返金・解約について」をご確認ください。</dd>
+          <dd>返金条件は講座の種類によって異なります。<strong>簿記1級 合格伴走・証券アナリスト(CMA)1次対策</strong>は、受講開始日から30日以内であれば理由を問わず全額返金いたします。<strong>AI実践編（AIビジネス基礎編／ビジネス応用×AI実践編／金融AI実践編／会計×AI実践編／金融会計セット）</strong>は、ご購入から7日以内かつ受講生サイトで開いた記事が3本以内の場合に限り、理由を問わず全額返金いたします。デジタルコンテンツの性質上、これを超えた場合の返金には応じられません（当方側の不具合により閲覧できない場合を除きます）。詳細は本ページ内「返金・解約について」をご確認ください。</dd>
           <dt>動作環境</dt>
           <dd>動画再生とインターネット接続が可能な環境、および最新版のブラウザ（Google Chrome / Safari / Microsoft Edge 等）を推奨します。</dd>
         </dl>
@@ -2222,8 +2697,11 @@
       <!-- 返金・解約について -->
       <article id="legal-refund" class="legal-block">
         <h3>返金・解約について</h3>
-        <h4>30日間返金保証</h4>
+        <h4>簿記1級 合格伴走／証券アナリスト(CMA)1次対策：30日間返金保証</h4>
         <p>受講開始日から30日以内であれば、理由を問わず全額を返金いたします。安心してお試しいただくための制度です。</p>
+        <h4>AI実践編：7日間返金保証（3記事まで確認できます）</h4>
+        <p>ご購入から7日以内で、かつ受講生サイトで開いた記事が3本以内であれば、理由を問わず全額を返金いたします。まず何本か読んでみて、思っていた内容と違うと感じたら、そのままお申し出いただけます。</p>
+        <p>デジタルコンテンツの性質上、この条件を超えた場合の返金には応じられません（当方側の不具合により閲覧できない場合を除きます）。閲覧した記事の数は、受講生サイトの記録で確認いたします。</p>
         <h4>返金の手続き</h4>
         <ol>
           <li>本ページ記載のお問い合わせ窓口（メールまたはLINE）へ、返金をご希望の旨をご連絡ください。</li>
@@ -2279,5 +2757,208 @@
       </div>
     </div>
   </footer>
+  <!-- ===== 相談チャット（/api/chat・受講生サイトのエンドポイントを利用） ===== -->
+  <style>
+    .cw-launch {
+      position: fixed; right: 20px; bottom: 20px; z-index: 90;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #2D6A4F; color: #fff; border: none; border-radius: 999px;
+      padding: 14px 20px; font: inherit; font-size: 14.5px; font-weight: 700;
+      box-shadow: 0 12px 30px rgba(45,106,79,.34); cursor: pointer; transition: transform .15s, box-shadow .15s;
+    }
+    .cw-launch:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(45,106,79,.42); }
+    .cw-launch svg { width: 19px; height: 19px; flex: none; }
+    .cw-panel {
+      position: fixed; right: 20px; bottom: 20px; z-index: 91;
+      width: min(380px, calc(100vw - 32px)); max-height: min(620px, calc(100vh - 40px));
+      background: #fff; border-radius: 20px; box-shadow: 0 28px 70px rgba(15,44,68,.30);
+      display: none; flex-direction: column; overflow: hidden;
+    }
+    .cw-panel.is-open { display: flex; }
+    .cw-head { background: var(--navy); color: #fff; padding: 16px 18px; display: flex; align-items: center; gap: 10px; }
+    .cw-head strong { font-size: 15px; }
+    .cw-head span { font-size: 12px; color: rgba(255,255,255,.7); display: block; margin-top: 2px; }
+    .cw-close { margin-left: auto; background: none; border: none; color: rgba(255,255,255,.85); font-size: 22px; line-height: 1; cursor: pointer; padding: 0 4px; }
+    .cw-close:hover { color: #fff; }
+    .cw-body { flex: 1; overflow-y: auto; padding: 18px; background: #F7F9FB; display: flex; flex-direction: column; gap: 12px; }
+    .cw-msg { max-width: 86%; font-size: 14px; line-height: 1.85; padding: 12px 14px; border-radius: 14px; white-space: pre-wrap; word-break: break-word; }
+    .cw-bot { background: #fff; border: 1px solid #E5E9EF; color: #38455A; align-self: flex-start; border-bottom-left-radius: 5px; }
+    .cw-me { background: #2D6A4F; color: #fff; align-self: flex-end; border-bottom-right-radius: 5px; }
+    .cw-err { background: #FFF4F2; border: 1px solid #F0C4BC; color: #A2402C; align-self: stretch; max-width: 100%; }
+    .cw-dots span { display: inline-block; width: 6px; height: 6px; margin-right: 4px; border-radius: 50%; background: #9AA7B5; animation: cwB 1.1s infinite; }
+    .cw-dots span:nth-child(2) { animation-delay: .18s; } .cw-dots span:nth-child(3) { animation-delay: .36s; }
+    @keyframes cwB { 0%,60%,100% { opacity: .28; } 30% { opacity: 1; } }
+    .cw-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+    .cw-chip { font: inherit; font-size: 12.5px; background: #fff; border: 1px solid #CFE3D8; color: #2D6A4F; border-radius: 999px; padding: 7px 12px; cursor: pointer; }
+    .cw-chip:hover { background: #F1F7F3; }
+    .cw-foot { border-top: 1px solid #E5E9EF; padding: 12px; background: #fff; }
+    .cw-form { display: flex; gap: 8px; align-items: flex-end; }
+    .cw-input { flex: 1; font: inherit; font-size: 14px; border: 1.5px solid #E5E9EF; border-radius: 12px; padding: 10px 12px; resize: none; max-height: 90px; line-height: 1.6; }
+    .cw-input:focus { outline: none; border-color: #2D6A4F; }
+    .cw-send { flex: none; background: #2D6A4F; color: #fff; border: none; border-radius: 12px; width: 42px; height: 42px; cursor: pointer; }
+    .cw-send:disabled { background: #B6C2CE; cursor: default; }
+    .cw-note { margin: 8px 2px 0; font-size: 11px; color: var(--text-muted); line-height: 1.6; }
+    /* アイコンの立体感：白い縁 → 落ち影 → 内側のハイライトの3枚重ねで、丸が浮いて見えるようにする */
+    .cw-launch-av {
+      width: 30px; height: 30px; border-radius: 50%; object-fit: cover; flex: none;
+      border: 2px solid #fff;
+      box-shadow: 0 2px 5px rgba(10,30,20,.35), 0 6px 14px rgba(10,30,20,.22);
+      transform: translateZ(0);
+      transition: transform .18s ease;
+    }
+    .cw-launch:hover .cw-launch-av { transform: scale(1.08) rotate(-3deg); }
+
+    /* ヘッダー：後ろに柔らかい光を敷いて、顔が前に出て見えるようにする */
+    .cw-head-av-wrap { position: relative; flex: none; display: inline-flex; }
+    .cw-head-av-wrap::before {
+      content: ""; position: absolute; inset: -8px; border-radius: 50%;
+      background: radial-gradient(circle at 50% 40%, rgba(232,162,74,.55), rgba(232,162,74,0) 70%);
+    }
+    .cw-head-av {
+      position: relative; width: 44px; height: 44px; border-radius: 50%; object-fit: cover;
+      border: 2.5px solid rgba(255,255,255,.92);
+      box-shadow: 0 3px 8px rgba(0,0,0,.4), 0 10px 22px rgba(0,0,0,.3);
+    }
+
+    .cw-row { display: flex; gap: 10px; align-items: flex-start; }
+    .cw-row-av {
+      width: 32px; height: 32px; border-radius: 50%; object-fit: cover; flex: none; margin-top: 2px;
+      border: 2px solid #fff;
+      box-shadow: 0 1px 3px rgba(15,44,68,.28), 0 4px 10px rgba(15,44,68,.18);
+    }
+    /* 吹き出しにも軽い立ち上がりを足して、アイコンと段差をそろえる */
+    .cw-row .cw-bot { box-shadow: 0 1px 2px rgba(15,44,68,.06), 0 4px 12px rgba(15,44,68,.08); }
+    .cw-row .cw-msg { max-width: calc(100% - 36px); }
+    @media (max-width: 560px) {
+      .cw-launch { right: 14px; bottom: 14px; padding: 12px 17px; font-size: 14px; }
+      .cw-panel { right: 8px; left: 8px; bottom: 8px; width: auto; max-height: calc(100vh - 24px); }
+    }
+  </style>
+
+  <button type="button" class="cw-launch" id="cw-launch">
+    <img src="/assets/minibunbun-3d.jpg" alt="" class="cw-launch-av">
+    ミニぶんぶんに相談する
+  </button>
+
+  <div class="cw-panel" id="cw-panel" role="dialog" aria-label="コース相談チャット" aria-modal="false">
+    <div class="cw-head">
+      <span class="cw-head-av-wrap"><img src="/assets/minibunbun-3d.jpg" alt="" class="cw-head-av"></span>
+      <div>
+        <strong>ミニぶんぶん</strong>
+        <span>ぶんぶんのAI分身です</span>
+      </div>
+      <button type="button" class="cw-close" id="cw-close" aria-label="閉じる">×</button>
+    </div>
+    <div class="cw-body" id="cw-body"></div>
+    <div class="cw-foot">
+      <form class="cw-form" id="cw-form">
+        <textarea class="cw-input" id="cw-input" rows="1" placeholder="いまの状況を書いてください" maxlength="500"></textarea>
+        <button type="submit" class="cw-send" id="cw-send" aria-label="送信">
+          <svg viewBox="0 0 256 256" fill="currentColor" style="width:18px;height:18px;"><path d="M231.87,114,52.11,25.35a16,16,0,0,0-19.51,4.86,16,16,0,0,0-1.71,17.06L61.94,128,30.89,208.73A16,16,0,0,0,45.83,232a16.5,16.5,0,0,0,6.31-1.28L231.87,142a16,16,0,0,0,0-28Z"/></svg>
+        </button>
+      </form>
+      <p class="cw-note">合否・収入を保証するものではありません。込み入った相談は <a href="https://line.me/R/ti/p/@159qegdx" target="_blank" rel="noopener" style="color:#2D6A4F;font-weight:600;">LINE</a> へどうぞ。</p>
+    </div>
+  </div>
+
+  <script>
+  (function () {
+    var API = 'https://app.sujilab.net/api/chat';
+    var launch = document.getElementById('cw-launch'), panel = document.getElementById('cw-panel'),
+        body = document.getElementById('cw-body'), form = document.getElementById('cw-form'),
+        input = document.getElementById('cw-input'), send = document.getElementById('cw-send');
+    if (!launch || !panel) return;
+    var msgs = [], busy = false, started = false;
+
+    function add(kind, text) {
+      var d = document.createElement('div');
+      d.className = 'cw-msg ' + kind;
+      d.textContent = text;
+      if (kind === 'cw-bot') {
+        // ミニぶんぶんの発言にはアイコンを添える（誰が話しているかを一目で分かるように）
+        var row = document.createElement('div');
+        row.className = 'cw-row';
+        var av = document.createElement('img');
+        av.src = '/assets/minibunbun-3d.jpg'; av.alt = ''; av.className = 'cw-row-av';
+        row.appendChild(av); row.appendChild(d);
+        body.appendChild(row);
+      } else {
+        body.appendChild(d);
+      }
+      body.scrollTop = body.scrollHeight;
+      return d;
+    }
+    function chips(list) {
+      var w = document.createElement('div'); w.className = 'cw-chips';
+      list.forEach(function (t) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'cw-chip'; b.textContent = t;
+        b.addEventListener('click', function () { w.remove(); ask(t); });
+        w.appendChild(b);
+      });
+      body.appendChild(w); body.scrollTop = body.scrollHeight;
+    }
+    function open() {
+      panel.classList.add('is-open'); launch.style.display = 'none';
+      if (!started) {
+        started = true;
+        add('cw-bot', 'こんにちは、ミニぶんぶんです！ ぶんぶんのAI分身で、コース選びの相談に乗ります。いまの状況を教えてください。簿記1級・証券アナリスト(CMA)・AI実践編のどれから始めるのが合っているか、一緒に決めましょう。');
+        chips(['簿記2級を取った後、何をすればいい？', '早く収入をつくりたい', '経理で昇進したい', '実務経験が浅いのが不安']);
+      }
+      setTimeout(function () { input.focus(); }, 60);
+    }
+    function close() { panel.classList.remove('is-open'); launch.style.display = ''; }
+    launch.addEventListener('click', open);
+    document.getElementById('cw-close').addEventListener('click', close);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && panel.classList.contains('is-open')) close(); });
+    window.cwOpen = open;
+
+    input.addEventListener('input', function () { input.style.height = 'auto'; input.style.height = Math.min(input.scrollHeight, 90) + 'px'; });
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); form.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true })); }
+    });
+    form.addEventListener('submit', function (e) { e.preventDefault(); var v = input.value.trim(); if (v) ask(v); });
+
+    function ask(text) {
+      if (busy) return;
+      busy = true; send.disabled = true;
+      input.value = ''; input.style.height = 'auto';
+      add('cw-me', text);
+      msgs.push({ role: 'user', content: text });
+      if (msgs.length > 12) msgs = msgs.slice(-12);   // 送りすぎない
+
+      var wait = add('cw-bot', '');
+      wait.innerHTML = '<span class="cw-dots"><span></span><span></span><span></span></span>';
+
+      fetch(API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: msgs })
+      }).then(function (r) {
+        if (r.status === 429) throw new Error('アクセスが集中しています。少し時間をおいてからお試しください。');
+        if (!r.ok) throw new Error('いまつながりませんでした。時間をおいてお試しいただくか、LINEからご相談ください。');
+        return r.text();
+      }).then(function (raw) {
+        var out = '';
+        raw.split('\n').forEach(function (line) {
+          if (line.indexOf('data: ') !== 0) return;
+          var p = line.slice(6).trim();
+          if (p === '[DONE]') return;
+          try { var j = JSON.parse(p); if (j.text) out += j.text; if (j.error) throw new Error(j.error); } catch (e2) { if (e2 instanceof SyntaxError) return; throw e2; }
+        });
+        (wait.closest('.cw-row') || wait).remove();
+        if (!out) throw new Error('うまく返せませんでした。もう一度お試しください。');
+        add('cw-bot', out);
+        msgs.push({ role: 'assistant', content: out });
+      }).catch(function (err) {
+        (wait.closest('.cw-row') || wait).remove();
+        var m = err.message || '';
+        if (err instanceof TypeError || /fetch|network|failed/i.test(m)) { m = 'いまつながりませんでした。通信環境をご確認のうえ、もう一度お試しください。お急ぎのときはLINEからご相談ください。'; }
+        add('cw-err', m || 'エラーが起きました。時間をおいてお試しください。');
+      }).finally(function () { busy = false; send.disabled = false; });
+    }
+  })();
+  </script>
+
 </body>
 </html>
