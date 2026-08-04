@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI実践編（金融・会計×AI）｜数字の資格AIラボ</title>
-  <meta name="description" content="学んだ会計・金融を、AIで実務の道具に。プログラミング未経験でも、決算・株価データの分析や会計実務の自動化ツールが作れる実践講座。AIビジネス基礎編¥19,800／ビジネス応用×AI実践編¥99,800／金融AI実践編¥29,800／会計×AI実践編¥49,800／セット¥69,800。">
+  <meta name="description" content="学んだ会計・金融を、AIで実務の道具に。プログラミング未経験でも、決算・株価データの分析や会計実務の自動化ツールが作れる実践講座。副業×AI実践編¥99,800／金融AI実践編¥29,800／会計×AI実践編¥49,800。">
 
   <!-- 検索・SNS最適化 -->
   <link rel="canonical" href="https://lp-eta-tan.vercel.app/ai">
@@ -21,7 +21,7 @@
   <meta property="og:site_name" content="数字の資格AIラボ">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:title" content="AI実践編｜学んだ会計・金融を、AIで“仕事の道具”にする">
-  <meta property="og:description" content="プログラミング未経験でも、決算・株価分析や会計自動化のツールが作れる。AIビジネス基礎編¥19,800／ビジネス応用×AI実践編¥99,800／金融AI実践編¥29,800／会計×AI実践編¥49,800／セット¥69,800。">
+  <meta property="og:description" content="プログラミング未経験でも、決算・株価分析や会計自動化のツールが作れる。副業×AI実践編¥99,800／金融AI実践編¥29,800／会計×AI実践編¥49,800。">
   <meta property="og:url" content="https://lp-eta-tan.vercel.app/ai">
   <meta property="og:image" content="https://lp-eta-tan.vercel.app/assets/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -71,26 +71,53 @@
     a { color: inherit; text-decoration: none; }
     ul, ol { list-style: none; }
 
-    /* CSS 変数 */
+    /* CSS 変数
+       ── 2026-08-04：ダーク×グラス×ネオンの「未来のラボ」へ切り替え。
+          ネイビー×オレンジのブランド色はそのまま、地を深宇宙まで沈めて
+          面をガラスに、差し色にシアンを足している。
+          面＝--surface系／文字＝--ink・--text系、と役割で分ける（同じ白を共有しない）。 */
     :root {
-      --navy: #0F2C44;
-      --navy-soft: #1A3F5F;
-      --navy-deep: #08182A;
-      --orange: #FF6B35;
-      --orange-soft: #FFE8DD;
-      --green: #06C755;
-      --green-dark: #04A547;
-      --cream: #F7F4ED;
-      --cream-deep: #EFE9DC;
+      /* 地（深いほど奥） */
+      --navy: #0B1526;
+      --navy-soft: #14243C;
+      --navy-deep: #050A14;
+      --bg: #060B14;
+      --band-deep: #08111F;
+
+      /* ブランドの差し色 */
+      --orange: #FF7A45;
+      --orange-soft: rgba(255,122,69,0.22);
+      --cyan: #7AE0FF;
+      --cyan-deep: #35B9E8;
+      --violet: #9A8CFF;
+      --accent-2: #46E0A8;   /* 旧 #2D6A4F（濃い緑）の後継。暗い地でも沈まないミント */
+      --green: #06C755;      /* LINEのブランド色。変えない */
+      --green-dark: #05A948;
+
+      /* 面（ガラス） */
+      --surface: rgba(255,255,255,0.045);
+      --surface-2: rgba(255,255,255,0.022);
+      --surface-3: rgba(122,224,255,0.10);
+      --icon-bg: rgba(122,224,255,0.12);
       --white: #FFFFFF;
-      --text: #1F2937;
-      --text-muted: #6B7280;
-      --text-light: #9CA3AF;
-      --border: #E5E7EB;
-      --border-dark: #2A4866;
-      --shadow-sm: 0 2px 8px rgba(15, 44, 68, 0.08);
-      --shadow-md: 0 8px 24px rgba(15, 44, 68, 0.12);
-      --shadow-lg: 0 20px 50px rgba(15, 44, 68, 0.18);
+
+      /* 文字 */
+      --ink: #EDF4FF;
+      --text: #C3D2E6;
+      --text-muted: #93A6C0;
+      --text-light: #71839E;
+
+      /* 線 */
+      --border: rgba(150,190,255,0.16);
+      --border-dark: rgba(150,190,255,0.14);
+      --line-accent: rgba(122,224,255,0.42);
+
+      /* 影とネオン */
+      --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.35);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.45);
+      --shadow-lg: 0 26px 70px rgba(0, 0, 0, 0.55);
+      --glow-orange: 0 0 0 1px rgba(255,122,69,.35), 0 10px 34px rgba(255,122,69,.28);
+      --glow-cyan: 0 0 0 1px rgba(122,224,255,.28), 0 10px 34px rgba(122,224,255,.20);
 
       /* スペーシング（8px基準） */
       --space-1: 8px;  --space-2: 16px; --space-3: 24px;
@@ -113,7 +140,13 @@
       --fs-h2: clamp(20px, 2.4vw, 24px);
       --fs-h3: 16px;
 
-      /* 金融チャート風の背景モチーフ（navy地セクション用） */
+      /* 地の奥に置く未来都市。目立たせないのが条件なので、線も窓あかりもかなり薄い。
+         作り直すときは scratchpad の build-city-motif.mjs（ビルの座標表）から吐き直す */
+      --star-motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 340' preserveAspectRatio='xMidYMid slice'%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='157.63' cy='161.61' r='0.65' fill-opacity='0.33'/%3E%3Ccircle cx='58.26' cy='286.4' r='0.84' fill-opacity='0.31'/%3E%3Ccircle cx='115.71' cy='110.24' r='0.81' fill-opacity='0.4'/%3E%3Ccircle cx='229.75' cy='166.4' r='1' fill-opacity='0.31'/%3E%3Ccircle cx='48.29' cy='48.83' r='1.23' fill-opacity='0.19'/%3E%3Ccircle cx='223.1' cy='234.51' r='0.94' fill-opacity='0.27'/%3E%3Ccircle cx='248.57' cy='105.82' r='0.69' fill-opacity='0.34'/%3E%3Ccircle cx='247.83' cy='243.03' r='1.07' fill-opacity='0.3'/%3E%3Ccircle cx='319.04' cy='68.9' r='0.46' fill-opacity='0.26'/%3E%3Ccircle cx='262.1' cy='34.41' r='0.58' fill-opacity='0.3'/%3E%3Ccircle cx='240.43' cy='56.77' r='0.44' fill-opacity='0.23'/%3E%3Ccircle cx='80.43' cy='66.98' r='0.67' fill-opacity='0.39'/%3E%3Ccircle cx='264.85' cy='288.17' r='0.51' fill-opacity='0.31'/%3E%3Ccircle cx='192.86' cy='132.77' r='1.24' fill-opacity='0.28'/%3E%3Ccircle cx='74.06' cy='326.16' r='0.71' fill-opacity='0.28'/%3E%3Ccircle cx='223.96' cy='267.37' r='1.15' fill-opacity='0.37'/%3E%3Ccircle cx='281.03' cy='3.08' r='0.96' fill-opacity='0.21'/%3E%3Ccircle cx='290.63' cy='137.43' r='0.44' fill-opacity='0.17'/%3E%3Ccircle cx='305.06' cy='27.59' r='1.23' fill-opacity='0.26'/%3E%3Ccircle cx='177.31' cy='300.48' r='0.49' fill-opacity='0.29'/%3E%3Ccircle cx='103.13' cy='10.08' r='0.96' fill-opacity='0.22'/%3E%3Ccircle cx='109.06' cy='54.14' r='1.17' fill-opacity='0.21'/%3E%3Ccircle cx='137.82' cy='295.63' r='0.76' fill-opacity='0.4'/%3E%3Ccircle cx='35.59' cy='259.4' r='0.44' fill-opacity='0.27'/%3E%3Ccircle cx='167.77' cy='314.93' r='0.78' fill-opacity='0.22'/%3E%3Ccircle cx='204.66' cy='275.25' r='1.18' fill-opacity='0.31'/%3E%3C/g%3E%3C/svg%3E");
+      --star2-motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 610 610' preserveAspectRatio='xMidYMid slice'%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='166.28' cy='92.39' r='0.6' fill-opacity='0.24'/%3E%3Ccircle cx='314.37' cy='477.91' r='1.27' fill-opacity='0.27'/%3E%3Ccircle cx='385.62' cy='454.42' r='1.15' fill-opacity='0.25'/%3E%3Ccircle cx='590.08' cy='120.65' r='1.78' fill-opacity='0.2'/%3E%3Ccircle cx='328.83' cy='91.51' r='0.88' fill-opacity='0.18'/%3E%3Ccircle cx='58.74' cy='171.28' r='0.83' fill-opacity='0.28'/%3E%3Ccircle cx='490.27' cy='11.38' r='1.15' fill-opacity='0.25'/%3E%3Ccircle cx='365.96' cy='447.87' r='1.04' fill-opacity='0.14'/%3E%3Ccircle cx='40.29' cy='401.42' r='0.59' fill-opacity='0.28'/%3E%3Ccircle cx='449.17' cy='70.39' r='1.23' fill-opacity='0.15'/%3E%3Ccircle cx='297.35' cy='123.32' r='1.18' fill-opacity='0.22'/%3E%3Ccircle cx='458.39' cy='442.57' r='1.43' fill-opacity='0.19'/%3E%3Ccircle cx='198.04' cy='223.54' r='0.73' fill-opacity='0.19'/%3E%3Ccircle cx='208.69' cy='145.48' r='0.69' fill-opacity='0.21'/%3E%3C/g%3E%3C/svg%3E");
+      --city-motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 460' preserveAspectRatio='xMidYMax slice'%3E%3Cdefs%3E%3Cpattern id='w0' x='6' y='8' width='15' height='13' patternUnits='userSpaceOnUse'%3E%3Crect x='0' y='0' width='3' height='3' fill='%237AE0FF' fill-opacity='0.11'/%3E%3C/pattern%3E%3Cpattern id='w1' x='9' y='5' width='18' height='16' patternUnits='userSpaceOnUse'%3E%3Crect x='0' y='0' width='3' height='3' fill='%237AE0FF' fill-opacity='0.11'/%3E%3C/pattern%3E%3ClinearGradient id='hz' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%237AE0FF' stop-opacity='0'/%3E%3Cstop offset='0.5' stop-color='%237AE0FF' stop-opacity='0.10'/%3E%3Cstop offset='1' stop-color='%237AE0FF' stop-opacity='0'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23fff' stop-opacity='0'/%3E%3Cstop offset='0.30' stop-color='%23fff' stop-opacity='0.5'/%3E%3Cstop offset='0.44' stop-color='%23fff' stop-opacity='1'/%3E%3Cstop offset='0.80' stop-color='%23fff' stop-opacity='0.8'/%3E%3Cstop offset='1' stop-color='%23fff' stop-opacity='0.25'/%3E%3C/linearGradient%3E%3Cmask id='m'%3E%3Crect width='1600' height='460' fill='url(%23f)'/%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23m)'%3E%3Cg stroke='%237AE0FF' stroke-opacity='0.055' stroke-width='1' fill='none'%3E%3Cline x1='800' y1='200' x2='-1400' y2='460'/%3E%3Cline x1='800' y1='200' x2='-1210' y2='460'/%3E%3Cline x1='800' y1='200' x2='-1020' y2='460'/%3E%3Cline x1='800' y1='200' x2='-830' y2='460'/%3E%3Cline x1='800' y1='200' x2='-640' y2='460'/%3E%3Cline x1='800' y1='200' x2='-450' y2='460'/%3E%3Cline x1='800' y1='200' x2='-260' y2='460'/%3E%3Cline x1='800' y1='200' x2='-70' y2='460'/%3E%3Cline x1='800' y1='200' x2='120' y2='460'/%3E%3Cline x1='800' y1='200' x2='310' y2='460'/%3E%3Cline x1='800' y1='200' x2='500' y2='460'/%3E%3Cline x1='800' y1='200' x2='690' y2='460'/%3E%3Cline x1='800' y1='200' x2='880' y2='460'/%3E%3Cline x1='800' y1='200' x2='1070' y2='460'/%3E%3Cline x1='800' y1='200' x2='1260' y2='460'/%3E%3Cline x1='800' y1='200' x2='1450' y2='460'/%3E%3Cline x1='800' y1='200' x2='1640' y2='460'/%3E%3Cline x1='800' y1='200' x2='1830' y2='460'/%3E%3Cline x1='800' y1='200' x2='2020' y2='460'/%3E%3Cline x1='800' y1='200' x2='2210' y2='460'/%3E%3Cline x1='800' y1='200' x2='2400' y2='460'/%3E%3Cline x1='800' y1='200' x2='2590' y2='460'/%3E%3Cline x1='800' y1='200' x2='2780' y2='460'/%3E%3Cline x1='800' y1='200' x2='2970' y2='460'/%3E%3Cline x1='0' y1='200.65' x2='1600' y2='200.65'/%3E%3Cline x1='0' y1='203.96' x2='1600' y2='203.96'/%3E%3Cline x1='0' y1='211.36' x2='1600' y2='211.36'/%3E%3Cline x1='0' y1='224.01' x2='1600' y2='224.01'/%3E%3Cline x1='0' y1='242.88' x2='1600' y2='242.88'/%3E%3Cline x1='0' y1='268.89' x2='1600' y2='268.89'/%3E%3Cline x1='0' y1='302.86' x2='1600' y2='302.86'/%3E%3Cline x1='0' y1='345.55' x2='1600' y2='345.55'/%3E%3Cline x1='0' y1='397.7' x2='1600' y2='397.7'/%3E%3Cline x1='0' y1='460' x2='1600' y2='460'/%3E%3C/g%3E%3Crect x='0' y='174' width='1600' height='52' fill='url(%23hz)'/%3E%3Cline x1='0' y1='200' x2='1600' y2='200' stroke='%237AE0FF' stroke-opacity='0.20'/%3E%3Cg fill='%23060B14' fill-opacity='0.55'%3E%3Crect x='0' y='116' width='78' height='84'/%3E%3Crect x='82' y='146' width='46' height='54'/%3E%3Crect x='132' y='85' width='62' height='115'/%3E%3Crect x='198' y='128' width='38' height='72'/%3E%3Crect x='240' y='106' width='90' height='94'/%3E%3Crect x='334' y='53' width='52' height='147'/%3E%3Crect x='390' y='137' width='44' height='63'/%3E%3Crect x='438' y='93' width='74' height='107'/%3E%3Crect x='516' y='120' width='40' height='80'/%3E%3Crect x='560' y='70' width='96' height='130'/%3E%3Crect x='660' y='133' width='50' height='67'/%3E%3Crect x='714' y='100' width='66' height='100'/%3E%3Crect x='784' y='60' width='42' height='140'/%3E%3Crect x='830' y='123' width='84' height='77'/%3E%3Crect x='918' y='90' width='48' height='110'/%3E%3Crect x='970' y='110' width='72' height='90'/%3E%3Crect x='1046' y='139' width='40' height='61'/%3E%3Crect x='1090' y='78' width='88' height='122'/%3E%3Crect x='1182' y='126' width='46' height='74'/%3E%3Crect x='1232' y='101' width='64' height='99'/%3E%3Crect x='1300' y='65' width='52' height='135'/%3E%3Crect x='1356' y='130' width='78' height='70'/%3E%3Crect x='1438' y='96' width='44' height='104'/%3E%3Crect x='1486' y='115' width='92' height='85'/%3E%3Crect x='1582' y='88' width='18' height='112'/%3E%3C/g%3E%3Cg fill='%237AE0FF' fill-opacity='0.05'%3E%3Crect x='0' y='116' width='78' height='84'/%3E%3Crect x='82' y='146' width='46' height='54'/%3E%3Crect x='132' y='85' width='62' height='115'/%3E%3Crect x='198' y='128' width='38' height='72'/%3E%3Crect x='240' y='106' width='90' height='94'/%3E%3Crect x='334' y='53' width='52' height='147'/%3E%3Crect x='390' y='137' width='44' height='63'/%3E%3Crect x='438' y='93' width='74' height='107'/%3E%3Crect x='516' y='120' width='40' height='80'/%3E%3Crect x='560' y='70' width='96' height='130'/%3E%3Crect x='660' y='133' width='50' height='67'/%3E%3Crect x='714' y='100' width='66' height='100'/%3E%3Crect x='784' y='60' width='42' height='140'/%3E%3Crect x='830' y='123' width='84' height='77'/%3E%3Crect x='918' y='90' width='48' height='110'/%3E%3Crect x='970' y='110' width='72' height='90'/%3E%3Crect x='1046' y='139' width='40' height='61'/%3E%3Crect x='1090' y='78' width='88' height='122'/%3E%3Crect x='1182' y='126' width='46' height='74'/%3E%3Crect x='1232' y='101' width='64' height='99'/%3E%3Crect x='1300' y='65' width='52' height='135'/%3E%3Crect x='1356' y='130' width='78' height='70'/%3E%3Crect x='1438' y='96' width='44' height='104'/%3E%3Crect x='1486' y='115' width='92' height='85'/%3E%3Crect x='1582' y='88' width='18' height='112'/%3E%3C/g%3E%3Cg%3E%3Crect x='0' y='116' width='78' height='84' fill='url(%23w0)'/%3E%3Crect x='82' y='146' width='46' height='54' fill='url(%23w1)'/%3E%3Crect x='132' y='85' width='62' height='115' fill='url(%23w0)'/%3E%3Crect x='198' y='128' width='38' height='72' fill='url(%23w1)'/%3E%3Crect x='240' y='106' width='90' height='94' fill='url(%23w0)'/%3E%3Crect x='334' y='53' width='52' height='147' fill='url(%23w1)'/%3E%3Crect x='390' y='137' width='44' height='63' fill='url(%23w0)'/%3E%3Crect x='438' y='93' width='74' height='107' fill='url(%23w1)'/%3E%3Crect x='516' y='120' width='40' height='80' fill='url(%23w0)'/%3E%3Crect x='560' y='70' width='96' height='130' fill='url(%23w1)'/%3E%3Crect x='660' y='133' width='50' height='67' fill='url(%23w0)'/%3E%3Crect x='714' y='100' width='66' height='100' fill='url(%23w1)'/%3E%3Crect x='784' y='60' width='42' height='140' fill='url(%23w0)'/%3E%3Crect x='830' y='123' width='84' height='77' fill='url(%23w1)'/%3E%3Crect x='918' y='90' width='48' height='110' fill='url(%23w0)'/%3E%3Crect x='970' y='110' width='72' height='90' fill='url(%23w1)'/%3E%3Crect x='1046' y='139' width='40' height='61' fill='url(%23w0)'/%3E%3Crect x='1090' y='78' width='88' height='122' fill='url(%23w1)'/%3E%3Crect x='1182' y='126' width='46' height='74' fill='url(%23w0)'/%3E%3Crect x='1232' y='101' width='64' height='99' fill='url(%23w1)'/%3E%3Crect x='1300' y='65' width='52' height='135' fill='url(%23w0)'/%3E%3Crect x='1356' y='130' width='78' height='70' fill='url(%23w1)'/%3E%3Crect x='1438' y='96' width='44' height='104' fill='url(%23w0)'/%3E%3Crect x='1486' y='115' width='92' height='85' fill='url(%23w1)'/%3E%3Crect x='1582' y='88' width='18' height='112' fill='url(%23w0)'/%3E%3C/g%3E%3Cg stroke='%237AE0FF' stroke-opacity='0.14' stroke-width='1' fill='%23FF7A45' fill-opacity='0.30'%3E%3Cline x1='360' y1='53' x2='360' y2='27'/%3E%3Ccircle cx='360' cy='25' r='2'/%3E%3Cline x1='805' y1='60' x2='805' y2='34'/%3E%3Ccircle cx='805' cy='32' r='2'/%3E%3Cline x1='942' y1='90' x2='942' y2='64'/%3E%3Ccircle cx='942' cy='62' r='2'/%3E%3Cline x1='1326' y1='65' x2='1326' y2='39'/%3E%3Ccircle cx='1326' cy='37' r='2'/%3E%3Cline x1='1591' y1='88' x2='1591' y2='62'/%3E%3Ccircle cx='1591' cy='60' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      --sky-motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 420' preserveAspectRatio='xMidYMin slice'%3E%3Cdefs%3E%3CradialGradient id='pg' cx='0.38' cy='0.30' r='0.8'%3E%3Cstop offset='0' stop-color='%239A8CFF' stop-opacity='0.26'/%3E%3Cstop offset='0.55' stop-color='%239A8CFF' stop-opacity='0.11'/%3E%3Cstop offset='1' stop-color='%237AE0FF' stop-opacity='0.03'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='1330' cy='60' r='190' fill='url(%23pg)'/%3E%3Cg fill='none' stroke='%237AE0FF' stroke-opacity='0.16' stroke-width='1.4'%3E%3Cellipse cx='1330' cy='60' rx='295' ry='52' transform='rotate(-18 1330 60)'/%3E%3Cellipse cx='1330' cy='60' rx='340' ry='72' transform='rotate(-18 1330 60)'/%3E%3C/g%3E%3Cg fill='none' stroke='%237AE0FF' stroke-opacity='0.075' stroke-width='1'%3E%3Cellipse cx='260' cy='120' rx='560' ry='150' transform='rotate(-14 260 120)'/%3E%3Cellipse cx='1240' cy='250' rx='700' ry='190' transform='rotate(11 1240 250)'/%3E%3Cellipse cx='820' cy='-40' rx='460' ry='130' transform='rotate(-6 820 -40)'/%3E%3C/g%3E%3Cg stroke='%237AE0FF' stroke-opacity='0.13' stroke-width='1' fill='%23FF7A45' fill-opacity='0.5'%3E%3Cline x1='180' y1='99.5' x2='91.6' y2='99.5'/%3E%3Ccircle cx='214' cy='99.5' r='1.6'/%3E%3Cline x1='520' y1='55' x2='452.4' y2='55'/%3E%3Ccircle cx='546' cy='55' r='1.6'/%3E%3Cline x1='1050' y1='304.5' x2='1154' y2='304.5'/%3E%3Ccircle cx='1010' cy='304.5' r='1.6'/%3E%3Cline x1='1350' y1='71.5' x2='1428' y2='71.5'/%3E%3Ccircle cx='1320' cy='71.5' r='1.6'/%3E%3Cline x1='760' y1='350.5' x2='702.8' y2='350.5'/%3E%3Ccircle cx='782' cy='350.5' r='1.6'/%3E%3C/g%3E%3Cg fill='%237AE0FF' fill-opacity='0.20'%3E%3Crect x='180' y='96' width='34' height='7' rx='3.5'/%3E%3Crect x='520' y='52' width='26' height='6' rx='3'/%3E%3Crect x='1010' y='300' width='40' height='9' rx='4.5'/%3E%3Crect x='1320' y='68' width='30' height='7' rx='3.5'/%3E%3Crect x='760' y='348' width='22' height='5' rx='2.5'/%3E%3C/g%3E%3C/svg%3E");
+
       --chart-motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 260'%3E%3Cdefs%3E%3Cfilter id='g' x='-60%25' y='-60%25' width='220%25' height='220%25'%3E%3CfeGaussianBlur stdDeviation='4' result='b'/%3E%3CfeMerge%3E%3CfeMergeNode in='b'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cg stroke='%23ffffff' stroke-opacity='0.07'%3E%3Cline x1='0' y1='40' x2='420' y2='40'/%3E%3Cline x1='0' y1='90' x2='420' y2='90'/%3E%3Cline x1='0' y1='140' x2='420' y2='140'/%3E%3Cline x1='0' y1='190' x2='420' y2='190'/%3E%3Cline x1='0' y1='240' x2='420' y2='240'/%3E%3Cline x1='40' y1='0' x2='40' y2='260'/%3E%3Cline x1='120' y1='0' x2='120' y2='260'/%3E%3Cline x1='200' y1='0' x2='200' y2='260'/%3E%3Cline x1='280' y1='0' x2='280' y2='260'/%3E%3Cline x1='360' y1='0' x2='360' y2='260'/%3E%3C/g%3E%3Cpolyline points='20,220 90,180 160,190 230,120 300,140 380,40' fill='none' stroke='%23FF6B35' stroke-opacity='0.55' stroke-width='2.5' filter='url(%23g)'/%3E%3Cg fill='%23FF6B35' fill-opacity='0.6' filter='url(%23g)'%3E%3Ccircle cx='20' cy='220' r='3.5'/%3E%3Ccircle cx='90' cy='180' r='3.5'/%3E%3Ccircle cx='160' cy='190' r='3.5'/%3E%3Ccircle cx='230' cy='120' r='3.5'/%3E%3Ccircle cx='300' cy='140' r='3.5'/%3E%3Ccircle cx='380' cy='40' r='3.5'/%3E%3C/g%3E%3C/svg%3E");
     }
 
@@ -122,7 +155,7 @@
       font-family: 'Noto Sans JP', sans-serif;
       font-weight: 400;
       color: var(--text);
-      background: var(--white);
+      background: var(--surface);
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
@@ -142,7 +175,7 @@
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.2em;
-      color: var(--navy);
+      color: var(--ink);
       text-transform: uppercase;
       margin-bottom: 24px;
     }
@@ -158,7 +191,7 @@
       line-height: 1.25;
       letter-spacing: -0.01em;
       margin-bottom: 24px;
-      color: var(--navy);
+      color: var(--ink);
     }
     .section-subtitle {
       font-size: clamp(16px, 1.5vw, 18px);
@@ -206,9 +239,9 @@
     }
     .btn-line:hover { background: var(--green-dark); }
     .btn-outline {
-      background: var(--white);
-      color: var(--navy);
-      border: 2px solid var(--navy);
+      background: var(--surface);
+      color: var(--ink);
+      border: 2px solid var(--line-accent);
     }
     .btn-outline:hover { background: var(--navy); color: var(--white); }
     .btn-orange {
@@ -254,7 +287,7 @@
       width: 100%;
       padding: 16px 0;
       z-index: 10;
-      background: var(--cream);
+      background: var(--surface-2);
       border-bottom: 1px solid var(--border);
     }
     .site-header .container {
@@ -274,7 +307,7 @@
     .site-nav a {
       font-size: 14px;
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       white-space: nowrap;
     }
     .site-nav a:hover {
@@ -287,7 +320,7 @@
       gap: 12px;
       font-weight: 900;
       font-size: 18px;
-      color: var(--navy);
+      color: var(--ink);
     }
     .logo-mark {
       width: 40px;
@@ -312,7 +345,7 @@
        ============================================ */
     .hero {
       padding: clamp(48px, 6vw, 80px) 0;
-      background: var(--white);
+      background: var(--surface);
       position: relative;
       overflow: hidden;
       min-height: 100vh;
@@ -332,8 +365,8 @@
     .hero-eyebrow {
       display: inline-block;
       padding: 8px 18px;
-      background: var(--cream-deep);
-      color: var(--navy);
+      background: var(--surface-3);
+      color: var(--ink);
       font-weight: 700;
       font-size: 13px;
       letter-spacing: 0.1em;
@@ -346,7 +379,7 @@
       font-weight: 900;
       line-height: 1.05;
       letter-spacing: -0.01em;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 32px;
       animation: hero-fade 0.8s ease-out 0.1s both;
     }
@@ -416,9 +449,9 @@
       right: -20px;
       max-width: 200px;
       padding: 14px 18px;
-      background: var(--white);
-      color: var(--navy);
-      border: 2px solid var(--navy);
+      background: var(--surface);
+      color: var(--ink);
+      border: 2px solid var(--line-accent);
       border-radius: var(--radius-md);
       display: flex;
       align-items: center;
@@ -435,8 +468,8 @@
       width: 38px;
       height: 38px;
       border-radius: 50%;
-      background: rgba(15,44,68,0.08);
-      color: var(--navy);
+      background: var(--icon-bg);
+      color: var(--ink);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -454,13 +487,13 @@
     }
     .hero-badge-em {
       font-size: 17px;
-      color: var(--navy);
+      color: var(--ink);
     }
     .hero-floating-card {
       position: absolute;
       bottom: -30px;
       left: -30px;
-      background: var(--white);
+      background: var(--surface);
       padding: 20px 24px;
       border-radius: var(--radius-md);
       box-shadow: var(--shadow-md);
@@ -474,8 +507,8 @@
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      background: rgba(15,44,68,0.08);
-      color: var(--navy);
+      background: var(--icon-bg);
+      color: var(--ink);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -490,7 +523,7 @@
     .hero-floating-card-text strong {
       display: block;
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 2px;
     }
 
@@ -503,7 +536,7 @@
        Section 2: PROBLEM
        ============================================ */
     .problem {
-      background: var(--cream);
+      background: var(--surface-2);
       position: relative;
     }
     .problem::before {
@@ -514,7 +547,7 @@
       font-family: 'Inter', sans-serif;
       font-size: clamp(160px, 20vw, 320px);
       font-weight: 900;
-      color: var(--cream-deep);
+      color: var(--surface-3);
       line-height: 1;
       pointer-events: none;
       user-select: none;
@@ -528,7 +561,7 @@
     .problem-list {
       max-width: 800px;
       margin: 0 auto 48px;
-      background: var(--white);
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
       overflow: hidden;
@@ -540,18 +573,18 @@
       gap: 18px;
       border-bottom: 1px solid var(--border);
       transition: background 0.2s ease;
-      border-left: 4px solid var(--navy);
+      border-left: 4px solid var(--line-accent);
     }
     .problem-card:last-child { border-bottom: none; }
     .problem-card:hover {
-      background: var(--cream);
+      background: var(--surface-2);
     }
     .problem-icon {
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background: rgba(15,44,68,0.08);
-      color: var(--navy);
+      background: var(--icon-bg);
+      color: var(--ink);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -569,12 +602,12 @@
       max-width: 720px;
       margin: 0 auto;
       padding: 32px;
-      background: var(--white);
+      background: var(--surface);
       border-radius: var(--radius-md);
       border: 2px dashed var(--navy);
       font-size: clamp(18px, 2vw, 22px);
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       line-height: 1.6;
     }
     .problem-bridge .em {
@@ -585,7 +618,7 @@
        Section 3: MISSION
        ============================================ */
     .mission {
-      background: var(--white);
+      background: var(--surface);
       text-align: center;
     }
     .mission-title {
@@ -593,7 +626,7 @@
       font-weight: 900;
       line-height: 1.25;
       letter-spacing: -0.01em;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 32px;
       max-width: 920px;
       margin-left: auto;
@@ -615,7 +648,7 @@
       max-width: 820px;
       margin: 0 auto;
       text-align: left;
-      background: var(--white);
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
       overflow: hidden;
@@ -630,7 +663,7 @@
       transition: background 0.2s ease;
     }
     .mission-step:last-child { border-bottom: none; }
-    .mission-step:hover { background: var(--cream); }
+    .mission-step:hover { background: var(--surface-2); }
     .mission-step-num {
       width: 44px;
       height: 44px;
@@ -651,13 +684,13 @@
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.2em;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 8px;
     }
     .mission-step-title {
       font-size: var(--fs-h2);
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 8px;
       line-height: 1.4;
     }
@@ -765,7 +798,7 @@
        Section 5: HOW TO USE (5-step cycle)
        ============================================ */
     .how-to {
-      background: var(--white);
+      background: var(--surface);
       position: relative;
     }
     .how-to-header {
@@ -782,7 +815,7 @@
       position: relative;
     }
     .how-to-step {
-      background: var(--cream);
+      background: var(--surface-2);
       padding: 32px 20px;
       border-radius: var(--radius-md);
       text-align: center;
@@ -792,8 +825,8 @@
     }
     .how-to-step:hover {
       transform: translateY(-4px);
-      background: var(--cream-deep);
-      border-color: var(--navy);
+      background: var(--surface-3);
+      border-color: var(--ink);
     }
     .how-to-step-num {
       width: 48px;
@@ -813,7 +846,7 @@
     .how-to-step-title {
       font-size: var(--fs-h3);
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 8px;
       line-height: 1.4;
     }
@@ -846,7 +879,7 @@
        Section 6: CONNECTIONS
        ============================================ */
     .connections {
-      background: var(--cream);
+      background: var(--surface-2);
       position: relative;
       overflow: hidden;
     }
@@ -859,7 +892,7 @@
     .connections-list {
       max-width: 920px;
       margin: 0 auto 56px;
-      background: var(--white);
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       overflow: hidden;
@@ -875,21 +908,21 @@
     }
     .connection-row:last-child { border-bottom: none; }
     .connection-row:hover {
-      background: var(--cream);
+      background: var(--surface-2);
     }
     .connection-math {
       font-family: 'Inter', sans-serif;
       font-size: clamp(18px, 2.2vw, 24px);
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       letter-spacing: -0.01em;
     }
     .connection-arrow {
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      background: rgba(15,44,68,0.08);
-      color: var(--navy);
+      background: var(--icon-bg);
+      color: var(--ink);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -908,7 +941,7 @@
       text-align: center;
       font-size: clamp(20px, 2.5vw, 28px);
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       line-height: 1.6;
       padding: 0 24px;
       position: relative;
@@ -919,7 +952,7 @@
       font-family: 'Inter', serif;
       font-size: clamp(60px, 8vw, 96px);
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       opacity: 0.4;
       line-height: 0.6;
       position: absolute;
@@ -980,15 +1013,11 @@
     }
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 16px;
-      max-width: 1180px;
+      max-width: 820px;
       margin: 0 auto;
     }
-    /* 4プラン化：カードを詰めて1行に収める */
-    .pricing-grid .pricing-card { padding: 32px 22px; }
-    .pricing-grid .pricing-price .num { font-size: clamp(30px, 2.6vw, 40px); }
-    .pricing-grid .pricing-card-name { font-size: 20px; }
     .pricing-grid .pricing-badge { right: 16px; }
     @media (max-width: 1024px) {
       .pricing-grid { grid-template-columns: repeat(2, 1fr); }
@@ -997,7 +1026,7 @@
       .pricing-grid { grid-template-columns: 1fr; }
     }
     .pricing-card {
-      background: var(--white);
+      background: var(--surface);
       color: var(--text);
       padding: var(--card-pad-showcase);
       border-radius: var(--radius-lg);
@@ -1008,7 +1037,7 @@
     .pricing-card.featured {
       background: var(--navy-soft);
       color: var(--white);
-      border: 2px solid var(--navy);
+      border: 2px solid var(--line-accent);
     }
     .pricing-card.featured .pricing-cta {
       box-shadow: 0 0 20px rgba(255,107,53,0.35);
@@ -1032,7 +1061,7 @@
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.2em;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 12px;
     }
     .pricing-card.featured .pricing-card-label {
@@ -1041,7 +1070,7 @@
     .pricing-card-name {
       font-size: var(--fs-h2);
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 16px;
     }
     .pricing-card.featured .pricing-card-name {
@@ -1058,13 +1087,13 @@
       font-weight: 900;
       letter-spacing: -0.01em;
       line-height: 1;
-      color: var(--navy);
+      color: var(--ink);
     }
     .pricing-card.featured .pricing-price .num { color: var(--white); }
     .pricing-price .yen {
       font-size: 24px;
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       margin-right: 2px;
     }
     .pricing-card.featured .pricing-price .yen { color: var(--white); }
@@ -1095,24 +1124,24 @@
       list-style: none;
       margin: 0 0 28px;
       padding: 12px 0 0;
-      border-top: 1px solid #e5e7eb;
+      border-top: 1px solid var(--border);
     }
     .pricing-list li {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       padding: 10px 0;
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid var(--border);
       font-size: 15px;
     }
     .pricing-list .subject {
-      color: var(--navy);
+      color: var(--ink);
       font-weight: 600;
     }
     .pricing-list .price {
       font-weight: 900;
       font-size: 22px;
-      color: var(--navy);
+      color: var(--ink);
       letter-spacing: -0.01em;
     }
     .pricing-card.featured .pricing-list { border-color: rgba(255,255,255,0.2); }
@@ -1121,7 +1150,7 @@
     .pricing-card.featured .pricing-list .price { color: var(--white); }
     /* 階層価格リスト：科目見出し行（パック）と配下の分野行 */
     .pricing-list li.group {
-      background: var(--cream);
+      background: var(--surface-2);
       margin-top: 14px;
       padding: 10px 12px;
       border-bottom: none;
@@ -1169,7 +1198,7 @@
     .buy-mini:hover { opacity: .85; }
     /* 未発売の価格・科目名はグレー表示 */
     .pricing-list .is-soon .subject,
-    .pricing-list .is-soon .price { color: #9aa1ab; }
+    .pricing-list .is-soon .price { color: var(--text-light); }
     .pricing-features {
       margin: 28px 0 36px;
     }
@@ -1207,14 +1236,14 @@
       background: #E55A2B;
       transform: translateY(-2px);
     }
-    /* 上位プラン（ビジネス応用編）＝4プランの下に横長1枚で置く */
+    /* 上位プラン（副業×AI実践編）＝4プランの下に横長1枚で置く */
     .pricing-advanced {
       position: relative;
       max-width: 1180px;
       margin: 24px auto 0;
       background: var(--navy-soft);
       color: var(--white);
-      border: 2px solid var(--navy);
+      border: 2px solid var(--line-accent);
       border-radius: var(--radius-lg);
       padding: 32px 34px;
       display: grid;
@@ -1247,7 +1276,7 @@
       width: 100%;
       min-width: 680px;
       border-collapse: collapse;
-      background: var(--white);
+      background: var(--surface);
       font-size: 14px;
     }
     .pricing-compare th,
@@ -1271,13 +1300,13 @@
     .pricing-compare thead th:first-child { border-left: none; }
     .pricing-compare tbody th {
       text-align: left;
-      color: var(--navy);
+      color: var(--ink);
       font-weight: 700;
       white-space: nowrap;
-      background: var(--cream);
+      background: var(--surface-2);
     }
     .pricing-compare td { color: var(--text); }
-    .pricing-compare tbody tr:nth-child(even) td { background: var(--cream); }
+    .pricing-compare tbody tr:nth-child(even) td { background: var(--surface-2); }
     .pricing-compare .compare-check { color: var(--green-dark); display: inline-flex; }
     .pricing-compare .compare-check svg { width: 18px; height: 18px; }
     .pricing-trust-band {
@@ -1328,8 +1357,8 @@
     .line-broadcast-inner {
       max-width: 720px;
       margin: 0 auto;
-      background: var(--white);
-      border: 1px solid #BFE8CF;
+      background: var(--surface);
+      border: 1px solid rgba(6,199,85,.35);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-md);
       padding: var(--card-pad-showcase);
@@ -1376,7 +1405,7 @@
        Section 9: FAQ
        ============================================ */
     .faq {
-      background: var(--white);
+      background: var(--surface);
     }
     .faq-header {
       text-align: center;
@@ -1390,12 +1419,12 @@
       gap: 16px;
     }
     .faq-item {
-      background: var(--cream);
+      background: var(--surface-2);
       border-radius: var(--radius-sm);
       overflow: hidden;
       transition: background 0.2s ease;
     }
-    .faq-item[open] { background: var(--white); border: 2px solid var(--navy); }
+    .faq-item[open] { background: var(--surface); border: 2px solid var(--line-accent); }
     .faq-q {
       list-style: none;
       cursor: pointer;
@@ -1406,7 +1435,7 @@
       gap: 16px;
       font-size: var(--fs-h3);
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       line-height: 1.5;
       position: relative;
     }
@@ -1414,7 +1443,7 @@
     .faq-q-mark {
       font-family: 'Inter', sans-serif;
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       font-size: 20px;
       flex-shrink: 0;
       width: 32px;
@@ -1424,8 +1453,8 @@
       width: 28px;
       height: 28px;
       border-radius: 50%;
-      background: var(--white);
-      color: var(--navy);
+      background: var(--surface);
+      color: var(--ink);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1594,21 +1623,21 @@
        法務セクション（特商法・各種ポリシー）
        ============================================ */
     .legal {
-      background: var(--cream);
+      background: var(--surface-2);
       padding: var(--space-7) 0;
       border-top: 1px solid var(--border);
     }
     .legal-title {
       font-size: var(--fs-h2);
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       text-align: center;
       margin-bottom: 40px;
     }
     .legal-block {
       max-width: 820px;
       margin: 0 auto 28px;
-      background: var(--white);
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       padding: var(--card-pad-compact);
@@ -1617,15 +1646,15 @@
     .legal-block h3 {
       font-size: 18px;
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       margin: 0 0 18px;
       padding-bottom: 12px;
-      border-bottom: 2px solid var(--navy);
+      border-bottom: 2px solid var(--line-accent);
     }
     .legal-block h4 {
       font-size: 14px;
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       margin: 18px 0 6px;
     }
     .legal-block p,
@@ -1643,7 +1672,7 @@
     }
     .legal-dl dt {
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       padding: 12px 0;
       border-top: 1px solid var(--border);
       font-size: 14px;
@@ -1802,7 +1831,7 @@
        ================================ */
     .sample-lesson {
       padding: clamp(64px, 8vw, 96px) 0;
-      background: linear-gradient(180deg, var(--cream) 0%, #ffffff 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,.03) 0%, transparent 100%);
     }
     .sample-lesson .container {
       max-width: 960px;
@@ -1845,6 +1874,392 @@
     @media (max-width: 768px) {
       .sample-lesson { padding: 56px 0; }
       .sample-lesson-meta { gap: 16px; font-size: 13px; }
+    }
+
+    /* ============================================================
+       FUTURE LAYER — 「未来のラボ」（2026-08-04）
+       上の既存スタイルを、暗い地・ガラスの面・ネオンの差し色に寄せ直す層。
+       この層をまるごと削り、:root を元の明るい値に戻せば旧デザインに戻る。
+       動きは規約どおり「ホバー」と「ヒーローの入場」だけ。背景は動かさない。
+       ============================================================ */
+
+    /* --- 地：深宇宙のグラデーション＋実験ノートの方眼＋奥の未来都市
+       （スクロールしても動かさない＝ラボの窓の外に街がある、という見え方） --- */
+    html { background: var(--bg); }
+    body {
+      color: var(--text);
+      background-color: var(--bg);
+      /* 手前から順に：方眼 → 軌道と乗り物 → 星2種 → 地平線と街 → 星雲（いちばん奥） */
+      background-image:
+        linear-gradient(rgba(150,190,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(150,190,255,.04) 1px, transparent 1px),
+        var(--sky-motif),
+        var(--star-motif),
+        var(--star2-motif),
+        var(--city-motif),
+        radial-gradient(880px 620px at 10% -8%, rgba(255,122,69,.16), transparent 62%),
+        radial-gradient(980px 700px at 92% 2%,  rgba(122,224,255,.14), transparent 60%),
+        radial-gradient(1200px 780px at 50% 104%, rgba(154,140,255,.20), transparent 64%);
+      background-repeat:
+        repeat, repeat,
+        no-repeat, repeat, repeat, no-repeat,
+        no-repeat, no-repeat, no-repeat;
+      background-position:
+        0 0, 0 0,
+        center top, 0 0, 0 0, center bottom,
+        0 0, 0 0, 0 0;
+      background-size:
+        68px 68px, 68px 68px,
+        1600px 420px, 340px 340px, 610px 610px, 1600px 460px,
+        auto, auto, auto;
+      background-attachment: fixed;
+    }
+    /* 画面が狭いときは、街も乗り物も縮めて置く */
+    @media (max-width: 768px) {
+      body {
+        background-size:
+          68px 68px, 68px 68px,
+          1000px 260px, 300px 300px, 520px 520px, 1000px 290px,
+          auto, auto, auto;
+      }
+    }
+    ::selection { background: rgba(122,224,255,.28); color: var(--white); }
+
+    /* セクションの継ぎ目に細いネオンの線を1本。
+       装飾の ::before / ::after を持つセクションがあるので、
+       疑似要素ではなく inset の box-shadow で引く（ぶつからない）。 */
+    section { box-shadow: inset 0 1px 0 rgba(122,224,255,.13); }
+
+    /* --- 見出し --- */
+    .eyebrow { color: var(--cyan); }
+    .eyebrow::before {
+      width: 40px; height: 1px;
+      background: linear-gradient(90deg, var(--cyan), rgba(122,224,255,0));
+      box-shadow: 0 0 8px rgba(122,224,255,.7);
+    }
+    .section-title, .method-title, .pricing-title, .final-cta-title, .legal-title {
+      color: var(--ink);
+      text-shadow: 0 0 42px rgba(122,224,255,.10);
+    }
+    /* 暗い地だと蛍光ペン風の帯は濁るので、光る一本線に置き換える */
+    .underline-mark {
+      background: none;
+      color: var(--orange);
+      position: relative;
+      padding: 0 2px;
+    }
+    .underline-mark::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: -4px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--orange), var(--cyan));
+      box-shadow: 0 0 16px rgba(255,122,69,.55);
+    }
+
+    /* --- ユーティリティバー・ヘッダー：すりガラス --- */
+    .utility-bar {
+      background: rgba(5,10,20,.72);
+      border-bottom: 1px solid rgba(150,190,255,.10);
+      backdrop-filter: blur(10px);
+    }
+    .site-header {
+      background: rgba(8,17,31,.72);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px) saturate(140%);
+      box-shadow: 0 1px 0 rgba(122,224,255,.12), 0 12px 30px rgba(0,0,0,.35);
+    }
+    .logo { color: var(--ink); }
+    .logo-mark {
+      background: linear-gradient(140deg, #12233C, #0A1424);
+      color: var(--cyan);
+      box-shadow:
+        inset 0 0 0 1px rgba(122,224,255,.35),
+        0 0 18px rgba(122,224,255,.28);
+    }
+    .site-nav a { color: var(--text); }
+    .site-nav a:hover { color: var(--cyan); }
+
+    /* --- ボタン：ネオンで光らせる --- */
+    .btn { border-radius: 999px; }
+    .btn-orange {
+      background: linear-gradient(135deg, #FF8A4C, #F2542D);
+      color: var(--white);
+      box-shadow: var(--glow-orange);
+    }
+    .btn-orange:hover {
+      background: linear-gradient(135deg, #FF9A61, #FF6B35);
+      box-shadow: 0 0 0 1px rgba(255,122,69,.55), 0 14px 42px rgba(255,122,69,.42);
+    }
+    .btn-outline {
+      background: rgba(122,224,255,.06);
+      color: var(--cyan);
+      border: 1px solid var(--line-accent);
+      backdrop-filter: blur(8px);
+      box-shadow: none;
+    }
+    .btn-outline:hover {
+      background: rgba(122,224,255,.14);
+      color: var(--white);
+      box-shadow: var(--glow-cyan);
+    }
+    .btn-line { box-shadow: 0 0 0 1px rgba(6,199,85,.45), 0 10px 30px rgba(6,199,85,.28); }
+    .btn-line:hover { box-shadow: 0 0 0 1px rgba(6,199,85,.7), 0 14px 40px rgba(6,199,85,.4); }
+
+    /* --- HERO --- */
+    .hero { background: transparent; }
+    .hero-eyebrow {
+      background: rgba(122,224,255,.08);
+      border: 1px solid rgba(122,224,255,.28);
+      color: var(--cyan);
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+    }
+    .hero-title { color: var(--ink); }
+    .hero-title .em { color: var(--orange); }
+    @supports (background-clip: text) or (-webkit-background-clip: text) {
+      .hero-title .em {
+        background-image: linear-gradient(100deg, #FF8A4C 0%, #FFC46B 42%, var(--cyan) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+    }
+    /* 見出しの下線を、光る一本線に */
+    .hero-title .em::after {
+      bottom: 2px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--orange), var(--cyan));
+      box-shadow: 0 0 16px rgba(122,224,255,.55);
+    }
+    .hero-sub { color: var(--text); }
+    .hero-sub strong { color: var(--ink); }
+    /* 画像はガラスの額縁に入れ、後ろにオレンジの光を置く */
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      inset: -12% -10% -8% -6%;
+      background:
+        radial-gradient(closest-side, rgba(255,122,69,.30), transparent 72%),
+        radial-gradient(closest-side, rgba(122,224,255,.24), transparent 70%);
+      background-position: 26% 30%, 78% 74%;
+      background-repeat: no-repeat;
+      background-size: 62% 62%, 58% 58%;
+      filter: blur(8px);
+      pointer-events: none;
+    }
+    .hero-visual > div:first-child {
+      border: 1px solid rgba(122,224,255,.28) !important;
+      box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.05) inset !important;
+    }
+    /* ヒーロー画像（ロボット）はもともと暗くネオン寄りなので、補正は最小限。
+       下だけ落として、重ねてある浮きカードの文字を読みやすくする */
+    .hero-visual > div:first-child img { filter: saturate(1.04) contrast(1.04); }
+    .hero-visual > div:first-child::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, transparent 58%, rgba(6,11,20,.45) 100%);
+    }
+    .hero-badge, .hero-floating-card {
+      background: rgba(12,22,38,.72);
+      border: 1px solid var(--line-accent);
+      color: var(--ink);
+      backdrop-filter: blur(14px) saturate(140%);
+      box-shadow: 0 16px 46px rgba(0,0,0,.5), 0 0 26px rgba(122,224,255,.16);
+    }
+    .hero-badge-em { color: var(--cyan); }
+    .hero-badge-icon, .hero-floating-card-icon { color: var(--cyan); }
+    .hero-floating-card-text { color: var(--text); }
+    .hero-floating-card-text strong { color: var(--ink); }
+
+    /* --- カードの共通ガラス（本文のインラインstyleにも class で効かせる） --- */
+    .glass-card,
+    .problem-list, .problem-bridge,
+    .method-card, .how-to-step, .pricing-card,
+    .pricing-compare-wrap, .pricing-trust-band,
+    .line-broadcast-inner, .faq-item, .legal-block,
+    .final-cta-bonus {
+      backdrop-filter: blur(12px) saturate(130%);
+    }
+    .glass-card {
+      border-radius: 18px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.42);
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .glass-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(122,224,255,.42);
+      box-shadow: 0 24px 60px rgba(0,0,0,.5), 0 0 30px rgba(122,224,255,.14);
+    }
+
+    /* --- PROBLEM --- */
+    .problem { background: transparent; }
+    .problem-card { border-left-color: rgba(122,224,255,.35); }
+    .problem-card:hover { background: rgba(122,224,255,.05); }
+    .problem-icon { color: var(--cyan); }
+    .problem-text { color: var(--text); }
+    .problem-bridge {
+      border: 1px solid var(--line-accent);
+      color: var(--ink);
+      box-shadow: 0 0 34px rgba(122,224,255,.14) inset;
+    }
+
+    /* --- CONCEPT（これまで → この講座のあと） --- */
+    #concept { background: linear-gradient(180deg, rgba(122,224,255,.05), transparent 60%), var(--band-deep) !important; }
+
+    /* --- WHAT YOU BUILD：箇条書きの頭に、光る矢印を置く --- */
+    #build li { position: relative; }
+    #build li::before {
+      content: '';
+      position: absolute;
+      left: -1.15em;
+      top: .82em;
+      width: 6px; height: 6px;
+      border-top: 1.5px solid var(--cyan);
+      border-right: 1.5px solid var(--cyan);
+      transform: rotate(45deg);
+      box-shadow: 0 0 8px rgba(122,224,255,.55);
+    }
+
+    /* --- METHOD --- */
+    .method { background: linear-gradient(180deg, rgba(154,140,255,.07), transparent 55%), var(--navy); }
+    .method-card {
+      background: rgba(255,255,255,.045);
+      border: 1px solid var(--border);
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .method-card:hover {
+      border-color: rgba(122,224,255,.42);
+      box-shadow: 0 24px 60px rgba(0,0,0,.5), 0 0 30px rgba(122,224,255,.14);
+    }
+    .method-icon {
+      background: rgba(122,224,255,.12);
+      border: 1px solid rgba(122,224,255,.22);
+      color: var(--cyan);
+    }
+
+    /* --- HOW TO：5ステップ --- */
+    .how-to { background: transparent; }
+    .how-to-step { border-color: var(--border); }
+    .how-to-step:hover { border-color: rgba(122,224,255,.42); box-shadow: 0 0 26px rgba(122,224,255,.12); }
+    .how-to-step-num,
+    .how-to-step:nth-child(odd) .how-to-step-num {
+      background: linear-gradient(140deg, #1B3252, #0C1A2E);
+      color: var(--cyan);
+      box-shadow: inset 0 0 0 1px rgba(122,224,255,.35), 0 0 16px rgba(122,224,255,.22);
+    }
+    .how-to-step-title { color: var(--ink); }
+    .how-to-note {
+      background: rgba(122,224,255,.06);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      color: var(--text);
+    }
+    .how-to-note .em { color: var(--cyan); }
+
+    /* --- PRICING --- */
+    .pricing { background: linear-gradient(180deg, rgba(255,122,69,.07), transparent 50%), var(--navy); }
+    .pricing-card {
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 50px rgba(0,0,0,.42);
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .pricing-card:hover {
+      border-color: rgba(122,224,255,.45);
+      box-shadow: 0 26px 64px rgba(0,0,0,.5), 0 0 32px rgba(122,224,255,.16);
+    }
+    .pricing-cta {
+      background: linear-gradient(135deg, #FF8A4C, #F2542D);
+      border-radius: 999px;
+      box-shadow: var(--glow-orange);
+    }
+    .pricing-cta:hover {
+      background: linear-gradient(135deg, #FF9A61, #FF6B35);
+      box-shadow: 0 0 0 1px rgba(255,122,69,.55), 0 14px 42px rgba(255,122,69,.42);
+    }
+    .pricing-card-label { color: var(--cyan); }
+    .pricing-card-name { color: var(--ink); }
+    .pricing-price .num, .pricing-price .yen { color: var(--ink); }
+    .pricing-price .tax, .pricing-card-sub { color: var(--text-muted); }
+    .pricing-feature svg { color: var(--accent-2); }
+    .pricing-badge { box-shadow: 0 0 22px rgba(255,122,69,.45); }
+    /* 上位プラン＝ここだけオレンジのネオンで格を上げる */
+    .pricing-advanced {
+      background: linear-gradient(150deg, rgba(255,122,69,.16), rgba(154,140,255,.12) 55%, rgba(122,224,255,.10));
+      border: 1px solid rgba(255,122,69,.45);
+      box-shadow: 0 30px 80px rgba(0,0,0,.55), 0 0 44px rgba(255,122,69,.18);
+      backdrop-filter: blur(14px) saturate(140%);
+    }
+    .pricing-advanced .pricing-card-label { color: #FFD3B8; }
+    .pricing-compare thead th {
+      background: linear-gradient(180deg, rgba(122,224,255,.16), rgba(122,224,255,.06));
+      color: var(--ink);
+    }
+    .pricing-compare .compare-check { color: var(--accent-2); }
+    .pricing-trust-band {
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--border);
+    }
+    .trust-item-icon { background: rgba(122,224,255,.12); color: var(--cyan); }
+    .trust-item-text span { color: var(--text-muted); }
+
+    /* --- LINE --- */
+    .line-broadcast { background: transparent; }
+    .line-broadcast-inner {
+      background: rgba(6,199,85,.06);
+      border: 1px solid rgba(6,199,85,.35);
+      box-shadow: 0 0 40px rgba(6,199,85,.12) inset;
+    }
+    .line-broadcast-points li { color: var(--text); }
+
+    /* --- FAQ --- */
+    .faq { background: transparent; }
+    .faq-item { border: 1px solid var(--border); transition: background .2s ease, border-color .2s ease; }
+    .faq-item:hover { border-color: rgba(122,224,255,.35); }
+    .faq-item[open] {
+      border: 1px solid var(--line-accent);
+      box-shadow: 0 0 30px rgba(122,224,255,.12);
+    }
+    .faq-q { color: var(--ink); }
+    .faq-q-mark { color: var(--cyan); }
+    .faq-toggle { background: rgba(122,224,255,.12); color: var(--cyan); }
+    .faq-a { color: var(--text); }
+
+    /* --- FINAL CTA --- */
+    .final-cta {
+      background:
+        radial-gradient(820px 460px at 50% -6%, rgba(255,122,69,.30), transparent 66%),
+        radial-gradient(760px 500px at 50% 106%, rgba(122,224,255,.24), transparent 64%),
+        radial-gradient(900px 600px at 50% 50%, rgba(154,140,255,.12), transparent 70%),
+        var(--navy-deep);
+    }
+    .final-cta-title .em { color: var(--orange); }
+    .final-cta-bonus {
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--border);
+    }
+    .final-cta-bonus-item svg { color: var(--accent-2); }
+
+    /* --- 法務・フッター --- */
+    .legal { background: transparent; border-top: 1px solid var(--border); }
+    .legal-block { border: 1px solid var(--border); }
+    .legal-block h3 { border-bottom-color: rgba(122,224,255,.35); }
+    .legal-block h3, .legal-block h4, .legal-dl dt { color: var(--ink); }
+    .site-footer {
+      background: linear-gradient(180deg, rgba(122,224,255,.05), transparent 40%), var(--navy-deep);
+      border-top: 1px solid var(--border);
+    }
+    .footer-nav a, .footer-copy { color: var(--text-muted); }
+    .footer-nav a:hover { color: var(--cyan); }
+
+    /* --- 動きを減らす設定の人には、入場アニメを出さない --- */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-eyebrow, .hero-title, .hero-sub, .hero-ctas, .hero-visual { animation: none !important; }
+      * { transition-duration: .01ms !important; }
     }
   </style>
 </head>
@@ -1889,8 +2304,8 @@
       <div class="hero-grid">
         <div class="hero-content">
           <span class="hero-eyebrow">会計・金融AI実践編 ｜ by 数字の資格AIラボ</span>
-          <h1 class="hero-title">学んだ会計・金融を、<br><span class="em">AIで“仕事の道具”に。</span></h1>
-          <p class="hero-sub">証券アナリスト・簿記で身につけた知識は、そのままAIへの“注文力”になります。プログラミング未経験でも、決算データやマクロ指標をAIに読ませて分析する“自分専用ツール”が作れる。試験のその先に用意した、実践トラックです。</p>
+          <h1 class="hero-title">知識を、AIで<br><span class="em">稼ぐ道具に。</span></h1>
+          <p class="hero-sub">簿記もCMAも、取っただけだと何も変わらんのよね。僕もそうでした。<br>でも<strong>AIと組ませた瞬間、一気に化けます。</strong>経理3年以上、財務経験必須——求人も案件も年数で切ってくる。年数は今すぐ増やせないけど、<strong>資格は今日から名乗れるし、作ったものは今日から見せられる。</strong><br>実務が浅くても、ここから戦えます。プログラミングは要りません！</p>
           <div class="hero-ctas">
             <a href="#pricing" class="btn btn-orange">プランを見る
               <svg viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
@@ -1901,13 +2316,13 @@
             </a>
             <a href="#build" class="btn btn-outline">作れる例を見る</a>
           </div>
-          <p style="margin:18px 0 0;font-size:13px;color:var(--text-muted);line-height:1.7;">※特定の銘柄の売買を推奨する投資助言ではありません。ご自身の分析・実務作業を楽にする“道具づくり”を学ぶ講座です。</p>
+          <p style="margin:18px 0 0;font-size:13px;color:var(--text-muted);line-height:1.7;">※収入や案件の受注を保証するものではありません。特定の銘柄の売買を推奨する投資助言でもありません。ご自身の分析・実務作業を楽にする“道具づくり”を学ぶ講座です。</p>
         </div>
 
         <!-- ヒーロービジュアル（日本語で指示 → AIが実行 → 自分専用ツール） -->
         <div class="hero-visual">
-          <div style="position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--navy);">
-            <img src="assets/ai-hero.jpg" alt="ノートPCの金融ダッシュボード（チャートとAIチャット）を見ながら、AIで会計・金融データを分析する実務のイメージ" style="width:100%;height:auto;display:block;" loading="eager">
+          <div style="position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--band-deep);">
+            <img src="assets/ai-hero-robot.jpg" alt="人型ロボットが、宙に浮かぶ財務チャート（棒グラフ・折れ線・構成比）を操作している。AIに任せて会計・金融データを分析するイメージ" style="width:100%;height:auto;display:block;" loading="eager">
           </div>
           <div class="hero-badge">
             <div class="hero-badge-icon">
@@ -1966,34 +2381,75 @@
         </div>
       </div>
       <div class="problem-bridge">
-        実は、資格で得た知識こそが <span class="em">AIを動かす“注文力”</span> になります。
+        大丈夫！その資格が、AIを使うときに一番効きます。
       </div>
     </div>
   </section>
 
   <!-- ============================================
-       Section 3: CONCEPT（資格×AI＝注文力）
+       Section 3: CONCEPT（資格があるとAIに強い）
        ============================================ -->
-  <section id="concept" style="background:var(--navy);color:var(--white);">
+  <section id="concept" style="background:var(--band-deep);color:var(--white);">
     <div class="container">
       <div style="max-width:820px;margin:0 auto;text-align:center;">
         <span class="eyebrow" style="justify-content:center;color:#E8A24A;">WHY YOU</span>
         <h2 class="section-title" style="color:#fff;">なぜ「資格を持つ人」がAIに強いのか</h2>
-        <p class="section-subtitle" style="margin:0 auto;color:rgba(255,255,255,.82);">「前期比で異常な科目だけ抜き出して」——そうAIに頼めるのは、<strong style="color:#fff;">“どこを見ればいいか”を知っているから</strong>です。会計・金融の知識は、そのままAIへの“注文力”になる。だから資格を学んだ人ほど、AIで一気に実務が回ります。</p>
+        <p class="section-subtitle" style="margin:0 auto;color:rgba(255,255,255,.82);">「前期比でおかしい科目だけ抜き出して」。こう頼めるのは、<strong style="color:#fff;">どこを見ればいいか知っているから</strong>です。AIは頼んだぶんしか動きません。だから会計・金融を学んだ人ほど、AIを使いこなせます！</p>
       </div>
       <div style="display:flex;gap:18px;align-items:stretch;justify-content:center;flex-wrap:wrap;max-width:900px;margin:44px auto 0;">
-        <div style="flex:1 1 300px;max-width:380px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:28px;text-align:left;">
+        <div class="glass-card" style="flex:1 1 300px;max-width:380px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:28px;text-align:left;">
           <div style="font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--orange);">これまで</div>
           <h3 style="font-size:20px;font-weight:900;margin:8px 0 12px;color:#fff;">知識は“持っているだけ”</h3>
           <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.82);margin:0;">試験のために覚えた会計・金融の知識が、日々の実務や分析につながらないまま眠っている状態。</p>
         </div>
         <div style="display:flex;align-items:center;justify-content:center;color:var(--orange);font-size:30px;font-weight:900;flex:0 0 auto;">→</div>
-        <div style="flex:1 1 300px;max-width:380px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:28px;text-align:left;">
+        <div class="glass-card" style="flex:1 1 300px;max-width:380px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:28px;text-align:left;">
           <div style="font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--orange);">この講座のあと</div>
-          <h3 style="font-size:20px;font-weight:900;margin:8px 0 12px;color:#fff;">知識が“注文力”に変わる</h3>
-          <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.82);margin:0;">「どこを見て、何を頼むか」が分かるから、AIに的確に指示できる。手作業が“日本語で頼むだけ”に変わります。</p>
+          <h3 style="font-size:20px;font-weight:900;margin:8px 0 12px;color:#fff;">知識が、そのまま指示になる</h3>
+          <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.82);margin:0;">どこを見て何を頼むかが分かるので、指示が的確になります。毎回の手作業が、日本語で頼むだけに変わります。</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Section 3.5: AUTHORITY（資格は経験年数の代わりになる）
+       ============================================ -->
+  <section style="background:var(--surface-2);">
+    <div class="container">
+      <div style="text-align:center;max-width:820px;margin:0 auto 40px;">
+        <span class="eyebrow" style="justify-content:center;">AUTHORITY</span>
+        <h2 class="section-title">経験年数は、あとから増やせない。<br>資格とAIは、いまから増やせる。</h2>
+        <p class="section-subtitle" style="margin:16px auto 0;">実務が浅いの、引け目に感じますよね。僕もそうでした。でも<strong>資格は、そこを埋めるために効きます！</strong>「何年やったか」で比べられる場所から、「何を作れるか」で見てもらう場所へ移りましょう。</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:960px;margin:0 auto;">
+        <div class="glass-card" style="background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent-2);border-radius:14px;padding:24px;">
+          <div style="font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--accent-2);">01 ｜ 自分の仕事で</div>
+          <h3 style="margin:8px 0 0;font-size:18px;color:var(--ink);">説明を疑われるところから、始まらない</h3>
+          <p style="margin:10px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.9;">資格があると「この人は分かってる」から話が始まります。そこにAIで作った道具を持ち込めば、話が早いです！</p>
+          <p style="margin:12px 0 0;padding-top:12px;border-top:1px dashed var(--border);color:var(--text);font-size:13.5px;line-height:1.85;"><strong style="color:var(--accent-2);">持ち込めるもの：</strong>13週先の資金繰り予測／「あといくら売れば黒字か」／値上げ・売上減の感度分析</p>
+        </div>
+        <div class="glass-card" style="background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent-2);border-radius:14px;padding:24px;">
+          <div style="font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--accent-2);">02 ｜ 案件で</div>
+          <h3 style="margin:8px 0 0;font-size:18px;color:var(--ink);">応募のときに、名乗れる材料になる</h3>
+          <p style="margin:10px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.9;">年数だけで比べられたら、浅い側は最初から不利。でも資格は、その場で書ける事実です。そこに<strong>実際に動いているもの</strong>を見せれば、年数以外でも見てもらえます。</p>
+          <p style="margin:12px 0 0;padding-top:12px;border-top:1px dashed var(--border);color:var(--text);font-size:13.5px;line-height:1.85;"><strong style="color:var(--accent-2);">見せられるもの：</strong>LINEの相談窓口／資料をもとに出どころつきで答えるQ&Aボット／フォーム付きの紹介ページ／決済まで付いた会員制サイト</p>
+        </div>
+        <div class="glass-card" style="background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent-2);border-radius:14px;padding:24px;">
+          <div style="font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--accent-2);">03 ｜ 発信で</div>
+          <h3 style="margin:8px 0 0;font-size:18px;color:var(--ink);">同じ内容でも、読まれ方が変わる</h3>
+          <p style="margin:10px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.9;">同じことを書いても、誰が言うかで届き方は変わります。資格がその「誰が」を埋めて、作ったものが「本当にやってる」証拠になる。ネタにも困りません！</p>
+          <p style="margin:12px 0 0;padding-top:12px;border-top:1px dashed var(--border);color:var(--text);font-size:13.5px;line-height:1.85;"><strong style="color:var(--accent-2);">回せるもの：</strong>一次情報の出どころつきで記事を積み上げる道具／承認した文だけを毎朝ひとりでにXへ投稿する仕組み</p>
+        </div>
+      </div>
+
+      <div class="glass-card" style="max-width:820px;margin:28px auto 0;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:26px 28px;">
+        <p style="margin:0;font-weight:700;color:var(--ink);font-size:16.5px;">すでに実務経験が十分にある方へ</p>
+        <p style="margin:10px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.9;">資格は飛ばして、<strong>ここから直行でいいです！</strong>経験がある人に足りないのは知識ではなく、<strong>それを形にして渡せるもの</strong>の方なので。経験が浅い人は、資格を取りながらここで作れるものを増やすのが早いです。</p>
+      </div>
+
+      <p style="max-width:820px;margin:20px auto 0;text-align:center;color:var(--text-muted);font-size:13px;line-height:1.8;">※ 案件の受注・収入を保証するものではありません。資格や制作物は、判断材料を相手に増やすためのものです。</p>
     </div>
   </section>
 
@@ -2004,23 +2460,69 @@
     <div class="container">
       <div style="text-align:center;max-width:760px;margin:0 auto 44px;">
         <span class="eyebrow" style="justify-content:center;">WHAT YOU BUILD</span>
-        <h2 class="section-title">手作業が、「日本語で頼むだけ」に変わる</h2>
-        <p class="section-subtitle" style="margin:16px auto 0;">この講座で実際に作る“自分専用ツール”の例です。どれも、私が実務で動かしているものがベースです。</p>
+        <h2 class="section-title">作るものを、全部書き出します</h2>
+        <p class="section-subtitle" style="margin:16px auto 0;">「AIで業務効率化」だと何も伝わらないので、<strong>実際に作るものを全部そのまま出します。</strong>全回テキスト＋画像で、1ステップも飛ばしません！</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:960px;margin:0 auto;">
-        <div style="background:#FFF9E6;border:1px solid #E8C84A;border-radius:14px;padding:24px;">
-          <strong style="color:#1A2B4A;font-size:16px;">📈 決算・株価データの分析ツール</strong>
-          <p style="margin:10px 0 0;color:#5A6A7A;font-size:14px;line-height:1.8;">EDINETや保有株のデータをAIに読ませ、前期比や異常値を自動で抽出。決算チェックの時間を大きく短縮します。</p>
+
+      <div style="max-width:960px;margin:0 auto;display:grid;gap:20px;">
+
+        <!-- 副業×AI -->
+        <div class="glass-card" style="background:var(--surface);border:2px solid var(--accent-2);border-radius:18px;padding:28px;box-shadow:0 18px 50px rgba(0,0,0,.45);">
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;">
+            <strong style="font-size:19px;color:var(--ink);">副業×AI実践編</strong>
+            <span style="font-size:13px;color:var(--accent-2);font-weight:700;">全13回 ／ ¥99,800（先着30名・以降¥130,000）</span>
+          </div>
+          <p style="margin:8px 0 16px;color:var(--text-muted);font-size:14px;">自分の商売を回す → 案件を受けて納める → 預かって続ける。この順番で、そのまま使える道具を積み上げます！</p>
+          <ul style="margin:0;padding-left:1.2em;color:var(--text);font-size:14.5px;line-height:2.05;">
+            <li>一次情報を開いて、<strong>出どころつきの記事</strong>を1本ずつ積み上げる道具</li>
+            <li><strong>承認した文だけを、毎朝ひとりでにXへ投稿</strong>する仕組み（パソコンを閉じても動く）</li>
+            <li>自分のLINEアカウントに話しかけると、決めた内容が返ってくる窓口</li>
+            <li>自分の商品資料をもとに、<strong>出どころつきで質問に答える相談窓口</strong></li>
+            <li>片方で起きたことを、もう片方へ自動で流す連携（入口が無ければ画面から取りに行く）</li>
+            <li><strong>紹介ページ → 問い合わせフォーム → ログイン → 決済</strong>と積み上げた<strong>会員制サイト</strong></li>
+            <li>最終回は型を渡しません。<strong>自分で決めたお題で、道具を1つ作り切る</strong></li>
+          </ul>
         </div>
-        <div style="background:#FFF9E6;border:1px solid #E8C84A;border-radius:14px;padding:24px;">
-          <strong style="color:#1A2B4A;font-size:16px;">🧮 会計実務の自動化</strong>
-          <p style="margin:10px 0 0;color:#5A6A7A;font-size:14px;line-height:1.8;">経費集計〜月次・決算・EDINET連携まで、繰り返しの手作業をAIに任せる。毎月の“同じ作業”から解放されます。</p>
+
+        <!-- 会計×AI -->
+        <div class="glass-card" style="background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:28px;">
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;">
+            <strong style="font-size:19px;color:var(--ink);">会計×AI実践編</strong>
+            <span style="font-size:13px;color:var(--accent-2);font-weight:700;">全10回 ／ ¥49,800</span>
+          </div>
+          <p style="margin:8px 0 16px;color:var(--text-muted);font-size:14px;">事業をやっていると、経理は毎月ついてきます。そこを<strong>freeeとAIをつないで自動化</strong>します。そのうえで、<strong>freeeの外側に“経営の見張り番”（管理会計）を持ちます。</strong>freeeは帳簿を出してくれますが、「あといくら売れば黒字か」は出してくれません。変動費と固定費に分けられるのは自分だけだからです。<strong>記帳と申告はfreeeへ、判断に使う数字は自分専用に。</strong>その両方を作ります！</p>
+          <ul style="margin:0;padding-left:1.2em;color:var(--text);font-size:14.5px;line-height:2.05;">
+            <li><strong>freeeとGoogleをつなぐ</strong>ところから。実績の数字をAIが読みに行く土台を作る</li>
+            <li>Stripe・Amazon・ココナラ・通帳と<strong>バラバラの入金を、1枚のスプレッドシートに集める</strong></li>
+            <li>書き出したCSVから<strong>「あといくら売れば黒字か」</strong>（損益分岐点）を出す</li>
+            <li><strong>13週先の現金残高を先読み</strong>し、資金ショートの前にアラートを出す</li>
+            <li>「受けるべき？やめるべき？」を、<strong>過去に払って戻らない費用を外した“増分”</strong>で決める</li>
+            <li>「値上げしたら？売上が落ちたら？」を一括で試算する感度分析</li>
+            <li>損益分岐点・資金繰り・経費・予算実績の<strong>グラフが毎月ひとりでに立つ</strong>レポート</li>
+            <li>全部を1つに束ねた<strong>“経営の見張り番”（管理会計システム）</strong>が、毎月ひとりでに回る形で手元に残る</li>
+          </ul>
+          <p style="margin:14px 0 0;padding-top:12px;border-top:1px dashed var(--border);color:var(--text-muted);font-size:13px;line-height:1.8;">※税額の計算や申告書の作成はしません（税理士の業務です）。作るのは、<strong>税金を払える状態にしておくための数字</strong>と、<strong>経営判断に使う管理会計</strong>です。</p>
         </div>
-        <div style="background:#FFF9E6;border:1px solid #E8C84A;border-radius:14px;padding:24px;">
-          <strong style="color:#1A2B4A;font-size:16px;">📊 マクロ指標のシグナル化</strong>
-          <p style="margin:10px 0 0;color:#5A6A7A;font-size:14px;line-height:1.8;">気になる経済指標を定点観測し、注目すべきタイミングを自分用に可視化。ニュースを追い続けなくても気づけます。</p>
+
+        <!-- 金融AI -->
+        <div class="glass-card" style="background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:28px;">
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;">
+            <strong style="font-size:19px;color:var(--ink);">金融AI実践編（投資分析）</strong>
+            <span style="font-size:13px;color:var(--accent-2);font-weight:700;">全9回 ／ ¥29,800</span>
+          </div>
+          <p style="margin:8px 0 16px;color:var(--text-muted);font-size:14px;">CMAで覚えた指標、実際の決算で使えていますか？ <strong>使う側に回ります。</strong>分析の手作業は、自分で自動化できます！</p>
+          <ul style="margin:0;padding-left:1.2em;color:var(--text);font-size:14.5px;line-height:2.05;">
+            <li><strong>EDINETから競合他社の決算書類を追いかける</strong>道具</li>
+            <li>気になる複数社の決算を、<strong>学んだ指標で横並びに読む</strong>比較表</li>
+            <li>保有株の値動きを、学んだ指標で見る<strong>自分だけのダッシュボード</strong></li>
+            <li>移動平均線やRSIなどのテクニカル指標を、AIと一緒に読み解く</li>
+            <li>マクロ指標を定点観測し、<strong>変化があれば気づけるように通知</strong>する</li>
+            <li>自分のリスク許容度に合わせた配分／決めたルールでの発注をリスク管理込みで組む</li>
+          </ul>
         </div>
       </div>
+
+      <p style="max-width:820px;margin:24px auto 0;text-align:center;color:var(--text-muted);font-size:13.5px;line-height:1.85;">Xの自動投稿・LINEの窓口・会員制サイトは、<strong>私が実際に動かしているもの</strong>と同じ作り方です。<br>※特定の銘柄の売買を推奨するものではありません。</p>
     </div>
   </section>
 
@@ -2055,8 +2557,8 @@
         <div class="method-card">
           <span class="method-num-badge">04</span>
           <div class="method-icon"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M240,128a8,8,0,0,1-8,8H208v24a8,8,0,0,1-16,0V136H168a8,8,0,0,1,0-16h24V96a8,8,0,0,1,16,0v24h24A8,8,0,0,1,240,128ZM128,80a8,8,0,0,0,0-16H104V40a8,8,0,0,0-16,0V64H64a8,8,0,0,0,0,16H88v24a8,8,0,0,0,16,0V80Zm-8,96H96V152a8,8,0,0,0-16,0v24H56a8,8,0,0,0,0,16H80v24a8,8,0,0,0,16,0V192h24a8,8,0,0,0,0-16Z"/></svg></div>
-          <h3 class="method-card-title">資格の知識が“注文力”に</h3>
-          <p class="method-card-text">どこを見ればいいかを知っている人ほど、AIに的確に頼めます。会計・金融の学びが、そのまま最大の武器になります。</p>
+          <h3 class="method-card-title">資格があるほど、AIに強い</h3>
+          <p class="method-card-text">どこを見ればいいか知っている人ほど、AIに的確に頼めます。会計・金融の学びが、そのまま一番の武器になります。</p>
         </div>
       </div>
     </div>
@@ -2092,21 +2594,10 @@
     <div class="container">
       <div class="pricing-header">
         <span class="eyebrow">PRICING</span>
-        <h2 class="pricing-title">目的に合わせて<br>選べる5プラン</h2>
+        <h2 class="pricing-title">目的に合わせて<br>選べる3プラン</h2>
         <p class="section-subtitle" style="margin:16px auto 0;color:rgba(255,255,255,.82);">受講生サイトで、テキスト＋画像で学べます。プログラミング未経験でもOK。</p>
       </div>
       <div class="pricing-grid">
-        <div class="pricing-card">
-          <div class="pricing-card-label">BASIC</div>
-          <h3 class="pricing-card-name">AIビジネス基礎編</h3>
-          <div class="pricing-price"><span class="yen">¥</span><span class="num">19,800</span><span class="tax">（税込）</span></div>
-          <p class="pricing-card-sub">プログラミング未経験から、案件を取るまでの流れをまるごと道具にする講座。売り物を決める・プロフィール・案件探し・見極め・提案文と値付け・やり取り・面談準備（全10回）。</p>
-          <ul class="pricing-features">
-            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>スキル0・副業スタートでもOK</span></li>
-            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>プログラミング未経験でもOK</span></li>
-          </ul>
-          <a href="https://buy.stripe.com/28EfZg98U3ZM3MP4ZtgA80i" class="pricing-cta" target="_blank" rel="noopener">購入する</a>
-        </div>
         <div class="pricing-card">
           <div class="pricing-card-label">PRACTICE</div>
           <h3 class="pricing-card-name">金融AI実践編</h3>
@@ -2118,24 +2609,11 @@
           </ul>
           <a href="https://buy.stripe.com/9B6fZg2Kw7bY4QTdvZgA80e" class="pricing-cta" target="_blank" rel="noopener">購入する</a>
         </div>
-        <div class="pricing-card featured">
-          <div class="pricing-badge"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" style="display:inline;vertical-align:-1px;margin-right:3px;"><path d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51.11-31,51,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Z"/></svg>おすすめ</div>
-          <div class="pricing-card-label">SET</div>
-          <h3 class="pricing-card-name">金融会計セット</h3>
-          <div class="pricing-price"><span class="yen">¥</span><span class="num">69,800</span><span class="tax">（税込）</span></div>
-          <div class="pricing-original"><span class="strike">単品合計 ¥79,600</span> → ¥69,800（約12%OFF）</div>
-          <p class="pricing-card-sub">金融AI実践編＋会計×AI実践編。実務で使うAIを、まとめて（計16回）。</p>
-          <ul class="pricing-features">
-            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>2コース（計16回）を一括開放</span></li>
-            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>金融・会計どちらの実務にも効く</span></li>
-          </ul>
-          <a href="https://buy.stripe.com/9B6aEW4SE3ZM4QTeA3gA80c" class="pricing-cta" target="_blank" rel="noopener">セットで購入する</a>
-        </div>
         <div class="pricing-card">
           <div class="pricing-card-label">PRACTICE</div>
           <h3 class="pricing-card-name">会計×AI実践編</h3>
           <div class="pricing-price"><span class="yen">¥</span><span class="num">49,800</span><span class="tax">（税込）</span></div>
-          <p class="pricing-card-sub">個人事業主向け。バラバラの入金とfreeeの数字を集め、事業別の採算・資金繰り・意思決定までAIで自動化（全10回）。</p>
+          <p class="pricing-card-sub">個人事業主向け。経理まわりをfreee×AIで自動化し、freeeの外側に“経営の見張り番”（管理会計）を持つ。損益分岐点・資金繰り・意思決定まで（全10回）。</p>
           <ul class="pricing-features">
             <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>経理経験者・副業でAIを活かす方に</span></li>
             <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>受講生サイトでテキスト＋画像で学べる</span></li>
@@ -2144,20 +2622,23 @@
         </div>
       </div>
 
-      <!-- 上位プラン：ビジネス応用編（30名限定・決済リンク側で上限30を設定済み） -->
+      <!-- 上位プラン：副業×AI実践編
+           先着30名は ¥99,800、31人目からは ¥130,000。
+           いまの決済リンクは上限30で止まる設定なので、超えたら ¥130,000 のリンクを作って差し替える -->
       <div class="pricing-advanced">
-        <div class="pricing-badge">30名限定</div>
+        <div class="pricing-badge">先着30名</div>
         <div>
           <div class="pricing-card-label">ADVANCED</div>
-          <h3 class="pricing-card-name">ビジネス応用×AI実践編</h3>
+          <h3 class="pricing-card-name">副業×AI実践編</h3>
           <div class="pricing-price"><span class="yen">¥</span><span class="num">99,800</span><span class="tax">（税込）</span></div>
-          <p class="pricing-card-sub">副業でお金にするための道具箱。稼ぎ方の入口は3つ——①自分の商売や発信を回す ②案件を受けて納める ③預かって継続収入にする。前半は手を速くする2つ（議事録／書類を作る）。後半は請求書・帳票のデータ化、X自動投稿、社内マニュアルQAボット、フォーム自動連携。そして「売り場をつくる→問い合わせを受け取る→会員だけに見せる→有料会員サイト完成」と4段で積み上げて、自分の商品を自分の場所で売れる状態まで（全11回）。</p>
+          <p style="margin:-4px 0 12px;font-size:13.5px;font-weight:700;color:#FFD3B8;">先着30名まで。<span style="color:#fff;">31人目からは ¥130,000（税込）</span>になります</p>
+          <p class="pricing-card-sub">やりたいことを、自分の手で形にするための道具箱。まず準備と、AIにどこまで頼めるかの地図。次に自分の発信を回す3つ——ブログ記事／X自動投稿／LINE bot。そこから相談窓口・フォーム自動連携へ進み、「売り場をつくる→問い合わせを受け取る→会員だけに見せる→有料会員サイト完成」と4段で積み上げて、自分の商品を自分の場所で売れる状態まで。そして最終回だけは型を渡しません。自分で決めたお題を、自分で1つ作り切ります（全13回）。</p>
         </div>
         <div>
           <ul class="pricing-features">
             <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>自分の商売に使う・案件を受ける・預かって継続収入にする、どれにも効く</span></li>
             <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>1本目から実務で使える道具。積み上げて会員制サイトまで</span></li>
-            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>30名に達した時点で販売を終了します</span></li>
+            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>最終回は型を渡しません。自分で決めたお題で、道具を1つ作り切る</span></li>
           </ul>
           <a href="https://buy.stripe.com/eVqeVc4SEcwi1EH4ZtgA80l" class="pricing-cta" target="_blank" rel="noopener">購入する</a>
         </div>
@@ -2166,14 +2647,15 @@
       <div class="pricing-compare-wrap">
         <table class="pricing-compare">
           <thead>
-            <tr><th>項目</th><th>AIビジネス基礎編</th><th>ビジネス応用×AI実践編</th><th>金融AI実践編</th><th>会計×AI実践編</th><th>金融会計セット</th></tr>
+            <tr><th>項目</th><th>副業×AI実践編</th><th>金融AI実践編</th><th>会計×AI実践編</th></tr>
           </thead>
           <tbody>
-            <tr><th>回数</th><td>全10回</td><td>全11回</td><td>全9回</td><td>全10回</td><td>全19回</td></tr>
-            <tr><th>向いている人</th><td>スキル0から案件を取れるようになりたい</td><td>副業で稼ぎたい（自分の商売・案件受注・継続収入のどれでも）</td><td>CMA受講生・金融機関（投資部門）</td><td>経理経験者で副業したい</td><td>金融も会計も</td></tr>
-            <tr><th>学び方</th><td>テキスト＋画像</td><td>テキスト＋画像</td><td>テキスト＋画像</td><td>テキスト＋画像</td><td>テキスト＋画像</td></tr>
-            <tr><th>返金保証</th><td>7日・3記事まで</td><td>7日・3記事まで</td><td>7日・3記事まで</td><td>7日・3記事まで</td><td>7日・3記事まで</td></tr>
-            <tr><th>価格（税込）</th><td>¥19,800</td><td>¥99,800（30名限定）</td><td>¥29,800</td><td>¥49,800</td><td>¥69,800（約12%OFF）</td></tr>
+            <tr><th>回数</th><td>全13回</td><td>全9回</td><td>全10回</td></tr>
+            <tr><th>向いている人</th><td>やりたいことがあって、自分の手で形にしたい人</td><td>CMA受講生・金融機関（投資部門）</td><td>個人事業主・経理経験者。freeeを使っている人</td></tr>
+            <tr><th>迷ったら</th><td>プログラミング未経験でも、ここから始められます</td><td>経理が主戦場なら会計×AIへ</td><td>投資が目的なら金融AIへ</td></tr>
+            <tr><th>学び方</th><td>テキスト＋画像</td><td>テキスト＋画像</td><td>テキスト＋画像</td></tr>
+            <tr><th>返金保証</th><td>7日・3記事まで</td><td>7日・3記事まで</td><td>7日・3記事まで</td></tr>
+            <tr><th>価格（税込）</th><td>¥99,800（先着30名／以降¥130,000）</td><td>¥29,800</td><td>¥49,800</td></tr>
           </tbody>
         </table>
       </div>
@@ -2206,7 +2688,7 @@
         <p class="section-subtitle">新講座・活用事例・AIの最新情報を週1回お届け。プラン選びのご質問にもお答えします。</p>
         <ul class="line-broadcast-points">
           <li><span class="point-icon"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216Z"/></svg></span><span>新講座・活用事例・AIの最新情報を、週1回いち早くお知らせ</span></li>
-          <li><span class="point-icon"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Z"/></svg></span><span>料金・プラン選び（基礎／金融／会計／セット）のご質問に、AIが24時間その場で回答</span></li>
+          <li><span class="point-icon"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Z"/></svg></span><span>料金・プラン選び（副業／金融／会計）のご質問に、AIが24時間その場で回答</span></li>
           <li><span class="point-icon"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></svg></span><span>じっくり相談したいときは「相談希望」と送るだけ。担当者がご提案（通常1日以内）</span></li>
         </ul>
         <div class="line-broadcast-buttons" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
@@ -2223,14 +2705,14 @@
   <!-- ============================================
        Section 9: WHO（教えるのは実際に使っている道具）
        ============================================ -->
-  <section style="background:var(--cream);">
+  <section style="background:var(--surface-2);">
     <div class="container">
       <div style="max-width:760px;margin:0 auto;text-align:center;">
         <span class="eyebrow" style="justify-content:center;">WHO</span>
         <h2 class="section-title">教えるのは、私が実際に使っている道具です</h2>
-        <img src="assets/bunbun-avatar.jpg" alt="運営者 ぶんぶん" style="width:104px;height:104px;border-radius:50%;object-fit:cover;margin:20px auto 0;display:block;box-shadow:0 8px 26px rgba(26,43,74,0.18);border:4px solid #fff;" loading="lazy">
-        <h3 style="margin:14px 0 2px;font-size:20px;color:var(--navy);">ぶんぶん</h3>
-        <p style="margin:0;color:#5A6A7A;font-size:13px;">会計×AI ／ 簿記1級・証券アナリスト(CMA) ／ @a3aByulmQvDRNSU</p>
+        <img src="assets/bunbun-avatar.jpg" alt="運営者 ぶんぶん" style="width:104px;height:104px;border-radius:50%;object-fit:cover;margin:20px auto 0;display:block;box-shadow:0 8px 26px rgba(26,43,74,0.18);border:4px solid rgba(122,224,255,.28);" loading="lazy">
+        <h3 style="margin:14px 0 2px;font-size:20px;color:var(--ink);">ぶんぶん</h3>
+        <p style="margin:0;color:var(--text-muted);font-size:13px;">会計×AI ／ 簿記1級・証券アナリスト(CMA) ／ @a3aByulmQvDRNSU</p>
         <p class="section-subtitle" style="margin:18px auto 0;">偏差値40から日商簿記1級・証券アナリスト(CMA)1次に合格し、会計×AIをテーマに発信しています（Kindle3冊）。この講座で扱うのは、机上の理論ではなく、私が実務で実際に動かしているツールの作り方です。</p>
       </div>
     </div>
@@ -2249,7 +2731,7 @@
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q1.</span><span class="faq-q-text">プログラミング未経験でも作れますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">はい。AIに日本語で指示する形なので、コードを自分で書く必要はありません。各ステップに画面イメージ付きの手順があり、上から順に進めれば完成します。</div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q2.</span><span class="faq-q-text">何が必要ですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">PCとインターネット環境、無料で使えるAIやGoogleアカウントなどです。必要な準備は講座内で順番にご案内します。</div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q3.</span><span class="faq-q-text">これは投資助言ですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">いいえ。特定の銘柄の売買を推奨するものではありません。あくまで、ご自身の分析や実務作業を楽にする“道具づくり”を学ぶ講座です。</div></details>
-        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q4.</span><span class="faq-q-text">どのプランを選べばいいですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">スキルが無い状態から案件を取れるようになりたいなら「AIビジネス基礎編」、CMA学習中や金融機関（投資部門）で投資・株の分析に使うなら「金融AI実践編」、経理経験があって副業でAIを活かしたいなら「会計×AI実践編」。金融も会計も学びたいなら約12%お得な「金融会計セット」。受けた作業を早く終わらせたい、さらに人に渡せるもの（会員制サイトなどの納品物）まで作れるようになりたいなら「ビジネス応用×AI実践編」（30名限定）。迷ったらLINEでご相談ください。</div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q4.</span><span class="faq-q-text">どのプランを選べばいいですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">CMA学習中や金融機関（投資部門）で投資・株の分析に使うなら「金融AI実践編」、経理経験があって自分の事業の数字をAIで回したいなら「会計×AI実践編」。やりたいことがあって、それを自分の手で形にしたい——発信・問い合わせ対応から、自分の商品を売る会員制サイトまで作れるようになりたいなら「副業×AI実践編」（先着30名まで¥99,800、以降¥130,000）。迷ったらLINEでご相談ください。</div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q5.</span><span class="faq-q-text">簿記・会計の知識がなくても大丈夫ですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">金融AI実践編は、株や決算に興味があれば知識ゼロからでも進められます。会計×AI実践編は、簿記・会計の基礎がある方のほうがスムーズです。知識に不安があれば、簿記の学習と並行するのもおすすめです。</div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q6.</span><span class="faq-q-text">返金保証はありますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">はい。ご購入から7日以内で、受講生サイトで開いた記事が3本以内であれば、理由を問わず全額返金いたします。まず何本か読んでみて、思っていた内容と違うと感じたら、そのままお申し出ください。</div></details>
       </div>
@@ -2279,7 +2761,7 @@
           LINEでできること
         </div>
         <div class="final-cta-bonus-list">
-          <div class="final-cta-bonus-item"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>プラン選び（基礎／金融／会計／セット）の無料相談</span></div>
+          <div class="final-cta-bonus-item"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>プラン選び（副業／金融／会計）の無料相談</span></div>
           <div class="final-cta-bonus-item"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>講座内容の質問に、AIがその場で回答</span></div>
           <div class="final-cta-bonus-item"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>新講座・活用事例を、週1回お届け</span></div>
         </div>
