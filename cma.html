@@ -73,9 +73,9 @@
 
     /* CSS 変数 */
     :root {
-      --navy: #0A1220;        /* 地（深い紺） */
-      --navy-soft: #16223A;
-      --navy-deep: #05090F;
+      --navy: #14203A;        /* 地（明るめの紺） */
+      --navy-soft: #1E2C4A;
+      --navy-deep: #0E1729;
       --orange: #A87F2B;      /* 真鍮の金 */
       --orange-soft: #EFE4C8;
       --green: #06C755;
@@ -83,14 +83,14 @@
       --cream: rgba(255,255,255,0.028);  /* 旧・紙。いまは薄い面 */
       --cream-deep: rgba(255,255,255,0.06);
       --white: #FFFFFF;
-      --text: #C2CFE0;
-      --text-muted: #93A3BC;
+      --text: #D6E0EE;
+      --text-muted: #AAB9CE;
       --text-light: #6F7E96;
-      --border: rgba(150,185,235,0.16);
-      --border-dark: rgba(150,185,235,0.14);
+      --border: rgba(160,195,240,0.24);
+      --border-dark: rgba(160,195,240,0.20);
       /* 全面ダーク化で足したトークン（2026-08-05） */
-      --surface: rgba(255,255,255,0.05);    /* カードの面 */
-      --surface-2: rgba(255,255,255,0.025); /* 節の帯 */
+      --surface: rgba(255,255,255,0.085);   /* カードの面 */
+      --surface-2: rgba(255,255,255,0.05);  /* 節の帯 */
       --ink: #EAF1FF;                       /* 見出しの文字 */
       --line-accent: rgba(227,190,104,0.45);/* 金のヘアライン */
       --shadow-sm: 0 1px 3px rgba(22, 35, 58, 0.07);
@@ -1834,9 +1834,9 @@
           立体チャートの画像をページ全体の地にする。ただしヒーロー以外は
           濃い幕を重ねて沈める。幕が無いと、写真の上で長文が読めない。 */
     body {
-      background-color: #05090F;
+      background-color: #0E1729;
       background-image:
-        linear-gradient(rgba(5,9,15,.90), rgba(5,9,15,.94)),
+        linear-gradient(rgba(14,23,41,.78), rgba(14,23,41,.86)),
         url('assets/cma-chart3d.jpg');
       background-repeat: no-repeat, no-repeat;
       background-position: center, center;
@@ -1853,8 +1853,8 @@
             画像そのものにチャートの線が入っているので、線画の星座チャートは重ねない
             （重ねると線が二重になって濁る）。旧・天体写真は assets/cma-space.jpg に残してある。 */
       background-image:
-        linear-gradient(180deg, rgba(4,8,16,0) 55%, rgba(243,245,248,.85) 92%, #F5F7FA 100%),
-        linear-gradient(90deg, rgba(4,8,16,.90) 0%, rgba(4,8,16,.62) 40%, rgba(4,8,16,.16) 68%),
+        linear-gradient(180deg, rgba(14,23,41,0) 62%, rgba(14,23,41,.55) 88%, rgba(14,23,41,.82) 100%),
+        linear-gradient(90deg, rgba(8,14,26,.82) 0%, rgba(8,14,26,.50) 42%, rgba(8,14,26,.10) 70%),
         url('assets/cma-chart3d.jpg');
       background-size: cover, cover, cover;
       background-position: center, center, center 42%;
@@ -1878,6 +1878,19 @@
       backdrop-filter: blur(6px);
     }
     .hero .btn-outline:hover { background: rgba(255,255,255,.18); color: #FFFFFF; }
+    /* 🔴 浮きカードは地を持たせる。ガラスのままだと立体チャートの上で文字が読めない */
+    .hero-badge, .hero-floating-card {
+      background: rgba(14,23,41,.88);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      backdrop-filter: blur(12px) saturate(140%);
+      box-shadow: 0 14px 40px rgba(0,0,0,.5);
+    }
+    .hero-badge-em { color: #E3BE68; }
+    .hero-badge-small { color: var(--text-muted); }
+    .hero-floating-card-text { color: var(--text); }
+    .hero-floating-card-text strong { color: var(--ink); }
+    .hero-badge-icon, .hero-floating-card-icon { background: rgba(227,190,104,.14); color: #E3BE68; }
     /* ヒーロー内の小さな注記・補足も、暗い地に合わせる */
     .hero p:not(.hero-sub), .hero small, .hero .hero-note { color: #9FB0C8; }
     .hero a:not(.btn) { color: #E3BE68; }
@@ -1891,7 +1904,7 @@
     .problem-list, .method-card, .pricing-card, .faq-item, .legal-block,
     .mission-steps, .how-to-step, .line-broadcast-inner, .connections-list,
     .pricing-compare-wrap, .pricing-trust-band, .final-cta-bonus {
-      background-color: rgba(255,255,255,.05);
+      background-color: rgba(255,255,255,.085);
       border: 1px solid var(--border);
       backdrop-filter: blur(10px) saturate(130%);
     }
@@ -1980,11 +1993,11 @@
        この節を消して :root の色を明るい側へ戻せば、ヒーローだけ暗い形に戻せる。
        ============================================================ */
     .site-header {
-      background: rgba(5,9,15,.82);
+      background: rgba(14,23,41,.80);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(14px) saturate(140%);
     }
-    .utility-bar { background: rgba(3,6,11,.9); border-bottom: 1px solid rgba(150,185,235,.10); }
+    .utility-bar { background: rgba(9,15,28,.9); border-bottom: 1px solid rgba(150,185,235,.10); }
     .logo { color: var(--ink); }
     .site-nav a { color: var(--text); }
     .site-nav a:hover { color: #E3BE68; }
@@ -2625,7 +2638,7 @@
               <span>合格祝い金 1 万円</span>
             </li>
           </ul>
-          <span class="pricing-cta" style="background:#cfd4da;color:#6b7280;cursor:default;" aria-disabled="true">近日公開</span>
+          <span class="pricing-cta" style="background:rgba(255,255,255,.10);color:var(--text-muted);cursor:default;" aria-disabled="true">近日公開</span>
           <p style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:10px;">全科目がそろい次第、販売を開始します。まずは数学講座・確率統計講座からどうぞ。</p>
         </div>
       </div>
