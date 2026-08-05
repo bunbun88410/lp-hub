@@ -114,6 +114,10 @@
       --fs-h3: 16px;
 
       /* 金融チャート風の背景モチーフ（navy地セクション用） */
+      /* データベースの地。作り直しは build-db-motif.mjs から */
+      --table-motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 340' preserveAspectRatio='none'%3E%3Cg fill='%2316233A' fill-opacity='0.020'%3E%3Crect x='0' y='34' width='720' height='34'/%3E%3Crect x='0' y='102' width='720' height='34'/%3E%3Crect x='0' y='170' width='720' height='34'/%3E%3Crect x='0' y='238' width='720' height='34'/%3E%3Crect x='0' y='306' width='720' height='34'/%3E%3C/g%3E%3Cg fill='%2316233A' fill-opacity='0.045'%3E%3Crect x='104' y='12' width='86' height='9' rx='2'/%3E%3Crect x='8' y='80' width='70' height='9' rx='2'/%3E%3Crect x='400' y='114' width='52' height='9' rx='2'/%3E%3Crect x='216' y='182' width='34' height='9' rx='2'/%3E%3Crect x='612' y='46' width='90' height='9' rx='2'/%3E%3Crect x='276' y='250' width='98' height='9' rx='2'/%3E%3Crect x='478' y='284' width='108' height='9' rx='2'/%3E%3Crect x='216' y='148' width='34' height='9' rx='2'/%3E%3C/g%3E%3Cg stroke='%2316233A' stroke-opacity='0.045' stroke-width='1'%3E%3Cline x1='0' y1='34' x2='720' y2='34'/%3E%3Cline x1='0' y1='68' x2='720' y2='68'/%3E%3Cline x1='0' y1='102' x2='720' y2='102'/%3E%3Cline x1='0' y1='136' x2='720' y2='136'/%3E%3Cline x1='0' y1='170' x2='720' y2='170'/%3E%3Cline x1='0' y1='204' x2='720' y2='204'/%3E%3Cline x1='0' y1='238' x2='720' y2='238'/%3E%3Cline x1='0' y1='272' x2='720' y2='272'/%3E%3Cline x1='0' y1='306' x2='720' y2='306'/%3E%3C/g%3E%3Cg stroke='%2316233A' stroke-opacity='0.075' stroke-width='1'%3E%3Cline x1='96' y1='0' x2='96' y2='340'/%3E%3Cline x1='208' y1='0' x2='208' y2='340'/%3E%3Cline x1='268' y1='0' x2='268' y2='340'/%3E%3Cline x1='392' y1='0' x2='392' y2='340'/%3E%3Cline x1='470' y1='0' x2='470' y2='340'/%3E%3Cline x1='604' y1='0' x2='604' y2='340'/%3E%3C/g%3E%3C/svg%3E");
+      --er-motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800' preserveAspectRatio='xMidYMid meet'%3E%3Cg fill='none' stroke='%2316233A' stroke-opacity='0.10' stroke-width='1.4'%3E%3Crect x='80' y='120' width='190' height='90' rx='4'/%3E%3Crect x='430' y='330' width='210' height='107' rx='4'/%3E%3Crect x='150' y='520' width='175' height='73' rx='4'/%3E%3C/g%3E%3Cg fill='%2316233A' fill-opacity='0.05'%3E%3Cpath d='M80 124a4 4 0 0 1 4-4h182a4 4 0 0 1 4 4v18h-190z'/%3E%3Cpath d='M430 334a4 4 0 0 1 4-4h202a4 4 0 0 1 4 4v18h-210z'/%3E%3Cpath d='M150 524a4 4 0 0 1 4-4h167a4 4 0 0 1 4 4v18h-175z'/%3E%3C/g%3E%3Cg stroke='%2316233A' stroke-opacity='0.06' stroke-width='1'%3E%3Cline x1='89' y1='153' x2='261' y2='153'/%3E%3Cline x1='89' y1='170' x2='261' y2='170'/%3E%3Cline x1='89' y1='187' x2='261' y2='187'/%3E%3Cline x1='89' y1='204' x2='261' y2='204'/%3E%3Cline x1='439' y1='363' x2='631' y2='363'/%3E%3Cline x1='439' y1='380' x2='631' y2='380'/%3E%3Cline x1='439' y1='397' x2='631' y2='397'/%3E%3Cline x1='439' y1='414' x2='631' y2='414'/%3E%3Cline x1='439' y1='431' x2='631' y2='431'/%3E%3Cline x1='159' y1='553' x2='316' y2='553'/%3E%3Cline x1='159' y1='570' x2='316' y2='570'/%3E%3Cline x1='159' y1='587' x2='316' y2='587'/%3E%3C/g%3E%3Cg fill='none' stroke='%23A87F2B' stroke-opacity='0.20' stroke-width='1.4'%3E%3Cpath d='M270 175H350V352H430'/%3E%3Cpath d='M430 352l-12 -7M430 352l-12 0M430 352l-12 7'/%3E%3Cpath d='M237 520V430H430'/%3E%3Cpath d='M430 430l-12 -7M430 430l-12 0M430 430l-12 7'/%3E%3Cpath d='M640 400H700V560'/%3E%3C/g%3E%3Cg fill='none' stroke='%2316233A' stroke-opacity='0.11' stroke-width='1.4'%3E%3Cpath d='M622 560v96a78 24 0 0 0 156 0V560'/%3E%3Cellipse cx='700' cy='560' rx='78' ry='24'/%3E%3Cpath d='M622 592a78 24 0 0 0 156 0'/%3E%3Cpath d='M622 624a78 24 0 0 0 156 0'/%3E%3C/g%3E%3C/svg%3E");
+
       --chart-motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 260'%3E%3Cdefs%3E%3Cfilter id='g' x='-60%25' y='-60%25' width='220%25' height='220%25'%3E%3CfeGaussianBlur stdDeviation='4' result='b'/%3E%3CfeMerge%3E%3CfeMergeNode in='b'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cg stroke='%23ffffff' stroke-opacity='0.07'%3E%3Cline x1='0' y1='40' x2='420' y2='40'/%3E%3Cline x1='0' y1='90' x2='420' y2='90'/%3E%3Cline x1='0' y1='140' x2='420' y2='140'/%3E%3Cline x1='0' y1='190' x2='420' y2='190'/%3E%3Cline x1='0' y1='240' x2='420' y2='240'/%3E%3Cline x1='40' y1='0' x2='40' y2='260'/%3E%3Cline x1='120' y1='0' x2='120' y2='260'/%3E%3Cline x1='200' y1='0' x2='200' y2='260'/%3E%3Cline x1='280' y1='0' x2='280' y2='260'/%3E%3Cline x1='360' y1='0' x2='360' y2='260'/%3E%3C/g%3E%3Cpolyline points='20,220 90,180 160,190 230,120 300,140 380,40' fill='none' stroke='%23FF6B35' stroke-opacity='0.55' stroke-width='2.5' filter='url(%23g)'/%3E%3Cg fill='%23FF6B35' fill-opacity='0.6' filter='url(%23g)'%3E%3Ccircle cx='20' cy='220' r='3.5'/%3E%3Ccircle cx='90' cy='180' r='3.5'/%3E%3Ccircle cx='160' cy='190' r='3.5'/%3E%3Ccircle cx='230' cy='120' r='3.5'/%3E%3Ccircle cx='300' cy='140' r='3.5'/%3E%3Ccircle cx='380' cy='40' r='3.5'/%3E%3C/g%3E%3C/svg%3E");
     }
 
@@ -1815,15 +1819,31 @@
        この層を削り :root を元の値に戻せば旧デザインに戻る。
        ============================================================ */
 
-    /* --- 地：方眼ノート。これがこのページの署名 --- */
+    /* --- 地：データベース。これがこのページの署名 ---
+       方眼にしないのが肝。列の幅を不揃いにして、罫線ではなく「表」に見せる。
+       レコードの縞はスクロールで動かし（表を繰っている感じ）、
+       ER図と円柱は固定で置く（背後にずっとある装置の感じ）。 */
     body {
       background-color: #F5F7FA;
       background-image:
-        linear-gradient(rgba(22,35,58,.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(22,35,58,.045) 1px, transparent 1px),
-        linear-gradient(rgba(22,35,58,.022) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(22,35,58,.022) 1px, transparent 1px);
-      background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+        var(--er-motif),
+        var(--table-motif);
+      background-repeat: no-repeat, repeat;
+      background-position: center center, 0 0;
+      background-size: 1200px 800px, 720px 340px;
+      background-attachment: fixed, scroll;
+    }
+    @media (max-width: 768px) {
+      body { background-size: 820px 546px, 460px 220px; }
+    }
+
+    /* --- 明るい節は地を透かす。ここを透かさないと、下のデータベースが一切見えない --- */
+    .hero, .mission, .how-to, .faq, .sample-lesson { background: transparent; }
+    .problem, .connections, .legal { background: rgba(255,255,255,.55); }
+    /* 面（カード）は白のまま。地が透ける中で、読ませる場所だけ紙が浮く */
+    .problem-list, .method-card, .pricing-card, .faq-item, .legal-block,
+    .mission-steps, .how-to-step, .line-broadcast-inner, .connections-list {
+      background-color: #FFFFFF;
     }
 
     /* --- 見出しは角ゴのまま（明朝は簿記側の記号なので使わない）。字間で精密さを出す --- */
