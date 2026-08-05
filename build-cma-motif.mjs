@@ -149,6 +149,37 @@ const chart = svg(CW, CHH, 'xMidYMax slice',
   `%3Cg fill='none' stroke='${GOLD}' stroke-opacity='0.45' stroke-width='1.6'%3E${maLine}%3C/g%3E`
 );
 
+// ============================================================
+// 4) 星座になった株価チャート（暗いヒーローの上に重ねる）
+// ============================================================
+// 宇宙とチャートを別々に置くと、ただ隣り合っているだけになる。
+// 終値を星に、線を星座線にして、1つの絵にする。
+// 🔴 暗い地の上なので、下の --candle-motif（紺＝明るい地むけ）は使えない。
+//    こちらは金と白で描く。
+const HW = 1600, HH = 900;
+const hx = i => 60 + (i / (N - 1)) * (HW - 120);
+// 🔴 値動きだけに任せると、線が画面の真ん中で終わってヒーロー画像の裏に隠れる。
+//    値動き（±260）に右肩上がりの傾き（380）を足して、必ず右上の空きへ抜けさせる。
+const hy = (v, i) => r1(760 - ((v - 120) / 210) * 260 - (i / (N - 1)) * 380);
+
+const pts = closes.map(([, v], i) => [r1(hx(i)), hy(v, i)]);
+const skyLine = `%3Cpolyline points='${pts.map(([x, y]) => `${x},${y}`).join(' ')}'/%3E`;
+// 星の大きさをばらす。全部同じだと点線に見える
+let skyDots = '';
+let skyHalo = '';
+pts.forEach(([x, y], i) => {
+  const big = i % 7 === 0;
+  skyDots += `%3Ccircle cx='${x}' cy='${y}' r='${big ? 2.6 : 1.5}'/%3E`;
+  if (big) skyHalo += `%3Ccircle cx='${x}' cy='${y}' r='7'/%3E`;
+});
+
+const skyChart = svg(HW, HH, 'xMidYMid slice',
+  `%3Cg fill='%23FFFFFF' fill-opacity='0.14'%3E${skyHalo}%3C/g%3E` +
+  `%3Cg fill='none' stroke='%23E3BE68' stroke-opacity='0.72' stroke-width='1.8'%3E${skyLine}%3C/g%3E` +
+  `%3Cg fill='%23FFFFFF' fill-opacity='0.85'%3E${skyDots}%3C/g%3E`
+);
+
+console.log(`      --sky-chart-motif: url("data:image/svg+xml,${skyChart}");`);
 console.log(`      --star-motif: url("data:image/svg+xml,${star}");`);
 console.log(`      --orbit-motif: url("data:image/svg+xml,${orbit}");`);
 console.log(`      --candle-motif: url("data:image/svg+xml,${chart}");`);
