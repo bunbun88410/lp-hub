@@ -85,6 +85,74 @@ const er = svg(1200, 800, 'xMidYMid meet',
   `%3Cg fill='none' stroke='${INK}' stroke-opacity='0.11' stroke-width='1.4'%3E${cylinder}%3C/g%3E`
 );
 
+// ============================================================
+// 3) ローソク足と出来高（画面の下に固定で敷く）
+// ============================================================
+// 証券アナリストの講座なので、データベースだけだと「分析」が出ない。
+// 相場がずっと動いている感じを、下に薄く1本だけ通す。
+const CW = 1600, CHH = 360;
+const BASE = 250;   // 終値の基準線
+const VOL_TOP = 286; // 出来高の上端
+
+// 再現できる乱数（毎回同じ相場にするため）
+let seed = 20260805;
+const rnd = () => (seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648;
+
+let candles = '';
+let volumes = '';
+const closes = [];
+let price = BASE;
+const N = 46, STEP = CW / N;
+
+for (let i = 0; i < N; i++) {
+  const open = price;
+  price += (rnd() - 0.48) * 26;            // 少しだけ上げ基調
+  price = Math.max(120, Math.min(330, price));
+  const close = price;
+  const hi = Math.min(open, close) - rnd() * 16;   // y は上が小さい
+  const lo = Math.max(open, close) + rnd() * 16;
+  closes.push([i * STEP + STEP / 2, close]);
+
+  const x = i * STEP + STEP / 2;
+  const w = STEP * 0.46;
+  const top = Math.min(open, close);
+  const h = Math.max(2, Math.abs(close - open));
+  const up = close < open;                  // y が小さい＝価格が高い＝上昇
+
+  const g = up ? 'u' : 'd';
+  candles += `%3Cg class='${g}'%3E`
+    + `%3Cline x1='${r1(x)}' y1='${r1(hi)}' x2='${r1(x)}' y2='${r1(lo)}'/%3E`
+    + `%3Crect x='${r1(x - w / 2)}' y='${r1(top)}' width='${r1(w)}' height='${r1(h)}'/%3E`
+    + `%3C/g%3E`;
+
+  const vh = 12 + rnd() * 56;
+  volumes += `%3Crect x='${r1(x - w / 2)}' y='${r1(VOL_TOP + (74 - vh))}' width='${r1(w)}' height='${r1(vh)}'/%3E`;
+}
+function r1(n) { return Math.round(n * 10) / 10; }
+
+// 移動平均（5本）
+const ma = closes.map((_, i) => {
+  const s = closes.slice(Math.max(0, i - 4), i + 1);
+  return [closes[i][0], s.reduce((t, p) => t + p[1], 0) / s.length];
+});
+const maLine = `%3Cpolyline points='${ma.map(([x, y]) => `${r1(x)},${r1(y)}`).join(' ')}'/%3E`;
+
+// 価格の目盛（水平の破線）
+const levels = [140, 200, 260].map(y => `%3Cline x1='0' y1='${y}' x2='${CW}' y2='${y}'/%3E`).join('');
+
+// 上昇と下降で色を分ける（上昇＝真鍮、下降＝紺）
+const upG = candles.replace(/%3Cg class='d'%3E[\s\S]*?%3C\/g%3E/g, '').replace(/%3Cg class='u'%3E|%3C\/g%3E/g, '');
+const dnG = candles.replace(/%3Cg class='u'%3E[\s\S]*?%3C\/g%3E/g, '').replace(/%3Cg class='d'%3E|%3C\/g%3E/g, '');
+
+const chart = svg(CW, CHH, 'xMidYMax slice',
+  `%3Cg stroke='${INK}' stroke-opacity='0.07' stroke-width='1' stroke-dasharray='6 10'%3E${levels}%3C/g%3E` +
+  `%3Cg fill='${INK}' fill-opacity='0.075'%3E${volumes}%3C/g%3E` +
+  `%3Cg stroke='${INK}' stroke-opacity='0.18' fill='${INK}' fill-opacity='0.11' stroke-width='1'%3E${dnG}%3C/g%3E` +
+  `%3Cg stroke='${GOLD}' stroke-opacity='0.34' fill='%23ffffff' fill-opacity='0.8' stroke-width='1'%3E${upG}%3C/g%3E` +
+  `%3Cg fill='none' stroke='${GOLD}' stroke-opacity='0.45' stroke-width='1.6'%3E${maLine}%3C/g%3E`
+);
+
 console.log(`      --table-motif: url("data:image/svg+xml,${table}");`);
 console.log(`      --er-motif: url("data:image/svg+xml,${er}");`);
-console.error(`長さ table=${table.length} er=${er.length}`);
+console.log(`      --candle-motif: url("data:image/svg+xml,${chart}");`);
+console.error(`長さ table=${table.length} er=${er.length} candle=${chart.length}`);
