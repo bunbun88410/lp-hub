@@ -15,19 +15,19 @@
   <meta name="description" content="証券アナリスト(CMA)1次試験対策の「理解で伸ばす」講座。経済・ファンダメンタル分析・証券分析・数学の4科目を、丸暗記ではなく本質・途中式・意味まで噛み砕いて扱います。AIを学習の道具として使う方法も含めて学べます。">
 
   <!-- 検索・SNS最適化 -->
-  <link rel="canonical" href="https://lp-eta-tan.vercel.app/cma">
+  <link rel="canonical" href="https://sujilab.net/cma">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="数字の資格AIラボ">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:title" content="証券アナリスト(CMA)1次対策｜数学嫌いを置いていかない">
   <meta property="og:description" content="丸暗記ではなく、本質・途中式・意味まで噛み砕く。経済・ファンダメンタル分析・証券分析・数学の4科目をAIも道具に学べる、理解で伸ばすCMA1次対策講座。">
-  <meta property="og:url" content="https://lp-eta-tan.vercel.app/cma">
-  <meta property="og:image" content="https://lp-eta-tan.vercel.app/assets/og-image.png">
+  <meta property="og:url" content="https://sujilab.net/cma">
+  <meta property="og:image" content="https://sujilab.net/assets/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="証券アナリスト(CMA)1次対策｜数学嫌いを置いていかない">
   <meta name="twitter:description" content="丸暗記ではなく、本質・途中式・意味まで噛み砕く。理解で伸ばすCMA1次対策講座。">
-  <meta name="twitter:image" content="https://lp-eta-tan.vercel.app/assets/og-image.png">
+  <meta name="twitter:image" content="https://sujilab.net/assets/og-image.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -35,7 +35,7 @@
       {
         "@type": "Organization",
         "name": "数字の資格AIラボ",
-        "url": "https://lp-eta-tan.vercel.app/",
+        "url": "https://sujilab.net/",
         "description": "証券アナリスト(CMA)1次試験対策の理解重視型オンライン講座。"
       },
       {
@@ -46,7 +46,7 @@
         "provider": {
           "@type": "Organization",
           "name": "数字の資格AIラボ",
-          "url": "https://lp-eta-tan.vercel.app/"
+          "url": "https://sujilab.net/"
         }
       }
     ]
@@ -990,10 +990,23 @@
     }
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      /* 2026-08-06：3列から2列＋全幅1枚に組み替えた。
+         ① 既定の stretch だと、科目別プラン（12行の価格一覧）の高さに合わせて
+            見放題パスと全科目セットが引き伸ばされ、下半分が空白になっていた
+         ② 単品の購入ボタンを足したことで、1列ぶんの幅（約270px）に
+            「科目名＋価格＋販売中＋購入」が収まらなくなった
+         → 買うか決める2枚（見放題パス・全科目セット）を上に並べ、
+            価格の一覧である科目別プランは、幅をいっぱいに使って下に置く。 */
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
       max-width: 1100px;
       margin: 0 auto;
+      align-items: start;
+    }
+    /* 科目別プラン（1枚目）は最後に全幅で置く */
+    .pricing-grid > .pricing-card:first-child {
+      grid-column: 1 / -1;
+      order: 3;
     }
     .pricing-card {
       background: var(--surface);
@@ -1131,12 +1144,21 @@
     .pricing-list li.sub { padding-left: 16px; }
     .pricing-list li.sub .subject { font-weight: 500; font-size: 14px; }
     .pricing-list li.sub .price { font-size: 17px; }
-    .pricing-list li { flex-wrap: wrap; gap: 4px 8px; }
+    /* 2026-08-06：flex + flex-wrap だと、「ファンダメンタル分析・ファイナンス・ガバナンス」の
+       ような長い科目名のときに価格と購入ボタンが次の行へ落ち、行の高さが不揃いになっていた。
+       2カラムのグリッドにして、科目名は自分の列の中だけで折り返し、価格側は必ず同じ行に置く。 */
+    .pricing-list li {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      column-gap: 12px;
+      row-gap: 0;
+    }
     .pricing-list .price-cell {
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-left: auto;
+      justify-content: flex-end;
     }
     /* 販売状態バッジ */
     .badge-onsale, .badge-soon {
@@ -1745,6 +1767,17 @@
         grid-template-columns: 1fr;
         gap: 18px;
       }
+      /* 2026-08-06：スマホは1列なので、科目別プランを最後に回さず元の順番に戻す。
+         幅が狭いぶん、価格の行は2カラムをやめて折り返させる（縦読みになるのを防ぐ）。 */
+      .pricing-grid > .pricing-card:first-child { order: 0; }
+      .pricing-list li {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 4px 8px;
+      }
+      .pricing-list .price-cell { margin-left: auto; }
       .pricing-card {
         padding: 36px 28px;
       }
@@ -2559,11 +2592,11 @@
             </li>
             <li class="sub">
               <span class="subject">簿記</span>
-              <span class="price-cell"><span class="price">¥9,900</span><span class="badge-live">販売中</span></span>
+              <span class="price-cell"><span class="price">¥9,900</span><span class="badge-live">販売中</span><a class="buy-mini" href="https://buy.stripe.com/28EbJ00Co67U2IL1NhgA807" target="_blank" rel="noopener">購入</a></span>
             </li>
             <li class="sub">
               <span class="subject">ファンダメンタル分析・ファイナンス・ガバナンス</span>
-              <span class="price-cell"><span class="price">¥12,800</span><span class="badge-live">販売中</span></span>
+              <span class="price-cell"><span class="price">¥12,800</span><span class="badge-live">販売中</span><a class="buy-mini" href="https://buy.stripe.com/9B65kC3OA3ZMert8bFgA80n" target="_blank" rel="noopener">購入</a></span>
             </li>
             <li class="group">
               <span class="subject">科目Ⅲ（経済・数学・統計）パック</span>
@@ -2571,15 +2604,15 @@
             </li>
             <li class="sub">
               <span class="subject">数学</span>
-              <span class="price-cell"><span class="price">¥4,500</span><span class="badge-live">販売中</span></span>
+              <span class="price-cell"><span class="price">¥4,500</span><span class="badge-live">販売中</span><a class="buy-mini" href="https://buy.stripe.com/bJe8wO84QdAm5UXfE7gA804" target="_blank" rel="noopener">購入</a></span>
             </li>
             <li class="sub">
               <span class="subject">確率・統計</span>
-              <span class="price-cell"><span class="price">¥4,500</span><span class="badge-live">販売中</span></span>
+              <span class="price-cell"><span class="price">¥4,500</span><span class="badge-live">販売中</span><a class="buy-mini" href="https://buy.stripe.com/5kQ3cu1Gscwi6Z1fE7gA805" target="_blank" rel="noopener">購入</a></span>
             </li>
             <li class="sub">
               <span class="subject">経済</span>
-              <span class="price-cell"><span class="price">¥19,800</span><span class="badge-live">販売中</span></span>
+              <span class="price-cell"><span class="price">¥19,800</span><span class="badge-live">販売中</span><a class="buy-mini" href="https://buy.stripe.com/8x26oGacYfIugzB77BgA80k" target="_blank" rel="noopener">購入</a></span>
             </li>
           </ul>
           <ul class="pricing-features">
