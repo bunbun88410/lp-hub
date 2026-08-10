@@ -11,8 +11,8 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>数字の資格AIラボ｜簿記・証券アナリスト・AIで、資格を“使える武器”に</title>
-  <meta name="description" content="簿記・証券アナリスト(CMA)の資格対策から、学んだ知識をAIで実務に使う実践まで。偏差値40から4回落ちて合格した凡人が、合格とその先の“使える力”を地続きでつなぐ学びの場。">
+  <title>AIで、勉強と副業を加速する｜簿記1級・証券アナリスト対策</title>
+  <meta name="description" content="資格の勉強をしている間、稼ぐ時間は止まってしまうのか。答えは「どちらもAIで速くする」。講義を止めてその場でAIに質問できる簿記1級・証券アナリスト(CMA)対策と、いまある知識をAIで売れる形に変えるAI実践編。偏差値40から積み上げた、凡人の正直な学びを。">
 
   <!-- 検索・SNS最適化 -->
   <link rel="canonical" href="https://sujilab.net/">
@@ -20,13 +20,13 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="数字の資格AIラボ">
   <meta property="og:locale" content="ja_JP">
-  <meta property="og:title" content="数字の資格AIラボ｜資格を“使える武器”に">
-  <meta property="og:description" content="簿記・証券アナリスト・AI実践。合格と、その先の実務で使える力までをつなぐ学びの場。">
+  <meta property="og:title" content="AIで、勉強と副業を加速する｜簿記1級・証券アナリスト対策">
+  <meta property="og:description" content="AIで、勉強と副業を加速する。講義を止めてその場でAIに質問できる簿記1級・証券アナリスト(CMA)対策と、いまある知識をAIで売れる形に変えるAI実践編。偏差値40から積み上げた、凡人の正直な学びを。">
   <meta property="og:url" content="https://sujilab.net/">
   <meta property="og:image" content="https://sujilab.net/assets/og-image-v2.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="数字の資格AIラボ｜資格を“使える武器”に">
-  <meta name="twitter:description" content="丸暗記ではなく、本質・途中式・意味まで噛み砕く。理解で伸ばすCMA1次対策講座。">
+  <meta name="twitter:title" content="AIで、勉強と副業を加速する｜簿記1級・証券アナリスト対策">
+  <meta name="twitter:description" content="AIで、勉強と副業を加速する。講義を止めてその場でAIに質問できる簿記1級・証券アナリスト(CMA)対策と、いまある知識をAIで売れる形に変えるAI実践編。偏差値40から積み上げた、凡人の正直な学びを。">
   <meta name="twitter:image" content="https://sujilab.net/assets/og-image-v2.png">
   <script type="application/ld+json">
   {
@@ -36,7 +36,7 @@
         "@type": "Organization",
         "name": "数字の資格AIラボ",
         "url": "https://sujilab.net/",
-        "description": "証券アナリスト(CMA)1次試験対策の理解重視型オンライン講座。"
+        "description": "簿記1級・証券アナリスト(CMA)の理解重視型オンライン講座と、学んだ会計・金融をAIで実務に使うAI実践編。"
       },
       {
         "@type": "Course",
@@ -55,7 +55,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <!-- Noto Serif JP は「開講中の講座」の見出し1つだけに使う。
+       OS標準の明朝（游明朝/ヒラギノ明朝）が無い環境でも予備校らしい明朝が出るように700だけ読む -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     /* ============================================
        数字の資格AIラボ LP — Design System
@@ -65,7 +67,10 @@
     /* リセット */
     html { scroll-behavior: smooth; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    #mission, #curriculum, #pricing, #faq { scroll-margin-top: 88px; }
+    /* 固定ヘッダー(92px)の下に見出しが潜らないよう、ページ内リンクの飛び先すべてに逃げを入れる */
+    #mission, #curriculum, #pricing, #faq,
+    #shindan, #tracks,
+    #legal-tokuho, #legal-privacy, #legal-terms, #legal-refund, #legal-contact { scroll-margin-top: 100px; }
     img, svg { max-width: 100%; height: auto; display: block; }
     button { font-family: inherit; cursor: pointer; border: none; background: none; }
     a { color: inherit; text-decoration: none; }
@@ -1441,6 +1446,8 @@
     }
     .final-cta-title .em {
       color: var(--orange);
+      /* inline-block ＝ スマホ幅で「加速／する。」と割らず、塊ごと次の行へ落とす */
+      display: inline-block;
     }
     .final-cta-sub {
       font-size: 17px;
@@ -1809,34 +1816,131 @@
     /* ============================================
        ブランドハブ Hero（2カラム・自作SVGビジュアル）
        ============================================ */
-    .hub-hero { background: var(--cream); overflow: hidden; }
+    /* 未来感は「暗さ」ではなく「薄い格子＋やわらかい光」で出す。地は明るいクリーム。
+       画像は背景に敷かず右のカードで見せる（文字と画像を重ねないので可読性の調整が要らない）。 */
+    .hub-hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--text);
+      background:
+        radial-gradient(900px 520px at 88% 12%, rgba(255,183,120,0.28) 0%, rgba(255,183,120,0) 62%),
+        radial-gradient(760px 480px at 6% 90%, rgba(120,180,230,0.20) 0%, rgba(120,180,230,0) 65%),
+        linear-gradient(160deg, #FFFDF8 0%, var(--cream) 48%, #F1EFE6 100%);
+    }
+    /* 薄い格子。明るい地なので線はネイビー側を薄く使う */
+    .hub-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(15,44,68,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15,44,68,0.055) 1px, transparent 1px);
+      background-size: 58px 58px;
+      -webkit-mask-image: radial-gradient(120% 90% at 30% 20%, #000 20%, transparent 78%);
+      mask-image: radial-gradient(120% 90% at 30% 20%, #000 20%, transparent 78%);
+      pointer-events: none;
+    }
+    /* オレンジのにじみ。H1の裏に置いて見出しだけを光らせる */
+    .hub-hero::after {
+      content: '';
+      position: absolute;
+      left: -180px; top: -200px;
+      width: 640px; height: 640px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,107,53,0.14) 0%, rgba(255,107,53,0) 66%);
+      pointer-events: none;
+    }
+    .hub-hero > .container { position: relative; z-index: 1; }
+    /* 漂う数式・数字（診断ワールドの dxw-form / dxw-num と同じ発想） */
+    .hub-hero-motif { position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .hub-hero-motif span {
+      position: absolute;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 700;
+      color: rgba(15,44,68,0.10);
+      white-space: nowrap;
+      animation: motif-drift 12s ease-in-out infinite alternate;
+    }
+    @keyframes motif-drift { from { transform: translateY(0); } to { transform: translateY(-14px); } }
+    @media (prefers-reduced-motion: reduce) { .hub-hero-motif span { animation: none; } }
+
     .hub-hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 56px;
+      /* H1の2行目「加速する。」を折らずに置ける幅を左に確保する */
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 52px;
       align-items: center;
     }
-    .hub-hero-copy { max-width: 560px; }
+    .hub-hero-copy { max-width: 640px; }
     .hub-hero-copy .eyebrow { margin-bottom: 20px; }
     .hub-hero-h1 {
-      font-size: var(--fs-display);
+      /* 「AIで、勉強と副業を」を1行に収める上限。ここを上げると3行にちぎれる */
+      font-size: clamp(40px, 5.6vw, 72px);
       font-weight: 900;
       line-height: 1.05;
       letter-spacing: -0.01em;
       color: var(--navy);
       margin: 0 0 32px;
     }
-    .hub-hero-h1 .em { color: var(--orange); white-space: nowrap; position: relative; display: inline-block; }
-    .hub-hero-h1 .em::after { content: ''; position: absolute; left: 0; bottom: 8px; width: 100%; height: 14px; background: var(--orange-soft); z-index: -1; }
+    .hub-hero-h1 .em {
+      color: var(--orange);
+      white-space: nowrap;
+      position: relative;
+      display: inline-block;
+      text-shadow: 0 0 26px rgba(255,107,53,0.28);
+    }
+    /* 下線＝光の帯。height を上げたり bottom を下げたりすると字の下端に食い込む（12px より上には出さない） */
+    .hub-hero-h1 .em::after {
+      content: '';
+      position: absolute;
+      left: 2%; bottom: 6px;
+      width: 96%; height: 5px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, rgba(255,107,53,0) 0%, rgba(255,107,53,0.9) 22%, rgba(255,107,53,0.9) 78%, rgba(255,107,53,0) 100%);
+      filter: blur(3px);
+      z-index: -1;
+    }
+    /* .h1-accel＝小見出し「資格で土台をつくり、AIで前に進める。」＝H1の強さを消さないよう一段小さく置く */
+    .hub-hero-h1 .h1-accel {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.52em;
+      font-weight: 800;
+      line-height: 1.3;
+      color: var(--navy-soft);
+    }
+    /* 読者の迷いを名指しする一言 */
+    .hub-hero-doubt {
+      margin: 0 0 16px;
+      padding-left: 14px;
+      border-left: 3px solid var(--orange);
+      font-size: clamp(15px, 1.4vw, 17px);
+      font-weight: 700;
+      line-height: 1.7;
+      color: var(--navy);
+    }
     .hub-hero-sub {
       font-size: clamp(16px, 1.5vw, 19px);
       color: var(--text-muted);
       line-height: 1.8;
       margin: 0 0 28px;
     }
+    .hub-hero-sub strong { color: var(--navy); }
+    /* 本人の答え＝一人称で置く。読者への一般論として言い切らない */
+    .hub-hero-answer {
+      margin: 0 0 18px;
+      font-size: clamp(15px, 1.4vw, 17px);
+      line-height: 1.85;
+      color: #A15A2B;
+    }
+    .hub-hero-answer strong { color: var(--navy); }
     .hub-hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
-    /* 3トラックへのクイック導線（丸ピル） */
+    /* 予備校の「無料体験」の注記にあたる一行 */
+    .hub-hero-free { margin: 12px 0 0; font-size: 12.5px; color: var(--text-muted); }
+    /* 宛先ブロック内のトラックへのクイック導線（ピル） */
+    /* トラックへのクイック導線（明るい地なので白ピル） */
     .hub-hero-tracks { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .hub-hero-track-ai { border-color: var(--orange); box-shadow: 0 4px 18px rgba(255,107,53,0.18); }
     .hub-hero-track {
       display: inline-flex;
       align-items: center;
@@ -1859,10 +1963,81 @@
       border-radius: 22px;
       overflow: hidden;
       box-shadow: var(--shadow-lg);
-      background: var(--navy);
+      background: var(--cream-deep);
       animation: hero-fade 1s ease-out 0.2s both;
     }
     .hub-hero-card svg { width: 100%; height: auto; display: block; }
+
+    /* ===== 開講案内（予備校の掲示板の型） =====
+       ネイビーの看板 → 白い本体 → 罫線で区切った講座行、という受験予備校の掲示の形をなぞる。
+       見出しだけ明朝にすると一気に「予備校」に見えるので、そこだけ serif を当てる。 */
+    .hub-hero-board {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      animation: hero-fade 1s ease-out 0.2s both;
+    }
+    .hub-hero-board-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 20px;
+      background: var(--navy);
+      color: var(--white);
+      border-bottom: 3px solid var(--orange);
+    }
+    .hub-hero-board-title {
+      font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+    .hub-hero-board-date { font-size: 11.5px; color: rgba(255,255,255,0.72); letter-spacing: .04em; }
+    .hub-hero-board-list { margin: 0; padding: 0; }
+    .hub-hero-board-list li { border-bottom: 1px dashed var(--border); }
+    .hub-hero-board-list a {
+      display: block;
+      padding: 15px 20px;
+      transition: background 0.15s ease;
+    }
+    .hub-hero-board-list a:hover { background: var(--cream); }
+    .hb-name {
+      display: block;
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.5;
+    }
+    .hb-name::after { content: ' →'; color: var(--orange); font-weight: 900; }
+    .hb-meta { display: block; margin-top: 5px; font-size: 12.5px; color: var(--text-muted); line-height: 1.6; }
+    .hb-meta em { font-style: normal; font-weight: 700; color: #C0451B; }
+    /* 点数の帯＝予備校らしさの本体。ただし誰の点数かを必ず添える */
+    .hub-hero-board-score { padding: 16px 20px 18px; background: var(--cream); }
+    .hb-score-label { display: block; font-size: 11.5px; font-weight: 700; letter-spacing: .04em; color: var(--text-muted); }
+    .hb-score-row { display: flex; align-items: baseline; gap: 7px; margin-top: 8px; flex-wrap: wrap; }
+    .hb-score-row b {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .hb-score-row i { font-style: normal; font-size: 14px; color: var(--text-light); }
+    .hb-score-row .hb-pass { color: var(--orange); }
+    .hb-score-note {
+      align-self: center;
+      margin-left: 2px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 11.5px;
+      font-weight: 700;
+    }
+    .hb-score-foot { display: block; margin-top: 10px; font-size: 11px; color: var(--text-light); line-height: 1.6; }
 
     @media (max-width: 900px) {
       .hub-hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
@@ -1870,7 +2045,490 @@
       .hub-hero-copy { max-width: 640px; margin: 0 auto; }
       .hub-hero-copy .eyebrow { justify-content: center; }
       .hub-hero-ctas, .hub-hero-tracks { justify-content: center; }
+      .hub-hero-doubt { text-align: left; }
+      .hub-hero-h1 .h1-accel { font-size: 0.62em; }
+      /* 掲示板は中央寄せにすると台無しになるので、ここだけ左揃えに戻す */
+      .hub-hero-board, .hub-hero-board * { text-align: left; }
       .hub-hero-visual { max-width: 480px; margin: 0 auto; width: 100%; }
+      /* モチーフは狭い画面だと文字に重なるので消す */
+      .hub-hero-motif { display: none; }
+    }
+    /* ヒーロー内の eyebrow は明るい地に載せるので、白のバッジにする */
+    .hub-hero .hero-eyebrow {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* ============================================================
+       ヒーローを背景画像（hub-hero-ai.jpg）に合わせてダークにする一括上書き。
+       画像の左端の実測色が rgb(7,39,68) なので、スクリムもベースもその色で揃える。
+       🔴 このブロックをまるごと消すと、上で定義した「明るいヒーロー」に戻る。
+       画像はアクセントに水色と金色を使っているので、ヒーロー内だけ2色を足す。
+       ============================================================ */
+    .hub-hero {
+      --hero-cyan: #6EC6F5;
+      --hero-gold: #F2C879;
+      color: var(--white);
+      background-image:
+        linear-gradient(96deg, #072744 0%, #072744 34%, rgba(7,39,68,0.92) 46%, rgba(7,39,68,0.55) 60%, rgba(7,39,68,0.14) 78%, rgba(7,39,68,0.04) 100%),
+        url('assets/hub-hero-ai.jpg');
+      background-size: cover, cover;
+      /* left 固定。right や center にすると人物が左へ寄って文字に重なる（要注意） */
+      background-position: center, left center;
+      background-repeat: no-repeat;
+    }
+    .hub-hero::before {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    }
+    .hub-hero::after { background: radial-gradient(circle, rgba(110,198,245,0.16) 0%, rgba(110,198,245,0) 66%); }
+    .hub-hero-motif span { color: rgba(110,198,245,0.14); }
+    /* 画像に「文字を置くための空き」が作ってあるので1カラムで使う */
+    .hub-hero-grid { display: block; min-height: 60vh; }
+    .hub-hero-copy {
+      /* H1「AIで、勉強と副業を」が1行に収まる幅。狭めると「を」だけ次行に落ちる（要注意） */
+      max-width: 660px;
+      text-shadow: 0 1px 14px rgba(3,17,30,0.85);
+    }
+    .hub-hero-h1 { font-size: clamp(34px, 4.4vw, 58px); }
+    /* 掲示板はヒーローの下の帯へ移した（人物に重ねないため） */
+    .hub-hero-visual { display: none; }
+    .hub-hero .hero-eyebrow {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.20);
+      color: var(--hero-gold);
+      box-shadow: none;
+      backdrop-filter: blur(8px);
+    }
+    .hub-hero-h1 { color: var(--white); }
+    .hub-hero-h1 .em { color: var(--hero-cyan); text-shadow: 0 0 34px rgba(110,198,245,0.45); }
+    .hub-hero-h1 .em::after {
+      background: linear-gradient(90deg, rgba(110,198,245,0) 0%, rgba(110,198,245,0.9) 22%, rgba(110,198,245,0.9) 78%, rgba(110,198,245,0) 100%);
+    }
+    .hub-hero-h1 .h1-accel { color: rgba(255,255,255,0.74); }
+    .hub-hero-doubt { color: var(--white); border-left-color: var(--hero-cyan); }
+    .hub-hero-answer { color: var(--hero-gold); }
+    .hub-hero-answer strong { color: var(--white); }
+    .hub-hero-sub { color: rgba(255,255,255,0.85); }
+    .hub-hero-sub strong { color: var(--white); }
+    .hub-hero-free { color: rgba(255,255,255,0.66); }
+    .hub-hero-track {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.20);
+      color: var(--white);
+      box-shadow: none;
+      backdrop-filter: blur(8px);
+    }
+    .hub-hero-track:hover { background: rgba(255,255,255,0.16); box-shadow: none; }
+    .hub-hero-track i { box-shadow: 0 0 10px currentColor; }
+    .hub-hero-track-ai { border-color: rgba(242,200,121,0.65); box-shadow: 0 0 22px rgba(242,200,121,0.14); }
+    .hub-hero .btn-outline { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.55); }
+    .hub-hero .btn-outline:hover { background: var(--white); color: var(--navy); }
+    @media (max-width: 900px) {
+      /* 縦画面では横スクリムが効かないので縦に覆う。人物が入る位置まで右へ寄せる */
+      .hub-hero {
+        background-image:
+          linear-gradient(180deg, rgba(6,32,56,0.90) 0%, rgba(7,39,68,0.80) 42%, rgba(5,26,46,0.94) 100%),
+          url('assets/hub-hero-ai.jpg');
+        background-position: center, 68% center;
+      }
+      .hub-hero-grid { min-height: 0; }
+      /* 左に色帯のあるブロックを中央寄せにすると崩れるので、ここだけ左揃えに戻す */
+      .hub-hero-for, .hub-hero-for *, .hub-hero-bridge { text-align: left; }
+      .hf-col .hub-hero-tracks { justify-content: flex-start; }
+    }
+
+    /* ===== 宛先を2つに分けるブロック =====
+       「勉強を加速」と「副業を加速」はターゲットが違う（前者は会計・金融に限定、後者は分野不問）。
+       1文にまとめると両方に刺さらなくなるので、左の色帯で分けて別々に名指しする。 */
+    .hub-hero-for { display: grid; gap: 18px; margin-top: 26px; }
+    .hf-col { padding-left: 15px; border-left: 3px solid; }
+    .hf-study { border-left-color: var(--hero-cyan); }
+    .hf-work { border-left-color: var(--hero-gold); }
+    .hf-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .hf-study .hf-tag { background: rgba(110,198,245,0.18); color: var(--hero-cyan); }
+    .hf-work .hf-tag { background: rgba(242,200,121,0.18); color: var(--hero-gold); }
+    .hf-who { margin: 9px 0 0; font-size: 15.5px; font-weight: 700; color: var(--white); line-height: 1.6; }
+    .hf-who em { font-style: normal; color: var(--hero-gold); }
+    .hf-detail { margin: 5px 0 0; font-size: 12.5px; color: rgba(255,255,255,0.7); line-height: 1.75; }
+    .hf-col .hub-hero-tracks { margin-top: 11px; }
+    .hub-hero-bridge {
+      margin: 22px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.16);
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.8;
+    }
+    .hub-hero-bridge strong { color: var(--white); }
+
+    /* ===== 開講案内の帯（ヒーロー直下・予備校の掲示） ===== */
+    .hub-board-band { padding: 0; background: var(--cream); }
+    .hub-board-band > .container { padding-top: 0; padding-bottom: 0; }
+    .hub-hero-board { margin-top: -34px; margin-bottom: 34px; }
+    .hub-board-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .hub-board-grid li { border-bottom: none; border-right: 1px dashed var(--border); }
+    .hub-board-grid li:last-child { border-right: none; }
+    @media (max-width: 760px) {
+      .hub-board-grid { grid-template-columns: 1fr; }
+      .hub-board-grid li { border-right: none; border-bottom: 1px dashed var(--border); }
+      .hub-hero-board { margin-top: 0; }
+    }
+
+    /* ===== 進む順番（ルーター）＝ヒーロー直下 ===== */
+    .hub-router { padding: clamp(36px, 4.5vw, 56px) 0; background: var(--white); }
+    .hub-router-lead {
+      margin: 0;
+      text-align: center;
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.6;
+    }
+    /* inline-block ＝ 折り返すときに「どちらから始めても構いません。」を途中で割らない */
+    .hub-router-lead .em { color: var(--orange); display: inline-block; }
+    .hub-router-note {
+      margin: 12px auto 0;
+      max-width: 660px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14.5px;
+      line-height: 1.9;
+    }
+    .hub-router-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      max-width: 1000px;
+      margin: 22px auto 0;
+    }
+    .hub-router-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+    .hub-router-card strong { display: block; color: var(--navy); font-size: 14px; }
+    .hub-router-card p { margin: 6px 0 0; color: var(--text-muted); font-size: 13.5px; }
+    .hub-router-line {
+      margin: 18px auto 0;
+      max-width: 660px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13.5px;
+    }
+    .hub-router-line a { color: #2D6A4F; font-weight: 600; }
+
+    /* ===== なぜ、AIの時代に簿記1級とCMAなのか ===== */
+    .why-now {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(900px 520px at 85% 0%, #17415F 0%, rgba(23,65,95,0) 60%),
+        linear-gradient(200deg, #0B2136 0%, #0F2C44 50%, #08182A 100%);
+    }
+    .why-now::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+      background-size: 58px 58px;
+      -webkit-mask-image: radial-gradient(110% 80% at 70% 10%, #000 15%, transparent 75%);
+      mask-image: radial-gradient(110% 80% at 70% 10%, #000 15%, transparent 75%);
+      pointer-events: none;
+    }
+    .why-now > .container { position: relative; z-index: 1; }
+    .why-now-motif { position: absolute; inset: 0; pointer-events: none; }
+    .why-now-motif span {
+      position: absolute;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 700;
+      color: rgba(240,217,174,0.13);
+    }
+    .why-now-head { max-width: 760px; margin: 0 auto 48px; text-align: center; }
+    .why-now-head .eyebrow { justify-content: center; color: rgba(255,255,255,0.85); }
+    .why-now-head .eyebrow::before { background: rgba(255,255,255,0.85); }
+    .why-now-head .section-title { color: var(--white); }
+    .why-now-lead {
+      margin: 20px auto 0;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.95;
+      font-size: clamp(15px, 1.4vw, 17px);
+    }
+    .why-now-lead strong { color: var(--white); }
+    .why-now-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .why-now-card {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 30px 28px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(10px);
+    }
+    .why-now-num {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      color: var(--orange);
+    }
+    .why-now-title {
+      margin: 12px 0 0;
+      font-size: 19px;
+      line-height: 1.5;
+      color: var(--white);
+    }
+    .why-now-text {
+      margin: 14px 0 0;
+      flex: 1;
+      color: rgba(255,255,255,0.72);
+      font-size: 14.5px;
+      line-height: 1.9;
+    }
+    .why-now-text strong { color: #F0D9AE; }
+    .why-now-link {
+      margin-top: 18px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #F0D9AE;
+    }
+    .why-now-link:hover { color: var(--orange); }
+    .why-now-stance {
+      max-width: 720px;
+      margin: 36px auto 0;
+      text-align: center;
+      color: rgba(255,255,255,0.72);
+      font-size: 14.5px;
+      line-height: 1.95;
+    }
+    .why-now-stance strong { color: var(--white); }
+    /* 「勉強そのものをAIで速くする」＝実装済み機能の紹介ブロック */
+    .why-now-accel {
+      max-width: 860px;
+      margin: 44px auto 0;
+      padding: 34px 36px;
+      border-radius: 20px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(255,107,53,0.16) 0%, rgba(255,107,53,0.04) 100%);
+      border: 1px solid rgba(255,107,53,0.4);
+      box-shadow: 0 0 60px rgba(255,107,53,0.12);
+    }
+    .why-now-accel-eyebrow {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      color: var(--orange);
+    }
+    .why-now-accel-title { margin: 12px 0 0; font-size: clamp(20px, 2.2vw, 26px); color: var(--white); }
+    .why-now-accel-text {
+      margin: 14px auto 0;
+      max-width: 640px;
+      color: rgba(255,255,255,0.78);
+      font-size: 14.5px;
+      line-height: 1.95;
+    }
+    .why-now-accel-text strong { color: var(--white); }
+    .why-now-accel-ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 24px; }
+
+    /* ハイライト＝暗い地の上でここだけ光らせる。使いすぎると効かないので1文に1回まで */
+    .wn-hl { color: var(--hero-gold, #F2C879); }
+    .why-now { --hero-gold: #F2C879; --hero-cyan: #6EC6F5; }
+    /* 「では、なぜこの2つなのか」の問いと答え */
+    .wn-q {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: clamp(19px, 2.2vw, 26px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.6;
+    }
+    .wn-a {
+      max-width: 720px;
+      margin: 14px auto 44px;
+      text-align: center;
+      font-size: 15px;
+      line-height: 1.95;
+      color: rgba(255,255,255,0.8);
+    }
+    .wn-a strong { color: var(--hero-gold); }
+    /* 資格カード2枚 */
+    .wn-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 22px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .wn-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 34px 30px 30px;
+      border-radius: 20px;
+      background: linear-gradient(165deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.035) 100%);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(10px);
+      transition: transform 0.18s ease, border-color 0.18s ease;
+    }
+    .wn-card:hover { transform: translateY(-4px); border-color: rgba(242,200,121,0.45); }
+    .wn-card-badge {
+      position: absolute;
+      top: 20px; right: 24px;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 40px;
+      font-weight: 900;
+      line-height: 1;
+      color: rgba(255,255,255,0.10);
+    }
+    .wn-card-name { margin: 0; font-size: 15px; font-weight: 700; letter-spacing: .06em; color: var(--hero-cyan); }
+    .wn-card-catch {
+      margin: 8px 0 0;
+      font-size: clamp(24px, 2.6vw, 31px);
+      font-weight: 900;
+      line-height: 1.35;
+      color: var(--white);
+    }
+    .wn-card-text { margin: 16px 0 0; font-size: 14.5px; line-height: 1.95; color: rgba(255,255,255,0.78); }
+    .wn-card-text strong { color: var(--white); }
+    .wn-card-for {
+      margin: 20px 0 0;
+      padding: 16px 18px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.22);
+      flex: 1;
+    }
+    .wn-for-label { display: block; font-size: 11.5px; font-weight: 800; letter-spacing: .08em; color: var(--hero-gold); }
+    .wn-card-for ul { margin: 10px 0 0; padding: 0; }
+    .wn-card-for li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 13.5px;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.82);
+    }
+    .wn-card-for li + li { margin-top: 4px; }
+    .wn-card-for li::before { content: '✓'; position: absolute; left: 0; color: var(--hero-cyan); font-weight: 900; }
+    .wn-card-cta { margin-top: 20px; width: 100%; }
+
+    /* ===== 知識がある人へ（マネタイズ側） =====
+       稼ぐ話なので、資格側より一段コントラストを上げて「切り替わった」ことを見せる。 */
+    .for-work {
+      --fw-gold: #F5C451;
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(760px 460px at 82% 6%, rgba(245,196,81,0.16) 0%, rgba(245,196,81,0) 62%),
+        linear-gradient(165deg, #0A1A2B 0%, #071522 55%, #05101B 100%);
+    }
+    .for-work::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 58px 58px;
+      -webkit-mask-image: radial-gradient(100% 80% at 80% 10%, #000 10%, transparent 72%);
+      mask-image: radial-gradient(100% 80% at 80% 10%, #000 10%, transparent 72%);
+      pointer-events: none;
+    }
+    .for-work > .container { position: relative; z-index: 1; }
+    .fw-hl { color: var(--fw-gold); }
+    /* 「終わ／らせますか」で割れるのを防ぐ。折り返すならこの塊ごと落とす */
+    .fw-nb { display: inline-block; }
+    .fw-head { max-width: 800px; margin: 0 auto 46px; text-align: center; }
+    .fw-head .eyebrow { justify-content: center; color: rgba(255,255,255,0.85); }
+    .fw-head .eyebrow::before { background: var(--fw-gold); }
+    .fw-head .section-title { color: var(--white); }
+    .fw-lead { margin: 20px auto 0; font-size: clamp(15px, 1.4vw, 17px); line-height: 1.95; color: rgba(255,255,255,0.8); }
+    .fw-lead strong { color: var(--white); }
+    /* 2ステップの流れ */
+    .fw-flow {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: stretch;
+      gap: 18px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .fw-step {
+      padding: 28px 26px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+    .fw-step-num {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 13px; font-weight: 900; letter-spacing: .1em;
+      color: var(--fw-gold);
+    }
+    .fw-step-title { margin: 10px 0 0; font-size: 20px; color: var(--white); }
+    .fw-step-text { margin: 12px 0 0; font-size: 14.5px; line-height: 1.95; color: rgba(255,255,255,0.78); }
+    .fw-step-text strong { color: var(--fw-gold); }
+    .fw-arrow { align-self: center; font-size: 26px; color: rgba(245,196,81,0.7); }
+    /* 主張＋CTA。ここが金の掛かる場所なので一番強く出す */
+    .fw-claim {
+      max-width: 880px;
+      margin: 44px auto 0;
+      padding: 40px 38px;
+      border-radius: 22px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(245,196,81,0.15) 0%, rgba(245,196,81,0.03) 100%);
+      border: 1px solid rgba(245,196,81,0.42);
+      box-shadow: 0 0 70px rgba(245,196,81,0.10);
+    }
+    .fw-claim-lead {
+      margin: 0;
+      font-size: clamp(22px, 2.8vw, 32px);
+      font-weight: 900;
+      line-height: 1.45;
+      color: var(--white);
+    }
+    .fw-claim-text {
+      margin: 16px auto 0;
+      max-width: 660px;
+      font-size: 14.5px;
+      line-height: 2;
+      color: rgba(255,255,255,0.8);
+    }
+    .fw-claim-text strong { color: var(--white); }
+    .fw-ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 26px; }
+    .for-work .btn-outline { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.55); }
+    .for-work .btn-outline:hover { background: var(--white); color: var(--navy); }
+    .for-work .btn-orange { box-shadow: 0 0 40px rgba(255,107,53,0.3); }
+    .fw-note { margin: 18px 0 0; font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.8; }
+    @media (max-width: 780px) {
+      .fw-flow { grid-template-columns: 1fr; }
+      .fw-arrow { transform: rotate(90deg); justify-self: center; }
+      .fw-claim { padding: 30px 22px; }
+    }
+    .why-now-accel .btn-outline { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.55); }
+    .why-now-accel .btn-outline:hover { background: var(--white); color: var(--navy); }
+    @media (max-width: 700px) {
+      .why-now-accel { padding: 28px 22px; }
+      .why-now-motif { display: none; }
     }
 
     /* ===== コース診断（入口＝ボタンのみ。本体は全画面の「ラボ」の中） ===== */
@@ -2128,39 +2786,226 @@
 
   <!-- ===== HERO（ブランドハブ） ===== -->
   <section class="hub-hero">
+    <!-- 数式モチーフは背景画像を入れた時点で不要（画像側が十分に情報量を持っている）。
+         カード表示に戻すときは、この下の .hub-hero-visual と合わせて復活させる -->
     <div class="container">
       <div class="hub-hero-grid">
         <!-- 左：コピー -->
         <div class="hub-hero-copy">
-          <span class="hero-eyebrow">数字の資格AIラボ</span>
-          <h1 class="hub-hero-h1">資格を、<span class="em">“使える武器”</span>に。</h1>
-          <p class="hub-hero-sub">簿記2級・3級を取ったけれど次に迷っている方、経理・財務で働く方へ。<strong>簿記1級・証券アナリスト・AI副業</strong>の3つから、あなたの目指すゴールに合う入口をご案内します。<br>偏差値40から4回落ちて合格した、凡人の正直な学びを。</p>
+          <span class="hero-eyebrow">簿記1級・証券アナリスト(CMA) 対策講座</span>
+          <h1 class="hub-hero-h1">AIで、<span class="em">勉強と副業</span>を<br>加速する。<span class="h1-accel">資格で土台をつくり、AIで前に進める。</span></h1>
+          <!-- 読者がいちばん引っかかっている迷いを、最初に名指しする -->
+          <p class="hub-hero-doubt">資格の勉強をしている間、稼ぐ時間は止まってしまうのか。</p>
+          <!-- 答えは一人称で。読者への一般論として言い切ると成果の保証になる -->
+          <p class="hub-hero-answer">ぼくの答えは、<strong>「どちらもAIで速くする」</strong>でした。止まるのは、片方ずつ順番にやろうとするからです。</p>
+          <p class="hub-hero-sub">この2つは、同じ軸の<strong>入口と出口</strong>です。まだ知識が無い方は勉強から、もう知識がある方は副業から。宛先が違うので、分けて書きます。</p>
           <div class="hub-hero-ctas">
             <a href="#shindan" class="btn btn-orange">7つの質問で診断する</a>
             <a href="https://line.me/R/ti/p/@159qegdx" target="_blank" rel="noopener" class="btn btn-outline">LINEで無料相談</a>
           </div>
-          <!-- 3トラックへのクイック導線 -->
-          <div class="hub-hero-tracks">
-            <a href="/boki.html" class="hub-hero-track"><i style="background:#2D6A4F;"></i>簿記1級 合格伴走</a>
-            <a href="/cma.html" class="hub-hero-track"><i style="background:#0F2C44;"></i>証券アナリスト(CMA)</a>
-            <a href="/ai.html" class="hub-hero-track"><i style="background:#FF6B35;"></i>知識をAIで収入に</a>
-          </div>
-        </div>
-        <!-- 右：自作SVGビジュアル（資格→AI→使える武器への右肩上がり） -->
-        <div class="hub-hero-visual">
-          <div class="hub-hero-card">
-            <img src="assets/hub-hero.jpg" alt="会計・金融を学び、その知識をノートPCの分析（チャート）で実務に使う——学びが“使える力”に変わっていくイメージ" style="width:100%;height:auto;display:block;" loading="eager">
-          </div>
-          <div class="hero-floating-card">
-            <div class="hero-floating-card-icon">
-              <svg viewBox="0 0 256 256" fill="currentColor"><path d="M137.54,186.36a8,8,0,0,1,0,11.31l-9.94,10A56,56,0,0,1,48.38,128.4l24.72-24.72a56,56,0,0,1,79.32,0,8,8,0,0,1-11.32,11.32,40,40,0,0,0-56.68,0L59.7,139.72a40,40,0,0,0,56.58,56.58l9.94-9.94A8,8,0,0,1,137.54,186.36Zm70.08-138a56.08,56.08,0,0,0-79.22,0l-9.94,9.95a8,8,0,0,0,11.32,11.31l9.94-9.94a40,40,0,0,1,56.58,56.58L172.3,141a40,40,0,0,1-56.68,0,8,8,0,0,0-11.32,11.32,56,56,0,0,0,79.32,0l24.72-24.72A56.08,56.08,0,0,0,207.62,48.38Z"/></svg>
+          <p class="hub-hero-free">診断は登録不要・30秒。LINE相談も無料です。</p>
+          <!-- 宛先は2つある。1文にまとめようとすると両方に刺さらなくなるので、分けて名指しする。
+               勉強を加速＝会計・金融に限定／副業を加速＝分野を問わない、という非対称をそのまま出す。 -->
+          <div class="hub-hero-for">
+            <div class="hf-col hf-study">
+              <span class="hf-tag">勉強を加速する</span>
+              <p class="hf-who">これから会計・金融の知識をつける方へ</p>
+              <p class="hf-detail">勉強してこなかった方／経理・財務・金融で働く方／経済学部の方／簿記3級・2級をお持ちの方</p>
+              <div class="hub-hero-tracks">
+                <a href="/boki.html" class="hub-hero-track"><i style="background:#6EC6F5;"></i>簿記1級 合格伴走</a>
+                <a href="/cma.html" class="hub-hero-track"><i style="background:#6EC6F5;"></i>証券アナリスト(CMA)</a>
+              </div>
             </div>
-            <div class="hero-floating-card-text">
-              <strong>簿記・CMA・AI実践</strong>
-              一つの場所で、地続きに
+            <div class="hf-col hf-work">
+              <span class="hf-tag">副業を加速する</span>
+              <p class="hf-who">もう知識がある方へ。<em>分野は問いません</em></p>
+              <p class="hf-detail">資格や受験勉強で積んだ知識／これから発信していきたい方／自分のコンテンツを売りたい方</p>
+              <div class="hub-hero-tracks">
+                <a href="/ai.html" class="hub-hero-track hub-hero-track-ai"><i style="background:#F2C879;"></i>AI実践編</a>
+              </div>
             </div>
           </div>
+          <p class="hub-hero-bridge">共通しているのは、<strong>勉強してきたことを、そのままにしない</strong>という一点だけです。</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== 開講案内の帯（予備校の掲示） =====
+       ヒーローの人物に重ねたくないので、ヒーローの下に横帯として置く。
+       ⚠ 書けるのは「講座の中身の事実」だけ。合格者数・合格率は実績が無いので書かない。
+       点数は運営者本人の記録であることを必ず明示する（受講生の実績と誤読させない）。 -->
+  <section class="hub-board-band">
+    <div class="container">
+
+          <div class="hub-hero-board">
+            <div class="hub-hero-board-head">
+              <span class="hub-hero-board-title">開講中の講座</span>
+              <span class="hub-hero-board-date">2026年8月現在</span>
+            </div>
+            <ul class="hub-hero-board-list hub-board-grid">
+              <li>
+                <a href="/boki.html">
+                  <span class="hb-name">日商簿記1級 合格伴走</span>
+                  <span class="hb-meta">講義 全51本／月2回 面談／<em>定員5名</em></span>
+                </a>
+              </li>
+              <li>
+                <a href="/cma.html">
+                  <span class="hb-name">証券アナリスト(CMA) 1次対策</span>
+                  <span class="hb-meta">経済・ファンダメンタル分析・証券分析・数学</span>
+                </a>
+              </li>
+              <li>
+                <a href="/ai.html">
+                  <span class="hb-name">AI実践編</span>
+                  <span class="hb-meta">全13回／全10回／全9回 の3コース</span>
+                </a>
+              </li>
+            </ul>
+            <div class="hub-hero-board-score">
+              <span class="hb-score-label">運営者の日商簿記1級 4回の得点</span>
+              <span class="hb-score-row">
+                <b>28</b><i>→</i><b>55</b><i>→</i><b>68</b><i>→</i><b class="hb-pass">70</b>
+                <span class="hb-score-note">合格</span>
+              </span>
+              <span class="hb-score-foot">受講生の実績ではなく、運営者本人の記録です。</span>
+            </div>
+          </div>
+    </div>
+  </section>
+
+  <!-- ===== 進む順番（ルーター） =====
+       ヒーロー直下に置く。「どれか1つを選ぶ＝他は捨てる」と読ませないための位置。 -->
+  <section class="hub-router">
+    <div class="container">
+      <p class="hub-router-lead">勉強と副業は、<span class="em">どちらから始めても構いません。</span></p>
+      <p class="hub-router-note"><strong>進む順番は、いまの状況で変わります。</strong>よくある3つの並べ方を置いておきます。</p>
+      <div class="hub-router-grid">
+        <div class="hub-router-card">
+          <strong>経理の専門型</strong>
+          <p>簿記1級 → AI実践</p>
+        </div>
+        <div class="hub-router-card">
+          <strong>財務キャリア型</strong>
+          <p>簿記1級 → 証券アナリスト(CMA)</p>
+        </div>
+        <div class="hub-router-card">
+          <strong>短期収入型</strong>
+          <p>AI実践 → 足りないと感じたら簿記1級</p>
+        </div>
+      </div>
+      <p class="hub-router-line">迷ったら、<a href="https://line.me/R/ti/p/@159qegdx" target="_blank" rel="noopener">LINEでご相談</a>ください。いまの状況をうかがって、どこから始めるかを一緒に決めます。</p>
+    </div>
+  </section>
+
+  <!-- ===== なぜ、AIの時代に簿記1級とCMAなのか =====
+       「なぜこの2つ？」という読者の疑問に、AI時代の役割で答える。
+       ⚠ 就職・年収の保証や「必須」の断定は書かない（事業ハブ ブランド・名義ルールの煽り表現NG）。
+       主張は本人の見立て（n=1）として置く。 -->
+  <!-- ===== 2つの宛先それぞれへの本編 =====
+       ヒーローで分けた「勉強を加速／副業を加速」の中身をここで展開する。
+       ⚠ 「市場価値が上がる」「成功する」は成果の保証になるので書かない。
+       profile.json valueAxis のとおり、資格の話は「見られ方・扱われ方・チャンス」へ着地させる。
+       主張は本人の見立て(n=1)として置く。 -->
+
+  <!-- (1) 知識がない人へ -->
+  <section class="why-now" id="for-study">
+    <div class="why-now-motif" aria-hidden="true">
+      <span style="left:5%;top:14%;font-size:15px;">&Sigma;</span>
+      <span style="left:93%;top:26%;font-size:20px;">&beta;</span>
+      <span style="left:9%;top:82%;font-size:18px;">NPV</span>
+    </div>
+    <div class="container">
+      <div class="why-now-head">
+        <span class="eyebrow">FOR BEGINNERS</span>
+        <h2 class="section-title">AIで、<span class="wn-hl">全員が下駄を履いた。</span></h2>
+        <p class="why-now-lead">それらしい答えは、もう誰でも出せます。<strong>足元が同じ高さになったぶん、差がつくのは「その答えを判断できるか」だけ。</strong>ぼくはそこに資格を置きました。</p>
+      </div>
+
+      <p class="wn-q">では、なぜ<span class="wn-hl">簿記1級と証券アナリスト(CMA)</span>なのか。</p>
+      <p class="wn-a">どんなビジネスにも、<strong>会計</strong>と<strong>価値評価</strong>はついて回るからです。流行り廃りで消える知識ではありません。長く効く2つだから、この2つを勧めています。</p>
+
+      <div class="wn-grid">
+        <div class="wn-card">
+          <span class="wn-card-badge">01</span>
+          <h3 class="wn-card-name">日商簿記1級</h3>
+          <p class="wn-card-catch">認知度と、<span class="wn-hl">権威性</span>。</p>
+          <p class="wn-card-text">「簿記1級」は、説明しなくても伝わる数少ない資格です。<strong>肩書きで判断されがちな場面ほど、この一語が効きます。</strong>学歴や経歴の説明に時間を使わずに済む、というのが実感です。</p>
+          <div class="wn-card-for">
+            <span class="wn-for-label">こんな方に</span>
+            <ul>
+              <li>簿記2級までの勉強が、楽しく思えた方</li>
+              <li>商業系の学校に通っていた方</li>
+              <li>学歴に自信がなく、別の物差しが欲しい方</li>
+            </ul>
+          </div>
+          <a href="/boki.html" class="btn btn-orange wn-card-cta">簿記1級 合格伴走を見る</a>
+        </div>
+
+        <div class="wn-card">
+          <span class="wn-card-badge">02</span>
+          <h3 class="wn-card-name">証券アナリスト(CMA)</h3>
+          <p class="wn-card-catch">簿記1級より、<span class="wn-hl">届きやすい</span>。</p>
+          <p class="wn-card-text">認知度は簿記1級ほどではありません。ただ<strong>難易度は簿記1級ほどではなく、金融・会計・経済をまとめて学べます。</strong>正直に言うと、いちばん面白かったのはこちらです。「数字に強い人」として見られる場面が増えました。</p>
+          <div class="wn-card-for">
+            <span class="wn-for-label">こんな方に</span>
+            <ul>
+              <li>会計だけでなく、金融や経済まで広げたい方</li>
+              <li>財務・経営企画・IR・金融へ進みたい方</li>
+              <li>難関すぎない一本で、周りと違う軸が欲しい方</li>
+            </ul>
+          </div>
+          <a href="/cma.html" class="btn btn-orange wn-card-cta">CMA 1次対策を見る</a>
+        </div>
+      </div>
+
+      <p class="why-now-stance">断言はしません。ただ、AIに任せられることが増えるほど<strong>「任せた結果を確かめられる側」</strong>に回りたくて、ぼくはこの2つに時間を賭けました。</p>
+
+      <!-- 「資格勉強をAIで加速」＝実装済みの機能で裏付ける（cma.html と同じ記述） -->
+      <div class="why-now-accel">
+        <span class="why-now-accel-eyebrow">その勉強こそ、AIで速くできる</span>
+        <h3 class="why-now-accel-title">わからないところで、止まらない</h3>
+        <p class="why-now-accel-text">講義動画を一時停止すると、<strong>試験範囲に特化したAIチャットにその場で質問できます</strong>。受講生サイトに実装済みです。独学でいちばん時間を溶かすのは、つまずいた1箇所を放置することでした。</p>
+        <div class="why-now-accel-ctas">
+          <a href="/cma.html" class="btn btn-outline">講義の中身を見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- (2) 知識がある人へ＝マネタイズ側 -->
+  <section class="for-work" id="for-work">
+    <div class="container">
+      <div class="fw-head">
+        <span class="eyebrow">FOR PROFESSIONALS</span>
+        <h2 class="section-title">その知識、<span class="fw-hl">会社の中だけで</span><span class="fw-nb">終わらせますか。</span></h2>
+        <p class="fw-lead">高学歴の方。難関資格を持っている方。ある分野で実務を積んできた方。<strong>すでに持っているものを、外に出す番です。</strong></p>
+      </div>
+
+      <div class="fw-flow">
+        <div class="fw-step">
+          <span class="fw-step-num">01</span>
+          <h3 class="fw-step-title">自社コンテンツをつくる</h3>
+          <p class="fw-step-text">あなたが当たり前にやっていることは、誰かにとっては手が届かないことです。それを教材・記事・ツールの形にします。<strong>作るところをAIが持つので、必要なのは中身だけ。</strong></p>
+        </div>
+        <div class="fw-arrow" aria-hidden="true">→</div>
+        <div class="fw-step">
+          <span class="fw-step-num">02</span>
+          <h3 class="fw-step-title">案件を獲る</h3>
+          <p class="fw-step-text">提案文、実績のまとめ、見積もり、納品物。時間を取られる部分をAIに回して、<strong>「応募できる本数」を増やします。</strong>数を出せる人が残るのは、どの市場でも同じでした。</p>
+        </div>
+      </div>
+
+      <div class="fw-claim">
+        <p class="fw-claim-lead">いまは、<span class="fw-hl">個の力を高める時代</span>です。</p>
+        <p class="fw-claim-text">会社にすべてを預けたままにしない。給料以外の入り口を、自分の手で1つ持っておく。<strong>ぼく自身がそう考えて、開発環境に毎月3万円を入れ、平日3時間・休日12時間を作ることに使っています。</strong>結果を約束することはできませんが、やっていることは全部そのまま渡します。</p>
+        <div class="fw-ctas">
+          <a href="/ai.html" class="btn btn-orange btn-large">AI実践編を見る</a>
+          <a href="https://line.me/R/ti/p/@159qegdx" target="_blank" rel="noopener" class="btn btn-outline">まずLINEで相談する</a>
+        </div>
+        <p class="fw-note">副業×AI実践編 全13回 ¥99,800／会計×AI実践編 全10回 ¥49,800／金融AI実践編 全9回 ¥29,800（すべて税込）</p>
       </div>
     </div>
   </section>
@@ -2412,7 +3257,7 @@
       <div style="text-align:center;max-width:760px;margin:0 auto 40px;">
         <span class="eyebrow" style="justify-content:center;">COURSES</span>
         <h2 class="section-title">あなたに合う入口を選んでください</h2>
-        <p class="section-subtitle" style="margin:16px auto 0;">簿記2級・3級を取ったけれど次に迷っている方／経理・財務で働いている方／これから経理・財務を目指す方へ。<br><strong>目指すゴールで、3つに分かれます。</strong></p>
+        <p class="section-subtitle" style="margin:16px auto 0;"><strong>勉強を加速するなら、簿記1級か証券アナリスト(CMA)。副業を加速するなら、AI実践編。</strong><br>宛先が違うので、講座も分けています。いま近いほうから選んでください。</p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1000px;margin:0 auto;">
         <!-- ① 簿記1級 -->
@@ -2420,7 +3265,7 @@
           <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--text-muted);">簿記ラボ</div>
           <h3 style="margin:8px 0 0;font-size:21px;color:var(--navy);">簿記1級 合格伴走</h3>
           <p style="margin:10px 0 0;font-size:13px;font-weight:700;color:#2D6A4F;">処理する人 → 理解する人</p>
-          <p style="margin:12px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.8;flex:1;"><strong>経理・会計の専門性を、長期で積み上げたい方へ。</strong>4回落ちて合格した凡人が、講義 全51本と月2回の面談で合格まで伴走します（5名まで）。3級・2級はココナラの個別サポートで。</p>
+          <p style="margin:12px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.8;flex:1;"><strong>経理・会計の専門性を、長期で積み上げたい方へ。</strong>3回落ちて4回目で合格した凡人が、講義 全51本と月2回の面談で合格まで伴走します（5名まで）。3級・2級はココナラの個別サポートで。</p>
           <a href="/boki.html" class="btn btn-outline" style="margin-top:20px;">簿記の伴走を見る →</a>
         </div>
         <!-- ② アナリスト -->
@@ -2431,27 +3276,18 @@
           <p style="margin:12px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.8;flex:1;"><strong>財務・経営企画・IR・金融へ広げたい方へ。</strong>経済・ファンダメンタル分析・証券分析・数学を、丸暗記ではなく本質から。数学嫌いを置いていきません。</p>
           <a href="/cma.html" class="btn btn-outline" style="margin-top:20px;">CMA対策を見る →</a>
         </div>
-        <!-- ③ AI副業 -->
+        <!-- ③ AI実践編（＝目標ではなく道具。「副業」は看板ではなく講座名としてのみ出す） -->
         <div style="display:flex;flex-direction:column;background:#fff;border:2px solid #2D6A4F;border-radius:18px;padding:28px;box-shadow:0 10px 30px rgba(45,106,79,0.12);">
-          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#2D6A4F;">AI実践編</div>
-          <h3 style="margin:8px 0 0;font-size:21px;color:var(--navy);">知識を、AIで収入に変える</h3>
-          <p style="margin:10px 0 0;font-size:13px;font-weight:700;color:#2D6A4F;">知っている人 → 売れる人</p>
-          <p style="margin:12px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.8;flex:1;"><strong>資格より先に、実践で結果がほしい方へ。</strong>いま持っている知識と経験を、AIで売れる形に変えて最初の売上まで。プログラミングの知識は要りません。</p>
+          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#2D6A4F;">AI実践編 ／ 副業を加速する</div>
+          <h3 style="margin:8px 0 0;font-size:21px;color:var(--navy);">知識を、AIで使える形に変える</h3>
+          <p style="margin:10px 0 0;font-size:13px;font-weight:700;color:#2D6A4F;">知っている人 → 使える人</p>
+          <p style="margin:12px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.8;flex:1;"><strong>もう知識がある方へ。分野は問いません。</strong>資格や受験勉強、実務で積んできたものを、AIで実務と収入につながる形に。プログラミングの知識は要りません（会計×AI実践編 ¥49,800／金融AI実践編 ¥29,800／副業×AI実践編 ¥99,800）。</p>
           <a href="/ai.html" class="btn btn-orange" style="margin-top:20px;">AI実践を見る →</a>
         </div>
       </div>
 
-      <!-- 複合ルート -->
-      <div style="max-width:1000px;margin:36px auto 0;background:var(--cream);border-radius:18px;padding:28px;">
-        <p style="margin:0;text-align:center;font-weight:700;color:var(--navy);font-size:17px;">3つは、どれか1つを選んで終わりではありません。</p>
-        <p style="margin:10px auto 0;max-width:640px;text-align:center;color:var(--text-muted);font-size:14.5px;line-height:1.9;"><strong>資格で専門性をつくり、AIでそれを市場価値に変える。</strong>進む順番は、人によって変わります。</p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:20px;">
-          <div style="background:#fff;border-radius:12px;padding:16px 18px;"><strong style="color:#1A2B4A;font-size:14px;">経理の専門型</strong><p style="margin:6px 0 0;color:var(--text-muted);font-size:13.5px;">簿記1級 → AI副業</p></div>
-          <div style="background:#fff;border-radius:12px;padding:16px 18px;"><strong style="color:#1A2B4A;font-size:14px;">財務キャリア型</strong><p style="margin:6px 0 0;color:var(--text-muted);font-size:13.5px;">簿記1級 → アナリスト</p></div>
-          <div style="background:#fff;border-radius:12px;padding:16px 18px;"><strong style="color:#1A2B4A;font-size:14px;">短期収入型</strong><p style="margin:6px 0 0;color:var(--text-muted);font-size:13.5px;">AI副業 → 足りないと感じたら簿記1級</p></div>
-        </div>
-        <p style="margin:18px auto 0;max-width:640px;text-align:center;color:var(--text-muted);font-size:13.5px;">迷ったら、<a href="https://line.me/R/ti/p/@159qegdx" target="_blank" rel="noopener" style="color:#2D6A4F;font-weight:600;">LINEでご相談</a>ください。今の状況をうかがって、どこから始めるかを一緒に決めます。</p>
-      </div>
+      <!-- 進む順番（複合ルート）はヒーロー直下の .hub-router に移した。ここでは再掲せず、相談導線だけ残す -->
+      <p style="margin:32px auto 0;max-width:660px;text-align:center;color:var(--text-muted);font-size:13.5px;">どれを選んでも、後から変えて構いません。決めきれないときは<a href="https://line.me/R/ti/p/@159qegdx" target="_blank" rel="noopener" style="color:#2D6A4F;font-weight:600;">LINEでご相談</a>ください。いまの状況をうかがって、一緒に決めます。</p>
     </div>
   </section>
 
@@ -2460,7 +3296,7 @@
     <div class="container">
       <div class="method-header">
         <span class="eyebrow">WHY US</span>
-        <h2 class="method-title">3つの学びに共通する、<span class="em">4つの約束</span></h2>
+        <h2 class="method-title">勉強にも副業にも共通する、<span class="em">4つの約束</span></h2>
       </div>
       <div class="method-grid">
         <div class="method-card">
@@ -2479,7 +3315,7 @@
           <span class="method-num-badge">03</span>
           <div class="method-icon"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"/></svg></div>
           <h3 class="method-card-title">凡人の、正直な伴走</h3>
-          <p class="method-card-text">偏差値40から4回落ちて合格した運営者が、できない側の気持ちで寄り添う。少人数・1対1のLINE相談も。</p>
+          <p class="method-card-text">偏差値40から3回落ちて4回目で合格した運営者が、できない側の気持ちで寄り添う。少人数・1対1のLINE相談も。</p>
         </div>
         <div class="method-card">
           <span class="method-num-badge">04</span>
@@ -2512,7 +3348,7 @@
         <p style="margin:6px 0 0;color:var(--text-muted);font-size:14px;">会計×AI ／ 簿記1級・証券アナリスト(CMA)　@a3aByulmQvDRNSU</p>
         <div style="max-width:680px;margin:24px auto 0;color:var(--text);line-height:1.95;font-size:15px;text-align:left;">
           <p>偏差値40の高卒で、発達障害の特性もあり、人並みのことができずに怒られ続けていました。取り柄も自信もなく、「自分は何をやってもダメだ」と思っていた社会人でした。</p>
-          <p>そんな私が、簿記に出会って変わり始めます。日商簿記1級には<strong style="color:var(--navy);">4回落ちて</strong>、28→55→68→70点。2年以上・約3,168時間をかけて、ようやく合格しました。その勢いで証券アナリスト(CMA)1次にも合格。いまは会計×AIをテーマに発信し、Kindleを3冊出版しています。</p>
+          <p>そんな私が、簿記に出会って変わり始めます。日商簿記1級には<strong style="color:var(--navy);">3回落ちて</strong>、28→55→68→70点。2年以上・約3,168時間をかけて、ようやく合格しました。その勢いで証券アナリスト(CMA)1次にも合格。いまは会計×AIをテーマに発信し、Kindleを3冊出版しています。</p>
           <p>才能はありませんでした。ただ、基準を下げず、ゼロの日を作らず、続けただけです。だからこそ、同じように「向いてない」と思っている人に、遠回りして掴んだ学び方をそのまま渡したい。それが、この<strong style="color:#2D6A4F;">「数字の資格AIラボ」</strong>です。</p>
         </div>
         <a href="https://x.com/a3aByulmQvDRNSU" target="_blank" rel="noopener" style="display:inline-block;margin-top:22px;font-size:14px;color:#F0D9AE;font-weight:700;">Xで日々の発信を見る（@a3aByulmQvDRNSU）→</a>
@@ -2528,9 +3364,9 @@
         <h2 class="section-title">よくある質問</h2>
       </div>
       <div class="faq-list">
-        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q1.</span><span class="faq-q-text">何から始めればいいですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">3つの入口（簿記・証券アナリスト・AI実践）から、いま一番近い目的のものを選んでください。迷ったら、学びたい分野のLINEで無料相談できます。どこから始めても大丈夫です。</div></details>
-        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q2.</span><span class="faq-q-text">簿記・証券アナリスト・AI実践は、何が違いますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">簿記は会計の基礎、証券アナリスト(CMA)は金融・投資分析の資格、AI実践は「学んだ知識をAIで実務の道具にする」トラックです。会計・金融で学んだことが、そのままAIを使いこなす力になります。</div></details>
-        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q3.</span><span class="faq-q-text">数学や勉強が苦手でも大丈夫ですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">大丈夫です。運営者自身が偏差値40から4回落ちて合格した凡人です。丸暗記ではなく、途中式や意味まで高卒レベルから噛み砕く方針で、数学嫌いを置いていきません。</div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q1.</span><span class="faq-q-text">何から始めればいいですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">宛先で分かれます。<strong>これから会計・金融の知識をつける方</strong>は、簿記1級か証券アナリスト(CMA)のうち、いま近いほうから。<strong>すでに知識や実務がある方</strong>は、AI実践編から。こちらは分野を問いません。順番に両方を進めても、後から足しても構いません。迷ったら、LINEで無料相談できます。</div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q2.</span><span class="faq-q-text">簿記・証券アナリスト・AI実践は、何が違いますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">簿記は会計の基礎、証券アナリスト(CMA)は金融・投資分析の資格、AI実践は「学んだ知識をAIで実務の道具にする」トラックです。会計・金融で学んだことは、そのままAIを使いこなす力になります。AI実践は会計・金融に限らず、ほかの分野で積んだ知識でも使えます。</div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q3.</span><span class="faq-q-text">数学や勉強が苦手でも大丈夫ですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">大丈夫です。運営者自身が偏差値40から3回落ちて4回目で合格した凡人です。丸暗記ではなく、途中式や意味まで高卒レベルから噛み砕く方針で、数学嫌いを置いていきません。</div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q4.</span><span class="faq-q-text">支払い方法は？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">クレジットカード決済（Stripe）です。各講座の販売ページに税込価格を表示しています。詳細は本ページ下部の「特定商取引法に基づく表記」をご確認ください。</div></details>
       </div>
     </div>
@@ -2568,11 +3404,11 @@
        ============================================ -->
   <section class="final-cta">
     <div class="container">
-      <h2 class="final-cta-title">資格を、<span class="em">“使える武器”</span>に。<br>その入口を、選ぼう。</h2>
-      <p class="final-cta-sub">簿記・証券アナリスト・AI実践。<br>まずは、いま一番近い目的の学びから始めてください。</p>
+      <h2 class="final-cta-title">AIで、勉強と副業を<span class="em">加速する。</span><br>その入口を、選ぼう。</h2>
+      <p class="final-cta-sub">勉強を加速するなら、簿記1級・証券アナリスト(CMA)。<br>副業を加速するなら、AI実践編。いま近いほうから始めてください。</p>
       <div class="final-cta-buttons">
         <a href="#tracks" class="btn btn-orange btn-large">
-          3つの学びを見る
+          3つの講座を見る
           <svg viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
         </a>
         <a href="https://line.me/R/ti/p/@159qegdx" target="_blank" rel="noopener" class="btn btn-line btn-large">
@@ -2583,12 +3419,12 @@
       <div class="final-cta-bonus">
         <div class="final-cta-bonus-title">
           <svg viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Z"/></svg>
-          3つの入口
+          宛先は2つ。分けて用意しています
         </div>
         <div class="final-cta-bonus-list">
           <div class="final-cta-bonus-item"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span><a href="/boki.html" style="color:inherit;text-decoration:underline;">簿記1級 合格伴走（簿記ラボ）</a></span></div>
           <div class="final-cta-bonus-item"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span><a href="/cma.html" style="color:inherit;text-decoration:underline;">証券アナリスト(CMA)1次対策</a></span></div>
-          <div class="final-cta-bonus-item"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span><a href="/ai.html" style="color:inherit;text-decoration:underline;">会計・金融AI実践編</a></span></div>
+          <div class="final-cta-bonus-item"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span><a href="/ai.html" style="color:inherit;text-decoration:underline;">AI実践編（副業・会計・金融）</a></span></div>
         </div>
       </div>
     </div>
@@ -2751,7 +3587,7 @@
           <span>数字の資格AIラボ</span>
         </div>
         <div class="footer-copy">
-          運営：数字の資格AIラボ ｜ 提供講座：CMA Academy（証券アナリスト1次）／簿記ラボ（簿記1級 合格伴走）／会計・金融AI実践編<br>
+          運営：数字の資格AIラボ ｜ 提供講座：CMA Academy（証券アナリスト1次）／簿記ラボ（簿記1級 合格伴走）／AI実践編（副業・会計・金融）<br>
           © 2026 数字の資格AIラボ. 数学嫌いを置いていかない。理解して進む、AI時代の学び方。
         </div>
       </div>
