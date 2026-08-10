@@ -2247,6 +2247,62 @@
     }
     .hub-router-line a { color: #2D6A4F; font-weight: 600; }
 
+    /* ===== STORY（運営者の物語）=====
+       ⚠ 中身の一次ソースは ぶんぶん書籍/日商簿記1級勉強法_改訂版.md と profile.json。
+       得点の推移（28→55→68→70）は本人指示で出さない。結果の保証になる書き方もしない。 */
+    .story { background: var(--cream); }
+    .story-head { max-width: 780px; margin: 0 auto; text-align: center; }
+    .story-head .section-title { margin: 12px 0 0; }
+    .story-head .em { color: var(--orange); display: inline-block; }
+    .story-lead { margin: 18px auto 0; max-width: 660px; color: var(--text-muted); font-size: 15px; line-height: 2; }
+    .story-who { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 26px auto 0; }
+    .story-who img {
+      width: 64px; height: 64px; border-radius: 50%; object-fit: cover;
+      border: 3px solid var(--white); box-shadow: var(--shadow-sm); flex: none;
+    }
+    .story-who b { display: block; color: var(--navy); font-size: 16px; }
+    .story-who span { display: block; margin-top: 3px; color: var(--text-muted); font-size: 12.5px; line-height: 1.7; }
+    /* 縦のレール＝左の border。節目の丸は各項目の ::before で置く */
+    .story-track {
+      list-style: none;
+      max-width: 720px;
+      margin: clamp(32px, 4vw, 48px) auto 0;
+      padding: 4px 0 4px 26px;
+      border-left: 2px solid rgba(15, 44, 68, 0.13);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 30px;
+    }
+    .story-step { position: relative; }
+    .story-step::before {
+      content: '';
+      position: absolute; left: -35px; top: 5px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: #F2C879; border: 2px solid var(--cream);
+    }
+    .story-num { font-family: 'Inter', system-ui, sans-serif; font-size: 11px; font-weight: 900; letter-spacing: .12em; color: var(--orange); }
+    .story-step h3 { margin: 6px 0 0; font-size: clamp(17px, 2vw, 21px); color: var(--navy); line-height: 1.55; }
+    .story-step p { margin: 10px 0 0; color: var(--text-muted); font-size: 14.5px; line-height: 2; }
+    .story-step p strong { color: var(--navy); }
+    .story-note { margin: 10px 0 0; font-size: 12.5px; color: var(--text-light); line-height: 1.8; }
+    .story-close {
+      max-width: 720px;
+      margin: clamp(32px, 4vw, 44px) auto 0;
+      background: var(--navy);
+      border-radius: 18px;
+      padding: clamp(24px, 3vw, 34px) clamp(22px, 3vw, 36px);
+    }
+    .story-close p { margin: 0; color: rgba(255,255,255,0.84); font-size: 15px; line-height: 2; }
+    .story-close p + p { margin-top: 14px; }
+    .story-close strong { color: #F2C879; }
+    .story-x { display: block; text-align: center; margin: 22px 0 0; font-size: 14px; color: #2D6A4F; font-weight: 700; }
+    @media (max-width: 700px) {
+      .story-head { text-align: left; }
+      .story-who { justify-content: flex-start; }
+      .story-track { padding-left: 22px; }
+      .story-step::before { left: -31px; }
+    }
+
     /* ===== なぜ、AIの時代に簿記1級とCMAなのか ===== */
     .why-now {
       position: relative;
@@ -3383,21 +3439,76 @@
     </div>
   </section>
 
-  <!-- ===== 運営者（自己紹介・厚め） ===== -->
-  <section style="background:var(--cream);">
+  <!-- ===== STORY（運営者の物語）＝旧「運営者」セクションを物語に作り替えたもの =====
+       本人指示：「私自身これらを勉強したことで人生が変わった」をストーリーテリングで説明する。
+       ⚠ 一次ソース＝ぶんぶん書籍/日商簿記1級勉強法_改訂版.md（第1〜2章・おわりに）と profile.json。
+       ⚠ 書かないもの：得点の推移（本人指示）／「独学合格」（最初は通信講座）／休職の話／
+          就職・年収・収入の保証（読者への一般化は禁止。あくまで本人の n=1 として書く）。 -->
+  <section class="story" id="story">
     <div class="container">
-      <div style="max-width:820px;margin:0 auto;text-align:center;">
-        <span class="eyebrow" style="justify-content:center;">運営者</span>
-        <img src="assets/bunbun-avatar.jpg" alt="運営者 ぶんぶん" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin:20px auto 0;display:block;box-shadow:0 8px 26px rgba(15,44,68,0.18);border:4px solid #fff;" loading="lazy">
-        <h2 class="section-title" style="margin-top:16px;">ぶんぶん</h2>
-        <p style="margin:6px 0 0;color:var(--text-muted);font-size:14px;">会計×AI ／ 簿記1級・証券アナリスト(CMA)　@a3aByulmQvDRNSU</p>
-        <div style="max-width:680px;margin:24px auto 0;color:var(--text);line-height:1.95;font-size:15px;text-align:left;">
-          <p>偏差値40の高卒で、発達障害の特性もあり、人並みのことができずに怒られ続けていました。取り柄も自信もなく、「自分は何をやってもダメだ」と思っていた社会人でした。</p>
-          <p>そんな私が、簿記に出会って変わり始めます。日商簿記1級には<strong style="color:var(--navy);">3回落ちて</strong>、28→55→68→70点。2年以上・約3,168時間をかけて、ようやく合格しました。その勢いで証券アナリスト(CMA)1次にも合格。いまは会計×AIをテーマに発信し、Kindleを3冊出版しています。</p>
-          <p>才能はありませんでした。ただ、基準を下げず、ゼロの日を作らず、続けただけです。だからこそ、同じように「向いてない」と思っている人に、遠回りして掴んだ学び方をそのまま渡したい。それが、この<strong style="color:#2D6A4F;">「数字の資格AIラボ」</strong>です。</p>
+      <div class="story-head">
+        <span class="eyebrow" style="justify-content:center;">STORY</span>
+        <h2 class="section-title">勉強で、人生は変わりました。<span class="em">私の場合は。</span></h2>
+        <p class="story-lead">ここに書くのは講座の宣伝ではなく、私自身の記録です。うまくいった話より、落ち続けた時間のほうがずっと長い。それでも、続けた先に確かに変わったものがありました。</p>
+        <div class="story-who">
+          <img src="assets/bunbun-avatar.jpg" alt="運営者 ぶんぶん" loading="lazy">
+          <div style="text-align:left;">
+            <b>ぶんぶん</b>
+            <span>日商簿記1級／全経簿記上級／証券アナリスト(CMA)1次合格　@a3aByulmQvDRNSU</span>
+          </div>
         </div>
-        <a href="https://x.com/a3aByulmQvDRNSU" target="_blank" rel="noopener" style="display:inline-block;margin-top:22px;font-size:14px;color:#F0D9AE;font-weight:700;">Xで日々の発信を見る（@a3aByulmQvDRNSU）→</a>
       </div>
+
+      <ol class="story-track">
+        <li class="story-step">
+          <span class="story-num">01</span>
+          <h3>「何も知らない」「頭が悪い」と言われていました</h3>
+          <p>高校の偏差値は40。手に職をと美容師になり、そのあと会社員になりました。ところが私には発達障害の特性があって、うっかりミスも、遅刻も、忘れ物も、社会に出ると許されません。「もっとしっかりして」と毎日のように言われ、<strong>取り柄も自信もないまま</strong>、自分は会社員に向いていないな、と思いながら働いていました。</p>
+        </li>
+
+        <li class="story-step">
+          <span class="story-num">02</span>
+          <h3>簡単だと言われる簿記3級に、8か月かかりました</h3>
+          <p>きっかけはYouTubeでした。「簿記は独立や副業に役立つ」と聞いて、単純にも「これで人生が変わるかも」と思い、通信講座に申し込みます。ところが勉強が大嫌いだった私は、講義を聞くとすぐ眠くなる。受験日を勘違いして失格になったこともあります。<strong>結局8か月かかりました。</strong>それでも最後は9割を超えて合格でき、その勢いで2級にも受かります。</p>
+        </li>
+
+        <li class="story-step">
+          <span class="story-num">03</span>
+          <h3>講義は分かるのに、過去問が1問も解けない</h3>
+          <p>調子に乗って、日商簿記1級に挑みました。予備校の通信講座から始めたので、講師の説明は分かりやすく、講義そのものは理解できます。ところが過去問を開いた瞬間に手が止まりました。商業簿記・会計学・工業簿記・原価計算の4科目を解いて、<strong>合っているのが2問か3問。</strong>「足を踏み入れたのは間違いだったかもしれない」と本気で思いました。そこからやったのは、解答の下書きをそのまま写すという、果てしなく地道な作業です。</p>
+        </li>
+
+        <li class="story-step">
+          <span class="story-num">04</span>
+          <h3>3回、落ちました</h3>
+          <p>初めての本試験は、始まった瞬間に頭が真っ白になりました。半分は取れているだろうと思っていた点数は、3割にも届いていませんでした。2回目も、3回目も落ちます。<strong>3回目は、合格まであと2点。</strong>手ごたえのあった回だっただけに、さすがにこたえました。この時期はアルバイト先でもミスが続いて呆れられ、出勤すると頭痛がするほど。仕事のあとはフードコートに直行して、楽しそうな学生を横目に、ひとりで電卓を叩いていました。</p>
+        </li>
+
+        <li class="story-step">
+          <span class="story-num">05</span>
+          <h3>資格が、周りの見る目を変えました</h3>
+          <p>1級と並行して受けていた全経簿記上級に、2回目で合格します。履歴書に書ける資格が1つ増えた。ただそれだけのことなのに、それまで不採用通知ばかりだった就職活動が、嘘のように決まりました。私の能力が急に上がったわけではありません。変わったのは、<strong>周りからの見られ方</strong>のほうでした。</p>
+          <p class="story-note">※ これは私に起きたことです。同じ結果をお約束できるものではありません。</p>
+        </li>
+
+        <li class="story-step">
+          <span class="story-num">06</span>
+          <h3>4回目。働きながら、受かりました</h3>
+          <p>働き始めて、まとまった勉強時間は取れなくなりました。そこで、がむしゃらな量で押すのをやめます。朝は本試験と同じ時間帯に解く。必ず時間を計る。ただ解くのではなく、似た問題と比べながら答え合わせをする。無理はしない。<strong>2年あまり、のべ3,168時間。</strong>4回目で、ようやく合格しました。うれしさよりも、安堵のほうが大きかったのを覚えています。</p>
+        </li>
+
+        <li class="story-step">
+          <span class="story-num">07</span>
+          <h3>そして、同じ机の上にAIが来ました</h3>
+          <p>その後、証券アナリスト(CMA)1次にも合格し、Kindleを3冊出しました。いま向き合っているのがAIです。<strong>会計と金融が分かっている状態でAIに指示を出すと、できることが一段変わります。</strong>「どこを見ればいいか」を知っているぶん、注文が具体的になるからです。このサイトも、企画から設計・実装・公開・運用まで、AIを使いながら自分で作りました。</p>
+        </li>
+      </ol>
+
+      <div class="story-close">
+        <p>才能はありませんでした。基準を下げず、ゼロの日を作らず、続けただけです。そして勉強して本当に変わったのは、収入でも肩書きでもなく、<strong>選べる道が増えたこと</strong>でした。</p>
+        <p>同じ結果をお約束することはできません。ただ、遠回りしてようやく掴んだ学び方なら、そのまま渡せます。それが<strong>「数字の資格AIラボ」</strong>です。</p>
+      </div>
+      <a class="story-x" href="https://x.com/a3aByulmQvDRNSU" target="_blank" rel="noopener">Xで日々の発信を見る（@a3aByulmQvDRNSU）→</a>
     </div>
   </section>
 
