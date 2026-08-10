@@ -2164,6 +2164,46 @@
     }
 
     /* ===== 進む順番（ルーター）＝ヒーロー直下 ===== */
+    /* ============================================================
+       コンセプト＝3拍で見せる。
+       01 何がある（講義の種類）→ 02 どれが自分に合うか（診断）→ 03 何のために
+       ⚠ 03 は「人生が変わります」と言い切らない。渡せるのは一歩であって結果ではない。
+       ============================================================ */
+    .concept { padding: clamp(56px, 7vw, 92px) 0; background: var(--white); }
+    .concept-head { max-width: 780px; margin: 0 auto clamp(32px, 4vw, 48px); text-align: center; }
+    .concept-head .section-title { margin-top: 12px; }
+    .concept-head .em { color: var(--orange); display: inline-block; }
+    .concept-lead { margin: 16px 0 0; color: var(--text-muted); font-size: 15.5px; line-height: 2; }
+    .concept-steps { list-style: none; display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; max-width: 1000px; margin: 0 auto; }
+    .cstep {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: clamp(22px, 2.6vw, 32px) clamp(20px, 2.6vw, 34px);
+    }
+    .cstep-num {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 12px; font-weight: 900; letter-spacing: .1em; color: var(--orange);
+    }
+    .cstep-title { margin: 8px 0 0; font-size: clamp(19px, 2.1vw, 24px); color: var(--navy); line-height: 1.5; }
+    .cstep-text { margin: 12px 0 0; color: var(--text-muted); font-size: 14.5px; line-height: 2; }
+    .cstep-text strong { color: var(--navy); }
+    /* 01＝講義の種類 */
+    .ckinds { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 12px; margin-top: 18px; }
+    .ckind { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; }
+    .ckind a { color: var(--navy); font-weight: 700; font-size: 15px; text-decoration: none; }
+    .ckind a::after { content: " →"; color: var(--orange); font-weight: 900; }
+    .ckind span { display: block; margin-top: 6px; color: var(--text-muted); font-size: 12.5px; line-height: 1.7; }
+    /* 02＝診断への導線 */
+    .cstep-cta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .cstep-note { margin: 10px 0 0; font-size: 12.5px; color: var(--text-light); }
+    /* 03＝コンセプトの言い切り。ここだけ紺地にして着地点だと分かるようにする */
+    .cstep-goal { background: var(--navy); border-color: var(--navy); }
+    .cstep-goal .cstep-num { color: #F2C879; }
+    .cstep-goal .cstep-title { color: var(--white); }
+    .cstep-goal .cstep-text { color: rgba(255,255,255,0.84); }
+    .cstep-goal .cstep-text strong { color: #F2C879; }
+    @media (max-width: 700px) { .concept-head { text-align: left; } }
     .hub-router { padding: clamp(36px, 4.5vw, 56px) 0; background: var(--white); }
     .hub-router-lead {
       margin: 0;
@@ -2846,27 +2886,62 @@
     </div>
   </section>
 
-  <!-- ===== 進む順番（ルーター） =====
-       ヒーロー直下に置く。「どれか1つを選ぶ＝他は捨てる」と読ませないための位置。 -->
-  <section class="hub-router">
+  <!-- ===== コンセプト =====
+       本人指示：「講義の種類」「その人に合った講義を提供していること」
+       「人生を変えるための一歩を提供したいというコンセプト」の3つを組み込む。
+       ⚠ 03 は結果の保証にならないよう「変わります」ではなく「一歩を渡したい」で止める。
+       進む順番の3ルート（旧 .hub-router）は 02 の中へ畳み込んだ。 -->
+  <section class="concept" id="concept">
     <div class="container">
-      <p class="hub-router-lead">勉強と副業は、<span class="em">どちらから始めても構いません。</span></p>
-      <p class="hub-router-note"><strong>進む順番は、いまの状況で変わります。</strong>よくある3つの並べ方を置いておきます。</p>
-      <div class="hub-router-grid">
-        <div class="hub-router-card">
-          <strong>経理の専門型</strong>
-          <p>簿記1級 → AI実践</p>
-        </div>
-        <div class="hub-router-card">
-          <strong>財務キャリア型</strong>
-          <p>簿記1級 → 証券アナリスト(CMA)</p>
-        </div>
-        <div class="hub-router-card">
-          <strong>短期収入型</strong>
-          <p>AI実践 → 足りないと感じたら簿記1級</p>
-        </div>
+      <div class="concept-head">
+        <span class="eyebrow">CONCEPT</span>
+        <h2 class="section-title">渡したいのは、<span class="em">人生を変えるための一歩</span>です。</h2>
+        <p class="concept-lead">講座を並べて「好きに選んでください」とは言いません。何があるのかをお見せして、そのうち<strong>いまのあなたに合うものだけ</strong>をお出しします。</p>
       </div>
-      <p class="hub-router-line">迷ったら、<a href="https://line.me/R/ti/p/@159qegdx" target="_blank" rel="noopener">LINEでご相談</a>ください。いまの状況をうかがって、どこから始めるかを一緒に決めます。</p>
+
+      <ol class="concept-steps">
+        <li class="cstep">
+          <span class="cstep-num">01</span>
+          <h3 class="cstep-title">講義は、3つの種類があります</h3>
+          <p class="cstep-text">会計の土台をつくる<strong>簿記1級</strong>、金融・経済まで広げる<strong>証券アナリスト(CMA)</strong>、積んだ知識を仕事の形に変える<strong>AI実践編</strong>。ばらばらの商品ではなく、一本の道としてつながっています。</p>
+          <ul class="ckinds">
+            <li class="ckind"><a href="/boki.html">日商簿記1級 合格伴走</a><span>講義 全51本／月2回 面談／定員5名</span></li>
+            <li class="ckind"><a href="/cma.html">証券アナリスト(CMA) 1次対策</a><span>経済・ファンダメンタル分析・証券分析・数学</span></li>
+            <li class="ckind"><a href="/ai.html">AI実践編</a><span>全13回／全10回／全9回 の3コース</span></li>
+          </ul>
+        </li>
+
+        <li class="cstep">
+          <span class="cstep-num">02</span>
+          <h3 class="cstep-title">そのうち、あなたに合うものだけをお出しします</h3>
+          <p class="cstep-text">全部やる必要はありません。<strong>7つの質問に答えていただければ、いまのあなたに合う入口をこちらでお出しします。</strong>進む順番も、いまの状況で変わります。よくある3つの並べ方は、こうです。</p>
+          <div class="hub-router-grid">
+            <div class="hub-router-card">
+              <strong>経理の専門型</strong>
+              <p>簿記1級 → AI実践</p>
+            </div>
+            <div class="hub-router-card">
+              <strong>財務キャリア型</strong>
+              <p>簿記1級 → 証券アナリスト(CMA)</p>
+            </div>
+            <div class="hub-router-card">
+              <strong>短期収入型</strong>
+              <p>AI実践 → 足りないと感じたら簿記1級</p>
+            </div>
+          </div>
+          <div class="cstep-cta">
+            <a href="#shindan" class="btn btn-orange">7つの質問で診断する</a>
+            <a href="https://line.me/R/ti/p/@159qegdx" target="_blank" rel="noopener" class="btn btn-outline">LINEで相談する</a>
+          </div>
+          <p class="cstep-note">診断は登録不要・30秒。LINE相談も無料です。</p>
+        </li>
+
+        <li class="cstep cstep-goal">
+          <span class="cstep-num">03</span>
+          <h3 class="cstep-title">目的は、資格そのものではありません</h3>
+          <p class="cstep-text">合格も、副業の収入も、それ自体がゴールだとは思っていません。勉強して本当に変わったのは、<strong>選べる道が増えたこと</strong>でした。結果をお約束することはできません。ただ、その一歩を渡すためにこの講座をつくっています。</p>
+        </li>
+      </ol>
     </div>
   </section>
 
