@@ -2038,7 +2038,7 @@
     }
 
     /* ============================================================
-       ヒーローを背景画像（hub-hero-desk.jpg＝顔を落としてパソコンと手だけにした版）に合わせてダークにする一括上書き。
+       ヒーローを背景画像（hub-hero-desk-v2.jpg＝顔を落とし、写真の上端を紺へ溶かした版）に合わせてダークにする一括上書き。
        画像の左端の実測色が rgb(7,39,68) なので、スクリムもベースもその色で揃える。
        🔴 このブロックをまるごと消すと、上で定義した「明るいヒーロー」に戻る。
        画像はアクセントに水色と金色を使っているので、ヒーロー内だけ2色を足す。
@@ -2051,7 +2051,7 @@
         /* 🔴 下端を紺へ溶かす層。これが無いと写真がヒーローの下辺で直角に切れる */
         linear-gradient(to bottom, rgba(7,39,68,0) 56%, rgba(7,39,68,0.62) 82%, rgba(7,39,68,0.95) 95%, #072744 100%),
         linear-gradient(96deg, #072744 0%, #072744 34%, rgba(7,39,68,0.92) 46%, rgba(7,39,68,0.55) 60%, rgba(7,39,68,0.14) 78%, rgba(7,39,68,0.04) 100%),
-        url('assets/hub-hero-desk.jpg');
+        url('assets/hub-hero-desk-v2.jpg');
       background-size: cover, cover, cover;
       /* left 固定。right や center にすると人物が左へ寄って文字に重なる（要注意） */
       background-position: center, center, left center;
@@ -2110,7 +2110,7 @@
       .hub-hero {
         background-image:
           linear-gradient(180deg, rgba(6,32,56,0.90) 0%, rgba(7,39,68,0.80) 42%, rgba(5,26,46,0.99) 92%, #072744 100%),
-          url('assets/hub-hero-desk.jpg');
+          url('assets/hub-hero-desk-v2.jpg');
         background-position: center, 68% center;
       }
       .hub-hero-grid { min-height: 0; }
