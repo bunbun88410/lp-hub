@@ -2014,30 +2014,6 @@
     .hb-name::after { content: ' →'; color: var(--orange); font-weight: 900; }
     .hb-meta { display: block; margin-top: 5px; font-size: 12.5px; color: var(--text-muted); line-height: 1.6; }
     .hb-meta em { font-style: normal; font-weight: 700; color: #C0451B; }
-    /* 点数の帯＝予備校らしさの本体。ただし誰の点数かを必ず添える */
-    .hub-hero-board-score { padding: 16px 20px 18px; background: var(--cream); }
-    .hb-score-label { display: block; font-size: 11.5px; font-weight: 700; letter-spacing: .04em; color: var(--text-muted); }
-    .hb-score-row { display: flex; align-items: baseline; gap: 7px; margin-top: 8px; flex-wrap: wrap; }
-    .hb-score-row b {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 26px;
-      font-weight: 900;
-      color: var(--navy);
-      line-height: 1;
-    }
-    .hb-score-row i { font-style: normal; font-size: 14px; color: var(--text-light); }
-    .hb-score-row .hb-pass { color: var(--orange); }
-    .hb-score-note {
-      align-self: center;
-      margin-left: 2px;
-      padding: 3px 9px;
-      border-radius: 999px;
-      background: var(--orange);
-      color: var(--white);
-      font-size: 11.5px;
-      font-weight: 700;
-    }
-    .hb-score-foot { display: block; margin-top: 10px; font-size: 11px; color: var(--text-light); line-height: 1.6; }
 
     @media (max-width: 900px) {
       .hub-hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
@@ -2062,7 +2038,7 @@
     }
 
     /* ============================================================
-       ヒーローを背景画像（hub-hero-ai.jpg）に合わせてダークにする一括上書き。
+       ヒーローを背景画像（hub-hero-desk.jpg＝顔を落としてパソコンと手だけにした版）に合わせてダークにする一括上書き。
        画像の左端の実測色が rgb(7,39,68) なので、スクリムもベースもその色で揃える。
        🔴 このブロックをまるごと消すと、上で定義した「明るいヒーロー」に戻る。
        画像はアクセントに水色と金色を使っているので、ヒーロー内だけ2色を足す。
@@ -2073,7 +2049,7 @@
       color: var(--white);
       background-image:
         linear-gradient(96deg, #072744 0%, #072744 34%, rgba(7,39,68,0.92) 46%, rgba(7,39,68,0.55) 60%, rgba(7,39,68,0.14) 78%, rgba(7,39,68,0.04) 100%),
-        url('assets/hub-hero-ai.jpg');
+        url('assets/hub-hero-desk.jpg');
       background-size: cover, cover;
       /* left 固定。right や center にすると人物が左へ寄って文字に重なる（要注意） */
       background-position: center, left center;
@@ -2132,7 +2108,7 @@
       .hub-hero {
         background-image:
           linear-gradient(180deg, rgba(6,32,56,0.90) 0%, rgba(7,39,68,0.80) 42%, rgba(5,26,46,0.94) 100%),
-          url('assets/hub-hero-ai.jpg');
+          url('assets/hub-hero-desk.jpg');
         background-position: center, 68% center;
       }
       .hub-hero-grid { min-height: 0; }
@@ -2864,14 +2840,6 @@
                 </a>
               </li>
             </ul>
-            <div class="hub-hero-board-score">
-              <span class="hb-score-label">運営者の日商簿記1級 4回の得点</span>
-              <span class="hb-score-row">
-                <b>28</b><i>→</i><b>55</b><i>→</i><b>68</b><i>→</i><b class="hb-pass">70</b>
-                <span class="hb-score-note">合格</span>
-              </span>
-              <span class="hb-score-foot">受講生の実績ではなく、運営者本人の記録です。</span>
-            </div>
           </div>
     </div>
   </section>
