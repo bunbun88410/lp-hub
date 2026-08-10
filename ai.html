@@ -85,9 +85,9 @@
       --band-deep: #08111F;
 
       /* ブランドの差し色 */
-      --orange: #FF7A45;
+      --orange: #FF6B35;        /* 2026-08-11 index と同じ値に揃えた */
       --orange-soft: rgba(255,122,69,0.22);
-      --cyan: #7AE0FF;
+      --cyan: #6EC6F5;          /* 2026-08-11 index のヒーロー水色と同じ値 */
       --cyan-deep: #35B9E8;
       --violet: #9A8CFF;
       --accent-2: #46E0A8;   /* 旧 #2D6A4F（濃い緑）の後継。暗い地でも沈まないミント */
@@ -1982,7 +1982,7 @@
     .site-nav a:hover { color: var(--cyan); }
 
     /* --- ボタン：ネオンで光らせる --- */
-    .btn { border-radius: 999px; }
+    .btn { border-radius: var(--radius-sm); }  /* 2026-08-11 ピル形をやめ、他3ページと同じ角丸に */
     .btn-orange {
       background: linear-gradient(135deg, #FF8A4C, #F2542D);
       color: var(--white);

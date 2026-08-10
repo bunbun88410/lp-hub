@@ -92,7 +92,7 @@
       --surface: rgba(255,255,255,0.085);   /* カードの面 */
       --surface-2: rgba(255,255,255,0.05);  /* 節の帯 */
       --ink: #EAF1FF;                       /* 見出しの文字 */
-      --line-accent: rgba(227,190,104,0.45);/* 金のヘアライン */
+      --line-accent: rgba(242,200,121,0.45);/* 金のヘアライン */
       --shadow-sm: 0 1px 3px rgba(22, 35, 58, 0.07);
       --shadow-md: 0 4px 16px rgba(22, 35, 58, 0.10);
       --shadow-lg: 0 14px 38px rgba(22, 35, 58, 0.14);
@@ -103,9 +103,9 @@
       --space-7: 64px; --space-8: 80px; --space-9: 96px;
 
       /* 角丸 */
-      --radius-sm: 4px;
-      --radius-md: 6px;
-      --radius-lg: 8px;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 12px;
 
       /* カードpadding */
       --card-pad-compact: 28px 32px;
@@ -803,7 +803,7 @@
     .how-to-step:hover {
       transform: translateY(-4px);
       background: var(--cream-deep);
-      border-color: rgba(227,190,104,.45);
+      border-color: rgba(242,200,121,.45);
     }
     .how-to-step-num {
       width: 48px;
@@ -1895,13 +1895,13 @@
     }
     .hero .hero-eyebrow {
       background: rgba(255,255,255,.10);
-      border: 1px solid rgba(227,190,104,.35);
+      border: 1px solid rgba(242,200,121,.35);
       color: #EFE3C8;
       backdrop-filter: blur(6px);
     }
     .hero .hero-title { color: #F2F6FF; text-shadow: 0 2px 30px rgba(0,0,0,.5); }
-    .hero .hero-title .em { color: #E3BE68; }
-    .hero .hero-title .em::after { background: #E3BE68; }
+    .hero .hero-title .em { color: #F2C879; }
+    .hero .hero-title .em::after { background: #F2C879; }
     .hero .hero-sub { color: #C3D0E4; }
     .hero .hero-sub strong { color: #FFFFFF; }
     .hero .btn-outline {
@@ -1919,14 +1919,14 @@
       backdrop-filter: blur(12px) saturate(140%);
       box-shadow: 0 14px 40px rgba(0,0,0,.5);
     }
-    .hero-badge-em { color: #E3BE68; }
+    .hero-badge-em { color: #F2C879; }
     .hero-badge-small { color: var(--text-muted); }
     .hero-floating-card-text { color: var(--text); }
     .hero-floating-card-text strong { color: var(--ink); }
-    .hero-badge-icon, .hero-floating-card-icon { background: rgba(227,190,104,.14); color: #E3BE68; }
+    .hero-badge-icon, .hero-floating-card-icon { background: rgba(242,200,121,.14); color: #F2C879; }
     /* ヒーロー内の小さな注記・補足も、暗い地に合わせる */
     .hero p:not(.hero-sub), .hero small, .hero .hero-note { color: #9FB0C8; }
-    .hero a:not(.btn) { color: #E3BE68; }
+    .hero a:not(.btn) { color: #F2C879; }
 
     /* --- 明るい節は地を透かす。ここを透かさないと、下の星やローソク足が一切見えない --- */
     /* 🔴 .hero はここに入れない。下で宇宙の写真を敷いており、
@@ -2006,10 +2006,10 @@
     .method .em, .method-title .em,
     .final-cta .em, .final-cta-title .em,
     .pricing .em, .pricing-title .em,
-    .pricing-card.featured .em { color: #E3BE68; }
+    .pricing-card.featured .em { color: #F2C879; }
 
     /* --- ボタン：金の枠と面。煽らない --- */
-    .btn { border-radius: 4px; letter-spacing: .03em; }
+    .btn { border-radius: var(--radius-sm); letter-spacing: .03em; }
     .btn-orange { background: var(--orange); }
     .btn-orange:hover { background: #8A6720; }
     .pricing-cta { border-radius: 4px; background: var(--orange); }
@@ -2018,7 +2018,7 @@
 
     /* --- ヘッダー・ロゴ --- */
     .site-header { background: rgba(245,247,250,.92); backdrop-filter: blur(8px); }
-    .logo-mark { border-radius: 4px; background: var(--navy); box-shadow: inset 0 0 0 1px rgba(227,190,104,.45); color: #E3BE68; }
+    .logo-mark { border-radius: 50%; background: var(--navy); box-shadow: inset 0 0 0 2px rgba(255,255,255,0.28), inset 0 0 0 4px rgba(255,255,255,0.08), 0 0 8px rgba(242,200,121,0.30); color: #F2C879; }
 
     /* ============================================================
        全面ダーク（2026-08-05・本人指示で「背景を全体に広げる」）
@@ -2033,44 +2033,44 @@
     .utility-bar { background: rgba(9,15,28,.9); border-bottom: 1px solid rgba(150,185,235,.10); }
     .logo { color: var(--ink); }
     .site-nav a { color: var(--text); }
-    .site-nav a:hover { color: #E3BE68; }
+    .site-nav a:hover { color: #F2C879; }
 
     /* 見出しと本文 */
     .section-title, .method-title, .pricing-title, .final-cta-title,
     .mission-title, .legal-title { color: var(--ink); }
     .section-subtitle, .mission-lead, .legal-block p, .legal-block li,
     .legal-block dd, .faq-a, .problem-text, .how-to-step-text { color: var(--text); }
-    .eyebrow { color: #E3BE68; }
-    .eyebrow::before { background: #E3BE68; }
+    .eyebrow { color: #F2C879; }
+    .eyebrow::before { background: #F2C879; }
     /* 金は暗い地だと沈むので、強調はすべて明るい金にする */
     .em, .underline-mark, .method-title .em, .final-cta-title .em,
-    .pricing-title .em, .mission-title .em { color: #E3BE68; }
-    .underline-mark { background: linear-gradient(transparent 66%, rgba(227,190,104,.22) 66%); }
+    .pricing-title .em, .mission-title .em { color: #F2C879; }
+    .underline-mark { background: linear-gradient(transparent 66%, rgba(242,200,121,.22) 66%); }
 
     /* 面の中身 */
     .method-card-title, .pricing-card-name, .faq-q, .how-to-step-title,
     .legal-block h3, .legal-block h4, .legal-dl dt, .trust-item { color: var(--ink); }
     .method-card-text, .pricing-card-sub, .pricing-feature { color: var(--text); }
     .problem-icon, .method-icon, .trust-item-icon, .faq-toggle {
-      background: rgba(227,190,104,.12); color: #E3BE68;
+      background: rgba(242,200,121,.12); color: #F2C879;
     }
-    .problem-card { border-left-color: rgba(227,190,104,.45); }
+    .problem-card { border-left-color: rgba(242,200,121,.45); }
     .problem-card:hover { background: rgba(255,255,255,.04); }
-    .faq-item[open] { border-color: rgba(227,190,104,.45); }
+    .faq-item[open] { border-color: rgba(242,200,121,.45); }
 
     /* 履修表（科目カタログ） */
-    .pricing-list li.group { background: rgba(227,190,104,.10); border-left-color: #E3BE68; }
+    .pricing-list li.group { background: rgba(242,200,121,.10); border-left-color: #F2C879; }
     .pricing-list li { border-bottom-color: var(--border); }
     .pricing-list .subject { color: var(--ink); }
-    .pricing-compare thead th { background: rgba(227,190,104,.14); color: var(--ink); }
+    .pricing-compare thead th { background: rgba(242,200,121,.14); color: var(--ink); }
     .pricing-compare tbody th { background: rgba(255,255,255,.04); color: var(--ink); }
     .pricing-compare td { color: var(--text); }
     .pricing-compare tbody tr:nth-child(even) td { background: rgba(255,255,255,.03); }
     .badge-soon { background: rgba(255,255,255,.10); color: var(--text-muted); }
 
     /* ボタン */
-    .btn-outline { background: rgba(227,190,104,.08); color: #E3BE68; border-color: rgba(227,190,104,.45); }
-    .btn-outline:hover { background: rgba(227,190,104,.18); color: #FFF6E2; }
+    .btn-outline { background: rgba(242,200,121,.08); color: #F2C879; border-color: rgba(242,200,121,.45); }
+    .btn-outline:hover { background: rgba(242,200,121,.18); color: #FFF6E2; }
 
     /* 動画・画像は暗い地に馴染ませる */
     .sample-lesson-video { border: 1px solid var(--border); }
@@ -2681,7 +2681,7 @@
            対象＝1次のみ／期間＝次の1次試験まで／合格保証ではない、を明記する。
            申込は手動オンボーディング前提で受講相談フォームへ。
            専用の Stripe Payment Link（¥19,800）を作ったら、下の href を差し替える。 -->
-      <div style="max-width:1100px;margin:24px auto 0;background:rgba(255,255,255,.05);border:2px dashed rgba(227,190,104,.45);border-radius:20px;padding:32px;">
+      <div style="max-width:1100px;margin:24px auto 0;background:rgba(255,255,255,.05);border:2px dashed rgba(242,200,121,.45);border-radius:20px;padding:32px;">
         <div style="display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between;">
           <div style="flex:1 1 300px;min-width:280px;">
             <div style="display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--white);background:var(--navy);border-radius:999px;padding:5px 13px;margin-bottom:14px;">オプション ／ 見放題パス購入者向け</div>

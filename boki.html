@@ -73,24 +73,30 @@
 
     /* CSS 変数 */
     :root {
-      --navy: #23201C;        /* 墨 */
-      --navy-soft: #35302A;
-      --navy-deep: #17140F;
-      --orange: #B7382F;      /* 朱 */
-      --orange-soft: #EFD9D4;
+      /* 🔴 2026-08-11：本人指示「デザインは全部あわせてほしい」で、
+         旧「墨＋朱＋和紙」の配色を index と同じブランド配色に揃えた。
+         index.html の :root と同じ値。ここを触るときは4ページ同時に触ること。 */
+      --navy: #0F2C44;
+      --navy-soft: #1A3F5F;
+      --navy-deep: #08182A;
+      --orange: #FF6B35;
+      --orange-soft: #FFE8DD;
       --green: #06C755;
       --green-dark: #04A547;
-      --cream: #F5F1E7;       /* 生成りの紙 */
-      --cream-deep: #EAE3D4;
+      --cream: #F7F4ED;
+      --cream-deep: #EFE9DC;
       --white: #FFFFFF;
-      --text: #2E2A24;
-      --text-muted: #6B6459;
-      --text-light: #9C948A;
-      --border: #DED7C8;      /* 紙の罫線 */
-      --border-dark: #3E382F;
-      --shadow-sm: 0 1px 3px rgba(35, 32, 28, 0.07);
-      --shadow-md: 0 4px 14px rgba(35, 32, 28, 0.10);
-      --shadow-lg: 0 12px 34px rgba(35, 32, 28, 0.14);
+      --text: #1F2937;
+      --text-muted: #6B7280;
+      --text-light: #9CA3AF;
+      --border: #E5E7EB;
+      --border-dark: #2A4866;
+      /* ヒーローのアクセント2色。index のダークヒーローと同じ */
+      --hero-cyan: #6EC6F5;
+      --hero-gold: #F2C879;
+      --shadow-sm: 0 2px 8px rgba(15, 44, 68, 0.08);
+      --shadow-md: 0 8px 24px rgba(15, 44, 68, 0.12);
+      --shadow-lg: 0 20px 50px rgba(15, 44, 68, 0.18);
 
       /* スペーシング（8px基準） */
       --space-1: 8px;  --space-2: 16px; --space-3: 24px;
@@ -98,9 +104,9 @@
       --space-7: 64px; --space-8: 80px; --space-9: 96px;
 
       /* 角丸 */
-      --radius-sm: 3px;
-      --radius-md: 5px;
-      --radius-lg: 6px;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 12px;
 
       /* カードpadding */
       --card-pad-compact: 28px 32px;
@@ -498,6 +504,7 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
 
     /* ============================================
        Section 2: PROBLEM
@@ -1876,12 +1883,12 @@
     /* --- 数字は墨で、大きく。ここは「一人の記録」なので実績ではなく事実 --- */
     .num, .pricing-price .num { color: var(--navy); letter-spacing: -.02em; }
 
-    /* --- 印（はんこ）風のバッジ --- */
+    /* --- バッジ（2026-08-11：角丸を他ページと同じ --radius-sm に揃えた） --- */
     .pricing-badge, .hero-badge {
       background: var(--orange);
       color: #FFF8F2;
       border: none;
-      border-radius: 2px;
+      border-radius: var(--radius-sm);
       box-shadow: none;
       letter-spacing: .08em;
     }
@@ -1894,29 +1901,82 @@
     .method-card { background: rgba(255,253,248,.055); border-color: rgba(245,241,231,.18); }
     .method-icon { background: rgba(245,241,231,.12); color: #F0E9DA; }
 
-    /* --- 墨地の上では朱が沈むので、そこだけ明るい朱にする --- */
+    /* --- 紺地の上ではオレンジが沈むので、そこだけ金にする（index の紺地と同じ扱い） --- */
     .method .em, .method-title .em,
     .final-cta .em, .final-cta-title .em,
     .pricing-card.featured .em,
-    .site-footer .em { color: #E4816E; }
-    .method .underline-mark, .final-cta .underline-mark { color: #E4816E; }
+    .site-footer .em { color: var(--hero-gold); }
+    .method .underline-mark, .final-cta .underline-mark { color: var(--hero-gold); }
 
-    /* --- 写真は主役ではない。紙に馴染ませる --- */
-    .hero-visual img, .hero-image-wrap img {
-      filter: grayscale(.55) sepia(.18) contrast(.96) brightness(1.02);
+    /* --- 2026-08-11：写真を紙に馴染ませるセピア加工をやめた（他3ページは素の写真） --- */
+
+    /* --- ボタン（2026-08-11：角丸とホバー色を index に揃えた） --- */
+    .btn { border-radius: var(--radius-sm); letter-spacing: .04em; }
+    .btn-orange { background: var(--orange); }
+    .btn-orange:hover { background: #E55A2B; }
+    .btn-outline { border-width: 1px; }
+    .pricing-cta { border-radius: var(--radius-sm); background: var(--orange); }
+    .pricing-cta:hover { background: #E55A2B; }
+
+    /* --- ヘッダー・フッター（2026-08-11：ロゴを index と同じ丸い印に戻した） --- */
+    .site-header { background: rgba(247,244,236,.92); backdrop-filter: blur(8px); }
+    .logo-mark {
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.28), inset 0 0 0 4px rgba(255,255,255,0.08), 0 0 8px rgba(255,107,53,0.3);
     }
 
-    /* --- ボタン：朱の判子と、墨の枠 --- */
-    .btn { border-radius: 2px; letter-spacing: .04em; }
-    .btn-orange { background: var(--orange); }
-    .btn-orange:hover { background: #9E2F27; }
-    .btn-outline { border-width: 1px; }
-    .pricing-cta { border-radius: 2px; background: var(--orange); }
-    .pricing-cta:hover { background: #9E2F27; }
-
-    /* --- ヘッダー・フッター --- */
-    .site-header { background: rgba(247,244,236,.92); backdrop-filter: blur(8px); }
-    .logo-mark { border-radius: 2px; background: var(--navy); box-shadow: none; color: #F5F1E7; }
+    /* ============================================================
+       ヒーローをダークにする一括上書き（2026-08-11・本人指示「デザインは全部あわせてほしい」）
+       index.html の .hub-hero と同じ作り＝紺のグラデ地＋薄い格子＋水色のにじみ。
+       アクセントは水色(--hero-cyan)と金(--hero-gold)の2色だけ。
+       🔴 このブロックをまるごと消すと、上で定義した「白地のヒーロー」に戻る。
+       ============================================================ */
+    .hero {
+      color: var(--white);
+      background:
+        radial-gradient(900px 520px at 88% 12%, rgba(110,198,245,0.18) 0%, rgba(110,198,245,0) 62%),
+        radial-gradient(760px 480px at 6% 90%, rgba(242,200,121,0.12) 0%, rgba(242,200,121,0) 65%),
+        linear-gradient(160deg, #12354F 0%, var(--navy) 46%, #08182A 100%);
+    }
+    /* 薄い格子。暗い地なので線は白側を薄く使う */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 58px 58px;
+      -webkit-mask-image: radial-gradient(120% 90% at 30% 20%, #000 20%, transparent 78%);
+      mask-image: radial-gradient(120% 90% at 30% 20%, #000 20%, transparent 78%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-eyebrow {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.20);
+      color: var(--hero-gold);
+      backdrop-filter: blur(8px);
+    }
+    .hero-title { color: var(--white); }
+    .hero-title .em { color: var(--hero-cyan); text-shadow: 0 0 34px rgba(110,198,245,0.40); }
+    /* 下敷きの帯は暗い地だと汚れて見えるので、細い下線に置き換える */
+    .hero-title .em::after {
+      bottom: -2px;
+      height: 3px;
+      background: linear-gradient(90deg, rgba(110,198,245,0) 0%, rgba(110,198,245,0.9) 18%, rgba(110,198,245,0.9) 82%, rgba(110,198,245,0) 100%);
+      z-index: 0;
+    }
+    .hero-sub { color: rgba(255,255,255,0.85); }
+    .hero-sub strong { color: var(--white); }
+    .hero-sub strong.hero-limit { color: var(--hero-gold); }
+    /* 暗い地では緑・濃橙のリンクが沈むので、金と水色に寄せる */
+    .hero .hero-note { color: rgba(255,255,255,0.66); }
+    .hero .hero-note a { color: var(--hero-cyan); font-weight: 600; }
+    .hero-limit { color: var(--hero-gold); }
+    .hero-floating-card { background: rgba(255,255,255,0.94); }
 
     /* --- 動きを減らす設定の人には、入場アニメを出さない --- */
     @media (prefers-reduced-motion: reduce) {
@@ -1965,7 +2025,7 @@
         <div class="hero-content">
           <span class="hero-eyebrow">簿記ラボ ｜ by 数字の資格AIラボ</span>
           <h1 class="hero-title">簿記1級、<br><span class="em">本気の人とだけ、<br>走ります。</span></h1>
-          <p class="hero-sub">模擬試験で合格点を連発できて、ようやくスタートライン。ライバルは公認会計士の受験生です。それでも受けると決めた方へ——3回落ちて、28点から70点まで積み上げた合格者が、<strong>講義 全51本</strong>と月2回の画面共有で、合格まで伴走します。<strong style="color:#D4700A;">お受けできるのは5名まで。</strong></p>
+          <p class="hero-sub">模擬試験で合格点を連発できて、ようやくスタートライン。ライバルは公認会計士の受験生です。それでも受けると決めた方へ——3回落ちて、28点から70点まで積み上げた合格者が、<strong>講義 全51本</strong>と月2回の画面共有で、合格まで伴走します。<strong class="hero-limit">お受けできるのは5名まで。</strong></p>
           <div class="hero-ctas">
             <a href="#pricing" class="btn btn-orange">プランを見る
               <svg viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
@@ -1975,7 +2035,7 @@
               LINEで無料相談
             </a>
           </div>
-          <p style="margin:18px 0 0;font-size:13px;color:var(--text-muted);">簿記3級・2級の方は <a href="https://coconala.com/services/3501081" target="_blank" rel="noopener" style="color:#2D6A4F;font-weight:600;">ココナラの個別サポート（評価5.0）</a> へどうぞ。</p>
+          <p class="hero-note" style="margin:18px 0 0;font-size:13px;">簿記3級・2級の方は <a href="https://coconala.com/services/3501081" target="_blank" rel="noopener">ココナラの個別サポート（評価5.0）</a> へどうぞ。</p>
         </div>
 
         <!-- ヒーロービジュアル：伴走イラスト（合格ゴールへ並走） -->
