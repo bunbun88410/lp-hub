@@ -84,17 +84,21 @@
       --orange-soft: #FFE8DD;
       --green: #06C755;
       --green-dark: #04A547;
-      --cream: #F7F4ED;
-      --cream-deep: #EFE9DC;
+      --cream: #0C2137;          /* 節の地（旧クリーム） */
+      --panel: #12304A;           /* カードの面 */
+      --panel-2: #0A1C2E;         /* 一段沈んだ面 */
+      --cream-deep: #1A3F5F;
       --white: #FFFFFF;
-      --text: #1F2937;
-      --text-muted: #6B7280;
-      --text-light: #9CA3AF;
-      --border: #E5E7EB;
+      --text: #D3E0EE;
+      --text-muted: #A6B8CC;
+      --text-light: #7C8EA4;
+      --border: rgba(150,190,235,0.20);
+      --ink: #EAF1FF;             /* 暗い地に載せる見出しの文字 */
+      --mint: #46E0A8;            /* 暗い地で沈まない緑（旧 #2D6A4F の後継） */
       --border-dark: #2A4866;
-      --shadow-sm: 0 2px 8px rgba(15, 44, 68, 0.08);
-      --shadow-md: 0 8px 24px rgba(15, 44, 68, 0.12);
-      --shadow-lg: 0 20px 50px rgba(15, 44, 68, 0.18);
+      --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.35);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.45);
+      --shadow-lg: 0 26px 70px rgba(0, 0, 0, 0.55);
 
       /* スペーシング（8px基準） */
       --space-1: 8px;  --space-2: 16px; --space-3: 24px;
@@ -126,7 +130,7 @@
       font-family: 'Noto Sans JP', sans-serif;
       font-weight: 400;
       color: var(--text);
-      background: var(--white);
+      background: #08182A;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
@@ -146,7 +150,7 @@
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.2em;
-      color: var(--navy);
+      color: var(--ink);
       text-transform: uppercase;
       margin-bottom: 24px;
     }
@@ -162,7 +166,7 @@
       line-height: 1.25;
       letter-spacing: -0.01em;
       margin-bottom: 24px;
-      color: var(--navy);
+      color: var(--ink);
     }
     .section-subtitle {
       font-size: clamp(16px, 1.5vw, 18px);
@@ -210,8 +214,8 @@
     }
     .btn-line:hover { background: var(--green-dark); }
     .btn-outline {
-      background: var(--white);
-      color: var(--navy);
+      background: var(--panel);
+      color: var(--ink);
       border: 2px solid var(--navy);
     }
     .btn-outline:hover { background: var(--navy); color: var(--white); }
@@ -258,7 +262,7 @@
       width: 100%;
       padding: 16px 0;
       z-index: 10;
-      background: var(--cream);
+      background: var(--panel-2);
       border-bottom: 1px solid var(--border);
     }
     .site-header .container {
@@ -278,7 +282,7 @@
     .site-nav a {
       font-size: 14px;
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       white-space: nowrap;
     }
     .site-nav a:hover {
@@ -291,7 +295,7 @@
       gap: 12px;
       font-weight: 900;
       font-size: 18px;
-      color: var(--navy);
+      color: var(--ink);
     }
     .logo-mark {
       width: 40px;
@@ -316,7 +320,7 @@
        ============================================ */
     .hero {
       padding: clamp(48px, 6vw, 80px) 0;
-      background: var(--white);
+      background: var(--panel);
       position: relative;
       overflow: hidden;
       min-height: 100vh;
@@ -337,7 +341,7 @@
       display: inline-block;
       padding: 8px 18px;
       background: var(--cream-deep);
-      color: var(--navy);
+      color: var(--ink);
       font-weight: 700;
       font-size: 13px;
       letter-spacing: 0.1em;
@@ -350,7 +354,7 @@
       font-weight: 900;
       line-height: 1.05;
       letter-spacing: -0.01em;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 32px;
       animation: hero-fade 0.8s ease-out 0.1s both;
     }
@@ -420,8 +424,8 @@
       right: -20px;
       max-width: 200px;
       padding: 14px 18px;
-      background: var(--white);
-      color: var(--navy);
+      background: var(--panel);
+      color: var(--ink);
       border: 2px solid var(--navy);
       border-radius: var(--radius-md);
       display: flex;
@@ -440,7 +444,7 @@
       height: 38px;
       border-radius: 50%;
       background: rgba(15,44,68,0.08);
-      color: var(--navy);
+      color: var(--ink);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -458,13 +462,13 @@
     }
     .hero-badge-em {
       font-size: 17px;
-      color: var(--navy);
+      color: var(--ink);
     }
     .hero-floating-card {
       position: absolute;
       bottom: -30px;
       left: -30px;
-      background: var(--white);
+      background: var(--panel);
       padding: 20px 24px;
       border-radius: var(--radius-md);
       box-shadow: var(--shadow-md);
@@ -479,7 +483,7 @@
       height: 44px;
       border-radius: 50%;
       background: rgba(15,44,68,0.08);
-      color: var(--navy);
+      color: var(--ink);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -494,7 +498,7 @@
     .hero-floating-card-text strong {
       display: block;
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 2px;
     }
 
@@ -507,7 +511,7 @@
        Section 2: PROBLEM
        ============================================ */
     .problem {
-      background: var(--cream);
+      background: var(--panel-2);
       position: relative;
     }
     .problem::before {
@@ -532,7 +536,7 @@
     .problem-list {
       max-width: 800px;
       margin: 0 auto 48px;
-      background: var(--white);
+      background: var(--panel);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
       overflow: hidden;
@@ -548,14 +552,14 @@
     }
     .problem-card:last-child { border-bottom: none; }
     .problem-card:hover {
-      background: var(--cream);
+      background: var(--panel-2);
     }
     .problem-icon {
       width: 36px;
       height: 36px;
       border-radius: 50%;
       background: rgba(15,44,68,0.08);
-      color: var(--navy);
+      color: var(--ink);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -573,12 +577,12 @@
       max-width: 720px;
       margin: 0 auto;
       padding: 32px;
-      background: var(--white);
+      background: var(--panel);
       border-radius: var(--radius-md);
       border: 2px dashed var(--navy);
       font-size: clamp(18px, 2vw, 22px);
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       line-height: 1.6;
     }
     .problem-bridge .em {
@@ -589,7 +593,7 @@
        Section 3: MISSION
        ============================================ */
     .mission {
-      background: var(--white);
+      background: var(--panel);
       text-align: center;
     }
     .mission-title {
@@ -597,7 +601,7 @@
       font-weight: 900;
       line-height: 1.25;
       letter-spacing: -0.01em;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 32px;
       max-width: 920px;
       margin-left: auto;
@@ -619,7 +623,7 @@
       max-width: 820px;
       margin: 0 auto;
       text-align: left;
-      background: var(--white);
+      background: var(--panel);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
       overflow: hidden;
@@ -634,7 +638,7 @@
       transition: background 0.2s ease;
     }
     .mission-step:last-child { border-bottom: none; }
-    .mission-step:hover { background: var(--cream); }
+    .mission-step:hover { background: var(--panel-2); }
     .mission-step-num {
       width: 44px;
       height: 44px;
@@ -655,13 +659,13 @@
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.2em;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 8px;
     }
     .mission-step-title {
       font-size: var(--fs-h2);
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 8px;
       line-height: 1.4;
     }
@@ -769,7 +773,7 @@
        Section 5: HOW TO USE (5-step cycle)
        ============================================ */
     .how-to {
-      background: var(--white);
+      background: var(--panel);
       position: relative;
     }
     .how-to-header {
@@ -786,7 +790,7 @@
       position: relative;
     }
     .how-to-step {
-      background: var(--cream);
+      background: var(--panel-2);
       padding: 32px 20px;
       border-radius: var(--radius-md);
       text-align: center;
@@ -797,7 +801,7 @@
     .how-to-step:hover {
       transform: translateY(-4px);
       background: var(--cream-deep);
-      border-color: var(--navy);
+      border-color: var(--ink);
     }
     .how-to-step-num {
       width: 48px;
@@ -817,7 +821,7 @@
     .how-to-step-title {
       font-size: var(--fs-h3);
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 8px;
       line-height: 1.4;
     }
@@ -850,7 +854,7 @@
        Section 6: CONNECTIONS
        ============================================ */
     .connections {
-      background: var(--cream);
+      background: var(--panel-2);
       position: relative;
       overflow: hidden;
     }
@@ -863,7 +867,7 @@
     .connections-list {
       max-width: 920px;
       margin: 0 auto 56px;
-      background: var(--white);
+      background: var(--panel);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       overflow: hidden;
@@ -879,13 +883,13 @@
     }
     .connection-row:last-child { border-bottom: none; }
     .connection-row:hover {
-      background: var(--cream);
+      background: var(--panel-2);
     }
     .connection-math {
       font-family: 'Inter', sans-serif;
       font-size: clamp(18px, 2.2vw, 24px);
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       letter-spacing: -0.01em;
     }
     .connection-arrow {
@@ -893,7 +897,7 @@
       height: 44px;
       border-radius: 50%;
       background: rgba(15,44,68,0.08);
-      color: var(--navy);
+      color: var(--ink);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -912,7 +916,7 @@
       text-align: center;
       font-size: clamp(20px, 2.5vw, 28px);
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       line-height: 1.6;
       padding: 0 24px;
       position: relative;
@@ -923,7 +927,7 @@
       font-family: 'Inter', serif;
       font-size: clamp(60px, 8vw, 96px);
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       opacity: 0.4;
       line-height: 0.6;
       position: absolute;
@@ -990,7 +994,7 @@
       margin: 0 auto;
     }
     .pricing-card {
-      background: var(--white);
+      background: var(--panel);
       color: var(--text);
       padding: var(--card-pad-showcase);
       border-radius: var(--radius-lg);
@@ -1025,7 +1029,7 @@
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.2em;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 12px;
     }
     .pricing-card.featured .pricing-card-label {
@@ -1034,7 +1038,7 @@
     .pricing-card-name {
       font-size: var(--fs-h2);
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 16px;
     }
     .pricing-card.featured .pricing-card-name {
@@ -1051,13 +1055,13 @@
       font-weight: 900;
       letter-spacing: -0.01em;
       line-height: 1;
-      color: var(--navy);
+      color: var(--ink);
     }
     .pricing-card.featured .pricing-price .num { color: var(--white); }
     .pricing-price .yen {
       font-size: 24px;
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       margin-right: 2px;
     }
     .pricing-card.featured .pricing-price .yen { color: var(--white); }
@@ -1098,13 +1102,13 @@
       font-size: 15px;
     }
     .pricing-list .subject {
-      color: var(--navy);
+      color: var(--ink);
       font-weight: 600;
     }
     .pricing-list .price {
       font-weight: 900;
       font-size: 22px;
-      color: var(--navy);
+      color: var(--ink);
       letter-spacing: -0.01em;
     }
     .pricing-card.featured .pricing-list { border-color: rgba(255,255,255,0.2); }
@@ -1113,7 +1117,7 @@
     .pricing-card.featured .pricing-list .price { color: var(--white); }
     /* 階層価格リスト：科目見出し行（パック）と配下の分野行 */
     .pricing-list li.group {
-      background: var(--cream);
+      background: var(--panel-2);
       margin-top: 14px;
       padding: 10px 12px;
       border-bottom: none;
@@ -1210,7 +1214,7 @@
       width: 100%;
       min-width: 560px;
       border-collapse: collapse;
-      background: var(--white);
+      background: var(--panel);
       font-size: 14px;
     }
     .pricing-compare th,
@@ -1234,13 +1238,13 @@
     .pricing-compare thead th:first-child { border-left: none; }
     .pricing-compare tbody th {
       text-align: left;
-      color: var(--navy);
+      color: var(--ink);
       font-weight: 700;
       white-space: nowrap;
-      background: var(--cream);
+      background: var(--panel-2);
     }
     .pricing-compare td { color: var(--text); }
-    .pricing-compare tbody tr:nth-child(even) td { background: var(--cream); }
+    .pricing-compare tbody tr:nth-child(even) td { background: var(--panel-2); }
     .pricing-compare .compare-check { color: var(--green-dark); display: inline-flex; }
     .pricing-compare .compare-check svg { width: 18px; height: 18px; }
     .pricing-trust-band {
@@ -1291,7 +1295,7 @@
     .line-broadcast-inner {
       max-width: 720px;
       margin: 0 auto;
-      background: var(--white);
+      background: var(--panel);
       border: 1px solid #BFE8CF;
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-md);
@@ -1339,7 +1343,7 @@
        Section 9: FAQ
        ============================================ */
     .faq {
-      background: var(--white);
+      background: var(--panel);
     }
     .faq-header {
       text-align: center;
@@ -1353,12 +1357,12 @@
       gap: 16px;
     }
     .faq-item {
-      background: var(--cream);
+      background: var(--panel-2);
       border-radius: var(--radius-sm);
       overflow: hidden;
       transition: background 0.2s ease;
     }
-    .faq-item[open] { background: var(--white); border: 2px solid var(--navy); }
+    .faq-item[open] { background: var(--panel); border: 2px solid var(--navy); }
     .faq-q {
       list-style: none;
       cursor: pointer;
@@ -1369,7 +1373,7 @@
       gap: 16px;
       font-size: var(--fs-h3);
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       line-height: 1.5;
       position: relative;
     }
@@ -1377,7 +1381,7 @@
     .faq-q-mark {
       font-family: 'Inter', sans-serif;
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       font-size: 20px;
       flex-shrink: 0;
       width: 32px;
@@ -1387,8 +1391,8 @@
       width: 28px;
       height: 28px;
       border-radius: 50%;
-      background: var(--white);
-      color: var(--navy);
+      background: var(--panel);
+      color: var(--ink);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1559,21 +1563,21 @@
        法務セクション（特商法・各種ポリシー）
        ============================================ */
     .legal {
-      background: var(--cream);
+      background: var(--panel-2);
       padding: var(--space-7) 0;
       border-top: 1px solid var(--border);
     }
     .legal-title {
       font-size: var(--fs-h2);
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       text-align: center;
       margin-bottom: 40px;
     }
     .legal-block {
       max-width: 820px;
       margin: 0 auto 28px;
-      background: var(--white);
+      background: var(--panel);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       padding: var(--card-pad-compact);
@@ -1582,7 +1586,7 @@
     .legal-block h3 {
       font-size: 18px;
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       margin: 0 0 18px;
       padding-bottom: 12px;
       border-bottom: 2px solid var(--navy);
@@ -1590,7 +1594,7 @@
     .legal-block h4 {
       font-size: 14px;
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       margin: 18px 0 6px;
     }
     .legal-block p,
@@ -1608,7 +1612,7 @@
     }
     .legal-dl dt {
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       padding: 12px 0;
       border-top: 1px solid var(--border);
       font-size: 14px;
@@ -1878,7 +1882,7 @@
       font-weight: 900;
       line-height: 1.05;
       letter-spacing: -0.01em;
-      color: var(--navy);
+      color: var(--ink);
       margin: 0 0 32px;
     }
     .hub-hero-h1 .em {
@@ -1916,7 +1920,7 @@
       font-size: clamp(15px, 1.4vw, 17px);
       font-weight: 700;
       line-height: 1.7;
-      color: var(--navy);
+      color: var(--ink);
     }
     .hub-hero-sub {
       font-size: clamp(16px, 1.5vw, 19px);
@@ -1924,7 +1928,7 @@
       line-height: 1.8;
       margin: 0 0 28px;
     }
-    .hub-hero-sub strong { color: var(--navy); }
+    .hub-hero-sub strong { color: var(--ink); }
     /* 本人の答え＝一人称で置く。読者への一般論として言い切らない */
     .hub-hero-answer {
       margin: 0 0 18px;
@@ -1932,7 +1936,7 @@
       line-height: 1.85;
       color: #A15A2B;
     }
-    .hub-hero-answer strong { color: var(--navy); }
+    .hub-hero-answer strong { color: var(--ink); }
     .hub-hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
     /* 予備校の「無料体験」の注記にあたる一行 */
     .hub-hero-free { margin: 12px 0 0; font-size: 12.5px; color: var(--text-muted); }
@@ -1945,12 +1949,12 @@
       align-items: center;
       gap: 8px;
       padding: 8px 15px;
-      background: var(--white);
+      background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 999px;
       font-size: 13px;
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       box-shadow: var(--shadow-sm);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
@@ -1982,9 +1986,9 @@
     }
     /* ヒーロー内の eyebrow は明るい地に載せるので、白のバッジにする */
     .hub-hero .hero-eyebrow {
-      background: var(--white);
+      background: var(--panel);
       border: 1px solid var(--border);
-      color: var(--navy);
+      color: var(--ink);
       box-shadow: var(--shadow-sm);
     }
 
@@ -2055,7 +2059,7 @@
     .hub-hero-track i { box-shadow: 0 0 10px currentColor; }
     .hub-hero-track-ai { border-color: rgba(242,200,121,0.65); box-shadow: 0 0 22px rgba(242,200,121,0.14); }
     .hub-hero .btn-outline { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.55); }
-    .hub-hero .btn-outline:hover { background: var(--white); color: var(--navy); }
+    .hub-hero .btn-outline:hover { background: var(--panel); color: var(--ink); }
     @media (max-width: 900px) {
       /* 縦画面では横スクリムが効かないので縦に覆う。人物が入る位置まで右へ寄せる */
       .hub-hero {
@@ -2108,14 +2112,14 @@
        01 何がある（講義の種類）→ 02 どれが自分に合うか（診断）→ 03 何のために
        ⚠ 03 は「人生が変わります」と言い切らない。渡せるのは一歩であって結果ではない。
        ============================================================ */
-    .concept { padding: clamp(56px, 7vw, 92px) 0; background: var(--white); }
+    .concept { padding: clamp(56px, 7vw, 92px) 0; background: var(--panel); }
     .concept-head { max-width: 780px; margin: 0 auto clamp(32px, 4vw, 48px); text-align: center; }
     .concept-head .section-title { margin-top: 12px; }
     .concept-head .em { color: var(--orange); display: inline-block; }
     .concept-lead { margin: 16px 0 0; color: var(--text-muted); font-size: 15.5px; line-height: 2; }
     .concept-steps { list-style: none; display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; max-width: 1000px; margin: 0 auto; }
     .cstep {
-      background: var(--cream);
+      background: var(--panel-2);
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: clamp(22px, 2.6vw, 32px) clamp(20px, 2.6vw, 34px);
@@ -2124,32 +2128,32 @@
       font-family: 'Inter', system-ui, sans-serif;
       font-size: 12px; font-weight: 900; letter-spacing: .1em; color: var(--orange);
     }
-    .cstep-title { margin: 8px 0 0; font-size: clamp(19px, 2.1vw, 24px); color: var(--navy); line-height: 1.5; }
+    .cstep-title { margin: 8px 0 0; font-size: clamp(19px, 2.1vw, 24px); color: var(--ink); line-height: 1.5; }
     .cstep-text { margin: 12px 0 0; color: var(--text-muted); font-size: 14.5px; line-height: 2; }
-    .cstep-text strong { color: var(--navy); }
+    .cstep-text strong { color: var(--ink); }
     /* 01＝講義の種類 */
     .ckinds { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 12px; margin-top: 18px; }
-    .ckind { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; }
-    .ckind a { color: var(--navy); font-weight: 700; font-size: 15px; text-decoration: none; }
+    .ckind { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; }
+    .ckind a { color: var(--ink); font-weight: 700; font-size: 15px; text-decoration: none; }
     .ckind a::after { content: " →"; color: var(--orange); font-weight: 900; }
     .ckind span { display: block; margin-top: 6px; color: var(--text-muted); font-size: 12.5px; line-height: 1.7; }
     /* 02＝診断への導線 */
     .cstep-cta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
     .cstep-note { margin: 10px 0 0; font-size: 12.5px; color: var(--text-light); }
     /* 03＝コンセプトの言い切り。ここだけ紺地にして着地点だと分かるようにする */
-    .cstep-goal { background: var(--navy); border-color: var(--navy); }
+    .cstep-goal { background: var(--navy); border-color: var(--ink); }
     .cstep-goal .cstep-num { color: #F2C879; }
     .cstep-goal .cstep-title { color: var(--white); }
     .cstep-goal .cstep-text { color: rgba(255,255,255,0.84); }
     .cstep-goal .cstep-text strong { color: #F2C879; }
     @media (max-width: 700px) { .concept-head { text-align: left; } }
-    .hub-router { padding: clamp(36px, 4.5vw, 56px) 0; background: var(--white); }
+    .hub-router { padding: clamp(36px, 4.5vw, 56px) 0; background: var(--panel); }
     .hub-router-lead {
       margin: 0;
       text-align: center;
       font-size: clamp(18px, 2vw, 22px);
       font-weight: 800;
-      color: var(--navy);
+      color: var(--ink);
       line-height: 1.6;
     }
     /* inline-block ＝ 折り返すときに「どちらから始めても構いません。」を途中で割らない */
@@ -2170,12 +2174,12 @@
       margin: 22px auto 0;
     }
     .hub-router-card {
-      background: var(--cream);
+      background: var(--panel-2);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 16px 18px;
     }
-    .hub-router-card strong { display: block; color: var(--navy); font-size: 14px; }
+    .hub-router-card strong { display: block; color: var(--ink); font-size: 14px; }
     .hub-router-card p { margin: 6px 0 0; color: var(--text-muted); font-size: 13.5px; }
     .hub-router-line {
       margin: 18px auto 0;
@@ -2184,7 +2188,7 @@
       color: var(--text-muted);
       font-size: 13.5px;
     }
-    .hub-router-line a { color: #2D6A4F; font-weight: 600; }
+    .hub-router-line a { color: var(--mint); font-weight: 600; }
 
     /* ===== 「なぜ作ったのか」＝4つの約束の前置き（旧 STORY の節をここへ畳んだ） ===== */
     .method-why {
@@ -2196,7 +2200,7 @@
     }
     .method-why p { margin: 0; }
     .method-why p + p { margin-top: 20px; }
-    .method-why strong { color: var(--navy); font-weight: 700; }
+    .method-why strong { color: var(--ink); font-weight: 700; }
     /* 書いた人。約束のあとに名刺のように1枚だけ置く */
     .method-who {
       max-width: 720px;
@@ -2209,9 +2213,9 @@
       width: 64px; height: 64px; border-radius: 50%; object-fit: cover;
       border: 3px solid var(--white); box-shadow: var(--shadow-sm); flex: none;
     }
-    .method-who b { display: block; color: var(--navy); font-size: 16px; }
+    .method-who b { display: block; color: var(--ink); font-size: 16px; }
     .method-who span { display: block; margin-top: 3px; color: var(--text-muted); font-size: 12.5px; line-height: 1.7; }
-    .method-who a { display: inline-block; margin-top: 8px; font-size: 13.5px; color: #2D6A4F; font-weight: 700; }
+    .method-who a { display: inline-block; margin-top: 8px; font-size: 13.5px; color: var(--mint); font-weight: 700; }
     @media (max-width: 700px) {
       .method-why { font-size: 15px; line-height: 2.05; }
     }
@@ -2503,7 +2507,7 @@
     .fw-claim-text strong { color: var(--white); }
     .fw-ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 26px; }
     .for-work .btn-outline { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.55); }
-    .for-work .btn-outline:hover { background: var(--white); color: var(--navy); }
+    .for-work .btn-outline:hover { background: var(--panel); color: var(--ink); }
     .for-work .btn-orange { box-shadow: 0 0 40px rgba(255,107,53,0.3); }
     .fw-note { margin: 18px 0 0; font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.8; }
     @media (max-width: 780px) {
@@ -2512,7 +2516,7 @@
       .fw-claim { padding: 30px 22px; }
     }
     .why-now-accel .btn-outline { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.55); }
-    .why-now-accel .btn-outline:hover { background: var(--white); color: var(--navy); }
+    .why-now-accel .btn-outline:hover { background: var(--panel); color: var(--ink); }
     @media (max-width: 700px) {
       .why-now-accel { padding: 28px 22px; }
       .why-now-motif { display: none; }
@@ -2540,13 +2544,13 @@
     }
     .dx-guide-bubble {
       position: absolute; left: max(12px, calc(50% - 620px)); bottom: 329px;
-      width: 210px; background: #fff; border: 1.5px solid #CFE3D8; border-radius: 16px;
-      padding: 14px 16px; font-size: 13.5px; line-height: 1.8; color: #234;
-      box-shadow: 0 10px 26px rgba(15,44,68,.12); pointer-events: none;
+      width: 210px; background: var(--panel); border: 1.5px solid rgba(70,224,168,0.40); border-radius: 16px;
+      padding: 14px 16px; font-size: 13.5px; line-height: 1.8; color: var(--text);
+      box-shadow: var(--shadow-md); pointer-events: none;
     }
     .dx-guide-bubble::after {
       content: ""; position: absolute; left: 34px; bottom: -9px; width: 16px; height: 16px;
-      background: #fff; border-right: 1.5px solid #CFE3D8; border-bottom: 1.5px solid #CFE3D8;
+      background: var(--panel); border-right: 1.5px solid rgba(70,224,168,0.40); border-bottom: 1.5px solid rgba(70,224,168,0.40);
       transform: rotate(45deg);
     }
     @media (max-width: 1180px) { .dx-guide, .dx-guide-bubble { display: none; } }
@@ -2719,7 +2723,7 @@
     }
     .dxw-card .btn-outline:hover { color: #fff; border-color: #6EC6F5; background: rgba(110,198,245,.22); }
     /* ===== 診断を閉じたあとに残る結果の帯 ===== */
-    .dxw-echo { background: var(--cream); padding: clamp(28px, 4vw, 44px) 0 0; }
+    .dxw-echo { background: var(--panel-2); padding: clamp(28px, 4vw, 44px) 0 0; }
     .dxe-card {
       max-width: 720px; margin: 0 auto;
       background: var(--navy); border-radius: 18px;
@@ -2732,7 +2736,7 @@
     .dxe-note strong { color: #F2C879; }
     .dxe-ctas { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
     .dxe-card .btn-outline { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.55); }
-    .dxe-card .btn-outline:hover { background: var(--white); color: var(--navy); }
+    .dxe-card .btn-outline:hover { background: var(--panel); color: var(--ink); }
     .dxe-redo { font: inherit; font-size: 13.5px; color: rgba(255,255,255,0.72); background: none; border: none; cursor: pointer; }
     .dxe-redo:hover { color: #fff; text-decoration: underline; }
 
@@ -3010,7 +3014,7 @@
   </section>
 
   <!-- ===== コース診断（入口） ===== -->
-  <section id="shindan" style="background:var(--cream);">
+  <section id="shindan" style="background:var(--panel-2);">
     <div class="container">
       <div class="dx-guide-bubble">ぼくがミニぶんぶんです。<br>一緒に、いまの現在地を見にいこう。</div>
       <img src="/assets/minibunbun-chibi.png" alt="案内役のミニぶんぶん" class="dx-guide" width="286" height="520" decoding="async">
@@ -3335,33 +3339,33 @@
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1000px;margin:0 auto;">
         <!-- ① 簿記1級 -->
-        <div style="display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 6px 24px rgba(15,44,68,0.05);">
+        <div style="display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 6px 24px rgba(15,44,68,0.05);">
           <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--text-muted);">簿記ラボ</div>
-          <h3 style="margin:8px 0 0;font-size:21px;color:var(--navy);">簿記1級 合格伴走</h3>
-          <p style="margin:10px 0 0;font-size:13px;font-weight:700;color:#2D6A4F;">処理する人 → 理解する人</p>
+          <h3 style="margin:8px 0 0;font-size:21px;color:var(--ink);">簿記1級 合格伴走</h3>
+          <p style="margin:10px 0 0;font-size:13px;font-weight:700;color:var(--mint);">処理する人 → 理解する人</p>
           <p style="margin:12px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.8;flex:1;"><strong>経理・会計の専門性を、長期で積み上げたい方へ。</strong>3回落ちて4回目で合格した凡人が、講義 全51本と月2回の面談で合格まで伴走します（5名まで）。3級・2級はココナラの個別サポートで。</p>
           <a href="/boki.html" class="btn btn-outline" style="margin-top:20px;">簿記の伴走を見る →</a>
         </div>
         <!-- ② アナリスト -->
-        <div style="display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 6px 24px rgba(15,44,68,0.05);">
+        <div style="display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 6px 24px rgba(15,44,68,0.05);">
           <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--text-muted);">CMA Academy</div>
-          <h3 style="margin:8px 0 0;font-size:21px;color:var(--navy);">証券アナリスト(CMA)1次対策</h3>
-          <p style="margin:10px 0 0;font-size:13px;font-weight:700;color:#2D6A4F;">作る人 → 分析する人</p>
+          <h3 style="margin:8px 0 0;font-size:21px;color:var(--ink);">証券アナリスト(CMA)1次対策</h3>
+          <p style="margin:10px 0 0;font-size:13px;font-weight:700;color:var(--mint);">作る人 → 分析する人</p>
           <p style="margin:12px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.8;flex:1;"><strong>財務・経営企画・IR・金融へ広げたい方へ。</strong>経済・ファンダメンタル分析・証券分析・数学を、丸暗記ではなく本質から。数学嫌いを置いていきません。</p>
           <a href="/cma.html" class="btn btn-outline" style="margin-top:20px;">CMA対策を見る →</a>
         </div>
         <!-- ③ AI実践編（＝目標ではなく道具。「副業」は看板ではなく講座名としてのみ出す） -->
-        <div style="display:flex;flex-direction:column;background:#fff;border:2px solid #2D6A4F;border-radius:18px;padding:28px;box-shadow:0 10px 30px rgba(45,106,79,0.12);">
-          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#2D6A4F;">AI実践編 ／ 副業を加速する</div>
-          <h3 style="margin:8px 0 0;font-size:21px;color:var(--navy);">知識を、AIで使える形に変える</h3>
-          <p style="margin:10px 0 0;font-size:13px;font-weight:700;color:#2D6A4F;">知っている人 → 使える人</p>
+        <div style="display:flex;flex-direction:column;background:var(--panel);border:2px solid #2D6A4F;border-radius:18px;padding:28px;box-shadow:0 10px 30px rgba(45,106,79,0.12);">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--mint);">AI実践編 ／ 副業を加速する</div>
+          <h3 style="margin:8px 0 0;font-size:21px;color:var(--ink);">知識を、AIで使える形に変える</h3>
+          <p style="margin:10px 0 0;font-size:13px;font-weight:700;color:var(--mint);">知っている人 → 使える人</p>
           <p style="margin:12px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.8;flex:1;"><strong>もう知識がある方へ。分野は問いません。</strong>資格や受験勉強、実務で積んできたものを、AIで実務と収入につながる形に。プログラミングの知識は要りません（会計×AI実践編 ¥49,800／金融AI実践編 ¥29,800／副業×AI実践編 ¥99,800）。</p>
           <a href="/ai.html" class="btn btn-orange" style="margin-top:20px;">AI実践を見る →</a>
         </div>
       </div>
 
       <!-- 進む順番（複合ルート）はヒーロー直下の .hub-router に移した。ここでは再掲せず、相談導線だけ残す -->
-      <p style="margin:32px auto 0;max-width:660px;text-align:center;color:var(--text-muted);font-size:13.5px;">どれを選んでも、後から変えて構いません。決めきれないときは<a href="https://line.me/R/ti/p/@159qegdx" target="_blank" rel="noopener" style="color:#2D6A4F;font-weight:600;">LINEでご相談</a>ください。いまの状況をうかがって、一緒に決めます。</p>
+      <p style="margin:32px auto 0;max-width:660px;text-align:center;color:var(--text-muted);font-size:13.5px;">どれを選んでも、後から変えて構いません。決めきれないときは<a href="https://line.me/R/ti/p/@159qegdx" target="_blank" rel="noopener" style="color:var(--mint);font-weight:600;">LINEでご相談</a>ください。いまの状況をうかがって、一緒に決めます。</p>
     </div>
   </section>
 
@@ -3701,12 +3705,12 @@
     .cw-dots span:nth-child(2) { animation-delay: .18s; } .cw-dots span:nth-child(3) { animation-delay: .36s; }
     @keyframes cwB { 0%,60%,100% { opacity: .28; } 30% { opacity: 1; } }
     .cw-chips { display: flex; flex-wrap: wrap; gap: 7px; }
-    .cw-chip { font: inherit; font-size: 12.5px; background: #fff; border: 1px solid #CFE3D8; color: #2D6A4F; border-radius: 999px; padding: 7px 12px; cursor: pointer; }
+    .cw-chip { font: inherit; font-size: 12.5px; background: #fff; border: 1px solid #CFE3D8; color: var(--mint); border-radius: 999px; padding: 7px 12px; cursor: pointer; }
     .cw-chip:hover { background: #F1F7F3; }
     .cw-foot { border-top: 1px solid #E5E9EF; padding: 12px; background: #fff; }
     .cw-form { display: flex; gap: 8px; align-items: flex-end; }
     .cw-input { flex: 1; font: inherit; font-size: 14px; border: 1.5px solid #E5E9EF; border-radius: 12px; padding: 10px 12px; resize: none; max-height: 90px; line-height: 1.6; }
-    .cw-input:focus { outline: none; border-color: #2D6A4F; }
+    .cw-input:focus { outline: none; border-color: var(--mint); }
     .cw-send { flex: none; background: #2D6A4F; color: #fff; border: none; border-radius: 12px; width: 42px; height: 42px; cursor: pointer; }
     .cw-send:disabled { background: #B6C2CE; cursor: default; }
     .cw-note { margin: 8px 2px 0; font-size: 11px; color: var(--text-muted); line-height: 1.6; }
@@ -3746,110 +3750,6 @@
       .cw-panel { right: 8px; left: 8px; bottom: 8px; width: auto; max-height: calc(100vh - 24px); }
     }
 
-    /* ============================================================
-       明暗の縞をやめる一括上書き（2026-08-11・本人指示
-       「明るいところと暗いところが織り交ざっていない方がいい」）
-
-       暗いのは ①ヒーロー（表紙） と ②最後のCTA＋フッター（締め）だけ。
-       途中にあった紺地の4節（for-study／for-work／method／受かって終わりにしない）と、
-       コンセプト03の紺カードを、明るい側へ反転させる。
-       🔴 このブロックをまるごと消すと、上で定義した紺地の版に戻る。
-       ============================================================ */
-
-    /* --- ① 地をクリームへ。格子・数式・チャートの装飾は薄くして残す --- */
-    .why-now, .for-work {
-      color: var(--text);
-      background:
-        radial-gradient(900px 520px at 85% 0%, #FFFDF8 0%, rgba(255,253,248,0) 62%),
-        linear-gradient(200deg, var(--white) 0%, var(--cream) 55%, #F1EFE6 100%);
-    }
-    .why-now::before, .for-work::before { opacity: .30; }
-    .why-now-motif span { color: rgba(15,44,68,0.08); }
-    .method { background: var(--cream); color: var(--text); }
-    .method::before { opacity: .45; }
-
-    /* --- ② 見出しの白を、オレンジの節見出し＋紺の大見出しへ --- */
-    .why-now-head .eyebrow, .fw-head .eyebrow, .method-header .eyebrow { color: var(--orange); }
-    .why-now-head .eyebrow::before, .fw-head .eyebrow::before, .method-header .eyebrow::before { background: var(--orange); }
-    .why-now-head .section-title, .fw-head .section-title, .method-title { color: var(--navy); }
-    .why-now-lead, .fw-lead { color: var(--text-muted); }
-    .why-now-lead strong, .fw-lead strong { color: var(--navy); }
-    .fw-hl { color: var(--orange); }
-
-    /* --- ③ ガラスのカードを、白いカードへ --- */
-    .why-now-card, .fw-step, .method-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-      backdrop-filter: none;
-    }
-    .why-now-card:hover, .method-card:hover { box-shadow: var(--shadow-md); }
-    .why-now-title, .fw-step-title, .method-card-title { color: var(--navy); }
-    .why-now-text, .fw-step-text, .method-card-text { color: var(--text-muted); }
-    .why-now-text strong, .fw-step-text strong { color: var(--orange); }
-    .why-now-num, .fw-step-num, .fw-arrow { color: var(--orange); }
-    .method-num-badge { color: var(--navy); opacity: .10; }
-    .method-icon { background: var(--orange-soft); color: var(--orange); }
-    .why-now-stance { color: var(--text-muted); }
-    .why-now-stance strong { color: var(--navy); }
-    .why-now-link { color: #2D6A4F; }
-    .why-now-link:hover { color: var(--orange); }
-
-    /* --- ④ 強調のボックスは、白地にオレンジの枠で立てる --- */
-    .why-now-accel, .fw-claim {
-      background: var(--white);
-      border: 1px solid var(--orange);
-      box-shadow: var(--shadow-md);
-    }
-    .why-now-accel-eyebrow, .fw-claim-text strong { color: var(--orange); }
-    .why-now-accel-title, .fw-claim-lead { color: var(--navy); }
-    .why-now-accel-text { color: var(--text-muted); }
-    .why-now-accel-text strong { color: var(--navy); }
-    .fw-claim-text { color: var(--text-muted); }
-    .fw-note { color: var(--text-light); }
-
-    /* --- ⑤ 白抜きのボタンは、明るい地では紺の枠にする --- */
-    .for-work .btn-outline, .why-now-accel .btn-outline {
-      background: transparent; color: var(--navy); border-color: var(--navy);
-    }
-    .for-work .btn-outline:hover, .why-now-accel .btn-outline:hover { background: var(--navy); color: var(--white); }
-    .for-work .btn-orange { box-shadow: var(--shadow-sm); }
-
-    /* --- ⑥ コンセプト03。紺のベタをやめ、白地＋オレンジの枠で「着地」を示す --- */
-    .cstep-goal { background: var(--white); border: 2px solid var(--orange); }
-    .cstep-goal .cstep-num { color: var(--orange); }
-    .cstep-goal .cstep-title { color: var(--navy); }
-    .cstep-goal .cstep-text { color: var(--text-muted); }
-    .cstep-goal .cstep-text strong { color: var(--orange); }
-
-    /* --- ⑥-2 for-study の2枚のカード（wn-*）。暗地前提の水色・金・白を明地用に置き換える --- */
-    .wn-q { color: var(--navy); }
-    .wn-a { color: var(--text-muted); }
-    .wn-a strong, .wn-hl { color: var(--orange); }
-    .wn-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-    }
-    .wn-card:hover { border-color: var(--orange); box-shadow: var(--shadow-md); }
-    .wn-card-badge { color: rgba(15,44,68,0.08); }
-    .wn-card-name { color: #2D6A4F; }
-    .wn-card-catch { color: var(--navy); }
-    .wn-card-text { color: var(--text-muted); }
-    .wn-card-text strong { color: var(--navy); }
-    /* 「こんな方に」の箱＝黒の半透明だと明地で灰色に濁るのでクリームにする */
-    .wn-card-for { background: var(--cream); }
-    .wn-for-label { color: var(--orange); }
-    .wn-card-for li { color: var(--text-muted); }
-    .wn-card-for li::before { color: #2D6A4F; }
-
-    /* --- ⑦ 「受かって終わり、にしない。」も明るい地に揃える --- */
-    .closing-word { background: var(--cream); color: var(--text); }
-    .closing-word .eyebrow { color: var(--orange); }
-    .closing-word .section-title { color: var(--navy); }
-    .closing-word p { color: var(--text-muted); }
-    .closing-word strong { color: var(--navy); }
-
   </style>
 
   <button type="button" class="cw-launch" id="cw-launch">
@@ -3874,7 +3774,7 @@
           <svg viewBox="0 0 256 256" fill="currentColor" style="width:18px;height:18px;"><path d="M231.87,114,52.11,25.35a16,16,0,0,0-19.51,4.86,16,16,0,0,0-1.71,17.06L61.94,128,30.89,208.73A16,16,0,0,0,45.83,232a16.5,16.5,0,0,0,6.31-1.28L231.87,142a16,16,0,0,0,0-28Z"/></svg>
         </button>
       </form>
-      <p class="cw-note">合否・収入を保証するものではありません。込み入った相談は <a href="https://line.me/R/ti/p/@159qegdx" target="_blank" rel="noopener" style="color:#2D6A4F;font-weight:600;">LINE</a> へどうぞ。</p>
+      <p class="cw-note">合否・収入を保証するものではありません。込み入った相談は <a href="https://line.me/R/ti/p/@159qegdx" target="_blank" rel="noopener" style="color:var(--mint);font-weight:600;">LINE</a> へどうぞ。</p>
     </div>
   </div>
 

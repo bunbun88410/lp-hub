@@ -83,20 +83,24 @@
       --orange-soft: #FFE8DD;
       --green: #06C755;
       --green-dark: #04A547;
-      --cream: #F7F4ED;
-      --cream-deep: #EFE9DC;
+      --cream: #0C2137;          /* 節の地（旧クリーム） */
+      --panel: #12304A;           /* カードの面 */
+      --panel-2: #0A1C2E;         /* 一段沈んだ面 */
+      --ink: #EAF1FF;             /* 暗い地に載せる見出しの文字 */
+      --mint: #46E0A8;            /* 暗い地で沈まない緑 */
+      --cream-deep: #1A3F5F;
       --white: #FFFFFF;
-      --text: #1F2937;
-      --text-muted: #6B7280;
-      --text-light: #9CA3AF;
-      --border: #E5E7EB;
+      --text: #D3E0EE;
+      --text-muted: #A6B8CC;
+      --text-light: #7C8EA4;
+      --border: rgba(150,190,235,0.20);
       --border-dark: #2A4866;
       /* ヒーローのアクセント2色。index のダークヒーローと同じ */
       --hero-cyan: #6EC6F5;
       --hero-gold: #F2C879;
-      --shadow-sm: 0 2px 8px rgba(15, 44, 68, 0.08);
-      --shadow-md: 0 8px 24px rgba(15, 44, 68, 0.12);
-      --shadow-lg: 0 20px 50px rgba(15, 44, 68, 0.18);
+      --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.35);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.45);
+      --shadow-lg: 0 26px 70px rgba(0, 0, 0, 0.55);
 
       /* スペーシング（8px基準） */
       --space-1: 8px;  --space-2: 16px; --space-3: 24px;
@@ -128,7 +132,7 @@
       font-family: 'Noto Sans JP', sans-serif;
       font-weight: 400;
       color: var(--text);
-      background: var(--white);
+      background: #08182A;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
@@ -148,7 +152,7 @@
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.2em;
-      color: var(--navy);
+      color: var(--ink);
       text-transform: uppercase;
       margin-bottom: 24px;
     }
@@ -164,7 +168,7 @@
       line-height: 1.25;
       letter-spacing: -0.01em;
       margin-bottom: 24px;
-      color: var(--navy);
+      color: var(--ink);
     }
     .section-subtitle {
       font-size: clamp(16px, 1.5vw, 18px);
@@ -212,8 +216,8 @@
     }
     .btn-line:hover { background: var(--green-dark); }
     .btn-outline {
-      background: var(--white);
-      color: var(--navy);
+      background: var(--panel);
+      color: var(--ink);
       border: 2px solid var(--navy);
     }
     .btn-outline:hover { background: var(--navy); color: var(--white); }
@@ -260,7 +264,7 @@
       width: 100%;
       padding: 16px 0;
       z-index: 10;
-      background: var(--cream);
+      background: var(--panel-2);
       border-bottom: 1px solid var(--border);
     }
     .site-header .container {
@@ -280,7 +284,7 @@
     .site-nav a {
       font-size: 14px;
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       white-space: nowrap;
     }
     .site-nav a:hover {
@@ -293,7 +297,7 @@
       gap: 12px;
       font-weight: 900;
       font-size: 18px;
-      color: var(--navy);
+      color: var(--ink);
     }
     .logo-mark {
       width: 40px;
@@ -318,7 +322,7 @@
        ============================================ */
     .hero {
       padding: clamp(48px, 6vw, 80px) 0;
-      background: var(--white);
+      background: var(--panel);
       position: relative;
       overflow: hidden;
       min-height: 100vh;
@@ -339,7 +343,7 @@
       display: inline-block;
       padding: 8px 18px;
       background: var(--cream-deep);
-      color: var(--navy);
+      color: var(--ink);
       font-weight: 700;
       font-size: 13px;
       letter-spacing: 0.1em;
@@ -352,7 +356,7 @@
       font-weight: 900;
       line-height: 1.05;
       letter-spacing: -0.01em;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 32px;
       animation: hero-fade 0.8s ease-out 0.1s both;
     }
@@ -422,8 +426,8 @@
       right: -20px;
       max-width: 200px;
       padding: 14px 18px;
-      background: var(--white);
-      color: var(--navy);
+      background: var(--panel);
+      color: var(--ink);
       border: 2px solid var(--navy);
       border-radius: var(--radius-md);
       display: flex;
@@ -442,7 +446,7 @@
       height: 38px;
       border-radius: 50%;
       background: rgba(15,44,68,0.08);
-      color: var(--navy);
+      color: var(--ink);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -460,13 +464,13 @@
     }
     .hero-badge-em {
       font-size: 17px;
-      color: var(--navy);
+      color: var(--ink);
     }
     .hero-floating-card {
       position: absolute;
       bottom: -30px;
       left: -30px;
-      background: var(--white);
+      background: var(--panel);
       padding: 20px 24px;
       border-radius: var(--radius-md);
       box-shadow: var(--shadow-md);
@@ -481,7 +485,7 @@
       height: 44px;
       border-radius: 50%;
       background: rgba(15,44,68,0.08);
-      color: var(--navy);
+      color: var(--ink);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -496,7 +500,7 @@
     .hero-floating-card-text strong {
       display: block;
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 2px;
     }
 
@@ -510,7 +514,7 @@
        Section 2: PROBLEM
        ============================================ */
     .problem {
-      background: var(--cream);
+      background: var(--panel-2);
       position: relative;
     }
     .problem::before {
@@ -535,7 +539,7 @@
     .problem-list {
       max-width: 800px;
       margin: 0 auto 48px;
-      background: var(--white);
+      background: var(--panel);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
       overflow: hidden;
@@ -551,14 +555,14 @@
     }
     .problem-card:last-child { border-bottom: none; }
     .problem-card:hover {
-      background: var(--cream);
+      background: var(--panel-2);
     }
     .problem-icon {
       width: 36px;
       height: 36px;
       border-radius: 50%;
       background: rgba(15,44,68,0.08);
-      color: var(--navy);
+      color: var(--ink);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -576,12 +580,12 @@
       max-width: 720px;
       margin: 0 auto;
       padding: 32px;
-      background: var(--white);
+      background: var(--panel);
       border-radius: var(--radius-md);
       border: 2px dashed var(--navy);
       font-size: clamp(18px, 2vw, 22px);
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       line-height: 1.6;
     }
     .problem-bridge .em {
@@ -592,7 +596,7 @@
        Section 3: MISSION
        ============================================ */
     .mission {
-      background: var(--white);
+      background: var(--panel);
       text-align: center;
     }
     .mission-title {
@@ -600,7 +604,7 @@
       font-weight: 900;
       line-height: 1.25;
       letter-spacing: -0.01em;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 32px;
       max-width: 920px;
       margin-left: auto;
@@ -622,7 +626,7 @@
       max-width: 820px;
       margin: 0 auto;
       text-align: left;
-      background: var(--white);
+      background: var(--panel);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
       overflow: hidden;
@@ -637,7 +641,7 @@
       transition: background 0.2s ease;
     }
     .mission-step:last-child { border-bottom: none; }
-    .mission-step:hover { background: var(--cream); }
+    .mission-step:hover { background: var(--panel-2); }
     .mission-step-num {
       width: 44px;
       height: 44px;
@@ -658,13 +662,13 @@
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.2em;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 8px;
     }
     .mission-step-title {
       font-size: var(--fs-h2);
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 8px;
       line-height: 1.4;
     }
@@ -772,7 +776,7 @@
        Section 5: HOW TO USE (5-step cycle)
        ============================================ */
     .how-to {
-      background: var(--white);
+      background: var(--panel);
       position: relative;
     }
     .how-to-header {
@@ -789,7 +793,7 @@
       position: relative;
     }
     .how-to-step {
-      background: var(--cream);
+      background: var(--panel-2);
       padding: 32px 20px;
       border-radius: var(--radius-md);
       text-align: center;
@@ -800,7 +804,7 @@
     .how-to-step:hover {
       transform: translateY(-4px);
       background: var(--cream-deep);
-      border-color: var(--navy);
+      border-color: var(--ink);
     }
     .how-to-step-num {
       width: 48px;
@@ -820,7 +824,7 @@
     .how-to-step-title {
       font-size: var(--fs-h3);
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 8px;
       line-height: 1.4;
     }
@@ -853,7 +857,7 @@
        Section 6: CONNECTIONS
        ============================================ */
     .connections {
-      background: var(--cream);
+      background: var(--panel-2);
       position: relative;
       overflow: hidden;
     }
@@ -866,7 +870,7 @@
     .connections-list {
       max-width: 920px;
       margin: 0 auto 56px;
-      background: var(--white);
+      background: var(--panel);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       overflow: hidden;
@@ -882,13 +886,13 @@
     }
     .connection-row:last-child { border-bottom: none; }
     .connection-row:hover {
-      background: var(--cream);
+      background: var(--panel-2);
     }
     .connection-math {
       font-family: 'Inter', sans-serif;
       font-size: clamp(18px, 2.2vw, 24px);
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       letter-spacing: -0.01em;
     }
     .connection-arrow {
@@ -896,7 +900,7 @@
       height: 44px;
       border-radius: 50%;
       background: rgba(15,44,68,0.08);
-      color: var(--navy);
+      color: var(--ink);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -915,7 +919,7 @@
       text-align: center;
       font-size: clamp(20px, 2.5vw, 28px);
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       line-height: 1.6;
       padding: 0 24px;
       position: relative;
@@ -926,7 +930,7 @@
       font-family: 'Inter', serif;
       font-size: clamp(60px, 8vw, 96px);
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       opacity: 0.4;
       line-height: 0.6;
       position: absolute;
@@ -993,7 +997,7 @@
       margin: 0 auto;
     }
     .pricing-card {
-      background: var(--white);
+      background: var(--panel);
       color: var(--text);
       padding: var(--card-pad-showcase);
       border-radius: var(--radius-lg);
@@ -1028,7 +1032,7 @@
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.2em;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 12px;
     }
     .pricing-card.featured .pricing-card-label {
@@ -1037,7 +1041,7 @@
     .pricing-card-name {
       font-size: var(--fs-h2);
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 16px;
     }
     .pricing-card.featured .pricing-card-name {
@@ -1054,13 +1058,13 @@
       font-weight: 900;
       letter-spacing: -0.01em;
       line-height: 1;
-      color: var(--navy);
+      color: var(--ink);
     }
     .pricing-card.featured .pricing-price .num { color: var(--white); }
     .pricing-price .yen {
       font-size: 24px;
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       margin-right: 2px;
     }
     .pricing-card.featured .pricing-price .yen { color: var(--white); }
@@ -1101,13 +1105,13 @@
       font-size: 15px;
     }
     .pricing-list .subject {
-      color: var(--navy);
+      color: var(--ink);
       font-weight: 600;
     }
     .pricing-list .price {
       font-weight: 900;
       font-size: 22px;
-      color: var(--navy);
+      color: var(--ink);
       letter-spacing: -0.01em;
     }
     .pricing-card.featured .pricing-list { border-color: rgba(255,255,255,0.2); }
@@ -1116,7 +1120,7 @@
     .pricing-card.featured .pricing-list .price { color: var(--white); }
     /* 階層価格リスト：科目見出し行（パック）と配下の分野行 */
     .pricing-list li.group {
-      background: var(--cream);
+      background: var(--panel-2);
       margin-top: 14px;
       padding: 10px 12px;
       border-bottom: none;
@@ -1213,7 +1217,7 @@
       width: 100%;
       min-width: 560px;
       border-collapse: collapse;
-      background: var(--white);
+      background: var(--panel);
       font-size: 14px;
     }
     .pricing-compare th,
@@ -1237,13 +1241,13 @@
     .pricing-compare thead th:first-child { border-left: none; }
     .pricing-compare tbody th {
       text-align: left;
-      color: var(--navy);
+      color: var(--ink);
       font-weight: 700;
       white-space: nowrap;
-      background: var(--cream);
+      background: var(--panel-2);
     }
     .pricing-compare td { color: var(--text); }
-    .pricing-compare tbody tr:nth-child(even) td { background: var(--cream); }
+    .pricing-compare tbody tr:nth-child(even) td { background: var(--panel-2); }
     .pricing-compare .compare-check { color: var(--green-dark); display: inline-flex; }
     .pricing-compare .compare-check svg { width: 18px; height: 18px; }
     .pricing-trust-band {
@@ -1294,7 +1298,7 @@
     .line-broadcast-inner {
       max-width: 720px;
       margin: 0 auto;
-      background: var(--white);
+      background: var(--panel);
       border: 1px solid #BFE8CF;
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-md);
@@ -1342,7 +1346,7 @@
        Section 9: FAQ
        ============================================ */
     .faq {
-      background: var(--white);
+      background: var(--panel);
     }
     .faq-header {
       text-align: center;
@@ -1356,12 +1360,12 @@
       gap: 16px;
     }
     .faq-item {
-      background: var(--cream);
+      background: var(--panel-2);
       border-radius: var(--radius-sm);
       overflow: hidden;
       transition: background 0.2s ease;
     }
-    .faq-item[open] { background: var(--white); border: 2px solid var(--navy); }
+    .faq-item[open] { background: var(--panel); border: 2px solid var(--navy); }
     .faq-q {
       list-style: none;
       cursor: pointer;
@@ -1372,7 +1376,7 @@
       gap: 16px;
       font-size: var(--fs-h3);
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       line-height: 1.5;
       position: relative;
     }
@@ -1380,7 +1384,7 @@
     .faq-q-mark {
       font-family: 'Inter', sans-serif;
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       font-size: 20px;
       flex-shrink: 0;
       width: 32px;
@@ -1390,8 +1394,8 @@
       width: 28px;
       height: 28px;
       border-radius: 50%;
-      background: var(--white);
-      color: var(--navy);
+      background: var(--panel);
+      color: var(--ink);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1560,21 +1564,21 @@
        法務セクション（特商法・各種ポリシー）
        ============================================ */
     .legal {
-      background: var(--cream);
+      background: var(--panel-2);
       padding: var(--space-7) 0;
       border-top: 1px solid var(--border);
     }
     .legal-title {
       font-size: var(--fs-h2);
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       text-align: center;
       margin-bottom: 40px;
     }
     .legal-block {
       max-width: 820px;
       margin: 0 auto 28px;
-      background: var(--white);
+      background: var(--panel);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       padding: var(--card-pad-compact);
@@ -1583,7 +1587,7 @@
     .legal-block h3 {
       font-size: 18px;
       font-weight: 900;
-      color: var(--navy);
+      color: var(--ink);
       margin: 0 0 18px;
       padding-bottom: 12px;
       border-bottom: 2px solid var(--navy);
@@ -1591,7 +1595,7 @@
     .legal-block h4 {
       font-size: 14px;
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       margin: 18px 0 6px;
     }
     .legal-block p,
@@ -1609,7 +1613,7 @@
     }
     .legal-dl dt {
       font-weight: 700;
-      color: var(--navy);
+      color: var(--ink);
       padding: 12px 0;
       border-top: 1px solid var(--border);
       font-size: 14px;
@@ -1881,7 +1885,7 @@
     }
 
     /* --- 数字は墨で、大きく。ここは「一人の記録」なので実績ではなく事実 --- */
-    .num, .pricing-price .num { color: var(--navy); letter-spacing: -.02em; }
+    .num, .pricing-price .num { color: var(--ink); letter-spacing: -.02em; }
 
     /* --- バッジ（2026-08-11：角丸を他ページと同じ --radius-sm に揃えた） --- */
     .pricing-badge, .hero-badge {
@@ -1892,7 +1896,7 @@
       box-shadow: none;
       letter-spacing: .08em;
     }
-    .hero-badge { color: var(--navy); background: #FFFDF8; border: 1px solid var(--orange); }
+    .hero-badge { color: var(--ink); background: #FFFDF8; border: 1px solid var(--orange); }
     .hero-badge-em { color: var(--orange); }
 
     /* --- 黒板の節（method）：墨地に生成りの字 --- */
@@ -1919,7 +1923,7 @@
     .pricing-cta:hover { background: #E55A2B; }
 
     /* --- ヘッダー・フッター（2026-08-11：ロゴを index と同じ丸い印に戻した） --- */
-    .site-header { background: rgba(247,244,236,.92); backdrop-filter: blur(8px); }
+    .site-header { background: rgba(8,24,42,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
     .logo-mark {
       border-radius: 50%;
       background: var(--navy);
@@ -1976,34 +1980,7 @@
     .hero .hero-note { color: rgba(255,255,255,0.66); }
     .hero .hero-note a { color: var(--hero-cyan); font-weight: 600; }
     .hero-limit { color: var(--hero-gold); }
-    .hero-floating-card { background: rgba(255,255,255,0.94); }
-
-    /* ============================================================
-       明暗の縞をやめる一括上書き（2026-08-11・本人指示
-       「明るいところと暗いところが織り交ざっていない方がいい」）
-       暗いのは ①ヒーロー＋その直下のMY RECORD（表紙のかたまり） と
-       ②最後のCTA＋フッター（締め）だけ。途中の method は明るい側へ反転させる。
-       index.html にも同じ考え方の上書きを入れてある。
-       🔴 このブロックをまるごと消すと、紺地の method に戻る。
-       ============================================================ */
-    .method { background: var(--cream); color: var(--text); }
-    .method::before { opacity: .45; }
-    .method-header .eyebrow { color: var(--orange); }
-    .method-header .eyebrow::before { background: var(--orange); }
-    .method-title { color: var(--navy); }
-    .method .em, .method-title .em { color: var(--orange); }
-    .method .underline-mark { color: var(--orange); }
-    .method-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-    }
-    .method-card:hover { box-shadow: var(--shadow-md); }
-    .method-card-title { color: var(--navy); }
-    .method-card-text { color: var(--text-muted); }
-    .method-card-text strong { color: var(--navy); }
-    .method-num-badge { color: var(--navy); opacity: .10; }
-    .method-icon { background: var(--orange-soft); color: var(--orange); }
+    .hero-floating-card { background: rgba(18,48,74,0.94); border: 1px solid var(--border); }
 
     /* --- 動きを減らす設定の人には、入場アニメを出さない --- */
     @media (prefers-reduced-motion: reduce) {
@@ -2067,7 +2044,7 @@
 
         <!-- ヒーロービジュアル：伴走イラスト（合格ゴールへ並走） -->
         <div class="hero-visual">
-          <div style="position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);background:#F7F4ED;">
+          <div style="position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--panel-2);">
             <img src="assets/boki-hero-real.jpg" alt="夕日に照らされた山の稜線を、あなたと1級合格者が、山頂の旗（合格）へ並んで駆け上がるイメージ" style="width:100%;height:auto;display:block;" loading="eager">
           </div>
           <div class="hero-floating-card">
@@ -2112,7 +2089,7 @@
   </section>
 
   <!-- ===== 簿記1級の本当の難しさ（覚悟の確認） ===== -->
-  <section style="background:var(--cream);">
+  <section style="background:var(--panel-2);">
     <div class="container">
       <div style="text-align:center;max-width:760px;margin:0 auto 40px;">
         <span class="eyebrow" style="justify-content:center;">REALITY</span>
@@ -2120,11 +2097,11 @@
         <p class="section-subtitle" style="margin:16px auto 0;">気軽に勧められる試験ではありません。読んだうえで「それでもやる」と思えた方だけ、来てください。</p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:900px;margin:0 auto;">
-        <div style="background:#fff;border:1px solid #E5E9EF;border-left:4px solid #D4700A;border-radius:14px;padding:22px;"><strong style="color:#1A2B4A;">模試で合格点を連発できて、ようやくスタートライン</strong><p style="margin:8px 0 0;color:#5A6A7A;font-size:14px;">「一周終わった」は入口ですらありません。本番と同じ時間・同じ順番で解いて、安定して合格点が出る状態を作ってからが本当の勝負です。</p></div>
-        <div style="background:#fff;border:1px solid #E5E9EF;border-left:4px solid #D4700A;border-radius:14px;padding:22px;"><strong style="color:#1A2B4A;">ライバルは公認会計士の受験生</strong><p style="margin:8px 0 0;color:#5A6A7A;font-size:14px;">同じ会場で、会計士試験の勉強量を積んだ人と並びます。その中で点を取りにいく試験だと、覚悟して臨む必要があります。</p></div>
-        <div style="background:#fff;border:1px solid #E5E9EF;border-left:4px solid #D4700A;border-radius:14px;padding:22px;"><strong style="color:#1A2B4A;">最後に効くのは、マインド</strong><p style="margin:8px 0 0;color:#5A6A7A;font-size:14px;">落ちた日に、次の日も机に向かえるか。基準を下げずに続けられるか。私が4回目で超えられたのは、ここを変えたからでした。</p></div>
+        <div style="background:var(--panel);border:1px solid var(--border);border-left:4px solid #D4700A;border-radius:14px;padding:22px;"><strong style="color:var(--ink);">模試で合格点を連発できて、ようやくスタートライン</strong><p style="margin:8px 0 0;color:var(--text-muted);font-size:14px;">「一周終わった」は入口ですらありません。本番と同じ時間・同じ順番で解いて、安定して合格点が出る状態を作ってからが本当の勝負です。</p></div>
+        <div style="background:var(--panel);border:1px solid var(--border);border-left:4px solid #D4700A;border-radius:14px;padding:22px;"><strong style="color:var(--ink);">ライバルは公認会計士の受験生</strong><p style="margin:8px 0 0;color:var(--text-muted);font-size:14px;">同じ会場で、会計士試験の勉強量を積んだ人と並びます。その中で点を取りにいく試験だと、覚悟して臨む必要があります。</p></div>
+        <div style="background:var(--panel);border:1px solid var(--border);border-left:4px solid #D4700A;border-radius:14px;padding:22px;"><strong style="color:var(--ink);">最後に効くのは、マインド</strong><p style="margin:8px 0 0;color:var(--text-muted);font-size:14px;">落ちた日に、次の日も机に向かえるか。基準を下げずに続けられるか。私が4回目で超えられたのは、ここを変えたからでした。</p></div>
       </div>
-      <p style="max-width:760px;margin:28px auto 0;text-align:center;color:#5A6A7A;font-size:14.5px;">だから伴走では、<strong style="color:#1A2B4A;">本番と同じ生活・解き方・時間配分</strong>まで一緒に作ります。知識だけ渡して終わりにはしません。</p>
+      <p style="max-width:760px;margin:28px auto 0;text-align:center;color:var(--text-muted);font-size:14.5px;">だから伴走では、<strong style="color:var(--ink);">本番と同じ生活・解き方・時間配分</strong>まで一緒に作ります。知識だけ渡して終わりにはしません。</p>
     </div>
   </section>
 
@@ -2136,37 +2113,37 @@
         <h2 class="section-title">簿記1級、こんな状態になっていませんか？</h2>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:900px;margin:0 auto;">
-        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:22px;"><strong style="color:#1A2B4A;">解説を読んでも「なぜそうなるか」が残る</strong><p style="margin:8px 0 0;color:#5A6A7A;font-size:14px;">答えは合っても、腑に落ちないまま進んでいる。</p></div>
-        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:22px;"><strong style="color:#1A2B4A;">勉強時間は積んでいるのに伸びない</strong><p style="margin:8px 0 0;color:#5A6A7A;font-size:14px;">やり方が合っているのか、自分では分からない。</p></div>
-        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:22px;"><strong style="color:#1A2B4A;">範囲が広すぎて優先順位がつかない</strong><p style="margin:8px 0 0;color:#5A6A7A;font-size:14px;">工業簿記・原価計算・連結…何から手をつける？</p></div>
-        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:22px;"><strong style="color:#1A2B4A;">モチベーションが続かない</strong><p style="margin:8px 0 0;color:#5A6A7A;font-size:14px;">「今日はいいや」が増え、ゼロの日が続いてしまう。</p></div>
+        <div style="background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px;"><strong style="color:var(--ink);">解説を読んでも「なぜそうなるか」が残る</strong><p style="margin:8px 0 0;color:var(--text-muted);font-size:14px;">答えは合っても、腑に落ちないまま進んでいる。</p></div>
+        <div style="background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px;"><strong style="color:var(--ink);">勉強時間は積んでいるのに伸びない</strong><p style="margin:8px 0 0;color:var(--text-muted);font-size:14px;">やり方が合っているのか、自分では分からない。</p></div>
+        <div style="background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px;"><strong style="color:var(--ink);">範囲が広すぎて優先順位がつかない</strong><p style="margin:8px 0 0;color:var(--text-muted);font-size:14px;">工業簿記・原価計算・連結…何から手をつける？</p></div>
+        <div style="background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px;"><strong style="color:var(--ink);">モチベーションが続かない</strong><p style="margin:8px 0 0;color:var(--text-muted);font-size:14px;">「今日はいいや」が増え、ゼロの日が続いてしまう。</p></div>
       </div>
     </div>
   </section>
 
   <!-- ===== 運営者ストーリー（逆転物語） ===== -->
-  <section style="background:var(--cream);">
+  <section style="background:var(--panel-2);">
     <div class="container">
       <div style="text-align:center;max-width:760px;margin:0 auto 40px;">
         <span class="eyebrow" style="justify-content:center;">STORY</span>
         <h2 class="section-title">「向いてない」と思っていた私が、<br>合格するまで。</h2>
       </div>
       <div style="max-width:980px;margin:0 auto;display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start;">
-        <div style="flex:1 1 380px;color:#38455A;line-height:1.95;font-size:15.5px;">
+        <div style="flex:1 1 380px;color:var(--text);line-height:1.95;font-size:15.5px;">
           <p>取り柄も学歴もなく、人並みのことができずに毎日怒られていました。発達障害の特性もあって、うっかりミスや忘れ物が許されない社会人生活は、自己肯定感を削るばかり。「自分は何をやってもダメだ」と思っていました。</p>
           <p>そんなとき、簿記に出会います。「これで変われるかもしれない」——半分すがるような気持ちで、電卓を握りました。</p>
-          <p>3級は5回目でやっと合格（97点）。2級は一発。調子に乗って挑んだ1級で、私は打ちのめされます。過去問を開いた瞬間、テキストとの差に挫折しかけました。そして初めての本試験——<strong style="color:#1A2B4A;">半分どころか、3割にも届きませんでした。</strong>箸にも棒にもかからない結果でした。</p>
-          <p>「やっぱり向いてないんだ」。何度もそう思いました。心が折れるたびに、私は「今日はこれだけでいい」と<strong style="color:#1A2B4A;">自分で基準を下げていた</strong>んです。</p>
-          <p>4回目に向けて、それをやめました。<strong style="color:#2D6A4F;">基準を下げない。ゼロの日を作らない。ただ、続ける。</strong>すると点数は、受けるたびに伸びていきました。3回目は合格まであと2点。2年以上、約3,168時間かけて、4回目で合格ラインを超えました。</p>
-          <p style="margin-top:22px;font-size:17px;font-weight:700;color:#1A2B4A;">才能じゃない。最後まで机に向かった人が、受かる。</p>
+          <p>3級は5回目でやっと合格（97点）。2級は一発。調子に乗って挑んだ1級で、私は打ちのめされます。過去問を開いた瞬間、テキストとの差に挫折しかけました。そして初めての本試験——<strong style="color:var(--ink);">半分どころか、3割にも届きませんでした。</strong>箸にも棒にもかからない結果でした。</p>
+          <p>「やっぱり向いてないんだ」。何度もそう思いました。心が折れるたびに、私は「今日はこれだけでいい」と<strong style="color:var(--ink);">自分で基準を下げていた</strong>んです。</p>
+          <p>4回目に向けて、それをやめました。<strong style="color:var(--mint);">基準を下げない。ゼロの日を作らない。ただ、続ける。</strong>すると点数は、受けるたびに伸びていきました。3回目は合格まであと2点。2年以上、約3,168時間かけて、4回目で合格ラインを超えました。</p>
+          <p style="margin-top:22px;font-size:17px;font-weight:700;color:var(--ink);">才能じゃない。最後まで机に向かった人が、受かる。</p>
           <p>かつての私と同じように「向いてない」と思っているあなたの隣で、その道を一緒に歩きます。</p>
         </div>
         <div style="flex:0 0 260px;max-width:260px;margin:0 auto;text-align:center;">
           <img src="assets/boki-book-cover.jpg" alt="著書『日商簿記1級勉強法【改訂版】』の表紙" style="width:100%;border-radius:10px;box-shadow:0 12px 34px rgba(26,43,74,0.22);" loading="lazy">
-          <p style="margin:16px 0 4px;font-size:13px;color:#5A6A7A;">この経験の全部を、一冊にまとめました。</p>
-          <p style="margin:0;font-size:14px;font-weight:700;color:#1A2B4A;">『日商簿記1級勉強法【改訂版】』</p>
-          <p style="margin:6px 0 0;font-size:12px;color:#9AA7B5;">Amazon Kindleで出版。講義つきプランでは<br>この本を<strong style="color:#D4700A;">特典として進呈</strong>します。</p>
-          <a href="https://www.amazon.co.jp/dp/B0DTD1M8WR" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;font-size:13px;color:#2D6A4F;font-weight:600;">Amazonで見る →</a>
+          <p style="margin:16px 0 4px;font-size:13px;color:var(--text-muted);">この経験の全部を、一冊にまとめました。</p>
+          <p style="margin:0;font-size:14px;font-weight:700;color:var(--ink);">『日商簿記1級勉強法【改訂版】』</p>
+          <p style="margin:6px 0 0;font-size:12px;color:var(--text-light);">Amazon Kindleで出版。講義つきプランでは<br>この本を<strong style="color:#D4700A;">特典として進呈</strong>します。</p>
+          <a href="https://www.amazon.co.jp/dp/B0DTD1M8WR" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;font-size:13px;color:var(--mint);font-weight:600;">Amazonで見る →</a>
         </div>
       </div>
     </div>
@@ -2181,11 +2158,11 @@
         <p class="section-subtitle" style="margin:16px auto 0;">私に起きたことを、そのまま書きます。あなたに同じことが起きると約束はできません。それでも、変わりうるということは知っておいてほしい。</p>
       </div>
       <div style="max-width:820px;margin:0 auto;display:grid;gap:14px;">
-        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:22px 24px;"><strong style="color:#1A2B4A;">下に見られることが、なくなった</strong><p style="margin:8px 0 0;color:#5A6A7A;font-size:14.5px;line-height:1.9;">それまでの私は、人並みのことができずに毎日怒られていました。「どうせこいつは」という空気の中にいるのは、思っている以上にこたえます。嫌な思いも、たくさんしました。簿記1級を取ってから、その扱いは無くなりました。</p></div>
-        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:22px 24px;"><strong style="color:#1A2B4A;">「この人は分かっている」から入ってもらえる</strong><p style="margin:8px 0 0;color:#5A6A7A;font-size:14.5px;line-height:1.9;">数字の話をするときの前提が変わります。説明を疑われるところから始まらない。これは、実力そのものより先に効きます。</p></div>
-        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:22px 24px;"><strong style="color:#1A2B4A;">期待される側になる</strong><p style="margin:8px 0 0;color:#5A6A7A;font-size:14.5px;line-height:1.9;">任される仕事が変わり、声のかかり方が変わります。学歴でも才能でもなく、積み上げた事実で扱いが変わるのが、この資格の良いところだと思っています。</p></div>
+        <div style="background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px 24px;"><strong style="color:var(--ink);">下に見られることが、なくなった</strong><p style="margin:8px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.9;">それまでの私は、人並みのことができずに毎日怒られていました。「どうせこいつは」という空気の中にいるのは、思っている以上にこたえます。嫌な思いも、たくさんしました。簿記1級を取ってから、その扱いは無くなりました。</p></div>
+        <div style="background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px 24px;"><strong style="color:var(--ink);">「この人は分かっている」から入ってもらえる</strong><p style="margin:8px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.9;">数字の話をするときの前提が変わります。説明を疑われるところから始まらない。これは、実力そのものより先に効きます。</p></div>
+        <div style="background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px 24px;"><strong style="color:var(--ink);">期待される側になる</strong><p style="margin:8px 0 0;color:var(--text-muted);font-size:14.5px;line-height:1.9;">任される仕事が変わり、声のかかり方が変わります。学歴でも才能でもなく、積み上げた事実で扱いが変わるのが、この資格の良いところだと思っています。</p></div>
       </div>
-      <p style="max-width:760px;margin:26px auto 0;text-align:center;color:#5A6A7A;font-size:14px;">※ 効果には個人差があります。合格や、合格後の待遇を保証するものではありません。</p>
+      <p style="max-width:760px;margin:26px auto 0;text-align:center;color:var(--text-muted);font-size:14px;">※ 効果には個人差があります。合格や、合格後の待遇を保証するものではありません。</p>
     </div>
   </section>
 
@@ -2195,14 +2172,14 @@
       <div class="method-header">
         <span class="eyebrow">WHAT YOU GET</span>
         <h2 class="method-title">お金を払うのは教材ではなく、<span class="em">詰まりの解消</span></h2>
-        <p class="section-subtitle" style="margin:16px auto 0;">問題集と過去問は、予備校のものを別途ご用意ください（<strong style="color:var(--navy);">TAC推奨</strong>）。この伴走はそれを置き換えるものではなく、解き方の型・詰まりの解消・本番の作り方に使います。</p>
+        <p class="section-subtitle" style="margin:16px auto 0;">問題集と過去問は、予備校のものを別途ご用意ください（<strong style="color:var(--ink);">TAC推奨</strong>）。この伴走はそれを置き換えるものではなく、解き方の型・詰まりの解消・本番の作り方に使います。</p>
       </div>
       <div class="method-grid">
         <div class="method-card">
           <span class="method-num-badge">01</span>
           <div class="method-icon"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M208,24H72A32,32,0,0,0,40,56V224a8,8,0,0,0,8,8H192a8,8,0,0,0,0-16H56a16,16,0,0,1,16-16H208a8,8,0,0,0,8-8V32A8,8,0,0,0,208,24Z"/></svg></div>
           <h3 class="method-card-title">講義 全51本を、週1本ずつ</h3>
-          <p class="method-card-text">スライドを開いて、私が解説していきます。連結はタイムテーブル、標準原価はシュラッター図——<strong style="color:var(--navy);">先に「解き方の型」</strong>を見せてから中身に入ります。録画が残るので、あとから追いつけます。</p>
+          <p class="method-card-text">スライドを開いて、私が解説していきます。連結はタイムテーブル、標準原価はシュラッター図——<strong style="color:var(--ink);">先に「解き方の型」</strong>を見せてから中身に入ります。録画が残るので、あとから追いつけます。</p>
         </div>
         <div class="method-card">
           <span class="method-num-badge">02</span>
@@ -2241,28 +2218,28 @@
         <p class="section-subtitle" style="margin:16px auto 0;">記憶で喋った教材ではありません。範囲・配分・正確性を、それぞれ別の一次資料で決めています。</p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:900px;margin:0 auto;">
-        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:22px;"><strong style="color:#2D6A4F;font-size:13px;">試験範囲</strong><p style="margin:6px 0 0;font-weight:700;color:#1A2B4A;">出題区分表から確定</p><p style="margin:8px 0 0;color:#5A6A7A;font-size:14px;">商業簿記・会計学は<strong>2027年4月1日施行</strong>の区分表、工業簿記・原価計算は2022年4月1日施行の区分表。1級で新しく増える論点だけを抜き出しています。</p></div>
-        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:22px;"><strong style="color:#2D6A4F;font-size:13px;">配分</strong><p style="margin:6px 0 0;font-weight:700;color:#1A2B4A;">過去問20回分の頻度で決定</p><p style="margin:8px 0 0;color:#5A6A7A;font-size:14px;">商会10回・工原10回を論点ごとに集計し、「出たら大問になるが頻度は低い」ものと、毎回出るものを分けて本数を割り当てました。</p></div>
-        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:22px;"><strong style="color:#2D6A4F;font-size:13px;">正確性</strong><p style="margin:6px 0 0;font-weight:700;color:#1A2B4A;">基準と法令の原文に当たる</p><p style="margin:8px 0 0;color:#5A6A7A;font-size:14px;">企業会計基準40本・適用指針37本・原価計算基準、そして<strong>会社法（第445〜465条）・会社計算規則</strong>まで。分配可能額のように会計基準に書いていない論点は、法令側で確認しています。スライドには<strong>「【根拠】〜第N項」</strong>を入れています。</p></div>
-        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:22px;"><strong style="color:#2D6A4F;font-size:13px;">例題</strong><p style="margin:6px 0 0;font-weight:700;color:#1A2B4A;">数値はすべて自作</p><p style="margin:8px 0 0;color:#5A6A7A;font-size:14px;">過去問の問題文や会計基準の条文は転載しません（いずれも転載が禁止されています）。要約して自分の言葉で説明し、例題の数値は作り直しています。</p></div>
+        <div style="background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px;"><strong style="color:var(--mint);font-size:13px;">試験範囲</strong><p style="margin:6px 0 0;font-weight:700;color:var(--ink);">出題区分表から確定</p><p style="margin:8px 0 0;color:var(--text-muted);font-size:14px;">商業簿記・会計学は<strong>2027年4月1日施行</strong>の区分表、工業簿記・原価計算は2022年4月1日施行の区分表。1級で新しく増える論点だけを抜き出しています。</p></div>
+        <div style="background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px;"><strong style="color:var(--mint);font-size:13px;">配分</strong><p style="margin:6px 0 0;font-weight:700;color:var(--ink);">過去問20回分の頻度で決定</p><p style="margin:8px 0 0;color:var(--text-muted);font-size:14px;">商会10回・工原10回を論点ごとに集計し、「出たら大問になるが頻度は低い」ものと、毎回出るものを分けて本数を割り当てました。</p></div>
+        <div style="background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px;"><strong style="color:var(--mint);font-size:13px;">正確性</strong><p style="margin:6px 0 0;font-weight:700;color:var(--ink);">基準と法令の原文に当たる</p><p style="margin:8px 0 0;color:var(--text-muted);font-size:14px;">企業会計基準40本・適用指針37本・原価計算基準、そして<strong>会社法（第445〜465条）・会社計算規則</strong>まで。分配可能額のように会計基準に書いていない論点は、法令側で確認しています。スライドには<strong>「【根拠】〜第N項」</strong>を入れています。</p></div>
+        <div style="background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px;"><strong style="color:var(--mint);font-size:13px;">例題</strong><p style="margin:6px 0 0;font-weight:700;color:var(--ink);">数値はすべて自作</p><p style="margin:8px 0 0;color:var(--text-muted);font-size:14px;">過去問の問題文や会計基準の条文は転載しません（いずれも転載が禁止されています）。要約して自分の言葉で説明し、例題の数値は作り直しています。</p></div>
       </div>
-      <p style="max-width:760px;margin:28px auto 0;text-align:center;color:#5A6A7A;font-size:14.5px;">私の点数の記憶で喋るのではなく、<strong style="color:#1A2B4A;">毎回、原文を開いてから作っています。</strong></p>
+      <p style="max-width:760px;margin:28px auto 0;text-align:center;color:var(--text-muted);font-size:14.5px;">私の点数の記憶で喋るのではなく、<strong style="color:var(--ink);">毎回、原文を開いてから作っています。</strong></p>
     </div>
   </section>
 
   <!-- ===== 安心材料（保証の代替） ===== -->
-  <section style="background:var(--cream);">
+  <section style="background:var(--panel-2);">
     <div class="container">
       <div style="text-align:center;max-width:760px;margin:0 auto 32px;">
         <span class="eyebrow" style="justify-content:center;">SAFETY</span>
         <h2 class="section-title">合格は断言しません。だから、始める前に確かめます。</h2>
       </div>
       <div style="max-width:820px;margin:0 auto;display:grid;gap:12px;">
-        <div style="background:#fff;border-radius:12px;padding:18px 22px;"><strong style="color:#2D6A4F;">初回面談で「向き・不向き」を確認</strong><span style="color:#5A6A7A;font-size:14px;"> — 目的や今の状況をうかがい、合わないと感じたら正直にお伝えします。</span></div>
-        <div style="background:#fff;border-radius:12px;padding:18px 22px;"><strong style="color:#2D6A4F;">こんな方が対象</strong><span style="color:#5A6A7A;font-size:14px;"> — ①本気で人生を変えたい方 ②経理・会計の仕事をしている方 ③簿記2級・3級を取って、次に迷っている方。</span></div>
-        <div style="background:#fff;border-radius:12px;padding:18px 22px;"><strong style="color:#2D6A4F;">対象外の方</strong><span style="color:#5A6A7A;font-size:14px;"> — 丸投げで受かりたい方、勉強そのものを代行してほしい方、3級・2級がメインの方。</span></div>
-        <div style="background:#fff;border-radius:12px;padding:18px 22px;"><strong style="color:#2D6A4F;">問題集・過去問は別途ご用意ください</strong><span style="color:#5A6A7A;font-size:14px;"> — 予備校のもの（TAC推奨）を使います。この伴走はそれを置き換えるものではありません。</span></div>
-        <div style="background:#fff;border-radius:12px;padding:18px 22px;"><strong style="color:#2D6A4F;">まずはお試し1ヶ月から</strong><span style="color:#5A6A7A;font-size:14px;"> — いきなり高額を払わず、¥10,000で相性を確かめてから。本編に進むときは、この¥10,000を差し引きます。</span></div>
+        <div style="background:var(--panel);border-radius:12px;padding:18px 22px;"><strong style="color:var(--mint);">初回面談で「向き・不向き」を確認</strong><span style="color:var(--text-muted);font-size:14px;"> — 目的や今の状況をうかがい、合わないと感じたら正直にお伝えします。</span></div>
+        <div style="background:var(--panel);border-radius:12px;padding:18px 22px;"><strong style="color:var(--mint);">こんな方が対象</strong><span style="color:var(--text-muted);font-size:14px;"> — ①本気で人生を変えたい方 ②経理・会計の仕事をしている方 ③簿記2級・3級を取って、次に迷っている方。</span></div>
+        <div style="background:var(--panel);border-radius:12px;padding:18px 22px;"><strong style="color:var(--mint);">対象外の方</strong><span style="color:var(--text-muted);font-size:14px;"> — 丸投げで受かりたい方、勉強そのものを代行してほしい方、3級・2級がメインの方。</span></div>
+        <div style="background:var(--panel);border-radius:12px;padding:18px 22px;"><strong style="color:var(--mint);">問題集・過去問は別途ご用意ください</strong><span style="color:var(--text-muted);font-size:14px;"> — 予備校のもの（TAC推奨）を使います。この伴走はそれを置き換えるものではありません。</span></div>
+        <div style="background:var(--panel);border-radius:12px;padding:18px 22px;"><strong style="color:var(--mint);">まずはお試し1ヶ月から</strong><span style="color:var(--text-muted);font-size:14px;"> — いきなり高額を払わず、¥10,000で相性を確かめてから。本編に進むときは、この¥10,000を差し引きます。</span></div>
       </div>
     </div>
   </section>
@@ -2355,17 +2332,17 @@
   </section>
 
   <!-- ===== 申込導線（ラダー） ===== -->
-  <section style="background:var(--cream);">
+  <section style="background:var(--panel-2);">
     <div class="container">
       <div style="text-align:center;max-width:760px;margin:0 auto 32px;">
         <span class="eyebrow" style="justify-content:center;">HOW TO START</span>
         <h2 class="section-title">申し込みまでの流れ</h2>
       </div>
       <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;text-align:center;">
-        <div style="background:#fff;border-radius:12px;padding:20px;"><div style="color:#D4700A;font-weight:700;font-size:13px;">STEP 1</div><strong style="color:#1A2B4A;">LINEで相談</strong><p style="margin:6px 0 0;color:#5A6A7A;font-size:13px;">簿記ラボLINEに「1級伴走 希望」と送る</p></div>
-        <div style="background:#fff;border-radius:12px;padding:20px;"><div style="color:#D4700A;font-weight:700;font-size:13px;">STEP 2</div><strong style="color:#1A2B4A;">初回面談</strong><p style="margin:6px 0 0;color:#5A6A7A;font-size:13px;">目的・現状をヒアリング。合うか確認</p></div>
-        <div style="background:#fff;border-radius:12px;padding:20px;"><div style="color:#D4700A;font-weight:700;font-size:13px;">STEP 3</div><strong style="color:#1A2B4A;">お試し1ヶ月</strong><p style="margin:6px 0 0;color:#5A6A7A;font-size:13px;">¥10,000で相性を確かめる</p></div>
-        <div style="background:#fff;border-radius:12px;padding:20px;"><div style="color:#D4700A;font-weight:700;font-size:13px;">STEP 4</div><strong style="color:#1A2B4A;">本編へ</strong><p style="margin:6px 0 0;color:#5A6A7A;font-size:13px;">続けると決めたら合格まで</p></div>
+        <div style="background:var(--panel);border-radius:12px;padding:20px;"><div style="color:#D4700A;font-weight:700;font-size:13px;">STEP 1</div><strong style="color:var(--ink);">LINEで相談</strong><p style="margin:6px 0 0;color:var(--text-muted);font-size:13px;">簿記ラボLINEに「1級伴走 希望」と送る</p></div>
+        <div style="background:var(--panel);border-radius:12px;padding:20px;"><div style="color:#D4700A;font-weight:700;font-size:13px;">STEP 2</div><strong style="color:var(--ink);">初回面談</strong><p style="margin:6px 0 0;color:var(--text-muted);font-size:13px;">目的・現状をヒアリング。合うか確認</p></div>
+        <div style="background:var(--panel);border-radius:12px;padding:20px;"><div style="color:#D4700A;font-weight:700;font-size:13px;">STEP 3</div><strong style="color:var(--ink);">お試し1ヶ月</strong><p style="margin:6px 0 0;color:var(--text-muted);font-size:13px;">¥10,000で相性を確かめる</p></div>
+        <div style="background:var(--panel);border-radius:12px;padding:20px;"><div style="color:#D4700A;font-weight:700;font-size:13px;">STEP 4</div><strong style="color:var(--ink);">本編へ</strong><p style="margin:6px 0 0;color:var(--text-muted);font-size:13px;">続けると決めたら合格まで</p></div>
       </div>
     </div>
   </section>
@@ -2373,7 +2350,7 @@
   <!-- ===== 3級2級案内 ===== -->
   <section>
     <div class="container">
-      <div style="max-width:760px;margin:0 auto;text-align:center;background:#fff;border:1px solid #E5E9EF;border-radius:16px;padding:32px;">
+      <div style="max-width:760px;margin:0 auto;text-align:center;background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:32px;">
         <span class="eyebrow" style="justify-content:center;">3級・2級の方へ</span>
         <h2 class="section-title" style="font-size:24px;">簿記3級・2級はココナラで</h2>
         <p class="section-subtitle" style="margin:12px auto 0;">3級・2級のつまずき解消は、ココナラの個別サポートで対応しています（初学者向けの丁寧な説明で<strong>評価5.0</strong>）。</p>
@@ -2416,7 +2393,7 @@
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q6.</span><span class="faq-q-text">返金はできますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">役務提供のため、購入後の返金・中途解約は承っておりません。だからこそ、いきなり本編ではなく、まずお試し（¥10,000）や初回面談で「合うか」を確かめてからご購入いただく形にしています。</div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q7.</span><span class="faq-q-text">テキストや問題集は、こちらで用意されますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">講義と教材スライドはこちらで用意します。<strong>問題集と過去問は、予備校のものを別途ご用意ください（TAC推奨）</strong>。演習量そのものは市販の教材が優れているので、置き換えずに使います。この伴走が担うのは、解き方の型・詰まりの解消・本番の作り方です。</div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q8.</span><span class="faq-q-text">「5名まで」とありますが、なぜですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">面談を1対1で、月2回お受けするためです。人数を増やすと1人あたりに使える時間が減り、答案や生活リズムまで見ることができなくなります。埋まった時点で募集を止めます。</div></details>
-        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q9.</span><span class="faq-q-text">簿記1級はきつそうです。他の選択肢はありますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">確保できる時間や今の状況によっては、証券アナリスト（CMA）をお勧めすることがあります。簿記1級より目指しやすく、財務・投資の知識は実務でそのまま使えて、持っていると一目置かれる資格です。初回面談で、どちらが向いているかを一緒に考えます。<a href="cma.html" style="color:#2D6A4F;font-weight:600;">CMA講座のご案内はこちら →</a></div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q9.</span><span class="faq-q-text">簿記1級はきつそうです。他の選択肢はありますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">確保できる時間や今の状況によっては、証券アナリスト（CMA）をお勧めすることがあります。簿記1級より目指しやすく、財務・投資の知識は実務でそのまま使えて、持っていると一目置かれる資格です。初回面談で、どちらが向いているかを一緒に考えます。<a href="cma.html" style="color:var(--mint);font-weight:600;">CMA講座のご案内はこちら →</a></div></details>
       </div>
     </div>
   </section>
