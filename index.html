@@ -2186,49 +2186,34 @@
     }
     .hub-router-line a { color: #2D6A4F; font-weight: 600; }
 
-    /* ===== STORY（この講座を作った理由）=====
-       章に割らず、続き文章として読ませる。地はページと同じクリームで、
-       ここだけ暗くしない（明暗が縞にならないようにするため・2026-08-11）。 */
-    .story { background: var(--cream); }
-    .story-head { max-width: 780px; margin: 0 auto; text-align: center; }
-    .story-head .section-title { margin: 12px 0 0; }
-    .story-head .em { color: var(--orange); display: inline-block; }
-    .story-body {
+    /* ===== 「なぜ作ったのか」＝4つの約束の前置き（旧 STORY の節をここへ畳んだ） ===== */
+    .method-why {
       max-width: 720px;
-      margin: clamp(28px, 3.5vw, 40px) auto 0;
+      margin: 0 auto clamp(36px, 4.5vw, 56px);
       color: var(--text);
       font-size: 15.5px;
       line-height: 2.15;
     }
-    .story-body p { margin: 0; }
-    .story-body p + p { margin-top: 22px; }
-    .story-body strong { color: var(--navy); font-weight: 700; }
-    .story-caution { color: var(--text-light); font-size: 13.5px; }
-    /* 最後の段落だけ、左に一本線を引いて着地だと分かるようにする */
-    .story-end {
-      margin-top: 26px;
-      padding-left: 20px;
-      border-left: 3px solid var(--orange);
-    }
-    .story-end strong { color: #2D6A4F; }
-    /* 書いた人。名刺のように1枚だけ置く */
-    .story-who {
+    .method-why p { margin: 0; }
+    .method-why p + p { margin-top: 20px; }
+    .method-why strong { color: var(--navy); font-weight: 700; }
+    /* 書いた人。約束のあとに名刺のように1枚だけ置く */
+    .method-who {
       max-width: 720px;
-      margin: clamp(28px, 3.5vw, 38px) auto 0;
+      margin: clamp(32px, 4vw, 44px) auto 0;
       padding-top: 24px;
       border-top: 1px solid var(--cream-deep);
       display: flex; align-items: center; gap: 16px;
     }
-    .story-who img {
+    .method-who img {
       width: 64px; height: 64px; border-radius: 50%; object-fit: cover;
       border: 3px solid var(--white); box-shadow: var(--shadow-sm); flex: none;
     }
-    .story-who b { display: block; color: var(--navy); font-size: 16px; }
-    .story-who span { display: block; margin-top: 3px; color: var(--text-muted); font-size: 12.5px; line-height: 1.7; }
-    .story-who a { display: inline-block; margin-top: 8px; font-size: 13.5px; color: #2D6A4F; font-weight: 700; }
+    .method-who b { display: block; color: var(--navy); font-size: 16px; }
+    .method-who span { display: block; margin-top: 3px; color: var(--text-muted); font-size: 12.5px; line-height: 1.7; }
+    .method-who a { display: inline-block; margin-top: 8px; font-size: 13.5px; color: #2D6A4F; font-weight: 700; }
     @media (max-width: 700px) {
-      .story-head { text-align: left; }
-      .story-body { font-size: 15px; line-height: 2.05; }
+      .method-why { font-size: 15px; line-height: 2.05; }
     }
 
     /* ===== なぜ、AIの時代に簿記1級とCMAなのか ===== */
@@ -3387,6 +3372,16 @@
         <span class="eyebrow">WHY US</span>
         <h2 class="method-title">勉強にも副業にも共通する、<span class="em">4つの約束</span></h2>
       </div>
+
+      <!-- なぜ作ったのか＝4つの約束の根拠。独立していた「STORY」の節をここへ畳んだ（2026-08-11 本人指示）。
+           ⚠ 一次ソース＝ぶんぶん書籍/日商簿記1級勉強法_改訂版.md（第1〜2章）と profile.json。
+           ⚠ 書かないもの：点数／「独学合格」（最初は通信）／休職の話／前職／
+              就職・収入・市場価値の保証。 -->
+      <div class="method-why">
+        <p>この4つは、うまくいった人の理屈ではありません。高校の偏差値は40。発達障害の特性があって、うっかりミスも忘れ物も許されない社会に出てから、「もっとしっかりして」と毎日のように言われていました。取り柄も自信もないまま、半分すがるような気持ちで電卓を握ったのが、簿記のはじまりです。</p>
+        <p>そこからは、うまくいった話より落ち続けた時間のほうがずっと長い道のりでした。簡単だと言われる3級に8か月かかり、日商簿記1級は<strong>3回落ちています</strong>（3回目は合格まであと2点でした）。4回目に変えたのは勉強量ではなく<strong>やり方</strong>のほうで、2年あまり・のべ3,168時間かけて、働きながらようやく合格しました。その後、証券アナリスト(CMA)1次にも合格し、Kindleを3冊出しています。</p>
+        <p>だからこの講座は、<strong>才能のある人が最短ルートを教えるもの</strong>にはしませんでした。どこで詰まるか、どこで心が折れるか、何をやめれば続くのか——全部、自分が通ってきた道です。<strong>遠回りしてようやく掴んだ学び方を、そのまま渡すため</strong>に作りました。その中身が、この4つです。</p>
+      </div>
       <div class="method-grid">
         <div class="method-card">
           <span class="method-num-badge">01</span>
@@ -3413,6 +3408,15 @@
           <p class="method-card-text">簿記（会計）→ 証券アナリスト（金融）→ AI実践。バラバラに学ばず、一本の道としてつなげて学べます。</p>
         </div>
       </div>
+
+      <div class="method-who">
+        <img src="assets/bunbun-avatar.jpg" alt="運営者 ぶんぶん" loading="lazy">
+        <div>
+          <b>ぶんぶん</b>
+          <span>日商簿記1級／全経簿記上級／証券アナリスト(CMA)1次合格</span>
+          <a href="https://x.com/a3aByulmQvDRNSU" target="_blank" rel="noopener">Xで日々の発信を見る（@a3aByulmQvDRNSU）→</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -3427,42 +3431,6 @@
     </div>
   </section>
 
-  <!-- ===== STORY（この講座を作った理由）=====
-       本人指示（2026-08-11）：ストーリーは講座を作った経緯の説明に織り交ぜる程度でよい。
-       章に割らず、続き文章としてつなげる。合格点などの点数は書かない。
-       ⚠ 一次ソース＝ぶんぶん書籍/日商簿記1級勉強法_改訂版.md（第1〜2章）と profile.json。
-       ⚠ 書かないもの：点数／「独学合格」（最初は通信）／休職の話／就職・収入・市場価値の保証。 -->
-  <section class="story" id="story">
-    <div class="container">
-      <div class="story-head">
-        <span class="eyebrow" style="justify-content:center;">STORY</span>
-        <h2 class="section-title">この講座を、<span class="em">なぜ作ったのか</span>。</h2>
-      </div>
-
-      <div class="story-body">
-        <p>高校の偏差値は40。手に職をと美容師になり、そのあと会社員になりました。ところが私には発達障害の特性があって、うっかりミスも忘れ物も、社会に出ると許されません。「もっとしっかりして」と毎日のように言われ、取り柄も自信もないまま働いていた私が、半分すがるような気持ちで電卓を握ったのが、簿記のはじまりでした。</p>
-
-        <p>そこからは、うまくいった話より落ち続けた時間のほうがずっと長い道のりでした。簡単だと言われる3級に8か月かかり、受験日を勘違いして失格になったこともあります。調子に乗って挑んだ1級では、予備校の通信講座で講義そのものは理解できたのに、過去問を開いた瞬間に手が止まりました。4科目を解いて、合っているのが2問か3問。<strong>結局、3回落ちています。</strong>3回目は合格まであと2点で、手ごたえのあった回だっただけに、さすがにこたえました。</p>
-
-        <p>4回目に変えたのは、勉強量ではなく<strong>やり方</strong>のほうでした。朝は本試験と同じ時間帯に解く。必ず時間を計る。ただ解くのではなく、似た問題と比べながら答え合わせをする。そして、しんどい日に自分で基準を下げるのをやめる。2年あまり、のべ3,168時間かけて、働きながらようやく合格しました。その後、証券アナリスト(CMA)1次にも合格し、Kindleを3冊出しています。</p>
-
-        <p>この間にいちばん驚いたのは、点数でも肩書きでもなく、<strong>周りからの見られ方が変わったこと</strong>でした。1級と並行して受けていた全経簿記上級に合格して、履歴書に書ける資格が1つ増えた。ただそれだけのことなのに、それまで不採用通知ばかりだった就職活動が、嘘のように決まったのです。私の能力が急に上がったわけではありません。<span class="story-caution">（これは私に起きたことで、同じ結果をお約束できるものではありません。）</span></p>
-
-        <p>だから、この講座は「才能のある人が最短ルートを教える」ものにはしませんでした。<strong>遠回りしてようやく掴んだ学び方を、そのまま渡すため</strong>に作っています。どこで詰まるか、どこで心が折れるか、何をやめれば続くのか——全部、自分が通ってきた道です。そしていま、同じ机の上にAIがあります。会計と金融が分かっている状態でAIに指示を出すと、できることが一段変わる。だから資格で終わらせず、その先まで一本の道としてつなげました。</p>
-
-        <p class="story-end">合格も、収入も、それ自体がゴールだとは思っていません。勉強して本当に変わったのは、選べる道が増えたことでした。結果をお約束することはできませんが、その一歩を渡すために、この<strong>「数字の資格AIラボ」</strong>をつくっています。</p>
-      </div>
-
-      <div class="story-who">
-        <img src="assets/bunbun-avatar.jpg" alt="運営者 ぶんぶん" loading="lazy">
-        <div>
-          <b>ぶんぶん</b>
-          <span>日商簿記1級／全経簿記上級／証券アナリスト(CMA)1次合格</span>
-          <a href="https://x.com/a3aByulmQvDRNSU" target="_blank" rel="noopener">Xで日々の発信を見る（@a3aByulmQvDRNSU）→</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ===== FAQ（共通の質問） ===== -->
   <section id="faq" class="faq">
