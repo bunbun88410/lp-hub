@@ -987,7 +987,7 @@
     }
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 24px;
       max-width: 1100px;
       margin: 0 auto;
@@ -1928,32 +1928,72 @@
     }
 
     /* ============================================================
-       明るく熱いヒーロー（2026-08-11・本人指示「伴走感を大事にしたいから明るく熱いイメージに」）
-       白地のままだと冷たいので、朝焼け側の暖色をうっすら敷いて、
-       見出しと定員だけをオレンジで立てる。写真（夕日の稜線）とつながる。
-       🔴 このブロックを消すと、上で定義した白地のヒーローに戻る。
+       ヒーロー＝写真を全面に敷く（2026-08-11・本人指示
+       「ヒーロー画像を背景にしたい。でっかくどーんとインパクトほしい」）
+
+       写真の構図＝左〜中央に走る2人／右上に夕日と山頂の旗／下は斜面。
+       人物と旗を上に残したいので、コピーは下側に敷く。
+       スクリムは紺ではなく焦茶〜濃紺にして、夕日の熱をそのまま残す。
+       🔴 このブロックをまるごと消すと、上で定義した白地の2カラムに戻る。
        ============================================================ */
     .hero {
+      /* ヘッダー（ユーティリティ帯32＋本体92）を引いた高さ。写真は画面いっぱいのまま、
+         最初の画面に申し込みボタンまで入るようにする */
+      min-height: calc(100vh - 124px);
+      display: flex;
+      align-items: flex-end;
+      padding: clamp(36px, 4.5vw, 56px) 0 clamp(28px, 3vw, 44px);
+      color: var(--white);
       background:
-        radial-gradient(880px 520px at 88% 16%, rgba(255,107,53,0.16) 0%, rgba(255,107,53,0) 62%),
-        radial-gradient(720px 460px at 4% 88%, rgba(255,183,120,0.20) 0%, rgba(255,183,120,0) 66%),
-        linear-gradient(165deg, #FFFDF9 0%, var(--cream) 52%, #FBEFE3 100%);
+        /* ① コピーの背後（左下）だけを重く落とす。写真の空・夕日は残す */
+        radial-gradient(1150px 900px at 8% 82%, rgba(8,16,28,0.96) 0%, rgba(8,16,28,0.78) 34%, rgba(8,16,28,0.30) 58%, rgba(8,16,28,0) 78%),
+        /* ② 下端は次の節へ渡すために締める */
+        linear-gradient(to bottom, rgba(30,20,12,0.18) 0%, rgba(20,24,34,0.42) 52%, rgba(11,22,38,0.92) 86%, #0B1626 100%),
+        url('assets/boki-hero-real.jpg');
+      background-size: cover, cover, cover;
+      /* 人物の顔から旗までが画面に入る位置。ここを動かすと構図が崩れる */
+      background-position: center, center, center 34%;
+      background-repeat: no-repeat;
     }
-    .hero-eyebrow { background: var(--orange-soft); color: #B34317; border: 1px solid rgba(255,107,53,0.28); }
-    .hero-title { color: var(--navy); }
-    .hero-title .em { color: var(--orange); }
-    /* 蛍光ペンの帯ではなく、下に引いた1本の線にする */
+    /* 🔴 .hero が flex なので container が中身なりに縮む。100% を明示しないと
+       コピーが画面中央へ寄ってしまう（一度ここでハマった） */
+    .hero > .container { width: 100%; box-sizing: border-box; }
+    /* 写真の上に文字を置くので、影で1段浮かせる。左寄せを明示する */
+    .hero-title { line-height: 1.2; margin-bottom: 24px; }
+    .hero-sub { margin-bottom: 28px; }
+    .hero-content {
+      max-width: 680px;
+      margin-left: 0;
+      margin-right: auto;
+      text-align: left;
+      text-shadow: 0 2px 18px rgba(6,14,24,0.9);
+    }
+    .hero-grid { display: block; }
+    /* 右カラムの写真カードは、写真そのものが背景になったので不要 */
+    .hero-visual { display: none; }
+    .hero-eyebrow {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.28);
+      color: #FFC98A;
+      backdrop-filter: blur(8px);
+    }
+    .hero-title { color: var(--white); }
+    .hero-title .em { color: #FF8A4C; text-shadow: 0 0 40px rgba(255,107,53,0.45); }
     .hero-title .em::after {
       bottom: -2px; height: 4px;
       background: linear-gradient(90deg, var(--orange) 0%, #FFB778 100%);
-      opacity: .9;
+      opacity: .95;
     }
-    .hero-sub { color: var(--text-muted); }
-    .hero-sub strong { color: var(--navy); }
-    .hero-sub strong.hero-limit { color: #C0451B; }
-    .hero .hero-note { color: var(--text-muted); }
-    .hero .hero-note a { color: #2D6A4F; font-weight: 600; }
-    .hero-floating-card { background: var(--white); border: 1px solid var(--border); }
+    .hero-sub { color: rgba(255,255,255,0.88); }
+    .hero-sub strong { color: var(--white); }
+    .hero-sub strong.hero-limit { color: #FFC98A; }
+    .hero .hero-note { color: rgba(255,255,255,0.72); }
+    .hero .hero-note a { color: #7FE3B4; font-weight: 700; }
+    @media (max-width: 900px) {
+      /* 縦画面は横が詰まるぶん、人物が入る位置まで寄せる */
+      .hero { min-height: 92vh; background-position: center, 62% 32%; }
+      .hero-content { text-shadow: 0 2px 16px rgba(6,14,24,0.92); }
+    }
 
     /* ===== MY RECORD（ヒーロー直下）。ここだけ紺だと明暗が縞になるので、
        明るく熱い地に揃えた（2026-08-11・本人指示） ===== */
