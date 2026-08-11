@@ -55,9 +55,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Noto Serif JP は「開講中の講座」の見出し1つだけに使う。
-       OS標準の明朝（游明朝/ヒラギノ明朝）が無い環境でも予備校らしい明朝が出るように700だけ読む -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <!-- 明朝は「開講中の講座」の掲示板だけに使っていたので、掲示板の削除とあわせて Noto Serif JP も外した（2026-08-11） -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     /* ============================================
        数字の資格AIラボ LP — Design System
@@ -1968,52 +1967,6 @@
     }
     .hub-hero-card svg { width: 100%; height: auto; display: block; }
 
-    /* ===== 開講案内（予備校の掲示板の型） =====
-       ネイビーの看板 → 白い本体 → 罫線で区切った講座行、という受験予備校の掲示の形をなぞる。
-       見出しだけ明朝にすると一気に「予備校」に見えるので、そこだけ serif を当てる。 */
-    .hub-hero-board {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      animation: hero-fade 1s ease-out 0.2s both;
-    }
-    .hub-hero-board-head {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 14px 20px;
-      background: var(--navy);
-      color: var(--white);
-      border-bottom: 3px solid var(--orange);
-    }
-    .hub-hero-board-title {
-      font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: .08em;
-    }
-    .hub-hero-board-date { font-size: 11.5px; color: rgba(255,255,255,0.72); letter-spacing: .04em; }
-    .hub-hero-board-list { margin: 0; padding: 0; }
-    .hub-hero-board-list li { border-bottom: 1px dashed var(--border); }
-    .hub-hero-board-list a {
-      display: block;
-      padding: 15px 20px;
-      transition: background 0.15s ease;
-    }
-    .hub-hero-board-list a:hover { background: var(--cream); }
-    .hb-name {
-      display: block;
-      font-size: 15.5px;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1.5;
-    }
-    .hb-name::after { content: ' →'; color: var(--orange); font-weight: 900; }
-    .hb-meta { display: block; margin-top: 5px; font-size: 12.5px; color: var(--text-muted); line-height: 1.6; }
-    .hb-meta em { font-style: normal; font-weight: 700; color: #C0451B; }
 
     @media (max-width: 900px) {
       .hub-hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
@@ -2023,8 +1976,6 @@
       .hub-hero-ctas, .hub-hero-tracks { justify-content: center; }
       .hub-hero-doubt { text-align: left; }
       .hub-hero-h1 .h1-accel { font-size: 0.62em; }
-      /* 掲示板は中央寄せにすると台無しになるので、ここだけ左揃えに戻す */
-      .hub-hero-board, .hub-hero-board * { text-align: left; }
       .hub-hero-visual { max-width: 480px; margin: 0 auto; width: 100%; }
       /* モチーフは狭い画面だと文字に重なるので消す */
       .hub-hero-motif { display: none; }
@@ -2150,18 +2101,6 @@
     }
     .hub-hero-bridge strong { color: var(--white); }
 
-    /* ===== 開講案内の帯（ヒーロー直下・予備校の掲示） ===== */
-    .hub-board-band { padding: 0; background: var(--cream); }
-    .hub-board-band > .container { padding-top: 0; padding-bottom: 0; }
-    .hub-hero-board { margin-top: -34px; margin-bottom: 34px; }
-    .hub-board-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
-    .hub-board-grid li { border-bottom: none; border-right: 1px dashed var(--border); }
-    .hub-board-grid li:last-child { border-right: none; }
-    @media (max-width: 760px) {
-      .hub-board-grid { grid-template-columns: 1fr; }
-      .hub-board-grid li { border-right: none; border-bottom: 1px dashed var(--border); }
-      .hub-hero-board { margin-top: 0; }
-    }
 
     /* ===== 進む順番（ルーター）＝ヒーロー直下 ===== */
     /* ============================================================
@@ -2915,41 +2854,6 @@
   </section>
 
 
-  <!-- ===== 開講案内の帯（予備校の掲示） =====
-       ヒーローの人物に重ねたくないので、ヒーローの下に横帯として置く。
-       ⚠ 書けるのは「講座の中身の事実」だけ。合格者数・合格率は実績が無いので書かない。
-       点数は運営者本人の記録であることを必ず明示する（受講生の実績と誤読させない）。 -->
-  <section class="hub-board-band">
-    <div class="container">
-
-          <div class="hub-hero-board">
-            <div class="hub-hero-board-head">
-              <span class="hub-hero-board-title">開講中の講座</span>
-              <span class="hub-hero-board-date">2026年8月現在</span>
-            </div>
-            <ul class="hub-hero-board-list hub-board-grid">
-              <li>
-                <a href="/boki.html">
-                  <span class="hb-name">日商簿記1級 合格伴走</span>
-                  <span class="hb-meta">講義 全51本／月2回 面談／<em>定員5名</em></span>
-                </a>
-              </li>
-              <li>
-                <a href="/cma.html">
-                  <span class="hb-name">証券アナリスト(CMA) 1次対策</span>
-                  <span class="hb-meta">経済・ファンダメンタル分析・証券分析・数学</span>
-                </a>
-              </li>
-              <li>
-                <a href="/ai.html">
-                  <span class="hb-name">AI実践編</span>
-                  <span class="hb-meta">全13回／全10回／全9回 の3コース</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-    </div>
-  </section>
 
   <!-- ===== コンセプト =====
        本人指示：「講義の種類」「その人に合った講義を提供していること」
