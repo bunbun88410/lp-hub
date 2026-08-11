@@ -2247,60 +2247,49 @@
     }
     .hub-router-line a { color: #2D6A4F; font-weight: 600; }
 
-    /* ===== STORY（運営者の物語）=====
-       ⚠ 中身の一次ソースは ぶんぶん書籍/日商簿記1級勉強法_改訂版.md と profile.json。
-       本試験の得点の推移は本人指示で出さない。結果の保証になる書き方もしない。 */
+    /* ===== STORY（この講座を作った理由）=====
+       章に割らず、続き文章として読ませる。地はページと同じクリームで、
+       ここだけ暗くしない（明暗が縞にならないようにするため・2026-08-11）。 */
     .story { background: var(--cream); }
     .story-head { max-width: 780px; margin: 0 auto; text-align: center; }
     .story-head .section-title { margin: 12px 0 0; }
     .story-head .em { color: var(--orange); display: inline-block; }
-    .story-lead { margin: 18px auto 0; max-width: 660px; color: var(--text-muted); font-size: 15px; line-height: 2; }
-    .story-who { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 26px auto 0; }
+    .story-body {
+      max-width: 720px;
+      margin: clamp(28px, 3.5vw, 40px) auto 0;
+      color: var(--text);
+      font-size: 15.5px;
+      line-height: 2.15;
+    }
+    .story-body p { margin: 0; }
+    .story-body p + p { margin-top: 22px; }
+    .story-body strong { color: var(--navy); font-weight: 700; }
+    .story-caution { color: var(--text-light); font-size: 13.5px; }
+    /* 最後の段落だけ、左に一本線を引いて着地だと分かるようにする */
+    .story-end {
+      margin-top: 26px;
+      padding-left: 20px;
+      border-left: 3px solid var(--orange);
+    }
+    .story-end strong { color: #2D6A4F; }
+    /* 書いた人。名刺のように1枚だけ置く */
+    .story-who {
+      max-width: 720px;
+      margin: clamp(28px, 3.5vw, 38px) auto 0;
+      padding-top: 24px;
+      border-top: 1px solid var(--cream-deep);
+      display: flex; align-items: center; gap: 16px;
+    }
     .story-who img {
       width: 64px; height: 64px; border-radius: 50%; object-fit: cover;
       border: 3px solid var(--white); box-shadow: var(--shadow-sm); flex: none;
     }
     .story-who b { display: block; color: var(--navy); font-size: 16px; }
     .story-who span { display: block; margin-top: 3px; color: var(--text-muted); font-size: 12.5px; line-height: 1.7; }
-    /* 縦のレール＝左の border。節目の丸は各項目の ::before で置く */
-    .story-track {
-      list-style: none;
-      max-width: 720px;
-      margin: clamp(32px, 4vw, 48px) auto 0;
-      padding: 4px 0 4px 26px;
-      border-left: 2px solid rgba(15, 44, 68, 0.13);
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 30px;
-    }
-    .story-step { position: relative; }
-    .story-step::before {
-      content: '';
-      position: absolute; left: -35px; top: 5px;
-      width: 12px; height: 12px; border-radius: 50%;
-      background: #F2C879; border: 2px solid var(--cream);
-    }
-    .story-num { font-family: 'Inter', system-ui, sans-serif; font-size: 11px; font-weight: 900; letter-spacing: .12em; color: var(--orange); }
-    .story-step h3 { margin: 6px 0 0; font-size: clamp(17px, 2vw, 21px); color: var(--navy); line-height: 1.55; }
-    .story-step p { margin: 10px 0 0; color: var(--text-muted); font-size: 14.5px; line-height: 2; }
-    .story-step p strong { color: var(--navy); }
-    .story-note { margin: 10px 0 0; font-size: 12.5px; color: var(--text-light); line-height: 1.8; }
-    .story-close {
-      max-width: 720px;
-      margin: clamp(32px, 4vw, 44px) auto 0;
-      background: var(--navy);
-      border-radius: 18px;
-      padding: clamp(24px, 3vw, 34px) clamp(22px, 3vw, 36px);
-    }
-    .story-close p { margin: 0; color: rgba(255,255,255,0.84); font-size: 15px; line-height: 2; }
-    .story-close p + p { margin-top: 14px; }
-    .story-close strong { color: #F2C879; }
-    .story-x { display: block; text-align: center; margin: 22px 0 0; font-size: 14px; color: #2D6A4F; font-weight: 700; }
+    .story-who a { display: inline-block; margin-top: 8px; font-size: 13.5px; color: #2D6A4F; font-weight: 700; }
     @media (max-width: 700px) {
       .story-head { text-align: left; }
-      .story-who { justify-content: flex-start; }
-      .story-track { padding-left: 22px; }
-      .story-step::before { left: -31px; }
+      .story-body { font-size: 15px; line-height: 2.05; }
     }
 
     /* ===== なぜ、AIの時代に簿記1級とCMAなのか ===== */
@@ -3524,86 +3513,50 @@
   </section>
 
   <!-- ===== なぜ資格×AI ===== -->
-  <section style="background:var(--navy);color:#fff;">
+  <section class="closing-word">
     <div class="container">
       <div style="max-width:760px;margin:0 auto;text-align:center;">
-        <span class="eyebrow" style="justify-content:center;color:rgba(255,255,255,0.85);">CONCEPT</span>
-        <h2 class="section-title" style="color:#fff;">受かって終わり、にしない。</h2>
-        <p style="margin:24px auto 0;line-height:1.95;color:rgba(255,255,255,0.82);">会計・金融の知識は、そのままAIへの“注文力”になります。「どこを見ればいいか」を知っている人ほど、AIで一気に実務が回る。<br>だから私たちは、資格対策から、その先の“使える力”までを一つの場所でつなげます。才能じゃない。最後まで机に向かった人が、受かる。</p>
+        <span class="eyebrow" style="justify-content:center;">PROMISE</span>
+        <h2 class="section-title">受かって終わり、にしない。</h2>
+        <p style="margin:24px auto 0;line-height:1.95;">会計・金融の知識は、そのままAIへの“注文力”になります。「どこを見ればいいか」を知っている人ほど、AIで一気に実務が回る。<br>だから私たちは、資格対策から、その先の“使える力”までを一つの場所でつなげます。才能じゃない。最後まで机に向かった人が、受かる。</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== STORY（運営者の物語）＝旧「運営者」セクションを物語に作り替えたもの =====
-       本人指示：「私自身これらを勉強したことで人生が変わった」をストーリーテリングで説明する。
-       ⚠ 一次ソース＝ぶんぶん書籍/日商簿記1級勉強法_改訂版.md（第1〜2章・おわりに）と profile.json。
-       ⚠ 書かないもの：得点の推移（本人指示）／「独学合格」（最初は通信講座）／休職の話／
-          就職・年収・収入の保証（読者への一般化は禁止。あくまで本人の n=1 として書く）。 -->
+  <!-- ===== STORY（この講座を作った理由）=====
+       本人指示（2026-08-11）：ストーリーは講座を作った経緯の説明に織り交ぜる程度でよい。
+       章に割らず、続き文章としてつなげる。合格点などの点数は書かない。
+       ⚠ 一次ソース＝ぶんぶん書籍/日商簿記1級勉強法_改訂版.md（第1〜2章）と profile.json。
+       ⚠ 書かないもの：点数／「独学合格」（最初は通信）／休職の話／就職・収入・市場価値の保証。 -->
   <section class="story" id="story">
     <div class="container">
       <div class="story-head">
         <span class="eyebrow" style="justify-content:center;">STORY</span>
-        <h2 class="section-title">勉強で、人生は変わりました。<span class="em">私の場合は。</span></h2>
-        <p class="story-lead">ここに書くのは講座の宣伝ではなく、私自身の記録です。うまくいった話より、落ち続けた時間のほうがずっと長い。それでも、続けた先に確かに変わったものがありました。</p>
-        <div class="story-who">
-          <img src="assets/bunbun-avatar.jpg" alt="運営者 ぶんぶん" loading="lazy">
-          <div style="text-align:left;">
-            <b>ぶんぶん</b>
-            <span>日商簿記1級／全経簿記上級／証券アナリスト(CMA)1次合格　@a3aByulmQvDRNSU</span>
-          </div>
+        <h2 class="section-title">この講座を、<span class="em">なぜ作ったのか</span>。</h2>
+      </div>
+
+      <div class="story-body">
+        <p>高校の偏差値は40。手に職をと美容師になり、そのあと会社員になりました。ところが私には発達障害の特性があって、うっかりミスも忘れ物も、社会に出ると許されません。「もっとしっかりして」と毎日のように言われ、取り柄も自信もないまま働いていた私が、半分すがるような気持ちで電卓を握ったのが、簿記のはじまりでした。</p>
+
+        <p>そこからは、うまくいった話より落ち続けた時間のほうがずっと長い道のりでした。簡単だと言われる3級に8か月かかり、受験日を勘違いして失格になったこともあります。調子に乗って挑んだ1級では、予備校の通信講座で講義そのものは理解できたのに、過去問を開いた瞬間に手が止まりました。4科目を解いて、合っているのが2問か3問。<strong>結局、3回落ちています。</strong>3回目は合格まであと2点で、手ごたえのあった回だっただけに、さすがにこたえました。</p>
+
+        <p>4回目に変えたのは、勉強量ではなく<strong>やり方</strong>のほうでした。朝は本試験と同じ時間帯に解く。必ず時間を計る。ただ解くのではなく、似た問題と比べながら答え合わせをする。そして、しんどい日に自分で基準を下げるのをやめる。2年あまり、のべ3,168時間かけて、働きながらようやく合格しました。その後、証券アナリスト(CMA)1次にも合格し、Kindleを3冊出しています。</p>
+
+        <p>この間にいちばん驚いたのは、点数でも肩書きでもなく、<strong>周りからの見られ方が変わったこと</strong>でした。1級と並行して受けていた全経簿記上級に合格して、履歴書に書ける資格が1つ増えた。ただそれだけのことなのに、それまで不採用通知ばかりだった就職活動が、嘘のように決まったのです。私の能力が急に上がったわけではありません。<span class="story-caution">（これは私に起きたことで、同じ結果をお約束できるものではありません。）</span></p>
+
+        <p>だから、この講座は「才能のある人が最短ルートを教える」ものにはしませんでした。<strong>遠回りしてようやく掴んだ学び方を、そのまま渡すため</strong>に作っています。どこで詰まるか、どこで心が折れるか、何をやめれば続くのか——全部、自分が通ってきた道です。そしていま、同じ机の上にAIがあります。会計と金融が分かっている状態でAIに指示を出すと、できることが一段変わる。だから資格で終わらせず、その先まで一本の道としてつなげました。</p>
+
+        <p class="story-end">合格も、収入も、それ自体がゴールだとは思っていません。勉強して本当に変わったのは、選べる道が増えたことでした。結果をお約束することはできませんが、その一歩を渡すために、この<strong>「数字の資格AIラボ」</strong>をつくっています。</p>
+      </div>
+
+      <div class="story-who">
+        <img src="assets/bunbun-avatar.jpg" alt="運営者 ぶんぶん" loading="lazy">
+        <div>
+          <b>ぶんぶん</b>
+          <span>日商簿記1級／全経簿記上級／証券アナリスト(CMA)1次合格</span>
+          <a href="https://x.com/a3aByulmQvDRNSU" target="_blank" rel="noopener">Xで日々の発信を見る（@a3aByulmQvDRNSU）→</a>
         </div>
       </div>
-
-      <ol class="story-track">
-        <li class="story-step">
-          <span class="story-num">01</span>
-          <h3>「何も知らない」「頭が悪い」と言われていました</h3>
-          <p>高校の偏差値は40。手に職をと美容師になり、そのあと会社員になりました。ところが私には発達障害の特性があって、うっかりミスも、遅刻も、忘れ物も、社会に出ると許されません。「もっとしっかりして」と毎日のように言われ、<strong>取り柄も自信もないまま</strong>、自分は会社員に向いていないな、と思いながら働いていました。</p>
-        </li>
-
-        <li class="story-step">
-          <span class="story-num">02</span>
-          <h3>簡単だと言われる簿記3級に、8か月かかりました</h3>
-          <p>きっかけはYouTubeでした。「簿記は独立や副業に役立つ」と聞いて、単純にも「これで人生が変わるかも」と思い、通信講座に申し込みます。ところが勉強が大嫌いだった私は、講義を聞くとすぐ眠くなる。受験日を勘違いして失格になったこともあります。<strong>結局8か月かかりました。</strong>それでも最後は9割を超えて合格でき、その勢いで2級にも受かります。</p>
-        </li>
-
-        <li class="story-step">
-          <span class="story-num">03</span>
-          <h3>講義は分かるのに、過去問が1問も解けない</h3>
-          <p>調子に乗って、日商簿記1級に挑みました。予備校の通信講座から始めたので、講師の説明は分かりやすく、講義そのものは理解できます。ところが過去問を開いた瞬間に手が止まりました。商業簿記・会計学・工業簿記・原価計算の4科目を解いて、<strong>合っているのが2問か3問。</strong>「足を踏み入れたのは間違いだったかもしれない」と本気で思いました。そこからやったのは、解答の下書きをそのまま写すという、果てしなく地道な作業です。</p>
-        </li>
-
-        <li class="story-step">
-          <span class="story-num">04</span>
-          <h3>3回、落ちました</h3>
-          <p>初めての本試験は、始まった瞬間に頭が真っ白になりました。半分は取れているだろうと思っていた点数は、3割にも届いていませんでした。2回目も、3回目も落ちます。<strong>3回目は、合格まであと2点。</strong>手ごたえのあった回だっただけに、さすがにこたえました。この時期はアルバイト先でもミスが続いて呆れられ、出勤すると頭痛がするほど。仕事のあとはフードコートに直行して、楽しそうな学生を横目に、ひとりで電卓を叩いていました。</p>
-        </li>
-
-        <li class="story-step">
-          <span class="story-num">05</span>
-          <h3>資格が、周りの見る目を変えました</h3>
-          <p>1級と並行して受けていた全経簿記上級に、2回目で合格します。履歴書に書ける資格が1つ増えた。ただそれだけのことなのに、それまで不採用通知ばかりだった就職活動が、嘘のように決まりました。私の能力が急に上がったわけではありません。変わったのは、<strong>周りからの見られ方</strong>のほうでした。</p>
-          <p class="story-note">※ これは私に起きたことです。同じ結果をお約束できるものではありません。</p>
-        </li>
-
-        <li class="story-step">
-          <span class="story-num">06</span>
-          <h3>4回目。働きながら、受かりました</h3>
-          <p>働き始めて、まとまった勉強時間は取れなくなりました。そこで、がむしゃらな量で押すのをやめます。朝は本試験と同じ時間帯に解く。必ず時間を計る。ただ解くのではなく、似た問題と比べながら答え合わせをする。無理はしない。<strong>2年あまり、のべ3,168時間。</strong>4回目で、ようやく合格しました。うれしさよりも、安堵のほうが大きかったのを覚えています。</p>
-        </li>
-
-        <li class="story-step">
-          <span class="story-num">07</span>
-          <h3>そして、同じ机の上にAIが来ました</h3>
-          <p>その後、証券アナリスト(CMA)1次にも合格し、Kindleを3冊出しました。いま向き合っているのがAIです。<strong>会計と金融が分かっている状態でAIに指示を出すと、できることが一段変わります。</strong>「どこを見ればいいか」を知っているぶん、注文が具体的になるからです。このサイトも、企画から設計・実装・公開・運用まで、AIを使いながら自分で作りました。</p>
-        </li>
-      </ol>
-
-      <div class="story-close">
-        <p>才能はありませんでした。基準を下げず、ゼロの日を作らず、続けただけです。そして勉強して本当に変わったのは、収入でも肩書きでもなく、<strong>選べる道が増えたこと</strong>でした。</p>
-        <p>同じ結果をお約束することはできません。ただ、遠回りしてようやく掴んだ学び方なら、そのまま渡せます。それが<strong>「数字の資格AIラボ」</strong>です。</p>
-      </div>
-      <a class="story-x" href="https://x.com/a3aByulmQvDRNSU" target="_blank" rel="noopener">Xで日々の発信を見る（@a3aByulmQvDRNSU）→</a>
     </div>
   </section>
 
@@ -3920,6 +3873,111 @@
       .cw-launch { right: 14px; bottom: 14px; padding: 12px 17px; font-size: 14px; }
       .cw-panel { right: 8px; left: 8px; bottom: 8px; width: auto; max-height: calc(100vh - 24px); }
     }
+
+    /* ============================================================
+       明暗の縞をやめる一括上書き（2026-08-11・本人指示
+       「明るいところと暗いところが織り交ざっていない方がいい」）
+
+       暗いのは ①ヒーロー（表紙） と ②最後のCTA＋フッター（締め）だけ。
+       途中にあった紺地の4節（for-study／for-work／method／受かって終わりにしない）と、
+       コンセプト03の紺カードを、明るい側へ反転させる。
+       🔴 このブロックをまるごと消すと、上で定義した紺地の版に戻る。
+       ============================================================ */
+
+    /* --- ① 地をクリームへ。格子・数式・チャートの装飾は薄くして残す --- */
+    .why-now, .for-work {
+      color: var(--text);
+      background:
+        radial-gradient(900px 520px at 85% 0%, #FFFDF8 0%, rgba(255,253,248,0) 62%),
+        linear-gradient(200deg, var(--white) 0%, var(--cream) 55%, #F1EFE6 100%);
+    }
+    .why-now::before, .for-work::before { opacity: .30; }
+    .why-now-motif span { color: rgba(15,44,68,0.08); }
+    .method { background: var(--cream); color: var(--text); }
+    .method::before { opacity: .45; }
+
+    /* --- ② 見出しの白を、オレンジの節見出し＋紺の大見出しへ --- */
+    .why-now-head .eyebrow, .fw-head .eyebrow, .method-header .eyebrow { color: var(--orange); }
+    .why-now-head .eyebrow::before, .fw-head .eyebrow::before, .method-header .eyebrow::before { background: var(--orange); }
+    .why-now-head .section-title, .fw-head .section-title, .method-title { color: var(--navy); }
+    .why-now-lead, .fw-lead { color: var(--text-muted); }
+    .why-now-lead strong, .fw-lead strong { color: var(--navy); }
+    .fw-hl { color: var(--orange); }
+
+    /* --- ③ ガラスのカードを、白いカードへ --- */
+    .why-now-card, .fw-step, .method-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: none;
+    }
+    .why-now-card:hover, .method-card:hover { box-shadow: var(--shadow-md); }
+    .why-now-title, .fw-step-title, .method-card-title { color: var(--navy); }
+    .why-now-text, .fw-step-text, .method-card-text { color: var(--text-muted); }
+    .why-now-text strong, .fw-step-text strong { color: var(--orange); }
+    .why-now-num, .fw-step-num, .fw-arrow { color: var(--orange); }
+    .method-num-badge { color: var(--navy); opacity: .10; }
+    .method-icon { background: var(--orange-soft); color: var(--orange); }
+    .why-now-stance { color: var(--text-muted); }
+    .why-now-stance strong { color: var(--navy); }
+    .why-now-link { color: #2D6A4F; }
+    .why-now-link:hover { color: var(--orange); }
+
+    /* --- ④ 強調のボックスは、白地にオレンジの枠で立てる --- */
+    .why-now-accel, .fw-claim {
+      background: var(--white);
+      border: 1px solid var(--orange);
+      box-shadow: var(--shadow-md);
+    }
+    .why-now-accel-eyebrow, .fw-claim-text strong { color: var(--orange); }
+    .why-now-accel-title, .fw-claim-lead { color: var(--navy); }
+    .why-now-accel-text { color: var(--text-muted); }
+    .why-now-accel-text strong { color: var(--navy); }
+    .fw-claim-text { color: var(--text-muted); }
+    .fw-note { color: var(--text-light); }
+
+    /* --- ⑤ 白抜きのボタンは、明るい地では紺の枠にする --- */
+    .for-work .btn-outline, .why-now-accel .btn-outline {
+      background: transparent; color: var(--navy); border-color: var(--navy);
+    }
+    .for-work .btn-outline:hover, .why-now-accel .btn-outline:hover { background: var(--navy); color: var(--white); }
+    .for-work .btn-orange { box-shadow: var(--shadow-sm); }
+
+    /* --- ⑥ コンセプト03。紺のベタをやめ、白地＋オレンジの枠で「着地」を示す --- */
+    .cstep-goal { background: var(--white); border: 2px solid var(--orange); }
+    .cstep-goal .cstep-num { color: var(--orange); }
+    .cstep-goal .cstep-title { color: var(--navy); }
+    .cstep-goal .cstep-text { color: var(--text-muted); }
+    .cstep-goal .cstep-text strong { color: var(--orange); }
+
+    /* --- ⑥-2 for-study の2枚のカード（wn-*）。暗地前提の水色・金・白を明地用に置き換える --- */
+    .wn-q { color: var(--navy); }
+    .wn-a { color: var(--text-muted); }
+    .wn-a strong, .wn-hl { color: var(--orange); }
+    .wn-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .wn-card:hover { border-color: var(--orange); box-shadow: var(--shadow-md); }
+    .wn-card-badge { color: rgba(15,44,68,0.08); }
+    .wn-card-name { color: #2D6A4F; }
+    .wn-card-catch { color: var(--navy); }
+    .wn-card-text { color: var(--text-muted); }
+    .wn-card-text strong { color: var(--navy); }
+    /* 「こんな方に」の箱＝黒の半透明だと明地で灰色に濁るのでクリームにする */
+    .wn-card-for { background: var(--cream); }
+    .wn-for-label { color: var(--orange); }
+    .wn-card-for li { color: var(--text-muted); }
+    .wn-card-for li::before { color: #2D6A4F; }
+
+    /* --- ⑦ 「受かって終わり、にしない。」も明るい地に揃える --- */
+    .closing-word { background: var(--cream); color: var(--text); }
+    .closing-word .eyebrow { color: var(--orange); }
+    .closing-word .section-title { color: var(--navy); }
+    .closing-word p { color: var(--text-muted); }
+    .closing-word strong { color: var(--navy); }
+
   </style>
 
   <button type="button" class="cw-launch" id="cw-launch">

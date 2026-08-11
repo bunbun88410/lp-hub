@@ -1978,6 +1978,33 @@
     .hero-limit { color: var(--hero-gold); }
     .hero-floating-card { background: rgba(255,255,255,0.94); }
 
+    /* ============================================================
+       明暗の縞をやめる一括上書き（2026-08-11・本人指示
+       「明るいところと暗いところが織り交ざっていない方がいい」）
+       暗いのは ①ヒーロー＋その直下のMY RECORD（表紙のかたまり） と
+       ②最後のCTA＋フッター（締め）だけ。途中の method は明るい側へ反転させる。
+       index.html にも同じ考え方の上書きを入れてある。
+       🔴 このブロックをまるごと消すと、紺地の method に戻る。
+       ============================================================ */
+    .method { background: var(--cream); color: var(--text); }
+    .method::before { opacity: .45; }
+    .method-header .eyebrow { color: var(--orange); }
+    .method-header .eyebrow::before { background: var(--orange); }
+    .method-title { color: var(--navy); }
+    .method .em, .method-title .em { color: var(--orange); }
+    .method .underline-mark { color: var(--orange); }
+    .method-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .method-card:hover { box-shadow: var(--shadow-md); }
+    .method-card-title { color: var(--navy); }
+    .method-card-text { color: var(--text-muted); }
+    .method-card-text strong { color: var(--navy); }
+    .method-num-badge { color: var(--navy); opacity: .10; }
+    .method-icon { background: var(--orange-soft); color: var(--orange); }
+
     /* --- 動きを減らす設定の人には、入場アニメを出さない --- */
     @media (prefers-reduced-motion: reduce) {
       .hero-eyebrow, .hero-title, .hero-sub, .hero-ctas, .hero-visual { animation: none !important; }
@@ -2168,14 +2195,14 @@
       <div class="method-header">
         <span class="eyebrow">WHAT YOU GET</span>
         <h2 class="method-title">お金を払うのは教材ではなく、<span class="em">詰まりの解消</span></h2>
-        <p class="section-subtitle" style="margin:16px auto 0;color:rgba(255,255,255,.8);">問題集と過去問は、予備校のものを別途ご用意ください（<strong style="color:#fff;">TAC推奨</strong>）。この伴走はそれを置き換えるものではなく、解き方の型・詰まりの解消・本番の作り方に使います。</p>
+        <p class="section-subtitle" style="margin:16px auto 0;">問題集と過去問は、予備校のものを別途ご用意ください（<strong style="color:var(--navy);">TAC推奨</strong>）。この伴走はそれを置き換えるものではなく、解き方の型・詰まりの解消・本番の作り方に使います。</p>
       </div>
       <div class="method-grid">
         <div class="method-card">
           <span class="method-num-badge">01</span>
           <div class="method-icon"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M208,24H72A32,32,0,0,0,40,56V224a8,8,0,0,0,8,8H192a8,8,0,0,0,0-16H56a16,16,0,0,1,16-16H208a8,8,0,0,0,8-8V32A8,8,0,0,0,208,24Z"/></svg></div>
           <h3 class="method-card-title">講義 全51本を、週1本ずつ</h3>
-          <p class="method-card-text">スライドを開いて、私が解説していきます。連結はタイムテーブル、標準原価はシュラッター図——<strong style="color:#fff;">先に「解き方の型」</strong>を見せてから中身に入ります。録画が残るので、あとから追いつけます。</p>
+          <p class="method-card-text">スライドを開いて、私が解説していきます。連結はタイムテーブル、標準原価はシュラッター図——<strong style="color:var(--navy);">先に「解き方の型」</strong>を見せてから中身に入ります。録画が残るので、あとから追いつけます。</p>
         </div>
         <div class="method-card">
           <span class="method-num-badge">02</span>
