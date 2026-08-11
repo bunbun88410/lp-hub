@@ -1989,79 +1989,79 @@
     }
 
     /* ============================================================
-       ヒーローを背景画像（hub-hero-desk-v4.jpg＝顔の左(x=1040)で縦に切り、被写体を右端へ寄せた版）に合わせてダークにする一括上書き。
-       画像の左端の実測色が rgb(7,39,68) なので、スクリムもベースもその色で揃える。
-       🔴 このブロックをまるごと消すと、上で定義した「明るいヒーロー」に戻る。
-       画像はアクセントに水色と金色を使っているので、ヒーロー内だけ2色を足す。
+       ヒーロー＝ミニぶんぶんのイラスト（hub-hero-mini）に合わせて明るくする一括上書き。
+       2026-08-11 本人指示で、紺のダーク版（hub-hero-desk-v4.jpg）から差し替えた。
+
+       絵は「左半分が白く空いていて、右にキャラ・電卓・ノート・ラップトップ・AI」。
+       左の空きにコピーを置くので、左からの白いスクリムで帯を均してから文字を載せる。
+       アクセントは絵に合わせて青とオレンジ（熱さ）の2色。
+       🔴 このブロックをまるごと消すと、上で定義した明るいヒーローの素の状態に戻る。
        ============================================================ */
     .hub-hero {
-      --hero-cyan: #6EC6F5;
-      --hero-gold: #F2C879;
-      color: var(--white);
+      --hero-cyan: #2E7FC2;   /* 明るい地でも読める青。絵の道と同系 */
+      --hero-gold: #B26A12;   /* 明るい地でも読める金 */
+      color: var(--text);
       background-image:
-        /* 🔴 下端を紺へ溶かす層。これが無いと写真がヒーローの下辺で直角に切れる */
-        linear-gradient(to bottom, rgba(7,39,68,0) 56%, rgba(7,39,68,0.62) 82%, rgba(7,39,68,0.95) 95%, #072744 100%),
-        linear-gradient(96deg, #072744 0%, #072744 34%, rgba(7,39,68,0.92) 46%, rgba(7,39,68,0.55) 60%, rgba(7,39,68,0.14) 78%, rgba(7,39,68,0.04) 100%),
-        url('assets/hub-hero-desk-v4.jpg');
+        /* ① 下端をクリームへ溶かして、次の節へ渡す */
+        linear-gradient(to bottom, rgba(247,244,237,0) 74%, rgba(247,244,237,0.72) 90%, var(--cream) 100%),
+        /* ② 左からの白いスクリム。コピーを載せる帯だけ均す */
+        linear-gradient(96deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.94) 32%, rgba(255,255,255,0.74) 46%, rgba(255,255,255,0.30) 60%, rgba(255,255,255,0) 76%),
+        url('assets/hub-hero-mini.jpg');
       background-size: cover, cover, cover;
-      /* 🔴 right 固定。この画像は被写体を右端に寄せてあるので、left にすると手元が画面外へ逃げる */
+      /* 🔴 right 固定。キャラを右端に残すため。left にすると絵の主役が画面外へ逃げる */
       background-position: center, center, right center;
       background-repeat: no-repeat;
     }
+    /* 薄い格子。明るい地なので線はネイビー側を薄く使う */
     .hub-hero::before {
       background-image:
-        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+        linear-gradient(rgba(15,44,68,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15,44,68,0.05) 1px, transparent 1px);
     }
-    .hub-hero::after { background: radial-gradient(circle, rgba(110,198,245,0.16) 0%, rgba(110,198,245,0) 66%); }
-    .hub-hero-motif span { color: rgba(110,198,245,0.14); }
-    /* 画像に「文字を置くための空き」が作ってあるので1カラムで使う */
+    /* 見出しの裏の光は、熱さを出すためオレンジにする */
+    .hub-hero::after { background: radial-gradient(circle, rgba(255,107,53,0.16) 0%, rgba(255,107,53,0) 66%); }
+    .hub-hero-motif span { color: rgba(15,44,68,0.08); }
+    /* 絵に「文字を置くための空き」が作ってあるので1カラムで使う */
     .hub-hero-grid { display: block; min-height: 60vh; }
     .hub-hero-copy {
       /* H1「AIで、勉強と副業を」が1行に収まる幅。狭めると「を」だけ次行に落ちる（要注意） */
       max-width: 660px;
-      text-shadow: 0 1px 14px rgba(3,17,30,0.85);
     }
-    .hub-hero-h1 { font-size: clamp(34px, 4.4vw, 58px); }
-    /* 掲示板はヒーローの下の帯へ移した（人物に重ねないため） */
+    .hub-hero-h1 { font-size: clamp(34px, 4.4vw, 58px); color: var(--navy); }
     .hub-hero-visual { display: none; }
     .hub-hero .hero-eyebrow {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.20);
-      color: var(--hero-gold);
+      background: var(--orange-soft);
+      border: 1px solid rgba(255,107,53,0.30);
+      color: #B34317;
       box-shadow: none;
-      backdrop-filter: blur(8px);
     }
-    .hub-hero-h1 { color: var(--white); }
-    .hub-hero-h1 .em { color: var(--hero-cyan); text-shadow: 0 0 34px rgba(110,198,245,0.45); }
+    .hub-hero-h1 .em { color: var(--orange); }
     .hub-hero-h1 .em::after {
-      background: linear-gradient(90deg, rgba(110,198,245,0) 0%, rgba(110,198,245,0.9) 22%, rgba(110,198,245,0.9) 78%, rgba(110,198,245,0) 100%);
+      background: linear-gradient(90deg, rgba(255,107,53,0) 0%, rgba(255,107,53,0.9) 20%, rgba(255,107,53,0.9) 80%, rgba(255,107,53,0) 100%);
     }
-    .hub-hero-h1 .h1-accel { color: rgba(255,255,255,0.74); }
-    .hub-hero-doubt { color: var(--white); border-left-color: var(--hero-cyan); }
-    .hub-hero-answer { color: var(--hero-gold); }
-    .hub-hero-answer strong { color: var(--white); }
-    .hub-hero-sub { color: rgba(255,255,255,0.85); }
-    .hub-hero-sub strong { color: var(--white); }
-    .hub-hero-free { color: rgba(255,255,255,0.66); }
+    .hub-hero-h1 .h1-accel { color: var(--text-muted); }
+    .hub-hero-doubt { color: var(--navy); border-left-color: var(--orange); }
+    .hub-hero-answer { color: #B34317; }
+    .hub-hero-answer strong { color: var(--navy); }
+    .hub-hero-sub { color: var(--text-muted); }
+    .hub-hero-sub strong { color: var(--navy); }
+    .hub-hero-free { color: var(--text-muted); }
     .hub-hero-track {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.20);
-      color: var(--white);
-      box-shadow: none;
-      backdrop-filter: blur(8px);
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--navy);
+      box-shadow: var(--shadow-sm);
     }
-    .hub-hero-track:hover { background: rgba(255,255,255,0.16); box-shadow: none; }
-    .hub-hero-track i { box-shadow: 0 0 10px currentColor; }
-    .hub-hero-track-ai { border-color: rgba(242,200,121,0.65); box-shadow: 0 0 22px rgba(242,200,121,0.14); }
-    .hub-hero .btn-outline { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.55); }
-    .hub-hero .btn-outline:hover { background: var(--white); color: var(--navy); }
+    .hub-hero-track:hover { background: var(--cream); box-shadow: var(--shadow-md); }
+    .hub-hero-track-ai { border-color: rgba(255,107,53,0.55); }
+    .hub-hero .btn-outline { background: var(--white); color: var(--navy); border-color: var(--navy); }
+    .hub-hero .btn-outline:hover { background: var(--navy); color: var(--white); }
     @media (max-width: 900px) {
-      /* 縦画面では横スクリムが効かないので縦に覆う。人物が入る位置まで右へ寄せる */
+      /* 縦画面では横スクリムが効かないので、上から白く覆う。キャラが入る位置まで右へ寄せる */
       .hub-hero {
         background-image:
-          linear-gradient(180deg, rgba(6,32,56,0.90) 0%, rgba(7,39,68,0.80) 42%, rgba(5,26,46,0.99) 92%, #072744 100%),
-          url('assets/hub-hero-desk-v4.jpg');
+          linear-gradient(180deg, rgba(255,255,255,0.90) 0%, rgba(255,255,255,0.84) 44%, rgba(250,248,243,0.94) 86%, var(--cream) 100%),
+          url('assets/hub-hero-mini.jpg');
         background-position: center, right center;
       }
       .hub-hero-grid { min-height: 0; }
@@ -3849,6 +3849,15 @@
     .closing-word .section-title { color: var(--navy); }
     .closing-word p { color: var(--text-muted); }
     .closing-word strong { color: var(--navy); }
+
+    /* --- 明るいヒーローの宛先ブロック。ダーク版の白文字が後勝ちで残るので、
+       ここ（スタイルシートの最後）で暗い側へ戻す --- */
+    .hf-who { color: var(--navy); }
+    .hf-who em { color: var(--orange); }
+    .hf-detail { color: var(--text-muted); }
+    .hub-hero-bridge { border-top-color: var(--border); color: var(--text-muted); }
+    .hub-hero-bridge strong { color: var(--navy); }
+    .hub-hero-copy { text-shadow: none; }
 
     /* --- ⑧ 熱さを足す（2026-08-11・本人指示「熱いイメージにしたい」）---
        明るい地のままだと淡泊なので、節ごとに朝焼け側の暖色をうっすら敷く。
