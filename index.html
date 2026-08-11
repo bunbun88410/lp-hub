@@ -3850,6 +3850,33 @@
     .closing-word p { color: var(--text-muted); }
     .closing-word strong { color: var(--navy); }
 
+    /* --- ⑧ 熱さを足す（2026-08-11・本人指示「熱いイメージにしたい」）---
+       明るい地のままだと淡泊なので、節ごとに朝焼け側の暖色をうっすら敷く。
+       ベタで塗らずグラデのにじみにするのは、文字の読みやすさを落とさないため。 */
+    .why-now, .for-work {
+      background:
+        radial-gradient(900px 520px at 86% 2%, rgba(255,107,53,0.11) 0%, rgba(255,107,53,0) 62%),
+        radial-gradient(720px 460px at 4% 92%, rgba(255,183,120,0.18) 0%, rgba(255,183,120,0) 66%),
+        linear-gradient(200deg, var(--white) 0%, var(--cream) 52%, #FBEFE3 100%);
+    }
+    .method {
+      background:
+        radial-gradient(780px 440px at 92% 6%, rgba(255,107,53,0.10) 0%, rgba(255,107,53,0) 62%),
+        var(--cream);
+    }
+    .closing-word {
+      background:
+        radial-gradient(720px 400px at 50% 0%, rgba(255,107,53,0.13) 0%, rgba(255,107,53,0) 66%),
+        var(--cream);
+    }
+    #shindan { background: linear-gradient(180deg, var(--cream) 0%, #FBEFE3 100%); }
+    /* 締めの紺は、オレンジの熱をもう一段強く回す */
+    .final-cta {
+      background:
+        radial-gradient(760px 420px at 18% 12%, rgba(255,107,53,0.22) 0%, rgba(255,107,53,0) 62%),
+        var(--navy-deep);
+    }
+
   </style>
 
   <button type="button" class="cw-launch" id="cw-launch">
