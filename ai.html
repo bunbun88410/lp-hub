@@ -2873,5 +2873,42 @@
       </div>
     </div>
   </footer>
+
+  <!-- 入口の識別（2026-09-14 追加。boki.html / cma.html と同じ仕組み） -->
+  <!-- どの入口から来た人が申し込んだかを数えるための仕組み。
+       ①URLの utm_source / utm_medium を読む（無ければ親LPが残した sessionStorage の印を使う）
+       → ②Stripeの決済リンクに client_reference_id として引き継ぐ。 -->
+  <script>
+    (function () {
+      var KEY = 'entry_ref';
+
+      // utm を安全な文字だけの短い印に変換する（例：x-profile）
+      function readRef() {
+        try {
+          var p = new URLSearchParams(location.search);
+          var src = p.get('utm_source');
+          if (!src) return null;
+          var med = p.get('utm_medium');
+          var raw = med ? src + '-' + med : src;
+          return raw.replace(/[^a-zA-Z0-9_-]/g, '').slice(0, 60) || null;
+        } catch (e) { return null; }
+      }
+
+      var ref = readRef();
+      try {
+        if (ref) sessionStorage.setItem(KEY, ref);
+        else ref = sessionStorage.getItem(KEY);
+      } catch (e) { /* プライベートモード等で使えなくても止めない */ }
+      if (!ref) return;
+
+      // Stripeの決済リンクに印を付ける
+      var links = document.querySelectorAll('a[href*="buy.stripe.com"]');
+      for (var i = 0; i < links.length; i++) {
+        var href = links[i].getAttribute('href');
+        if (!href || href.indexOf('client_reference_id=') !== -1) continue;
+        links[i].setAttribute('href', href + (href.indexOf('?') === -1 ? '?' : '&') + 'client_reference_id=' + encodeURIComponent(ref));
+      }
+    })();
+  </script>
 </body>
 </html>
