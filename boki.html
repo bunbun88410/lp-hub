@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>簿記1級 合格伴走｜数字の資格ラボ</title>
-  <meta name="description" content="簿記1級は、マインドが9割。10人受けて8人以上が落ちる試験で分かれ目になるのは、才能ではなく続け方でした。まずヒアリングしてあなた専用の学習計画を作り、講義 全51本と月2回のZoom画面共有で、合格まで伴走します（1対1のため5名まで）。お試し1ヶ月¥10,000／教材＋伴走¥49,000／講義つき¥98,000。">
+  <meta name="description" content="簿記1級は、マインドが9割。10人受けて8人以上が落ちる試験で分かれ目になるのは、才能ではなく続け方でした。まずヒアリングしてあなた専用の学習計画を作り、講義 全51本と月2回のZoom画面共有で、合格まで伴走します（1対1のため5名まで）。お試し1ヶ月¥10,000／本編は月額¥9,800（最大18回）。">
 
   <!-- 検索・SNS最適化 -->
   <link rel="canonical" href="https://sujilab.net/boki">
@@ -21,7 +21,7 @@
   <meta property="og:site_name" content="数字の資格ラボ">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:title" content="簿記1級 合格伴走｜合格は、マインドが9割">
-  <meta property="og:description" content="10人受けて8人以上が落ちる試験。分かれ目になるのは、才能ではなく続け方でした。まずヒアリングしてあなた専用の学習計画を作り、講義 全51本と月2回の画面共有で、合格まで伴走します（1対1のため5名まで）。お試し¥10,000／教材＋伴走¥49,000／講義つき¥98,000。">
+  <meta property="og:description" content="10人受けて8人以上が落ちる試験。分かれ目になるのは、才能ではなく続け方でした。まずヒアリングしてあなた専用の学習計画を作り、講義 全51本と月2回の画面共有で、合格まで伴走します（1対1のため5名まで）。お試し¥10,000／本編は月額¥9,800（最大18回）。">
   <meta property="og:url" content="https://sujilab.net/boki">
   <meta property="og:image" content="https://sujilab.net/assets/og-image-boki.jpg">
   <meta property="og:image:type" content="image/jpeg">
@@ -994,6 +994,10 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 24px;
+    }
+    /* お試し＋月額の2枚（2026-10-04） */
+    .pricing-grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       max-width: 1100px;
       margin: 0 auto;
     }
@@ -1742,7 +1746,7 @@
       }
 
       /* Pricing */
-      .pricing-grid {
+      .pricing-grid, .pricing-grid.two {
         grid-template-columns: 1fr;
         gap: 18px;
       }
@@ -2186,9 +2190,9 @@
             </a>
           </div>
           <!-- 🔴 ボタン直下のリスクリバーサル（2026-08-12・本人指示で全額返金保証を追加）。
-               ¥98,000 をいきなり見せる前に「損しようがない」ことを出しておく。押す前の不安を消す2行。
-               ⚠ 返金保証は**お試し1ヶ月だけ**。¥49,000/¥98,000 は返金不可なので、ここで混ぜないこと。 -->
-          <p class="hero-note" style="margin:14px 0 0;font-size:13.5px;font-weight:600;line-height:1.9;">まずは<strong>¥10,000のお試し1ヶ月</strong>から。<br>合わなければ<strong>1ヶ月以内で全額返金</strong>。続けるなら<strong>この¥10,000を全額差し引き</strong>。<br>どちらにしても、損はしません。</p>
+               本編（月額）をいきなり見せる前に「損しようがない」ことを出しておく。押す前の不安を消す2行。
+               ⚠ 返金保証は**お試し1ヶ月だけ**。本編（月額¥9,800・2026-10-04〜）は解約可・返金なしなので、ここで混ぜないこと。 -->
+          <p class="hero-note" style="margin:14px 0 0;font-size:13.5px;font-weight:600;line-height:1.9;">まずは<strong>¥10,000のお試し1ヶ月</strong>から。<br>合わなければ<strong>1ヶ月以内で全額返金</strong>。続けるなら<strong>本編の1ヶ月目が無料</strong>。<br>どちらにしても、損はしません。</p>
         </div>
 
         <!-- ヒーロービジュアル：伴走イラスト（合格ゴールへ並走） -->
@@ -2571,15 +2575,15 @@
         <div style="background:#fff;border-radius:12px;padding:18px 22px;"><strong style="color:#2D6A4F;">こんな方が対象</strong><span style="color:#5A6A7A;font-size:14px;"> — ①本気で人生を変えたい方 ②経理・会計の仕事をしている方 ③簿記2級・3級を取って、次に迷っている方。</span></div>
         <div style="background:#fff;border-radius:12px;padding:18px 22px;"><strong style="color:#2D6A4F;">対象外の方</strong><span style="color:#5A6A7A;font-size:14px;"> — 丸投げで受かりたい方、勉強そのものを代行してほしい方、3級・2級がメインの方。</span></div>
         <div style="background:#fff;border-radius:12px;padding:18px 22px;"><strong style="color:#2D6A4F;">問題集・過去問は別途ご用意ください</strong><span style="color:#5A6A7A;font-size:14px;"> — 予備校のもの（TAC推奨）を使います。この伴走はそれを置き換えるものではありません。</span></div>
-        <div style="background:#fff;border-radius:12px;padding:18px 22px;"><strong style="color:#2D6A4F;">まずはお試し1ヶ月から（全額返金保証つき）</strong><span style="color:#5A6A7A;font-size:14px;"> — いきなり高額を払わず、¥10,000で相性を確かめてから。合わなければ1ヶ月以内で全額返金、続けるなら本編の代金からこの¥10,000を差し引きます。</span></div>
+        <div style="background:#fff;border-radius:12px;padding:18px 22px;"><strong style="color:#2D6A4F;">まずはお試し1ヶ月から（全額返金保証つき）</strong><span style="color:#5A6A7A;font-size:14px;"> — いきなり高額を払わず、¥10,000で相性を確かめてから。合わなければ1ヶ月以内で全額返金、続けるなら本編（月額¥9,800）の1ヶ月目を無料にします。</span></div>
       </div>
     </div>
   </section>
 
   <!-- ===== 1対1だから、進め方を変えられる（2026-08-18 追加）
        予備校との差別化＝「同じ教材でも、始め方と進め方を人ごとに変える」。
-       3パターン（初学者＝ライブ講義／再受験＝理解度テスト／時間がない＝講義なしの¥49,000）を出して、
-       そのまま下の料金3プランへ渡す。ライブにした理由（＝メンタルの試験だから）もここで言い切る。
+       3パターン（初学者＝ライブ講義／再受験＝理解度テスト／時間がない＝講義を使わず面談とLINEだけ）を出して、
+       そのまま下の料金へ渡す。2026-10-04 本編を月額¥9,800に一本化（¥49,000・¥98,000は廃止）。ライブにした理由（＝メンタルの試験だから）もここで言い切る。
        ⚠ 合格保証・断定表現は入れない（FAQ・利用規約・特商法と整合させる）。 -->
   <section>
     <div class="container">
@@ -2603,7 +2607,7 @@
         <div style="background:#fff;border:1px solid #E5E9EF;border-left:4px solid #1A2B4A;border-radius:14px;padding:24px;">
           <strong style="color:#1A2B4A;font-size:13px;">時間が取れない方</strong>
           <p style="margin:8px 0 0;font-weight:700;color:#1A2B4A;font-size:17px;">講義がないだけ。伴走は同じです</p>
-          <p style="margin:10px 0 0;color:#5A6A7A;font-size:14.5px;line-height:1.85;">教材は自分で読める、講義に時間は使えない。その場合は<strong style="color:#1A2B4A;">「教材＋伴走」（¥49,000）</strong>をおすすめします。<strong style="color:#1A2B4A;">講義がないだけ</strong>で、教材スライド 全51本・月2回の面談・LINEの個別質問は同じです。<a href="#pricing" style="color:#2D6A4F;font-weight:700;">プランを見る →</a></p>
+          <p style="margin:10px 0 0;color:#5A6A7A;font-size:14.5px;line-height:1.85;">教材は自分で読める、講義に時間は使えない。その場合は<strong style="color:#1A2B4A;">講義を使わず、教材と面談・LINEだけで進めます。</strong>料金は同じ月額で、教材スライド 全51本・月2回の面談・LINEの個別質問はそのまま使えます。<a href="#pricing" style="color:#2D6A4F;font-weight:700;">プランを見る →</a></p>
         </div>
       </div>
 
@@ -2760,65 +2764,53 @@
       <div style="text-align:center;max-width:760px;margin:0 auto 40px;">
         <span class="eyebrow" style="justify-content:center;">PRICING</span>
         <h2 class="section-title">まずはお試し、続けると決めたら本編へ</h2>
-        <p class="section-subtitle" style="margin:16px auto 0;">買っていただくのは、教材だけではありません。<strong>あなた専用の計画と、続けられる環境</strong>です。講義 全51本＋合格までの伴走＋書籍つきで<strong>¥98,000</strong>（まずは¥10,000のお試しから）。<br><span style="color:#D4700A;font-weight:600;">※1対1で見るため、5名までです。</span></p>
+        <p class="section-subtitle" style="margin:16px auto 0;">買っていただくのは、教材だけではありません。<strong>あなた専用の計画と、続けられる環境</strong>です。講義 全51本＋合格までの伴走＋書籍つきで<strong>月額¥9,800</strong>。支払いは<strong>最大18回（¥176,400）</strong>まで、そのあとは追加料金なしで合格まで伴走します（まずは¥10,000のお試しから）。<br><span style="color:#D4700A;font-weight:600;">※1対1で見るため、5名までです。</span></p>
       </div>
-      <div class="pricing-grid" style="max-width:1080px;margin:0 auto;">
+      <div class="pricing-grid two" style="max-width:760px;margin:0 auto;">
         <div class="pricing-card">
           <div class="pricing-card-label">TRIAL</div>
           <h3 class="pricing-card-name">お試し（1ヶ月）</h3>
           <div class="pricing-price"><span class="yen">¥</span><span class="num">10,000</span><span class="tax">（税込）</span></div>
-          <p class="pricing-card-sub">この1ヶ月で、あなたの生活のままで続く「1日ぶんの勉強」を決めて、7日間の記録をもとに、実際に回るところまで一緒に直します。<strong>合わなければ1ヶ月以内で全額返金。本編に進むときは、この¥10,000を差し引きます。</strong></p>
+          <p class="pricing-card-sub">この1ヶ月で、あなたの生活のままで続く「1日ぶんの勉強」を決めて、7日間の記録をもとに、実際に回るところまで一緒に直します。<strong>合わなければ1ヶ月以内で全額返金。本編に進むときは、本編の1ヶ月目を無料にします。</strong></p>
           <ul class="pricing-features">
             <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>初回ヒアリング＋計画づくり</span></li>
             <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>講義4本（週1本）＋面談2回</span></li>
-            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>1ヶ月以内なら全額返金／続ければ全額充当</span></li>
+            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>1ヶ月以内なら全額返金／続ければ本編1ヶ月目が無料</span></li>
           </ul>
           <a href="https://buy.stripe.com/bJe28qdpa8g2abd3VpgA80g" class="pricing-cta" target="_blank" rel="noopener">お試しを始める</a>
         </div>
-        <div class="pricing-card">
-          <div class="pricing-card-label">SELF</div>
-          <h3 class="pricing-card-name">教材＋伴走</h3>
-          <div class="pricing-price"><span class="yen">¥</span><span class="num">49,000</span><span class="tax">（税込）</span></div>
-          <p class="pricing-card-sub">講義がないだけです。教材スライド 全51本・月2回の面談・LINEの個別質問・合格までの伴走は、講義つきと同じです。</p>
-          <ul class="pricing-features">
-            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>教材スライド 全51本</span></li>
-            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>月2回×30分のZoom（画面共有）</span></li>
-            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>LINEで個別質問／合格まで伴走</span></li>
-          </ul>
-          <a href="https://lin.ee/wDWTB5b" class="pricing-cta" target="_blank" rel="noopener">LINEで申し込む</a>
-        </div>
         <div class="pricing-card featured">
           <div class="pricing-badge"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" style="display:inline;vertical-align:-1px;margin-right:3px;"><path d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51.11-31,51,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Z"/></svg>おすすめ</div>
-          <div class="pricing-card-label">PACK</div>
+          <div class="pricing-card-label">MONTHLY</div>
           <h3 class="pricing-card-name">講義つき 合格まで伴走</h3>
-          <div class="pricing-price"><span class="yen">¥</span><span class="num">98,000</span><span class="tax">（税込）</span></div>
-          <p class="pricing-card-sub">合格するまで、追加料金なしで伴走します。続ける装置として、週1本のライブ講義 全51本つき。Kindle『簿記1級勉強法』を進呈。</p>
+          <div class="pricing-price"><span class="yen">¥</span><span class="num">9,800</span><span class="tax">／月（税込）</span></div>
+          <p class="pricing-card-sub">支払いは最大18回（¥176,400）まで。18回を払い終えたあとは、追加料金なしで合格まで伴走します。早く受かれば、そのぶん安く済みます。いつでも解約できます。Kindle『簿記1級勉強法』を進呈。</p>
           <ul class="pricing-features">
             <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>ライブ講義 全51本（週1本・録画あり）</span></li>
             <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>週1回、その場で質問できる時間つき</span></li>
             <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>月2回×30分のZoom＋LINE個別質問</span></li>
-            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>合格まで伴走（追加料金なし）</span></li>
+            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>支払いは最大18回。そのあとは合格まで追加料金なし</span></li>
             <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>Kindle『簿記1級勉強法』を進呈</span></li>
           </ul>
-          <a href="https://buy.stripe.com/bJecN4cl67bY9799fJgA80h" class="pricing-cta" target="_blank" rel="noopener">講義つきで申し込む</a>
+          <a href="https://buy.stripe.com/5kQ28q5WI0NAgzBajNgA80s" class="pricing-cta" target="_blank" rel="noopener">月額で申し込む</a>
         </div>
       </div>
 
       <div class="pricing-compare-wrap" style="max-width:900px;">
         <table class="pricing-compare">
           <thead>
-            <tr><th>項目</th><th>お試し（1ヶ月）</th><th>教材＋伴走</th><th>講義つき 合格まで伴走</th></tr>
+            <tr><th>項目</th><th>お試し（1ヶ月）</th><th>講義つき 合格まで伴走（月額）</th></tr>
           </thead>
           <tbody>
-            <tr><th>期間</th><td>1ヶ月</td><td>合格まで（追加料金なし）</td><td>合格まで（追加料金なし）</td></tr>
-            <tr><th>ライブ講義（週1本・録画あり）</th><td>4本</td><td>−</td><td>全51本</td></tr>
-            <tr><th>教材スライド</th><td>該当4本</td><td>全51本</td><td>全51本</td></tr>
-            <tr><th>週1回の質問できる時間</th><td><span class="compare-check"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg></span></td><td>−</td><td><span class="compare-check"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg></span></td></tr>
-            <tr><th>Zoom面談（画面共有）</th><td>2回</td><td>月2回×30分</td><td>月2回×30分</td></tr>
-            <tr><th>LINEで個別質問</th><td>−</td><td><span class="compare-check"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg></span></td><td><span class="compare-check"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg></span></td></tr>
-            <tr><th>Kindle『簿記1級勉強法』</th><td>−</td><td>−</td><td><span class="compare-check"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg></span></td></tr>
-            <tr><th>価格（税込）</th><td>¥10,000（本編に充当）</td><td>¥49,000</td><td>¥98,000</td></tr>
-            <tr><th>返金</th><td><strong>1ヶ月以内なら全額返金</strong></td><td>不可</td><td>不可</td></tr>
+            <tr><th>期間</th><td>1ヶ月</td><td>合格まで（支払いは最大18回）</td></tr>
+            <tr><th>ライブ講義（週1本・録画あり）</th><td>4本</td><td>全51本</td></tr>
+            <tr><th>教材スライド</th><td>該当4本</td><td>全51本</td></tr>
+            <tr><th>週1回の質問できる時間</th><td><span class="compare-check"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg></span></td><td><span class="compare-check"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg></span></td></tr>
+            <tr><th>Zoom面談（画面共有）</th><td>2回</td><td>月2回×30分</td></tr>
+            <tr><th>LINEで個別質問</th><td>−</td><td><span class="compare-check"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg></span></td></tr>
+            <tr><th>Kindle『簿記1級勉強法』</th><td>−</td><td><span class="compare-check"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg></span></td></tr>
+            <tr><th>価格（税込）</th><td>¥10,000（続けるなら本編1ヶ月目が無料）</td><td>月額¥9,800（最大18回・総額¥176,400まで）</td></tr>
+            <tr><th>返金・解約</th><td><strong>1ヶ月以内なら全額返金</strong></td><td>いつでも解約可（次回の請求から停止・支払い済みの月の返金なし）</td></tr>
           </tbody>
         </table>
       </div>
@@ -2838,7 +2830,7 @@
         </span>
       </div>
 
-      <p class="section-subtitle" style="max-width:760px;margin:24px auto 0;text-align:center;font-size:13px;">※ <strong style="color:#2D6A4F;">お試し1ヶ月（¥10,000）は、1ヶ月以内のお申し出で理由を問わず全額返金します。</strong>教材＋伴走・講義つきの2プランは、役務提供のため購入後の返金・中途解約を承っておりません。だからこそ、まずお試しから確かめていただく形にしています（詳細はFAQ・特商法表記）。</p>
+      <p class="section-subtitle" style="max-width:760px;margin:24px auto 0;text-align:center;font-size:13px;">※ <strong style="color:#2D6A4F;">お試し1ヶ月（¥10,000）は、1ヶ月以内のお申し出で理由を問わず全額返金します。</strong>本編（月額）はいつでも解約でき、次回の請求から止まります。支払い済みの月の返金・日割りはありません。だからこそ、まずお試しから確かめていただく形にしています（詳細はFAQ・特商法表記）。</p>
     </div>
   </section>
 
@@ -2853,7 +2845,7 @@
         <div style="background:#fff;border-radius:12px;padding:20px;"><div style="color:#D4700A;font-weight:700;font-size:13px;">STEP 1</div><strong style="color:#1A2B4A;">お試しを申し込む</strong><p style="margin:6px 0 0;color:#5A6A7A;font-size:13px;">¥10,000。合わなければ1ヶ月以内で全額返金</p></div>
         <div style="background:#fff;border-radius:12px;padding:20px;"><div style="color:#D4700A;font-weight:700;font-size:13px;">STEP 2</div><strong style="color:#1A2B4A;">初回ヒアリング</strong><p style="margin:6px 0 0;color:#5A6A7A;font-size:13px;">30分のZoom。下に中身を書きました</p></div>
         <div style="background:#fff;border-radius:12px;padding:20px;"><div style="color:#D4700A;font-weight:700;font-size:13px;">STEP 3</div><strong style="color:#1A2B4A;">7日間、記録する</strong><p style="margin:6px 0 0;color:#5A6A7A;font-size:13px;">決めた「1日ぶん」が実際に回るか確かめ、一緒に直します</p></div>
-        <div style="background:#fff;border-radius:12px;padding:20px;"><div style="color:#D4700A;font-weight:700;font-size:13px;">STEP 4</div><strong style="color:#1A2B4A;">本編へ</strong><p style="margin:6px 0 0;color:#5A6A7A;font-size:13px;">続けると決めたら合格まで。¥10,000は差し引きます</p></div>
+        <div style="background:#fff;border-radius:12px;padding:20px;"><div style="color:#D4700A;font-weight:700;font-size:13px;">STEP 4</div><strong style="color:#1A2B4A;">本編へ</strong><p style="margin:6px 0 0;color:#5A6A7A;font-size:13px;">続けると決めたら月額で合格まで。1ヶ月目は無料</p></div>
       </div>
 
       <p style="max-width:860px;margin:14px auto 0;text-align:center;color:#5A6A7A;font-size:13.5px;line-height:1.9;">先に話してから決めたい方は、<a href="https://lin.ee/wDWTB5b" target="_blank" rel="noopener" style="color:#D4700A;font-weight:600;">簿記ラボLINE</a>に「1級伴走 希望」と送ってください。無料の面談から始められます。</p>
@@ -2930,9 +2922,9 @@
       <div class="faq-list">
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q1.</span><span class="faq-q-text">論点解説にAIを使うそうですが、質は大丈夫ですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">AIは下書きとして活用しますが、最終回答は1級合格者の私が必ず確認・修正してから返します。会計特化AIが1級過去問で高い正答率に達したという報道もあり、精度は年々上がっています。</div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q2.</span><span class="faq-q-text">合格まで、どう面倒を見てもらえますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">初回にしっかりヒアリングして、あなたの生活に合う計画を作ります。そのうえで月2回の面談で進み具合を一緒に見て、ズレたら計画のほうを直します。手が止まった週は、原因が知識なのか、時間なのか、気持ちなのかを切り分けて、次の一手を決めます。<strong>これを、合格まで追加料金なしで続けます。</strong>（試験の合否そのものは日本商工会議所の判定によるため、当方が保証できるものではありません。）</div></details>
-                <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q3.</span><span class="faq-q-text">3つのプランの違いは？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">お試し（¥10,000・1ヶ月）は、初回面談・講義4本・面談2回で相性を確かめる期間です。本編に進むときは、この¥10,000を差し引きます。<br>本編は2つあります。<strong>講義つき（¥98,000）</strong>は講義 全51本と週1回の質問できる時間が付き、<strong>教材＋伴走（¥49,000）</strong>は講義を受けずに教材と面談・LINEだけを使う形です。どちらも合格まで（追加料金なし）伴走し、Kindle『簿記1級勉強法』は講義つきに付きます。</div></details>
+                <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q3.</span><span class="faq-q-text">お試しと本編の違いは？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">お試し（¥10,000・1ヶ月）は、初回面談・講義4本・面談2回で相性を確かめる期間です。本編に進むときは、本編の1ヶ月目を無料にします。<br>本編は<strong>月額¥9,800</strong>で、講義 全51本・週1回の質問できる時間・月2回の面談・LINEの個別質問が付きます（講義を使わず面談とLINEだけで進めても同じ料金です）。支払いは<strong>最大18回（¥176,400）</strong>までで、そのあとは追加料金なしで合格まで伴走します。Kindle『簿記1級勉強法』も進呈します。</div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q4.</span><span class="faq-q-text">面談の頻度・時間は？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">月2回×30分のZoom（画面共有・カメラオフOK）を基本に、必要に応じて最長1時間まで調整します。<strong>面談の回数も、ライブ講義1回の長さも、その人の生活と進み具合に合わせて決めます。</strong>勉強時間を奪わないよう短めに。平日夜・土日が中心です。</div></details>
-        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q5.</span><span class="faq-q-text">合わなかったら、返金してもらえますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a"><strong>お試し1ヶ月（¥10,000）は、1ヶ月以内にLINEかメールで「返金希望」とお伝えいただければ、理由を問わず全額返金します。</strong>理由の説明もアンケートも要りません。合わないと思ったら、遠慮なく言ってください。<br>教材＋伴走（¥49,000）と講義つき（¥98,000）は、役務提供のため購入後の返金・中途解約は承っておりません。<strong>だからこそ、返金保証つきのお試しを先に用意しています。</strong>まず1ヶ月使ってみて、続けると決めてから本編へどうぞ。</div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q5.</span><span class="faq-q-text">合わなかったら、返金してもらえますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a"><strong>お試し1ヶ月（¥10,000）は、1ヶ月以内にLINEかメールで「返金希望」とお伝えいただければ、理由を問わず全額返金します。</strong>理由の説明もアンケートも要りません。合わないと思ったら、遠慮なく言ってください。<br>本編（月額¥9,800）は、LINEかメールでお伝えいただければいつでも解約でき、次回の請求から止まります。支払い済みの月の返金・日割りはありません。<strong>だからこそ、返金保証つきのお試しを先に用意しています。</strong>まず1ヶ月使ってみて、続けると決めてから本編へどうぞ。</div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q6.</span><span class="faq-q-text">テキストや問題集は、こちらで用意されますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">講義と教材スライドはこちらで用意します。<strong>問題集と過去問は、予備校のものを別途ご用意ください（TAC推奨）</strong>。演習量そのものは市販の教材が優れているので、置き換えずに使います。この伴走が担うのは、解き方の型・つまずいた箇所の解決・本番の作り方、そして最後まで続けられる形づくりです。</div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q7.</span><span class="faq-q-text">「5名まで」とありますが、なぜですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">面談を1対1で、月2回お受けするためです。人数を増やすと1人あたりに使える時間が減り、答案や生活リズムまで見ることができなくなります。埋まった時点で募集を止めます。</div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q8.</span><span class="faq-q-text">簿記1級はきつそうです。他の選択肢はありますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">確保できる時間や今の状況によっては、証券アナリスト（CMA）をお勧めすることがあります。簿記1級より目指しやすく、財務・投資の知識は実務でそのまま使えて、持っていると一目置かれる資格です。初回面談で、どちらが向いているかを一緒に考えます。<a href="cma.html" style="color:#2D6A4F;font-weight:600;">CMA講座のご案内はこちら →</a></div></details>
@@ -2951,7 +2943,7 @@
   <section class="final-cta">
     <div class="container">
       <h2 class="final-cta-title"><span class="em">「向いてない」で、終わらせない。</span><br>今日から、一緒に。</h2>
-      <p class="final-cta-sub">まずは¥10,000のお試し1ヶ月から。<br>合わなければ1ヶ月以内で全額返金、続けるなら全額差し引きます。</p>
+      <p class="final-cta-sub">まずは¥10,000のお試し1ヶ月から。<br>合わなければ1ヶ月以内で全額返金、続けるなら本編の1ヶ月目が無料です。</p>
       <div class="final-cta-buttons">
         <a href="https://buy.stripe.com/bJe28qdpa8g2abd3VpgA80g" target="_blank" rel="noopener" class="btn btn-orange btn-large">
           お試しを始める ¥10,000
@@ -2967,7 +2959,7 @@
           講義つきプランの特典
         </div>
         <div class="final-cta-bonus-list">
-          <div class="final-cta-bonus-item"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>合格まで伴走（追加料金なし）</span></div>
+          <div class="final-cta-bonus-item"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>支払いは最大18回、そのあとは合格まで追加料金なし</span></div>
           <div class="final-cta-bonus-item"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>Kindle『簿記1級勉強法』を進呈</span></div>
           <div class="final-cta-bonus-item"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>初回ヒアリング＋あなた専用の計画づくり</span></div>
         </div>
@@ -2997,17 +2989,17 @@
           <dt>メールアドレス</dt>
           <dd><a href="mailto:cmaacademy.info@gmail.com">cmaacademy.info@gmail.com</a></dd>
           <dt>販売価格</dt>
-          <dd>各講座の販売ページに税込価格を表示します（販売中：数学講座・確率統計講座 各 ¥4,500／簿記 ¥9,900／経済 ¥19,800／ファンダメンタル分析・ファイナンス・ガバナンス ¥12,800／科目Ⅱ（ファンダメンタル分析）パック ¥19,800／科目Ⅲ（経済・数学・統計）パック ¥26,800／全講義見放題β版パス ¥29,800・追加オプション「1次合格サポート」¥19,800／簿記1級 合格伴走 お試し1ヶ月 ¥10,000・教材＋伴走 ¥49,000・講義つき ¥98,000／金融AI実践編 ¥29,800／副業×AI実践編 ¥99,800。いずれも税込。近日公開：全科目セット ¥78,900・合格伴走パック ¥109,800（全科目セットの販売開始と同時に提供）。その他の近日発売の講座は、販売開始時に販売ページで価格を表示します）。</dd>
+          <dd>各講座の販売ページに税込価格を表示します（販売中：数学講座・確率統計講座 各 ¥4,500／簿記 ¥9,900／経済 ¥19,800／ファンダメンタル分析・ファイナンス・ガバナンス ¥12,800／科目Ⅱ（ファンダメンタル分析）パック ¥19,800／科目Ⅲ（経済・数学・統計）パック ¥26,800／全講義見放題β版パス ¥29,800・追加オプション「1次合格サポート」¥19,800／簿記1級 合格伴走 お試し1ヶ月 ¥10,000・月額 ¥9,800（最大18回・総額¥176,400まで）／金融AI実践編 ¥29,800／副業×AI実践編 ¥99,800。いずれも税込。近日公開：全科目セット ¥78,900・合格伴走パック ¥109,800（全科目セットの販売開始と同時に提供）。その他の近日発売の講座は、販売開始時に販売ページで価格を表示します）。</dd>
           <dt>商品代金以外の必要料金</dt>
           <dd>インターネット接続料金・通信料金等はお客様のご負担となります。</dd>
           <dt>お支払い方法</dt>
           <dd>クレジットカード決済（Stripe）</dd>
           <dt>お支払い時期</dt>
-          <dd>お申し込み手続きの完了時にお支払いが確定します。</dd>
+          <dd>お申し込み手続きの完了時にお支払いが確定します。簿記1級 合格伴走の本編（月額）は、お申し込み日に初回、以後は毎月同じ日に自動で請求します（最大18回。お試しから続ける方は1ヶ月後が初回）。</dd>
           <dt>商品の引き渡し時期</dt>
           <dd>ご決済の確認後、受講生サイトへのログイン用のご案内メールをお送りします（通常は数分以内、遅くとも24時間以内）。</dd>
           <dt>返品・キャンセル</dt>
-          <dd><strong>お試し1ヶ月（¥10,000）は、ご購入日から1ヶ月（30日）以内にお申し出いただければ、理由を問わず全額返金いたします。</strong>返金はご購入時の決済手段（Stripe）へ、お申し出の確認後7営業日以内に手続きします。<br>教材＋伴走（¥49,000）・講義つき 合格まで伴走（¥98,000）は、役務の提供を伴うサービスのため、購入後の返金・中途解約は承っておりません。そのため、まず返金保証つきのお試し1ヶ月から始めていただく形にしています。詳細は本ページ内「返金・解約について」をご確認ください。</dd>
+          <dd><strong>お試し1ヶ月（¥10,000）は、ご購入日から1ヶ月（30日）以内にお申し出いただければ、理由を問わず全額返金いたします。</strong>返金はご購入時の決済手段（Stripe）へ、お申し出の確認後7営業日以内に手続きします。<br>本編（月額¥9,800）は、簿記ラボLINEまたはメールでのお申し出によりいつでも解約でき、次回の請求から停止します。支払い済みの月の返金・日割り計算は行いません。解約した月の終わりまではご利用いただけます。18回のお支払いを終えたあとは、追加料金なしで合格まで伴走します。詳細は本ページ内「返金・解約について」をご確認ください。</dd>
           <dt>動作環境</dt>
           <dd>動画再生とインターネット接続が可能な環境、および最新版のブラウザ（Google Chrome / Safari / Microsoft Edge 等）を推奨します。</dd>
         </dl>
@@ -3054,7 +3046,7 @@
         <h4>1. アカウント</h4>
         <p>本サービスは、ご決済の完了後に発行されるアカウントでご利用いただけます。ログイン情報の管理は利用者の責任で行うものとし、第三者への貸与・共有・譲渡はできません。</p>
         <h4>2. 料金・支払い</h4>
-        <p>利用者は、各講座に定める料金を所定の方法でお支払いいただきます。本サービスは買い切り型であり、自動継続課金は行いません。</p>
+        <p>利用者は、各講座に定める料金を所定の方法でお支払いいただきます。本サービスは原則として買い切り型です。ただし簿記1級 合格伴走の本編は月額の自動継続課金（最大18回）で、利用者はいつでも解約でき、次回の請求から停止します。</p>
         <h4>3. 禁止事項</h4>
         <p>利用者は、以下の行為を行ってはなりません。</p>
         <ul>
@@ -3082,17 +3074,17 @@
         <h3>返金・解約について</h3>
         <h4>お試し1ヶ月（¥10,000）は、1ヶ月以内のお申し出で全額返金します</h4>
         <p>お試し1ヶ月をご購入後、<strong>ご購入日から1ヶ月（30日）以内</strong>に簿記ラボLINEまたはメールで「返金希望」とお申し出いただいた場合、理由を問わず<strong>¥10,000を全額返金いたします</strong>。理由の説明や、アンケートへのご回答は不要です。返金はご購入時の決済手段（Stripe）へ返金処理を行い、当方がお申し出を確認してから7営業日以内に手続きします。着金までの日数はカード会社により異なります。</p>
-        <h4>教材＋伴走（¥49,000）・講義つき 合格まで伴走（¥98,000）は、返金・中途解約を承っておりません</h4>
-        <p>この2つは、役務の提供を伴うサービスのため、ご購入後の返金および中途解約は承っておりません。<strong>そのために、返金保証つきのお試し1ヶ月をご用意しています。</strong>まずお試しで相性を確かめてから、本編へお進みください。</p>
+        <h4>本編（月額¥9,800）は、いつでも解約できます</h4>
+        <p>簿記ラボLINEまたはメールで「解約希望」とお伝えいただければ、次回の請求から停止します。支払い済みの月の返金・日割り計算は行わず、解約した月の終わりまではご利用いただけます。お支払いは最大18回（¥176,400）までで、18回を払い終えたあとは追加料金なしで合格まで伴走します。</p>
         <h4>買う前に確かめていただく流れ</h4>
         <ol>
           <li>まず簿記ラボLINEでご相談ください（相談は無料です）。</li>
           <li>初回面談で目的・現状をうかがい、合わないと感じた場合は正直にお伝えします。</li>
-          <li>いきなり本編ではなく、お試し1ヶ月（¥10,000）から始めていただけます。合わなければ1ヶ月以内で全額返金、続ける場合は本編の代金からこの¥10,000を差し引きます。</li>
+          <li>いきなり本編ではなく、お試し1ヶ月（¥10,000）から始めていただけます。合わなければ1ヶ月以内で全額返金、続ける場合は本編（月額）の1ヶ月目を無料にします。</li>
         </ol>
         <h4>ご注意</h4>
         <ul>
-          <li>本サービスは買い切り型のため、継続課金の解約手続きはありません。</li>
+          <li>本編は月額の自動請求です。カードの支払いができなかった場合は、Stripe から再度請求し、それでも支払いができないときは解約となり、受講生サイトのご利用も止まります。</li>
           <li>当方の他の講座（証券アナリスト(CMA)対策講座・AI実践編）の返金条件は、それぞれの販売ページの記載が適用されます。本ページの条件は簿記1級 合格伴走にのみ適用されます。</li>
         </ul>
         <p class="legal-updated">制定日：2026年6月17日／最終改定：2026年8月10日</p>
