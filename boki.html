@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>簿記1級 合格伴走｜数字の資格ラボ</title>
-  <meta name="description" content="簿記1級は、マインドが9割。10人受けて8人以上が落ちる試験で分かれ目になるのは、才能ではなく続け方でした。まずヒアリングしてあなた専用の学習計画を作り、講義 全51本と月1回のZoom面談・LINE質問で、合格まで伴走します（1対1のため5名まで）。初回¥29,800（講義はずっと見られる）／2ヶ月目から月額¥7,800。">
+  <meta name="description" content="簿記1級は、マインドが9割。10人受けて8人以上が落ちる試験で分かれ目になるのは、才能ではなく続け方でした。まずヒアリングしてあなた専用の学習計画を作り、講義 全51本と月1回のZoom面談・LINE質問で、続けているあいだずっと伴走します（1対1のため同時に5名まで）。初回¥29,800（講義はずっと見られる）／2ヶ月目から月額¥7,800。">
 
   <!-- 検索・SNS最適化 -->
   <link rel="canonical" href="https://sujilab.net/boki">
@@ -21,7 +21,7 @@
   <meta property="og:site_name" content="数字の資格ラボ">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:title" content="簿記1級 合格伴走｜合格は、マインドが9割">
-  <meta property="og:description" content="10人受けて8人以上が落ちる試験。分かれ目になるのは、才能ではなく続け方でした。まずヒアリングしてあなた専用の学習計画を作り、講義 全51本と月1回の面談・LINE質問で、合格まで伴走します（1対1のため5名まで）。初回¥29,800／2ヶ月目から月額¥7,800。">
+  <meta property="og:description" content="10人受けて8人以上が落ちる試験。分かれ目になるのは、才能ではなく続け方でした。まずヒアリングしてあなた専用の学習計画を作り、講義 全51本と月1回の面談・LINE質問で、続けているあいだずっと伴走します（1対1のため同時に5名まで）。初回¥29,800／2ヶ月目から月額¥7,800。">
   <meta property="og:url" content="https://sujilab.net/boki">
   <meta property="og:image" content="https://sujilab.net/assets/og-image-boki.jpg">
   <meta property="og:image:type" content="image/jpeg">
@@ -30,7 +30,7 @@
   <meta property="og:image:alt" content="簿記1級 合格伴走｜本質から理解し、得点力を極める。あなたに合わせた学習設計・理解が深まる徹底解説・合格まで伴走">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="簿記1級 合格伴走｜合格は、マインドが9割">
-  <meta name="twitter:description" content="簿記1級は、マインドが9割。10人受けて8人以上が落ちる試験で分かれ目になるのは、才能ではなく続け方でした。あなた専用の計画と、講義 全51本・月1回の面談とLINEで伴走します（5名まで）。">
+  <meta name="twitter:description" content="簿記1級は、マインドが9割。10人受けて8人以上が落ちる試験で分かれ目になるのは、才能ではなく続け方でした。あなた専用の計画と、講義 全51本・月1回の面談とLINEで伴走します（1対1のため同時に5名まで）。">
   <meta name="twitter:image" content="https://sujilab.net/assets/og-image-boki.jpg">
   <meta name="twitter:image:alt" content="簿記1級 合格伴走｜本質から理解し、得点力を極める。あなたに合わせた学習設計・理解が深まる徹底解説・合格まで伴走">
   <script type="application/ld+json">
@@ -46,7 +46,7 @@
       {
         "@type": "Course",
         "name": "日商簿記1級 合格伴走",
-        "description": "講義 全51本と月1回のZoom面談・LINE質問で、日商簿記1級の合格まで伴走するオンライン講座。初回ヒアリングで受講者ごとの学習計画を作り、モチベーションが切れない続け方まで一緒に設計する。",
+        "description": "講義 全51本と月1回のZoom面談・LINE質問で、日商簿記1級の合格を目指して伴走するオンライン講座。初回ヒアリングで受講者ごとの学習計画を作り、モチベーションが切れない続け方まで一緒に設計する。",
         "inLanguage": "ja",
         "provider": {
           "@type": "Organization",
@@ -1059,6 +1059,7 @@
     .pricing-price {
       display: flex;
       align-items: baseline;
+      flex-wrap: wrap; /* 幅が狭いときは「＋月額¥7,800（税込）」を丸ごと次の行へ送る */
       gap: 6px;
       margin-bottom: 4px;
     }
@@ -1081,6 +1082,7 @@
       font-size: 13px;
       color: var(--text-muted);
       font-weight: 500;
+      white-space: nowrap;
     }
     .pricing-card.featured .pricing-price .tax { color: rgba(255,255,255,0.8); }
     .pricing-original {
@@ -2183,7 +2185,7 @@
         <div class="hero-content">
           <span class="hero-eyebrow">簿記ラボ ｜ by 数字の資格ラボ</span>
           <h1 class="hero-title">簿記1級は、<br><span class="em">マインドが9割。</span></h1>
-          <p class="hero-sub">10人受けて8人以上が落ちる試験。分かれ目になるのは、才能ではなく<strong>続け方</strong>でした。まずヒアリングして<strong>あなた専用の計画</strong>を作り、<strong>講義 全51本</strong>と月1回の面談・LINE質問で、合格まで伴走します。<strong class="hero-limit">1対1で見るため、5名までです。</strong></p>
+          <p class="hero-sub">10人受けて8人以上が落ちる試験。分かれ目になるのは、才能ではなく<strong>続け方</strong>でした。まずヒアリングして<strong>あなた専用の計画</strong>を作り、<strong>講義 全51本</strong>と月1回の面談・LINE質問で、続けているあいだずっと伴走します。<strong class="hero-limit">1対1で見るため、同時に5名までです。</strong></p>
           <div class="hero-ctas">
             <a href="#pricing" class="btn btn-orange">プランを見る
               <svg viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
@@ -2768,19 +2770,19 @@
       <div style="text-align:center;max-width:760px;margin:0 auto 40px;">
         <span class="eyebrow" style="justify-content:center;">PRICING</span>
         <h2 class="section-title">初回で講義と計画を、2ヶ月目からは伴走を</h2>
-        <p class="section-subtitle" style="margin:16px auto 0;">買っていただくのは、教材だけではありません。<strong>あなた専用の計画と、続けられる環境</strong>です。初回<strong>¥29,800</strong>で講義 全51本（ずっと見られます）と計画づくり、2ヶ月目からは<strong>月額¥7,800</strong>で面談とLINEの伴走。支払いは初回を含め<strong>最大18回（総額¥162,400）</strong>までで、そのあとは追加料金なしで合格まで伴走します。<br><span style="color:#D4700A;font-weight:600;">※1対1で見るため、5名までです。</span></p>
+        <p class="section-subtitle" style="margin:16px auto 0;">買っていただくのは、教材だけではありません。<strong>あなた専用の計画と、続けられる環境</strong>です。初回<strong>¥29,800</strong>で講義 全51本（ずっと見られます）と計画づくり、2ヶ月目からは<strong>月額¥7,800</strong>で面談とLINEの伴走。やめたくなったら、いつでもやめられます。<br><span style="color:#D4700A;font-weight:600;">※1対1で見るため、同時に5名までです（モニター枠の先着5人は別枠）。</span></p>
       </div>
       <div class="pricing-grid two">
         <div class="pricing-card featured">
           <div class="pricing-card-label">PLAN</div>
-          <h3 class="pricing-card-name">講義つき 合格まで伴走</h3>
+          <h3 class="pricing-card-name">講義つき 月払いで伴走</h3>
           <div class="pricing-price"><span class="tax">初回</span><span class="yen">¥</span><span class="num">29,800</span><span class="tax">＋月額¥7,800（税込）</span></div>
-          <p class="pricing-card-sub"><strong>お支払いは初回を含め最大18回・総額¥162,400（税込）まで。</strong>そのあとは追加料金なしで合格まで伴走します。2ヶ月目からの月額¥7,800が面談とLINEの伴走の代金です。講義は初回でお渡しするので、解約しても見られます。<strong>初回は7日以内なら全額返金。</strong></p>
+          <p class="pricing-card-sub"><strong>月額¥7,800で、続けているあいだずっと伴走します。</strong>やめたくなったら、次回の請求日の前日までの連絡でいつでもやめられます。<strong>初回は7日以内なら全額返金。</strong><br><span style="color:#D4700A;font-weight:600;">※10か月以上続けるつもりなら、一括（モニター枠・先着5人）のほうが安くなります（月払いは10か月で¥100,000）。</span></p>
           <ul class="pricing-features">
             <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>講義 全51本（受講生サイトで、ずっと見られる）</span></li>
             <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>初回ヒアリング＋あなた専用の計画づくり</span></li>
             <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>月1回30〜40分のZoom面談＋LINE個別質問</span></li>
-            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>支払いは初回を含め最大18回（総額¥162,400）。そのあとは合格まで追加料金なし</span></li>
+            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>途中でやめても、講義 全51本はそのまま見られる</span></li>
             <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>Kindle『簿記1級勉強法』を進呈</span></li>
           </ul>
           <a href="https://buy.stripe.com/28E28qacY3ZM3MP8bFgA80v" class="pricing-cta" target="_blank" rel="noopener">申し込む（初回¥29,800）</a>
@@ -2791,7 +2793,7 @@
           <div class="pricing-card-label">MONITOR</div>
           <h3 class="pricing-card-name">モニター枠（先着5人）</h3>
           <div class="pricing-price"><span class="tax">一括</span><span class="yen">¥</span><span class="num">98,000</span><span class="tax">（税込）</span></div>
-          <p class="pricing-card-sub"><strong>1回のお支払いで、合格まで伴走します（月額なし）。</strong>中身は月払いのプランと同じです。代わりに、<strong>月1回の感想</strong>と、<strong>合格したときの体験談</strong>（お名前を出すかはご自身で選べます）にご協力ください。<strong>7日以内なら全額返金。</strong></p>
+          <p class="pricing-card-sub"><strong>1回のお支払いで、合格まで伴走します（月額なし）。</strong>中身は月払いのプランと同じで、月払いの5名とは別枠です。代わりに、<strong>月1回の感想</strong>と、<strong>合格したときの体験談</strong>（お名前を出すかはご自身で選べます）にご協力ください。<strong>7日以内なら全額返金。</strong></p>
           <ul class="pricing-features">
             <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>講義 全51本（受講生サイトで、ずっと見られる）</span></li>
             <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>初回ヒアリング＋あなた専用の計画づくり</span></li>
@@ -2809,7 +2811,7 @@
             <tr><th>項目</th><th>初回</th><th>2ヶ月目から</th></tr>
           </thead>
           <tbody>
-            <tr><th>価格（税込）</th><td>¥29,800</td><td>月額¥7,800（初回を含め最大18回・総額¥162,400）</td></tr>
+            <tr><th>価格（税込）</th><td>¥29,800</td><td>月額¥7,800（続けている間。いつでも解約できる）</td></tr>
             <tr><th>講義 全51本</th><td>ずっと見られる</td><td>ずっと見られる（解約後も）</td></tr>
             <tr><th>計画づくり</th><td>初回ヒアリングで作る</td><td>面談のたびに作り直す</td></tr>
             <tr><th>Zoom面談（画面共有）</th><td>月1回30〜40分</td><td>月1回30〜40分</td></tr>
@@ -2925,13 +2927,13 @@
       </div>
       <div class="faq-list">
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q1.</span><span class="faq-q-text">論点解説にAIを使うそうですが、質は大丈夫ですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">AIは下書きとして活用しますが、最終回答は1級合格者の私が必ず確認・修正してから返します。会計特化AIが1級過去問で高い正答率に達したという報道もあり、精度は年々上がっています。</div></details>
-        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q2.</span><span class="faq-q-text">合格まで、どう面倒を見てもらえますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">初回にしっかりヒアリングして、あなたの生活に合う計画を作ります。そのうえで月1回の面談とLINEで進み具合を一緒に見て、ズレたら計画のほうを直します。手が止まった週は、原因が知識なのか、時間なのか、気持ちなのかを切り分けて、次の一手を決めます。伴走の代金は月額¥7,800です。<strong>お支払いは初回を含め最大18回（総額¥162,400）までで、そのあとは追加料金なしで合格まで続けます。</strong>（試験の合否そのものは日本商工会議所の判定によるため、当方が保証できるものではありません。）</div></details>
-                <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q3.</span><span class="faq-q-text">初回と2ヶ月目からで、何が違いますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">初回の<strong>¥29,800</strong>には、講義 全51本（受講生サイトでずっと見られます）・初回ヒアリングと計画づくり・1ヶ月目の伴走が入っています。<br>2ヶ月目からの<strong>月額¥7,800</strong>は、月1回30〜40分の面談とLINEの個別質問の代金です。解約すると面談とLINEの伴走は止まりますが、講義はそのまま見られます。支払いは初回を含め<strong>最大18回（総額¥162,400）</strong>までで、そのあとは追加料金なしで合格まで伴走します。Kindle『簿記1級勉強法』も進呈します。</div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q2.</span><span class="faq-q-text">伴走では、どう面倒を見てもらえますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">初回にしっかりヒアリングして、あなたの生活に合う計画を作ります。そのうえで月1回の面談とLINEで進み具合を一緒に見て、ズレたら計画のほうを直します。手が止まった週は、原因が知識なのか、時間なのか、気持ちなのかを切り分けて、次の一手を決めます。伴走の代金は月額¥7,800で、<strong>続けているあいだずっと伴走します。</strong>（試験の合否そのものは日本商工会議所の判定によるため、当方が保証できるものではありません。）</div></details>
+                <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q3.</span><span class="faq-q-text">初回と2ヶ月目からで、何が違いますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">初回の<strong>¥29,800</strong>には、講義 全51本（受講生サイトでずっと見られます）・初回ヒアリングと計画づくり・1ヶ月目の伴走が入っています。<br>2ヶ月目からの<strong>月額¥7,800</strong>は、月1回30〜40分の面談とLINEの個別質問の代金です。<strong>やめたくなったら、次回の請求日の前日までの連絡でいつでもやめられます。</strong>やめると面談とLINEの伴走は止まりますが、講義はそのまま見られます。<br>なお、月払いの合計は9か月で¥92,200、10か月で¥100,000です。<strong>10か月以上続けるつもりなら、一括（モニター枠・先着5人）のほうが安くなります</strong>（¥98,000・合格まで月額なし）。Kindle『簿記1級勉強法』も進呈します。</div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q4.</span><span class="faq-q-text">面談の頻度・時間は？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">月1回30〜40分のZoom（画面共有・カメラオフOK）です。面談のあいだの質問は、LINEでいつでも受けます。<strong>面談で何をやるかは、その人の生活と進み具合に合わせて決めます。</strong>勉強時間を奪わないよう短めに。平日夜・土日が中心です。</div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q5.</span><span class="faq-q-text">合わなかったら、返金してもらえますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a"><strong>初回の¥29,800は、7日以内にLINEかメールで「返金希望」とお伝えいただければ、理由を問わず全額返金します。</strong>理由の説明もアンケートも要りません。講義を見て、合わないと思ったら遠慮なく言ってください。<br>2ヶ月目からの月額¥7,800は、次回の請求日の前日までにLINEかメールでお伝えいただければ解約でき、次回の請求から止まります。支払い済みの月の返金・日割りはありません。解約しても、講義はそのまま見られます。</div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q6.</span><span class="faq-q-text">テキストや問題集は、こちらで用意されますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">講義と教材スライドはこちらで用意します。<strong>問題集と過去問は、予備校のものを別途ご用意ください（TAC推奨）</strong>。演習量そのものは市販の教材が優れているので、置き換えずに使います。この伴走が担うのは、解き方の型・つまずいた箇所の解決・本番の作り方、そして最後まで続けられる形づくりです。</div></details>
-        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q7.</span><span class="faq-q-text">「5名まで」とありますが、なぜですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">面談とLINE質問を1対1でお受けするためです。人数を増やすと1人あたりに使える時間が減り、答案や生活リズムまで見ることができなくなります。埋まった時点で募集を止めます。</div></details>
-        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q8.</span><span class="faq-q-text">モニター枠（¥98,000）では、何に協力すればいいですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">お願いするのは2つです。<strong>①月1回、使ってみた感想</strong>（面談の最後やLINEで、良かった点・分かりにくかった点を一言）と、<strong>②合格したときの体験談</strong>です。体験談にお名前を出すか、イニシャルや匿名にするかはご自身で選べます。<br>伴走の中身は月払いのプランと同じで、1回のお支払いで合格まで伴走します（月額はかかりません）。先着5人で、埋まり次第、申し込みボタンが止まります。<strong>7日以内なら、理由を問わず¥98,000を全額返金します。</strong></div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q7.</span><span class="faq-q-text">「5名まで」とありますが、なぜですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">面談とLINE質問を1対1でお受けするためです。人数を増やすと1人あたりに使える時間が減り、答案や生活リズムまで見ることができなくなります。同時に見る人数が5名に達した時点で、月払いの募集を止めます。モニター枠（先着5人）は、これとは別枠です。</div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q8.</span><span class="faq-q-text">モニター枠（¥98,000）では、何に協力すればいいですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">お願いするのは2つです。<strong>①月1回、使ってみた感想</strong>（面談の最後やLINEで、良かった点・分かりにくかった点を一言）と、<strong>②合格したときの体験談</strong>です。体験談にお名前を出すか、イニシャルや匿名にするかはご自身で選べます。<br>伴走の中身は月払いのプランと同じで、1回のお支払いで合格まで伴走します（月額はかかりません）。先着5人（月払いとは別枠）で、埋まり次第、申し込みボタンが止まります。<strong>7日以内なら、理由を問わず¥98,000を全額返金します。</strong></div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q9.</span><span class="faq-q-text">簿記1級はきつそうです。他の選択肢はありますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">確保できる時間や今の状況によっては、証券アナリスト（CMA）をお勧めすることがあります。簿記1級より目指しやすく、財務・投資の知識は実務でそのまま使えて、持っていると一目置かれる資格です。初回面談で、どちらが向いているかを一緒に考えます。<a href="cma.html" style="color:#2D6A4F;font-weight:600;">CMA講座のご案内はこちら →</a></div></details>
         <!-- 🔴 2026-08-19 追加：申し込み前の無料面談。中間CTAで「30分の個別面談を無料で」と出したので、
              中身（時間・やること・やらないこと）をここで確定させる。
@@ -2964,7 +2966,7 @@
           講義つきプランの特典
         </div>
         <div class="final-cta-bonus-list">
-          <div class="final-cta-bonus-item"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>支払いは最大18回（総額¥162,400）、そのあとは合格まで追加料金なし</span></div>
+          <div class="final-cta-bonus-item"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>やめたくなったら、いつでも解約できる（講義は解約後も見られる）</span></div>
           <div class="final-cta-bonus-item"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>Kindle『簿記1級勉強法』を進呈</span></div>
           <div class="final-cta-bonus-item"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>初回ヒアリング＋あなた専用の計画づくり</span></div>
         </div>
@@ -2994,7 +2996,7 @@
           <dt>メールアドレス</dt>
           <dd><a href="mailto:cmaacademy.info@gmail.com">cmaacademy.info@gmail.com</a></dd>
           <dt>販売価格</dt>
-          <dd>各講座の販売ページに税込価格を表示します（販売中：数学講座・確率統計講座 各 ¥4,500／簿記 ¥9,900／経済 ¥19,800／ファンダメンタル分析・ファイナンス・ガバナンス ¥12,800／科目Ⅱ（ファンダメンタル分析）パック ¥19,800／科目Ⅲ（経済・数学・統計）パック ¥26,800／全講義見放題β版パス ¥29,800・追加オプション「1次合格サポート」¥19,800／簿記1級 合格伴走 初回 ¥29,800・2ヶ月目から月額 ¥7,800（初回を含め最大18回・総額¥162,400まで）・モニター枠（先着5人）一括 ¥98,000／金融AI実践編 ¥29,800／副業×AI実践編 ¥99,800。いずれも税込。近日公開：全科目セット ¥78,900・合格伴走パック ¥109,800（全科目セットの販売開始と同時に提供）。その他の近日発売の講座は、販売開始時に販売ページで価格を表示します）。</dd>
+          <dd>各講座の販売ページに税込価格を表示します（販売中：数学講座・確率統計講座 各 ¥4,500／簿記 ¥9,900／経済 ¥19,800／ファンダメンタル分析・ファイナンス・ガバナンス ¥12,800／科目Ⅱ（ファンダメンタル分析）パック ¥19,800／科目Ⅲ（経済・数学・統計）パック ¥26,800／全講義見放題β版パス ¥29,800・追加オプション「1次合格サポート」¥19,800／簿記1級 合格伴走 初回 ¥29,800・2ヶ月目から月額 ¥7,800（解約のお申し出まで毎月。請求は初回を含め最大18回で終了）・モニター枠（先着5人・月払いとは別枠）一括 ¥98,000／金融AI実践編 ¥29,800／副業×AI実践編 ¥99,800。いずれも税込。近日公開：全科目セット ¥78,900・合格伴走パック ¥109,800（全科目セットの販売開始と同時に提供）。その他の近日発売の講座は、販売開始時に販売ページで価格を表示します）。</dd>
           <dt>商品代金以外の必要料金</dt>
           <dd>インターネット接続料金・通信料金等はお客様のご負担となります。</dd>
           <dt>お支払い方法</dt>
@@ -3082,7 +3084,7 @@
         <h4>モニター枠（¥98,000・一括）も、7日以内のお申し出で全額返金します</h4>
         <p><strong>ご購入日から7日以内</strong>に簿記ラボLINEまたはメールで「返金希望」とお申し出いただいた場合、理由を問わず<strong>¥98,000を全額返金いたします</strong>。手続きは初回と同じです。7日を過ぎたあとの返金はありません。月額の請求はないため、解約の手続きは要りません。</p>
         <h4>2ヶ月目からの月額（¥7,800）は、次回の請求日の前日までのご連絡で解約できます</h4>
-        <p>次回の請求日の前日までに簿記ラボLINEまたはメールで「解約希望」とお伝えいただければ、次回の請求から停止します。支払い済みの月の返金・日割り計算は行わず、解約した月の終わりまでは面談・LINEをご利用いただけます。講義は解約後もご覧いただけます。お支払いは初回を含め最大18回（総額¥162,400）までで、18回を払い終えたあとは追加料金なしで合格まで伴走します。</p>
+        <p>次回の請求日の前日までに簿記ラボLINEまたはメールで「解約希望」とお伝えいただければ、次回の請求から停止します。支払い済みの月の返金・日割り計算は行わず、解約した月の終わりまでは面談・LINEをご利用いただけます。講義は解約後もご覧いただけます。お支払いは初回を含め最大18回までで、18回を払い終えたあとは追加料金なしで合格まで伴走します。</p>
         <h4>買う前に確かめていただく流れ</h4>
         <ol>
           <li>まず簿記ラボLINEでご相談ください（相談は無料です）。</li>
