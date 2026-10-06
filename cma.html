@@ -1008,6 +1008,11 @@
       margin: 0 auto;
       align-items: start;
     }
+    /* 2026-10-06：全科目セットを外し、上の段が見放題パス1枚になった。
+       半分の幅で右が空かないよう、パスも全幅にする。 */
+    .pricing-grid > .pricing-card.featured {
+      grid-column: 1 / -1;
+    }
     /* 科目別プラン（1枚目）は最後に全幅で置く */
     .pricing-grid > .pricing-card:first-child {
       grid-column: 1 / -1;
