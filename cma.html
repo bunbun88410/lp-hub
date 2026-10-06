@@ -3122,7 +3122,36 @@
         } catch (e) { return null; }
       }
 
-      var ref = readRef();
+      // utm が無い訪問は、参照元のドメインで入口を寄せる（2026-10-06 追加）
+      // X本文のリンクは t.co を通るので utm が付かず、印が空のまま決済されていた。
+      // 自サイト内の移動・参照元なしは null（＝前に残した印を使う）。
+      function readReferrer() {
+        try {
+          if (!document.referrer) return null;
+          var h = new URL(document.referrer).hostname.toLowerCase().replace(/^www\./, '');
+          if (h === location.hostname.toLowerCase().replace(/^www\./, '') || /(^|\.)sujilab\.net$/.test(h)) return null;
+          var rules = [
+            [/^t\.co$/, 'x-tco'],
+            [/(^|\.)(x|twitter)\.com$/, 'x-web'],
+            [/(^|\.)(youtube\.com|youtu\.be)$/, 'youtube'],
+            [/(^|\.)(line\.me|lin\.ee)$/, 'line'],
+            [/(^|\.)ukkarihachibee\.com$/, 'blog'],
+            [/(^|\.)note\.com$/, 'note'],
+            [/(^|\.)google\.[a-z.]+$/, 'google'],
+            [/(^|\.)yahoo\.(co\.jp|com)$/, 'yahoo'],
+            [/(^|\.)bing\.com$/, 'bing'],
+            [/(^|\.)(chatgpt\.com|openai\.com)$/, 'chatgpt'],
+            [/(^|\.)amazon\.(co\.jp|com)$/, 'kindle']
+          ];
+          for (var i = 0; i < rules.length; i++) if (rules[i][0].test(h)) return rules[i][1];
+          // 決めていない参照元は「ref-ドメイン」で残す（例：ref-crowdworks_jp）
+          return ('ref-' + h.replace(/\./g, '_')).replace(/[^a-zA-Z0-9_-]/g, '').slice(0, 60);
+        } catch (e) { return null; }
+      }
+
+      // 印を決める順：①URLの utm → ②外部サイトの参照元 → ③同じタブで前に残した印
+      // Stripe の client_reference_id は英数字・-・_ の200字以内（外れた値は黙って捨てられる）ので、60字までの安全な文字だけにしている
+      var ref = readRef() || readReferrer();
       try {
         if (ref) sessionStorage.setItem(KEY, ref);
         else ref = sessionStorage.getItem(KEY);
