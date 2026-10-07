@@ -3143,11 +3143,17 @@
        🔴 スマホは `.header-cta` が display:none なので、これが無いとヒーローを過ぎた瞬間に
        CTAが画面から消えていた。JSは使わず常時表示。body に padding-bottom:78px を入れて
        ページ末尾（特商法・フッター）が隠れないようにしてある。
-       ⚠ ボタンを3つに増やさないこと。狭い帯で選択肢を増やすと押されなくなる。 -->
+       ⚠ ボタンを3つに増やさないこと。狭い帯で選択肢を増やすと押されなくなる。
+       🔴 2026-10-07 主従を入れ替えた（大きい緑＝LINEの無料面談／小さい枠＝決済）。
+       根拠：/boki の28日はスマホ55/74セッション・平均滞在約21秒・最下部まで読んだのは6%で、
+       LINEボタンのクリックは4。申込2件はどちらもLINEで「無料面談 希望」を押した人だった。
+       初めて来た人に常に見せる大きいボタンは、¥29,800の決済ではなく無料面談にする。
+       効果は 10/7 前後2週間の「LP訪問→LINEクリック」で比べる（Addness dc36861b）。 -->
   <div class="sticky-cta">
-    <a href="https://lin.ee/wDWTB5b" target="_blank" rel="noopener" class="sticky-cta-sub">LINEで相談</a>
-    <a href="https://buy.stripe.com/28E28qacY3ZM3MP8bFgA80v" target="_blank" rel="noopener" class="sticky-cta-main">
-      申し込む（初回¥29,800）
+    <a href="https://buy.stripe.com/28E28qacY3ZM3MP8bFgA80v" target="_blank" rel="noopener" class="sticky-cta-sub">申し込む</a>
+    <a href="https://lin.ee/wDWTB5b" target="_blank" rel="noopener" class="sticky-cta-main">
+      <svg viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Z"/></svg>
+      無料面談をLINEで申し込む
     </a>
   </div>
 
