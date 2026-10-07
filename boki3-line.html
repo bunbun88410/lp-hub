@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <meta name="description" content="日商簿記3級のYouTube講義で分からなかった箇所を、簿記ラボLINEへ無料で相談できます。">
+  <title>簿記3級の質問・学習相談｜簿記ラボLINE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- YouTube動画別の流入とLINEボタン押下をGA4で確認する -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1YC8Z04C44"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1YC8Z04C44');
+  </script>
+
+  <style>
+    :root {
+      --navy: #0F2C44;
+      --navy-soft: #1A3F5F;
+      --green: #06C755;
+      --green-dark: #04A547;
+      --green-pale: #E9F9EF;
+      --cream: #F7F4ED;
+      --white: #FFFFFF;
+      --text: #1F2937;
+      --text-muted: #667085;
+      --border: #E4E7EC;
+      --shadow: 0 14px 40px rgba(15, 44, 68, 0.13);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(6, 199, 85, 0.12), transparent 28rem),
+        var(--cream);
+      font-family: 'Noto Sans JP', sans-serif;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    main {
+      width: calc(100% - 32px);
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 16px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--green-pale);
+      color: #087A39;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    .eyebrow::before {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      content: '';
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--navy);
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(30px, 7vw, 46px);
+      line-height: 1.42;
+      letter-spacing: .01em;
+    }
+
+    .lead {
+      margin: 18px 0 0;
+      color: var(--text-muted);
+      font-size: clamp(16px, 3.7vw, 18px);
+    }
+
+    .card {
+      margin-top: 32px;
+      padding: clamp(24px, 6vw, 38px);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .card h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 21px;
+      line-height: 1.55;
+    }
+
+    .examples {
+      display: grid;
+      gap: 12px;
+      margin: 20px 0 26px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .examples li {
+      position: relative;
+      padding-left: 30px;
+      font-size: 15px;
+    }
+
+    .examples li::before {
+      position: absolute;
+      top: .5em;
+      left: 2px;
+      display: grid;
+      width: 18px;
+      height: 18px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green-pale);
+      color: #087A39;
+      content: '✓';
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .line-button {
+      display: flex;
+      min-height: 60px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: var(--green);
+      box-shadow: 0 10px 24px rgba(6, 199, 85, 0.24);
+      color: var(--white);
+      font-size: 18px;
+      font-weight: 900;
+      text-align: center;
+      text-decoration: none;
+      transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+    }
+
+    .line-button:hover {
+      background: var(--green-dark);
+      box-shadow: 0 12px 28px rgba(6, 165, 71, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .line-button:focus-visible {
+      outline: 3px solid rgba(6, 199, 85, 0.3);
+      outline-offset: 4px;
+    }
+
+    .help {
+      margin: 14px 0 0;
+      color: var(--text-muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .privacy {
+      margin: 28px 0 0;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    footer {
+      margin-top: 28px;
+      color: var(--text-muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    footer a { color: var(--navy-soft); }
+
+    @media (max-width: 480px) {
+      main { padding-top: 32px; }
+      .card { border-radius: 16px; }
+      .card h2 { font-size: 19px; }
+      .line-button { font-size: 17px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .line-button { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">日商簿記3級・YouTube講義</p>
+    <h1>分からなかったところを<br>LINEで聞けます</h1>
+    <p class="lead">動画の番号や時刻と、迷ったポイントを送ってください。簿記ラボのLINEで無料で質問できます。</p>
+
+    <section class="card" aria-labelledby="question-guide">
+      <h2 id="question-guide">この3つがあると、状況が伝わりやすいです</h2>
+      <ul class="examples">
+        <li>見ていた動画の番号と時刻</li>
+        <li>どの説明や仕訳で迷ったか</li>
+        <li>自分ではどう考えたか、または書いた答え</li>
+      </ul>
+      <a class="line-button" id="line-cta" href="https://lin.ee/wDWTB5b" rel="noopener">簿記ラボLINEを開く</a>
+      <p class="help">友だち追加済みの方は、そのままトーク画面が開きます。</p>
+      <p class="privacy">動画ごとの内容改善のため、このページへのアクセスとLINEボタンのクリックを匿名のアクセス解析で計測します。</p>
+    </section>
+
+    <footer><a href="https://sujilab.net/boki">簿記1級 合格伴走</a>｜数字の資格ラボ</footer>
+  </main>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var campaign = params.get('utm_campaign') || 'boki3_unknown';
+      var source = params.get('utm_source') || 'youtube';
+      var medium = params.get('utm_medium') || 'video';
+      var cta = document.getElementById('line-cta');
+
+      cta.addEventListener('click', function () {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'boki3_line_click', {
+            campaign: campaign,
+            traffic_source: source,
+            traffic_medium: medium,
+            transport_type: 'beacon'
+          });
+        }
+      });
+    }());
+  </script>
+</body>
+</html>
