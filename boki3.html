@@ -1,0 +1,2832 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1YC8Z04C44"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1YC8Z04C44');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 下書き：公開まで検索に出さない（公開時にこの行を外す） -->
+  <meta name="robots" content="index, follow">
+  <title>簿記3級 合格伴走｜数字の資格ラボ</title>
+  <meta name="description" content="日商簿記3級の合格伴走。講義はYouTubeで全25本を無料公開。お金をいただくのは伴走だけです。毎日の学習記録の確認・Zoom面談・LINE質問・受講生サイトで、合格まで追加料金なしで伴走します。一括¥9,800（税込）。2級・3級合わせて同時に10人まで。">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="数字の資格ラボ">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="簿記3級 合格伴走｜講義は無料、伴走だけ">
+  <meta property="og:description" content="日商簿記3級の合格伴走。講義はYouTubeで全25本を無料公開。お金をいただくのは伴走だけです。毎日の学習記録の確認・Zoom面談・LINE質問・受講生サイトで、合格まで追加料金なしで伴走します。一括¥9,800（税込）。2級・3級合わせて同時に10人まで。">
+  <meta property="og:url" content="https://sujilab.net/boki3">
+  <!-- og:image は2級・3級用の画像がまだ無いので入れていない（1級の画像は「簿記1級」と書いてあるため流用しない） -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="簿記3級 合格伴走｜講義は無料、伴走だけ">
+  <meta name="twitter:description" content="日商簿記3級の合格伴走。講義はYouTubeで全25本を無料公開。お金をいただくのは伴走だけです。毎日の学習記録の確認・Zoom面談・LINE質問・受講生サイトで、合格まで追加料金なしで伴走します。一括¥9,800（税込）。2級・3級合わせて同時に10人まで。">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "Organization", "name": "数字の資格ラボ", "url": "https://sujilab.net/" },
+      {
+        "@type": "Course",
+        "name": "日商簿記3級 合格伴走",
+        "description": "日商簿記3級の合格まで、毎日の学習記録の確認・Zoom面談・LINE質問・受講生サイトで伴走するオンライン講座。講義動画はYouTubeで無料公開。",
+        "inLanguage": "ja",
+        "provider": { "@type": "Organization", "name": "数字の資格ラボ", "url": "https://sujilab.net/" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;700;900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       数字の資格ラボ LP — Design System
+       Theme: ディープネイビー × ウォームオレンジ × クリームベージュ
+       ============================================ */
+
+    /* リセット */
+    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    #mission, #curriculum, #pricing, #faq { scroll-margin-top: 88px; }
+    img, svg { max-width: 100%; height: auto; display: block; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+
+    /* CSS 変数 */
+    :root {
+      /* 🔴 2026-08-11：本人指示「デザインは全部あわせてほしい」で、
+         旧「墨＋朱＋和紙」の配色を index と同じブランド配色に揃えた。
+         index.html の :root と同じ値。ここを触るときは4ページ同時に触ること。 */
+      --navy: #0F2C44;
+      --navy-soft: #1A3F5F;
+      --navy-deep: #08182A;
+      --orange: #FF6B35;
+      --orange-soft: #FFE8DD;
+      --green: #06C755;
+      --green-dark: #04A547;
+      --cream: #F7F4ED;
+      --cream-deep: #EFE9DC;
+      --white: #FFFFFF;
+      --text: #1F2937;
+      --text-muted: #6B7280;
+      --text-light: #9CA3AF;
+      --border: #E5E7EB;
+      --border-dark: #2A4866;
+      /* ヒーローのアクセント2色。index のダークヒーローと同じ */
+      --hero-cyan: #6EC6F5;
+      --hero-gold: #F2C879;
+      --shadow-sm: 0 2px 8px rgba(15, 44, 68, 0.08);
+      --shadow-md: 0 8px 24px rgba(15, 44, 68, 0.12);
+      --shadow-lg: 0 20px 50px rgba(15, 44, 68, 0.18);
+
+      /* スペーシング（8px基準） */
+      --space-1: 8px;  --space-2: 16px; --space-3: 24px;
+      --space-4: 32px; --space-5: 40px; --space-6: 48px;
+      --space-7: 64px; --space-8: 80px; --space-9: 96px;
+
+      /* 角丸 */
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 12px;
+
+      /* カードpadding */
+      --card-pad-compact: 28px 32px;
+      --card-pad-roomy: 40px 36px;
+      --card-pad-showcase: 48px 40px;
+
+      /* タイポグラフィ */
+      --fs-display: clamp(34px, 5vw, 64px);
+      --fs-h1: clamp(32px, 5vw, 56px);
+      --fs-h2: clamp(20px, 2.4vw, 24px);
+      --fs-h3: 16px;
+
+      /* 金融チャート風の背景モチーフ（navy地セクション用） */
+      --chart-motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 260'%3E%3Cdefs%3E%3Cfilter id='g' x='-60%25' y='-60%25' width='220%25' height='220%25'%3E%3CfeGaussianBlur stdDeviation='4' result='b'/%3E%3CfeMerge%3E%3CfeMergeNode in='b'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cg stroke='%23ffffff' stroke-opacity='0.07'%3E%3Cline x1='0' y1='40' x2='420' y2='40'/%3E%3Cline x1='0' y1='90' x2='420' y2='90'/%3E%3Cline x1='0' y1='140' x2='420' y2='140'/%3E%3Cline x1='0' y1='190' x2='420' y2='190'/%3E%3Cline x1='0' y1='240' x2='420' y2='240'/%3E%3Cline x1='40' y1='0' x2='40' y2='260'/%3E%3Cline x1='120' y1='0' x2='120' y2='260'/%3E%3Cline x1='200' y1='0' x2='200' y2='260'/%3E%3Cline x1='280' y1='0' x2='280' y2='260'/%3E%3Cline x1='360' y1='0' x2='360' y2='260'/%3E%3C/g%3E%3Cpolyline points='20,220 90,180 160,190 230,120 300,140 380,40' fill='none' stroke='%23FF6B35' stroke-opacity='0.55' stroke-width='2.5' filter='url(%23g)'/%3E%3Cg fill='%23FF6B35' fill-opacity='0.6' filter='url(%23g)'%3E%3Ccircle cx='20' cy='220' r='3.5'/%3E%3Ccircle cx='90' cy='180' r='3.5'/%3E%3Ccircle cx='160' cy='190' r='3.5'/%3E%3Ccircle cx='230' cy='120' r='3.5'/%3E%3Ccircle cx='300' cy='140' r='3.5'/%3E%3Ccircle cx='380' cy='40' r='3.5'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* ベース */
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* タイポグラフィ */
+    .num {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--navy);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 2px;
+      background: var(--navy);
+    }
+    .section-title {
+      font-size: var(--fs-h1);
+      font-weight: 900;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+      color: var(--navy);
+    }
+    .section-subtitle {
+      font-size: clamp(16px, 1.5vw, 18px);
+      color: var(--text-muted);
+      max-width: 640px;
+      line-height: 1.8;
+    }
+    .underline-mark {
+      background: linear-gradient(transparent 60%, var(--orange-soft) 60%);
+      padding: 0 4px;
+      color: var(--orange);
+    }
+
+    /* コンテナ */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    section {
+      padding: clamp(64px, 8vw, 96px) 0;
+      position: relative;
+    }
+
+    /* ボタン */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 28px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 16px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      white-space: nowrap;
+      min-height: 56px;
+      box-shadow: var(--shadow-sm);
+    }
+    .btn svg { width: 20px; height: 20px; }
+    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .btn-line {
+      background: var(--green);
+      color: var(--white);
+    }
+    .btn-line:hover { background: var(--green-dark); }
+    .btn-outline {
+      background: var(--white);
+      color: var(--navy);
+      border: 2px solid var(--navy);
+    }
+    .btn-outline:hover { background: var(--navy); color: var(--white); }
+    .btn-orange {
+      background: var(--orange);
+      color: var(--white);
+    }
+    .btn-orange:hover { background: #E55A2B; }
+    .btn-large {
+      padding: 20px 36px;
+      font-size: 18px;
+      min-height: 64px;
+    }
+
+    /* ============================================
+       ユーティリティバー
+       ============================================ */
+    .utility-bar {
+      background: var(--navy-deep);
+      padding: 6px 0;
+    }
+    .utility-bar .container {
+      display: flex;
+      justify-content: flex-end;
+      gap: var(--space-4);
+    }
+    .utility-bar a {
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+      white-space: nowrap;
+    }
+    .utility-bar a:hover {
+      color: var(--white);
+      text-decoration: underline;
+    }
+
+    /* ============================================
+       ヘッダー
+       ============================================ */
+    .site-header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 16px 0;
+      z-index: 10;
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+    }
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+    .site-nav {
+      display: flex;
+      gap: var(--space-4);
+    }
+    .site-nav a {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+    .site-nav a:hover {
+      color: var(--navy-soft);
+      text-decoration: underline;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      font-size: 18px;
+      color: var(--navy);
+    }
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.28), inset 0 0 0 4px rgba(255,255,255,0.08), 0 0 8px rgba(255,107,53,0.3);
+      flex-shrink: 0;
+    }
+    .logo-mark svg { width: 18px; height: 18px; }
+    .header-cta {
+      display: flex;
+      gap: 12px;
+    }
+
+    /* ============================================
+       Section 1: HERO
+       ============================================ */
+    .hero {
+      padding: clamp(48px, 6vw, 80px) 0;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      padding: 8px 18px;
+      background: var(--cream-deep);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      border-radius: var(--radius-sm);
+      margin-bottom: 32px;
+      animation: hero-fade 0.8s ease-out both;
+    }
+    .hero-title {
+      font-size: var(--fs-display);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--navy);
+      margin-bottom: 32px;
+      animation: hero-fade 0.8s ease-out 0.1s both;
+    }
+    .hero-title .em {
+      position: relative;
+      display: inline-block;
+      color: var(--orange);
+    }
+    .hero-title .em::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 8px;
+      width: 100%;
+      height: 14px;
+      background: var(--orange-soft);
+      z-index: -1;
+    }
+    .hero-sub {
+      font-size: clamp(16px, 1.5vw, 19px);
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 48px;
+      max-width: 520px;
+      animation: hero-fade 0.8s ease-out 0.2s both;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      animation: hero-fade 0.8s ease-out 0.4s both;
+    }
+    .hero-visual {
+      position: relative;
+      animation: hero-fade 1s ease-out 0.3s both;
+    }
+    .hero-image-wrap {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 4 / 5;
+      background: var(--navy);
+    }
+    .hero-image-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15,44,68,0) 55%, rgba(15,44,68,0.55) 100%);
+      pointer-events: none;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: 38% 42%;
+    }
+    .hero-image-wrap svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .hero-badge {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      max-width: 200px;
+      padding: 14px 18px;
+      background: var(--white);
+      color: var(--navy);
+      border: 2px solid var(--navy);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      font-size: 14px;
+      text-align: left;
+      box-shadow: var(--shadow-md);
+      transform: rotate(-4deg);
+      z-index: 3;
+      line-height: 1.3;
+    }
+    .hero-badge-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(15,44,68,0.08);
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-badge-icon svg { width: 20px; height: 20px; }
+    .hero-badge-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-badge-small {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+    }
+    .hero-badge-em {
+      font-size: 17px;
+      color: var(--navy);
+    }
+    .hero-floating-card {
+      position: absolute;
+      bottom: -30px;
+      left: -30px;
+      background: var(--white);
+      padding: 20px 24px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      z-index: 3;
+      max-width: 280px;
+    }
+    .hero-floating-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(15,44,68,0.08);
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-floating-card-icon svg { width: 22px; height: 22px; }
+    .hero-floating-card-text {
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--text);
+    }
+    .hero-floating-card-text strong {
+      display: block;
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+
+    @keyframes hero-fade {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+
+    /* ============================================
+       Section 2: PROBLEM
+       ============================================ */
+    .problem {
+      background: var(--cream);
+      position: relative;
+    }
+    .problem::before {
+      content: '?';
+      position: absolute;
+      top: 40px;
+      right: 5%;
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(160px, 20vw, 320px);
+      font-weight: 900;
+      color: var(--cream-deep);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .problem .container { position: relative; z-index: 2; }
+    .problem-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .problem-header .eyebrow { justify-content: center; }
+    .problem-list {
+      max-width: 800px;
+      margin: 0 auto 48px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .problem-card {
+      padding: var(--card-pad-compact);
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s ease;
+      border-left: 4px solid var(--navy);
+    }
+    .problem-card:last-child { border-bottom: none; }
+    .problem-card:hover {
+      background: var(--cream);
+    }
+    .problem-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(15,44,68,0.08);
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .problem-icon svg { width: 18px; height: 18px; }
+    .problem-text {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .problem-bridge {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      border: 2px dashed var(--navy);
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.6;
+    }
+    .problem-bridge .em {
+      color: var(--orange);
+    }
+
+    /* ============================================
+       Section 3: MISSION
+       ============================================ */
+    .mission {
+      background: var(--white);
+      text-align: center;
+    }
+    .mission-title {
+      font-size: var(--fs-h1);
+      font-weight: 900;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: var(--navy);
+      margin-bottom: 32px;
+      max-width: 920px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .mission-title .em {
+      color: var(--orange);
+      position: relative;
+    }
+    .mission-lead {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 80px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .mission-steps {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: left;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .mission-step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: start;
+      gap: 24px;
+      padding: 28px 32px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s ease;
+    }
+    .mission-step:last-child { border-bottom: none; }
+    .mission-step:hover { background: var(--cream); }
+    .mission-step-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .mission-step-label {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .mission-step-title {
+      font-size: var(--fs-h2);
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .mission-step-text {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ============================================
+       Section 4: METHOD (navy dark)
+       ============================================ */
+    .method {
+      background: var(--navy);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .method::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 420px;
+      height: 260px;
+      background-image: var(--chart-motif);
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      pointer-events: none;
+    }
+    .method .container { position: relative; z-index: 2; }
+    .method-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .method-header .eyebrow {
+      justify-content: center;
+      color: rgba(255,255,255,0.85);
+    }
+    .method-header .eyebrow::before { background: rgba(255,255,255,0.85); }
+    .method-title {
+      font-size: var(--fs-h1);
+      font-weight: 900;
+      line-height: 1.25;
+      color: var(--white);
+      letter-spacing: -0.01em;
+    }
+    .method-title .em { color: var(--orange); }
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .method-card {
+      background: var(--navy-soft);
+      border: 1px solid var(--border-dark);
+      padding: var(--card-pad-roomy);
+      border-radius: var(--radius-md);
+      position: relative;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .method-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.3);
+    }
+    .method-num-badge {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      font-family: 'Inter', sans-serif;
+      font-size: 40px;
+      font-weight: 900;
+      color: var(--white);
+      opacity: 0.08;
+      line-height: 1;
+    }
+    .method-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .method-icon svg { width: 28px; height: 28px; }
+    .method-card-title {
+      font-size: var(--fs-h2);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .method-card-text {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.8;
+    }
+
+    /* ============================================
+       Section 5: HOW TO USE (5-step cycle)
+       ============================================ */
+    .how-to {
+      background: var(--white);
+      position: relative;
+    }
+    .how-to-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .how-to-header .eyebrow { justify-content: center; }
+    .how-to-flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto 48px;
+      position: relative;
+    }
+    .how-to-step {
+      background: var(--cream);
+      padding: 32px 20px;
+      border-radius: var(--radius-md);
+      text-align: center;
+      position: relative;
+      border: 1px solid var(--border);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+    .how-to-step:hover {
+      transform: translateY(-4px);
+      background: var(--cream-deep);
+      border-color: var(--navy);
+    }
+    .how-to-step-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      margin: 0 auto 18px;
+    }
+    .how-to-step:nth-child(odd) .how-to-step-num { background: var(--navy); }
+    .how-to-step-title {
+      font-size: var(--fs-h3);
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .how-to-step-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .how-to-arrow {
+      display: none;
+    }
+    .how-to-note {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 28px 36px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: var(--radius-md);
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.7;
+      font-weight: 500;
+    }
+    .how-to-note .em {
+      color: var(--orange);
+      font-weight: 900;
+    }
+
+    /* ============================================
+       Section 6: CONNECTIONS
+       ============================================ */
+    .connections {
+      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+    .connections .container { position: relative; z-index: 2; }
+    .connections-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .connections-header .eyebrow { justify-content: center; }
+    .connections-list {
+      max-width: 920px;
+      margin: 0 auto 56px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .connection-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1.5fr;
+      align-items: center;
+      gap: 24px;
+      padding: 24px 28px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s ease;
+    }
+    .connection-row:last-child { border-bottom: none; }
+    .connection-row:hover {
+      background: var(--cream);
+    }
+    .connection-math {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(18px, 2.2vw, 24px);
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    .connection-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(15,44,68,0.08);
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .connection-arrow svg { width: 20px; height: 20px; }
+    .connection-finance {
+      font-size: 15px;
+      color: var(--text);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .connections-quote {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.6;
+      padding: 0 24px;
+      position: relative;
+    }
+    .connections-quote::before,
+    .connections-quote::after {
+      content: '"';
+      font-family: 'Inter', serif;
+      font-size: clamp(60px, 8vw, 96px);
+      font-weight: 900;
+      color: var(--navy);
+      opacity: 0.4;
+      line-height: 0.6;
+      position: absolute;
+    }
+    .connections-quote::before { left: -20px; top: -10px; }
+    .connections-quote::after { right: -20px; bottom: -40px; transform: rotate(180deg); }
+
+    /* ============================================
+       Section 8: PRICING
+       ============================================ */
+    .pricing {
+      background: var(--navy);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing::before {
+      content: '¥';
+      position: absolute;
+      top: 40px;
+      left: 5%;
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(180px, 25vw, 360px);
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.04);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .pricing::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 420px;
+      height: 260px;
+      background-image: var(--chart-motif);
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      pointer-events: none;
+    }
+    .pricing .container { position: relative; z-index: 2; }
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .pricing-header .eyebrow {
+      justify-content: center;
+      color: rgba(255,255,255,0.85);
+    }
+    .pricing-header .eyebrow::before { background: rgba(255,255,255,0.85); }
+    .pricing-title {
+      color: var(--white);
+      font-size: var(--fs-h1);
+      font-weight: 900;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+    /* 料金カード1枚 */
+    .pricing-grid.one {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    /* 月払い＋モニター枠の2枚（2026-10-05） */
+    .pricing-grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .pricing-card {
+      background: var(--white);
+      color: var(--text);
+      padding: var(--card-pad-showcase);
+      border-radius: var(--radius-lg);
+      position: relative;
+      border: 1px solid var(--border);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .pricing-card.featured {
+      background: var(--navy-soft);
+      color: var(--white);
+      border: 2px solid var(--navy);
+    }
+    .pricing-card.featured .pricing-cta {
+      box-shadow: 0 0 20px rgba(255,107,53,0.35);
+    }
+    .pricing-card.featured .pricing-badge { background: var(--orange); }
+    .pricing-card:hover { transform: translateY(-4px); }
+    .pricing-badge {
+      position: absolute;
+      top: -16px;
+      right: 24px;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 900;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.1em;
+    }
+    .pricing-card-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .pricing-card.featured .pricing-card-label {
+      color: rgba(255,255,255,0.85);
+    }
+    .pricing-card-name {
+      font-size: var(--fs-h2);
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .pricing-card.featured .pricing-card-name {
+      color: var(--white);
+    }
+    .pricing-price {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap; /* 幅が狭いときは「（税込）」を丸ごと次の行へ送る */
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+    .pricing-price .num {
+      font-size: clamp(40px, 5vw, 56px);
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      color: var(--navy);
+    }
+    .pricing-card.featured .pricing-price .num { color: var(--white); }
+    .pricing-price .yen {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--navy);
+      margin-right: 2px;
+    }
+    .pricing-card.featured .pricing-price .yen { color: var(--white); }
+    .pricing-price .tax {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .pricing-card.featured .pricing-price .tax { color: rgba(255,255,255,0.8); }
+    .pricing-original {
+      font-size: 13px;
+      color: var(--text-light);
+      text-decoration: line-through;
+      margin-bottom: 28px;
+    }
+    .pricing-card.featured .pricing-original { color: rgba(255,255,255,0.6); }
+
+    /* 科目別プラン用：科目ごとに価格を等しく並べる */
+    .pricing-card-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0 0 16px;
+      line-height: 1.5;
+    }
+    .pricing-card.featured .pricing-card-sub { color: rgba(255,255,255,0.8); }
+    .pricing-list {
+      list-style: none;
+      margin: 0 0 28px;
+      padding: 12px 0 0;
+      border-top: 1px solid #e5e7eb;
+    }
+    .pricing-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 10px 0;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 15px;
+    }
+    .pricing-list .subject {
+      color: var(--navy);
+      font-weight: 600;
+    }
+    .pricing-list .price {
+      font-weight: 900;
+      font-size: 22px;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    .pricing-card.featured .pricing-list { border-color: rgba(255,255,255,0.2); }
+    .pricing-card.featured .pricing-list li { border-color: rgba(255,255,255,0.2); }
+    .pricing-card.featured .pricing-list .subject,
+    .pricing-card.featured .pricing-list .price { color: var(--white); }
+    /* 階層価格リスト：科目見出し行（パック）と配下の分野行 */
+    .pricing-list li.group {
+      background: var(--cream);
+      margin-top: 14px;
+      padding: 10px 12px;
+      border-bottom: none;
+      border-radius: var(--radius-sm);
+    }
+    .pricing-list li.group:first-child { margin-top: 0; }
+    .pricing-list li.group .subject { font-size: 15px; }
+    .pricing-list li.group .price { font-size: 18px; }
+    .pricing-list li.sub { padding-left: 16px; }
+    .pricing-list li.sub .subject { font-weight: 500; font-size: 14px; }
+    .pricing-list li.sub .price { font-size: 17px; }
+    .pricing-list li { flex-wrap: wrap; gap: 4px 8px; }
+    .pricing-list .price-cell {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: auto;
+    }
+    /* 販売状態バッジ */
+    .badge-onsale, .badge-soon {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1;
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+    }
+    .badge-onsale { background: var(--green-dark); color: #fff; }
+    .badge-soon { background: var(--border); color: var(--text-muted); }
+    /* 販売中行の小型購入ボタン */
+    .buy-mini {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1;
+      padding: 7px 12px;
+      border-radius: var(--radius-sm);
+      background: var(--orange);
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity .15s;
+    }
+    .buy-mini:hover { opacity: .85; }
+    /* 未発売の価格・科目名はグレー表示 */
+    .pricing-list .is-soon .subject,
+    .pricing-list .is-soon .price { color: #9aa1ab; }
+    .pricing-features {
+      margin: 28px 0 36px;
+    }
+    .pricing-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+    .pricing-card.featured .pricing-feature { color: var(--white); }
+    .pricing-feature svg {
+      width: 18px;
+      height: 18px;
+      color: var(--green);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .pricing-card.featured .pricing-feature svg { color: var(--white); }
+    .pricing-cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 18px;
+      background: var(--orange);
+      color: var(--white);
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 15px;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .pricing-cta:hover {
+      background: #E55A2B;
+      transform: translateY(-2px);
+    }
+    .pricing-compare-wrap {
+      max-width: 1100px;
+      margin: var(--space-6) auto 0;
+      overflow-x: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+    }
+    .pricing-compare {
+      width: 100%;
+      min-width: 560px;
+      border-collapse: collapse;
+      background: var(--white);
+      font-size: 14px;
+    }
+    .pricing-compare th,
+    .pricing-compare td {
+      padding: 14px 16px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+    .pricing-compare th:first-child,
+    .pricing-compare td:first-child {
+      border-left: none;
+    }
+    .pricing-compare thead th {
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 900;
+      border-top: none;
+      border-left: 1px solid rgba(255,255,255,0.15);
+    }
+    .pricing-compare thead th:first-child { border-left: none; }
+    .pricing-compare tbody th {
+      text-align: left;
+      color: var(--navy);
+      font-weight: 700;
+      white-space: nowrap;
+      background: var(--cream);
+    }
+    .pricing-compare td { color: var(--text); }
+    .pricing-compare tbody tr:nth-child(even) td { background: var(--cream); }
+    .pricing-compare .compare-check { color: var(--green-dark); display: inline-flex; }
+    .pricing-compare .compare-check svg { width: 18px; height: 18px; }
+    .pricing-trust-band {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-3);
+      max-width: 920px;
+      margin: var(--space-6) auto 0;
+      padding: var(--space-3) var(--space-4);
+      background: var(--navy-soft);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-md);
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+    }
+    .trust-item-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--white);
+    }
+    .trust-item-icon svg { width: 18px; height: 18px; }
+    .trust-item-text {
+      display: flex;
+      flex-direction: column;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .trust-item-text strong { font-size: 14px; font-weight: 900; }
+    .trust-item-text span { color: rgba(255,255,255,0.7); }
+    a.trust-item:hover .trust-item-text strong { text-decoration: underline; }
+
+    /* ============================================
+       Section 8.5: LINE 週1配信
+       ============================================ */
+    .line-broadcast {
+      background: rgba(6, 199, 85, 0.05);
+    }
+    .line-broadcast-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid #BFE8CF;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      padding: var(--card-pad-showcase);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .line-broadcast-inner .eyebrow { color: var(--green); margin-bottom: 0; }
+    .line-broadcast-inner .eyebrow::before { background: var(--green); }
+    .line-broadcast-inner .section-title { font-size: clamp(26px, 3.5vw, 40px); margin-bottom: 0; }
+    .line-broadcast-inner .section-subtitle { margin: 0 auto; }
+    .line-broadcast-points {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: left;
+      color: var(--text);
+      line-height: 1.8;
+    }
+    .line-broadcast-points li {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .line-broadcast-points .point-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(6, 199, 85, 0.1);
+      color: var(--green-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .line-broadcast-points .point-icon svg { width: 15px; height: 15px; }
+    .line-broadcast-note {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    /* ============================================
+       Section 9: FAQ
+       ============================================ */
+    .faq {
+      background: var(--white);
+    }
+    .faq-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .faq-header .eyebrow { justify-content: center; }
+    .faq-list {
+      max-width: 820px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+    .faq-item {
+      background: var(--cream);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: background 0.2s ease;
+    }
+    .faq-item[open] { background: var(--white); border: 2px solid var(--navy); }
+    .faq-q {
+      list-style: none;
+      cursor: pointer;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: var(--fs-h3);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.5;
+      position: relative;
+    }
+    .faq-q::-webkit-details-marker { display: none; }
+    .faq-q-mark {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      color: var(--navy);
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 32px;
+    }
+    .faq-q-text { flex: 1; }
+    .faq-toggle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--white);
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .faq-item[open] .faq-toggle {
+      background: var(--navy);
+      color: var(--white);
+      transform: rotate(45deg);
+    }
+    .faq-toggle svg { width: 14px; height: 14px; }
+    .faq-a {
+      padding: 0 28px 28px 60px;
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    /* ============================================
+       Final CTA
+       ============================================ */
+    .final-cta {
+      padding: clamp(96px, 11vw, 140px) 0;
+      background: var(--navy-deep);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 420px;
+      height: 260px;
+      background-image: var(--chart-motif);
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      pointer-events: none;
+    }
+    .final-cta .container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .final-cta-title {
+      font-size: var(--fs-h1);
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+      color: var(--white);
+    }
+    .final-cta-title .em {
+      color: var(--orange);
+    }
+    .final-cta-sub {
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 48px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .final-cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 56px;
+    }
+    .final-cta-buttons .btn-orange {
+      box-shadow: 0 0 20px rgba(255,107,53,0.35);
+    }
+    .final-cta-bonus {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 28px 32px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      text-align: left;
+    }
+    .final-cta-bonus-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--green);
+      margin-bottom: 14px;
+      letter-spacing: 0.05em;
+    }
+    .final-cta-bonus-title svg { width: 18px; height: 18px; }
+    .final-cta-bonus-list {
+      display: grid;
+      gap: 10px;
+    }
+    .final-cta-bonus-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6;
+    }
+    .final-cta-bonus-item svg {
+      width: 16px;
+      height: 16px;
+      color: var(--green);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .site-footer {
+      background: var(--navy-deep);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 48px 0 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-logo {
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      font-size: 16px;
+    }
+    .footer-logo .logo-mark {
+      background: var(--navy);
+      width: 36px;
+      height: 36px;
+    }
+    .footer-logo .logo-mark svg { width: 16px; height: 16px; }
+    .footer-copy {
+      font-size: 13px;
+    }
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      width: 100%;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .footer-nav a {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 13px;
+      text-decoration: none;
+    }
+    .footer-nav a:hover { color: var(--white); text-decoration: underline; }
+
+    /* ============================================
+       法務セクション（特商法・各種ポリシー）
+       ============================================ */
+    .legal {
+      background: var(--cream);
+      padding: var(--space-7) 0;
+      border-top: 1px solid var(--border);
+    }
+    .legal-title {
+      font-size: var(--fs-h2);
+      font-weight: 900;
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .legal-block {
+      max-width: 820px;
+      margin: 0 auto 28px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: var(--card-pad-compact);
+      box-shadow: var(--shadow-sm);
+    }
+    .legal-block h3 {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--navy);
+      margin: 0 0 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--navy);
+    }
+    .legal-block h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 18px 0 6px;
+    }
+    .legal-block p,
+    .legal-block li,
+    .legal-block dd {
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--text);
+    }
+    .legal-block ul,
+    .legal-block ol { padding-left: 1.4em; margin: 8px 0; }
+    .legal-dl {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+    }
+    .legal-dl dt {
+      font-weight: 700;
+      color: var(--navy);
+      padding: 12px 0;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+    }
+    .legal-dl dd {
+      margin: 0;
+      padding: 12px 0;
+      border-top: 1px solid var(--border);
+    }
+    .legal-note { font-size: 12px; color: var(--text-muted); margin-top: 10px; }
+    .legal-updated { text-align: right; font-size: 12px; color: var(--text-muted); margin-top: 14px; }
+    /* ============================================
+       レスポンシブ・タブレット (≤1024px)
+       ============================================ */
+    @media (max-width: 1024px) {
+      .container { padding: 0 28px; }
+      section { padding: var(--space-8) 0; }
+      .how-to-flow { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* ============================================
+       レスポンシブ (≤768px)
+       ============================================ */
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      section { padding: 64px 0; }
+
+      .header-cta { display: none; }
+      .site-nav { display: none; }
+      .utility-bar { display: none; }
+
+      /* LINE 週1配信 */
+      .line-broadcast-inner { padding: 36px 20px; }
+      .line-broadcast-inner .btn-line { width: 100%; white-space: normal; }
+
+      /* 法務セクション */
+      .legal { padding: 48px 0; }
+      .legal-block { padding: 22px 20px; }
+      .legal-dl { grid-template-columns: 1fr; }
+      .legal-dl dt { padding: 12px 0 0; }
+      .legal-dl dd { padding: 4px 0 12px; border-top: none; }
+
+      /* Hero */
+      .hero { padding: 48px 0 64px; }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .hero-title { font-size: clamp(36px, 9vw, 56px); }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn {
+        width: 100%;
+        min-height: 52px;
+      }
+      .hero-image-wrap {
+        aspect-ratio: 4 / 3;
+        max-width: 420px;
+        margin: 0 auto;
+      }
+      .hero-badge {
+        max-width: 160px;
+        padding: 10px 14px;
+        top: -14px;
+        right: 8px;
+      }
+      .hero-badge-icon { width: 30px; height: 30px; }
+      .hero-badge-icon svg { width: 16px; height: 16px; }
+      .hero-floating-card {
+        bottom: -20px;
+        left: 10px;
+        padding: 14px 18px;
+        max-width: 240px;
+      }
+
+      /* Problem */
+      .problem-card {
+        padding: 22px 24px;
+      }
+
+      /* Mission */
+      .mission-step {
+        padding: 20px 22px;
+        gap: 14px;
+      }
+
+      /* Method */
+      .method-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .method-card {
+        padding: 32px 28px;
+      }
+      .method-num-badge { font-size: 32px; }
+
+      /* How to Use */
+      .how-to-flow {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .how-to-step {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 16px;
+        text-align: left;
+        padding: 20px 22px;
+        align-items: center;
+      }
+      .how-to-step-num {
+        margin: 0;
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+      }
+      .how-to-step-title { margin-bottom: 4px; }
+
+      /* Connections */
+      .connection-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 22px 24px;
+      }
+      .connection-arrow {
+        transform: rotate(90deg);
+      }
+
+      /* Pricing */
+      .pricing-grid, .pricing-grid.two {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .pricing-card {
+        padding: 36px 28px;
+      }
+      .pricing-card.featured {
+        order: -1;
+      }
+      .pricing-trust-band { grid-template-columns: 1fr; gap: var(--space-2); }
+
+      /* FAQ */
+      .faq-q { padding: 20px 22px; font-size: 15px; }
+      .faq-a { padding: 0 22px 22px 50px; font-size: 14px; }
+
+      /* Final CTA */
+      .final-cta-buttons {
+        flex-direction: column;
+      }
+      .final-cta-buttons .btn {
+        width: 100%;
+        min-height: 52px;
+        font-size: 16px;
+        letter-spacing: 0;
+        padding-left: 14px;
+        padding-right: 14px;
+        white-space: normal;
+      }
+    }
+
+    /* ================================
+       Sample Lesson セクション
+       ================================ */
+    .sample-lesson {
+      padding: clamp(64px, 8vw, 96px) 0;
+      background: linear-gradient(180deg, var(--cream) 0%, #ffffff 100%);
+    }
+    .sample-lesson .container {
+      max-width: 960px;
+    }
+    .sample-lesson-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .sample-lesson-video {
+      position: relative;
+      width: 100%;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      background: #000;
+    }
+    .sample-lesson-video video {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 9;
+    }
+    .sample-lesson-meta {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 28px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .sample-lesson-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sample-lesson-meta-item svg {
+      flex-shrink: 0;
+      color: var(--green-dark);
+    }
+    @media (max-width: 768px) {
+      .sample-lesson { padding: 56px 0; }
+      .sample-lesson-meta { gap: 16px; font-size: 13px; }
+    }
+
+    /* ============================================================
+       PAPER LAYER — 「道場」（2026-08-05）
+       予備校ではなく、一人の記録として読ませるための層。
+       墨×朱、紙の地、見出しは明朝。写真は少なく、余白は大きく。
+       この層を削り :root を元の値に戻せば旧デザインに戻る。
+       ============================================================ */
+
+    /* --- 地：生成りの紙に、帳簿の罫線をごく薄く --- */
+    body {
+      background-color: #F7F4EC;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(35,32,28,.042) 0,
+        rgba(35,32,28,.042) 1px,
+        transparent 1px,
+        transparent 30px
+      );
+    }
+
+    /* --- 見出しは明朝。ここが「予備校」と「道場」の分かれ目 --- */
+    .hero-title, .section-title, .method-title, .pricing-title,
+    .final-cta-title, .mission-title, .legal-title, .problem-bridge {
+      font-family: 'Noto Serif JP', 'Noto Sans JP', serif;
+      font-weight: 700;
+      letter-spacing: .01em;
+      line-height: 1.4;
+    }
+    .hero-title { line-height: 1.32; }
+    .method-card-title, .pricing-card-name, .faq-q-text, .how-to-step-title {
+      font-family: 'Noto Serif JP', 'Noto Sans JP', serif;
+      font-weight: 700;
+    }
+
+    /* --- 朱の下線。蛍光ペンではなく、引いた線 --- */
+    .hero-title .em { color: var(--orange); }
+    .hero-title .em::after {
+      bottom: -2px;
+      height: 4px;
+      background: var(--orange);
+      opacity: .85;
+    }
+    .underline-mark {
+      background: linear-gradient(transparent 66%, var(--orange-soft) 66%);
+      color: var(--orange);
+    }
+
+    /* --- 節の頭：朱の短い罫を1本 --- */
+    .eyebrow {
+      color: var(--orange);
+      letter-spacing: .26em;
+      font-size: 12px;
+    }
+    .eyebrow::before { width: 22px; height: 1px; background: var(--orange); }
+
+    /* --- 面は「紙」。角を立て、影を薄くし、罫線で締める --- */
+    .problem-list, .method-card, .pricing-card, .faq-item, .legal-block,
+    .mission-steps, .how-to-step, .line-broadcast-inner, .pricing-compare-wrap {
+      box-shadow: none;
+      border: 1px solid var(--border);
+    }
+    .problem-card { border-left: 3px solid var(--orange); }
+    .problem-icon, .method-icon, .trust-item-icon {
+      border-radius: 2px;
+      background: rgba(183,56,47,.08);
+      color: var(--orange);
+    }
+
+    /* --- 数字は墨で、大きく。ここは「一人の記録」なので実績ではなく事実 --- */
+    .num, .pricing-price .num { color: var(--navy); letter-spacing: -.02em; }
+
+    /* --- バッジ（2026-08-11：角丸を他ページと同じ --radius-sm に揃えた） --- */
+    .pricing-badge, .hero-badge {
+      background: var(--orange);
+      color: #FFF8F2;
+      border: none;
+      border-radius: var(--radius-sm);
+      box-shadow: none;
+      letter-spacing: .08em;
+    }
+    .hero-badge { color: var(--navy); background: #FFFDF8; border: 1px solid var(--orange); }
+    .hero-badge-em { color: var(--orange); }
+
+    /* --- 黒板の節（method）：墨地に生成りの字 --- */
+    .method { background: var(--navy); }
+    .method::before { opacity: .35; }
+    .method-card { background: rgba(255,253,248,.055); border-color: rgba(245,241,231,.18); }
+    .method-icon { background: rgba(245,241,231,.12); color: #F0E9DA; }
+
+    /* --- 紺地の上ではオレンジが沈むので、そこだけ金にする（index の紺地と同じ扱い） --- */
+    .method .em, .method-title .em,
+    .final-cta .em, .final-cta-title .em,
+    .pricing-card.featured .em,
+    .site-footer .em { color: var(--hero-gold); }
+    .method .underline-mark, .final-cta .underline-mark { color: var(--hero-gold); }
+
+    /* --- 2026-08-11：写真を紙に馴染ませるセピア加工をやめた（他3ページは素の写真） --- */
+
+    /* --- ボタン（2026-08-11：角丸とホバー色を index に揃えた） --- */
+    .btn { border-radius: var(--radius-sm); letter-spacing: .04em; }
+    .btn-orange { background: var(--orange); }
+    .btn-orange:hover { background: #E55A2B; }
+    .btn-outline { border-width: 1px; }
+    .pricing-cta { border-radius: var(--radius-sm); background: var(--orange); }
+    .pricing-cta:hover { background: #E55A2B; }
+
+    /* --- ヘッダー・フッター（2026-08-11：ロゴを index と同じ丸い印に戻した） --- */
+    .site-header { background: rgba(247,244,236,.92); backdrop-filter: blur(8px); }
+    .logo-mark {
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.28), inset 0 0 0 4px rgba(255,255,255,0.08), 0 0 8px rgba(255,107,53,0.3);
+    }
+
+    /* ============================================================
+       ヒーロー＝写真を全面に敷く（2026-08-11・本人指示
+       「ヒーロー画像を背景にしたい。でっかくどーんとインパクトほしい」）
+
+       写真の構図＝左〜中央に走る2人／右上に夕日と山頂の旗／下は斜面。
+       人物と旗を上に残したいので、コピーは下側に敷く。
+       スクリムは紺ではなく焦茶〜濃紺にして、夕日の熱をそのまま残す。
+       🔴 このブロックをまるごと消すと、上で定義した白地の2カラムに戻る。
+       ============================================================ */
+    .hero {
+      /* ヘッダー（ユーティリティ帯32＋本体92）を引いた高さ。写真は画面いっぱいのまま、
+         最初の画面に申し込みボタンまで入るようにする */
+      min-height: calc(100vh - 124px);
+      display: flex;
+      align-items: flex-end;
+      padding: clamp(36px, 4.5vw, 56px) 0 clamp(28px, 3vw, 44px);
+      color: var(--white);
+      background:
+        /* ① コピーの背後（左下）だけを重く落とす。写真の空・夕日は残す */
+        radial-gradient(1150px 900px at 8% 82%, rgba(8,16,28,0.96) 0%, rgba(8,16,28,0.78) 34%, rgba(8,16,28,0.30) 58%, rgba(8,16,28,0) 78%),
+        /* ② 下端は次の節へ渡すために締める */
+        linear-gradient(to bottom, rgba(30,20,12,0.18) 0%, rgba(20,24,34,0.42) 52%, rgba(11,22,38,0.92) 86%, #0B1626 100%),
+        url('assets/boki-hero-real.jpg');
+      background-size: cover, cover, cover;
+      /* 人物の顔から旗までが画面に入る位置。ここを動かすと構図が崩れる */
+      background-position: center, center, center 34%;
+      background-repeat: no-repeat;
+    }
+    /* 🔴 .hero が flex なので container が中身なりに縮む。100% を明示しないと
+       コピーが画面中央へ寄ってしまう（一度ここでハマった） */
+    .hero > .container { width: 100%; box-sizing: border-box; }
+    /* 写真の上に文字を置くので、影で1段浮かせる。左寄せを明示する */
+    .hero-title { line-height: 1.2; margin-bottom: 24px; }
+    .hero-sub { margin-bottom: 28px; }
+    .hero-content {
+      max-width: 680px;
+      margin-left: 0;
+      margin-right: auto;
+      text-align: left;
+      text-shadow: 0 2px 18px rgba(6,14,24,0.9);
+    }
+    .hero-grid { display: block; }
+    /* 右カラムの写真カードは、写真そのものが背景になったので不要 */
+    .hero-visual { display: none; }
+    .hero-eyebrow {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.28);
+      color: #FFC98A;
+      backdrop-filter: blur(8px);
+    }
+    .hero-title { color: var(--white); }
+    .hero-title .em { color: #FF8A4C; text-shadow: 0 0 40px rgba(255,107,53,0.45); }
+    .hero-title .em::after {
+      bottom: -2px; height: 4px;
+      background: linear-gradient(90deg, var(--orange) 0%, #FFB778 100%);
+      opacity: .95;
+    }
+    .hero-sub { color: rgba(255,255,255,0.88); }
+    .hero-sub strong { color: var(--white); }
+    .hero-sub strong.hero-limit { color: #FFC98A; display: block; margin-top: .3em; }
+    .hero .hero-note { color: rgba(255,255,255,0.72); }
+    .hero .hero-note a { color: #7FE3B4; font-weight: 700; }
+    /* 2026-10-14 ヒーローの副ボタン：暗い写真背景で読めるよう白系の文字と枠 */
+    .hero .btn-outline.hero-btn-sub {
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.85);
+      backdrop-filter: blur(6px);
+    }
+    .hero .btn-outline.hero-btn-sub:hover { background: var(--white); color: var(--navy); }
+    @media (max-width: 480px) {
+      .hero-ctas .btn { font-size: 15px; padding-left: 14px; padding-right: 14px; }
+    }
+    @media (max-width: 900px) {
+      /* 縦画面は横が詰まるぶん、人物が入る位置まで寄せる */
+      .hero { min-height: 92vh; background-position: center, 62% 32%; }
+      .hero-content { text-shadow: 0 2px 16px rgba(6,14,24,0.92); }
+    }
+
+    /* ===== MY RECORD（ヒーロー直下）。ここだけ紺だと明暗が縞になるので、
+       明るく熱い地に揃えた（2026-08-11・本人指示） ===== */
+    .my-record {
+      background:
+        radial-gradient(760px 420px at 50% 0%, rgba(255,107,53,0.12) 0%, rgba(255,107,53,0) 66%),
+        var(--cream);
+    }
+    .my-record .section-title { color: var(--navy); }
+    .my-record .section-title .em { color: var(--orange); }
+    .my-record p { color: var(--text-muted); }
+    .mr-stat {
+      flex: 1; min-width: 150px; padding: 18px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow-sm);
+    }
+    .mr-num { font-size: 28px; font-weight: 800; color: var(--navy); }
+    .mr-unit { font-size: 15px; font-weight: 600; color: var(--text-muted); }
+    .mr-label { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+
+    /* ============================================================
+       明暗の縞をやめる一括上書き（2026-08-11・本人指示
+       「明るいところと暗いところが織り交ざっていない方がいい」）
+       暗いのは ①ヒーロー＋その直下のMY RECORD（表紙のかたまり） と
+       ②最後のCTA＋フッター（締め）だけ。途中の method は明るい側へ反転させる。
+       index.html にも同じ考え方の上書きを入れてある。
+       🔴 このブロックをまるごと消すと、紺地の method に戻る。
+       ============================================================ */
+    .method { background: var(--cream); color: var(--text); }
+    .method::before { opacity: .45; }
+    .method-header .eyebrow { color: var(--orange); }
+    .method-header .eyebrow::before { background: var(--orange); }
+    .method-title { color: var(--navy); }
+    .method .em, .method-title .em { color: var(--orange); }
+    .method .underline-mark { color: var(--orange); }
+    .method-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .method-card:hover { box-shadow: var(--shadow-md); }
+    .method-card-title { color: var(--navy); }
+    .method-card-text { color: var(--text-muted); }
+    .method-card-text strong { color: var(--navy); }
+    .method-num-badge { color: var(--navy); opacity: .10; }
+    .method-icon { background: var(--orange-soft); color: var(--orange); }
+
+    /* --- 熱さを足す（2026-08-11・本人指示「明るく熱いイメージに」）--- */
+    .method {
+      background:
+        radial-gradient(780px 440px at 92% 6%, rgba(255,107,53,0.10) 0%, rgba(255,107,53,0) 62%),
+        var(--cream);
+    }
+    .final-cta {
+      background:
+        radial-gradient(760px 420px at 18% 12%, rgba(255,107,53,0.22) 0%, rgba(255,107,53,0) 62%),
+        var(--navy-deep);
+    }
+
+    /* --- 動きを減らす設定の人には、入場アニメを出さない --- */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-eyebrow, .hero-title, .hero-sub, .hero-ctas, .hero-visual { animation: none !important; }
+      * { transition-duration: .01ms !important; }
+    }
+    /* ============================================================
+       コンバージョン導線の追加（2026-08-12）
+       🔴 直す前の状態：スマホは `.header-cta` が display:none で、ヒーロー（〜約780px）を
+       過ぎると料金セクション（ページの約6割地点）までCTAが1つも無かった。
+       ページ全高は約23,000px なので、13,000px 以上を無反応で進ませていた。
+       ① モバイル追従CTA ② 中間CTA帯 の2つで塞ぐ。JSは使わない（常時表示）。
+       ============================================================ */
+
+    /* ① モバイル追従CTA（≤768px のみ） */
+    .sticky-cta { display: none; }
+    @media (max-width: 768px) {
+      .sticky-cta {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        position: fixed;
+        left: 0; right: 0; bottom: 0;
+        z-index: 900;
+        padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
+        background: rgba(255, 255, 255, .94);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid var(--border);
+        box-shadow: 0 -6px 24px rgba(15, 44, 68, .10);
+      }
+      .sticky-cta-sub {
+        flex: 0 0 34%;
+        text-align: center;
+        padding: 13px 6px;
+        font-size: 14px; font-weight: 700;
+        color: var(--navy);
+        border: 1.5px solid var(--navy);
+        border-radius: 10px;
+      }
+      .sticky-cta-main {
+        flex: 1;
+        display: flex; align-items: center; justify-content: center; gap: 6px;
+        padding: 13px 6px;
+        font-size: 15px; font-weight: 700;
+        color: #fff;
+        background: var(--orange);
+        border-radius: 10px;
+        box-shadow: 0 4px 14px rgba(255, 107, 53, .32);
+      }
+      .sticky-cta-main svg { width: 18px; height: 18px; fill: currentColor; flex: 0 0 18px; }
+      /* 追従バーがページ末尾を隠さないよう、その分の逃げをつくる */
+      body { padding-bottom: 78px; }
+    }
+
+    /* ② 中間CTA帯（感情のピーク直後に置く。価格は出さず、無料相談だけを差し出す） */
+    .mid-cta {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--navy);
+      border-radius: 20px;
+      padding: clamp(28px, 4vw, 44px) clamp(20px, 4vw, 40px);
+      text-align: center;
+      color: #fff;
+      box-shadow: var(--shadow-lg);
+    }
+    .mid-cta-title { font-family: 'Noto Serif JP', serif; font-size: clamp(20px, 2.6vw, 27px); font-weight: 700; line-height: 1.6; }
+    .mid-cta-title .em { color: var(--hero-gold); }
+    .mid-cta-sub { margin: 14px auto 0; max-width: 560px; font-size: 14.5px; line-height: 1.9; color: rgba(255,255,255,.82); }
+    .mid-cta-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 24px; }
+    .mid-cta-note { margin: 16px 0 0; font-size: 12.5px; color: rgba(255,255,255,.6); }
+    @media (max-width: 600px) {
+      .mid-cta-buttons .btn { width: 100%; font-size: 14px; letter-spacing: 0; padding-left: 10px; padding-right: 10px; white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <!-- 🔴 下書き（2026-10-28・未公開）：簿記3級 合格伴走。1級LP（cc-lp-v2/lp/boki.html）の構成とCSSをそのまま使い、級・価格・講義本数・試験の形・対象者を差し替えた。
+       申込ボタンの https://buy.stripe.com/3cI8wOcl6dAm1EH1NhgA80C は、Stripe の Payment Link ができたら差し替える（buy.stripe.com になれば、下の入口の印の仕組みもそのまま効く）。
+       本人決定（2026-10-28）：一括¥9,800（税込）・合格まで追加料金なし／中身は1級と同じ／2級・3級合わせて同時10人まで・モニター枠なし／
+       2級・3級を受けた人は1級の初回¥29,800→¥19,800／講義はYouTubeで全講義を無料公開（有料の価値は伴走だけ）／返金は1級LPと同じ7日以内全額返金。 -->
+  <div class="utility-bar">
+    <div class="container">
+      <a href="#faq">よくある質問</a>
+      <a href="#legal-tokuho">特定商取引法に基づく表記</a>
+      <a href="mailto:cmaacademy.info@gmail.com">お問い合わせ</a>
+    </div>
+  </div>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 5"/><polyline points="15 5 21 5 21 11"/></svg></div>
+        <span>数字の資格ラボ</span>
+      </div>
+      <div class="header-right">
+        <nav class="site-nav" aria-label="ページ内ナビゲーション">
+          <a href="#pricing">料金</a>
+          <a href="#faq">よくある質問</a>
+        </nav>
+        <div class="header-cta">
+          <a href="/boki3-line?utm_source=lp&amp;utm_medium=boki3&amp;utm_campaign=boki3_lp" class="btn btn-orange">
+            <svg viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Z"/></svg>
+            無料Zoom面談（30分）
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="hero-eyebrow">簿記ラボ ｜ by 数字の資格ラボ</span>
+          <h1 class="hero-title">簿記3級を、<br><span class="em">ひとりにさせない。</span></h1>
+          <p class="hero-sub">講義は、YouTubeで<strong>全25本を無料公開</strong>しています。お金をいただくのは<strong>伴走だけ</strong>です。毎日の学習記録の確認と、Zoom面談・LINE質問で、合格まで一緒に進みます。<strong class="hero-limit">2級・3級あわせて、同時に10人までです。</strong></p>
+          <div class="hero-ctas">
+            <a href="/boki3-line?utm_source=lp&amp;utm_medium=boki3&amp;utm_campaign=boki3_lp" class="btn btn-orange">
+              <svg viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Z"/></svg>
+              無料のZoom面談（30分）を申し込む
+            </a>
+            <a href="#pricing" class="btn btn-outline hero-btn-sub">料金を見る
+              <svg viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+            </a>
+          </div>
+          <p class="hero-note" style="margin:10px 0 0;font-size:12.5px;line-height:1.8;opacity:.9;">ボタンを押すと、簿記ラボLINEのご案内ページが開きます。友だち追加のあと「3級伴走 無料面談 希望」と送ってください。日程は担当からご案内します。</p>
+          <p class="hero-note" style="margin:14px 0 0;font-size:13.5px;font-weight:600;line-height:1.9;">一括<strong>¥9,800</strong>（税込）で、<strong>合格まで追加料金なし</strong>。<br>合わなければ<strong>7日以内で全額返金</strong>します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ① 試験の形 -->
+  <section style="background:var(--cream);">
+    <div class="container">
+      <div style="text-align:center;max-width:760px;margin:0 auto 32px;">
+        <span class="eyebrow" style="justify-content:center;">01 ｜ 試験の形</span>
+        <h2 class="section-title">簿記3級は、<span class="em">60分・70点</span>の試験です。</h2>
+        <p class="section-subtitle" style="margin:16px auto 0;">商業簿記が出ます。100点満点で、70点以上なら合格。<br><strong>受け方は「統一試験」と「ネット試験」の2つから選べます。</strong></p>
+      </div>
+      <div style="max-width:760px;margin:0 auto;background:#fff;border:1px solid #E5E9EF;border-radius:16px;padding:26px 22px;text-align:center;">
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px 40px;">
+          <div><div style="font-size:clamp(30px,4vw,38px);font-weight:900;color:#D4700A;line-height:1.1;">60<span style="font-size:18px;">分</span></div><div style="font-size:13px;color:#5A6A7A;margin-top:6px;">試験時間</div></div>
+          <div><div style="font-size:clamp(30px,4vw,38px);font-weight:900;color:#1A2B4A;line-height:1.1;">70<span style="font-size:18px;">点以上</span></div><div style="font-size:13px;color:#5A6A7A;margin-top:6px;">合格ライン（100点満点）</div></div>
+          <div><div style="font-size:clamp(30px,4vw,38px);font-weight:900;color:#1A2B4A;line-height:1.1;">2<span style="font-size:18px;">つ</span></div><div style="font-size:13px;color:#5A6A7A;margin-top:6px;">統一試験／ネット試験</div></div>
+        </div>
+        <p style="margin:16px 0 0;font-size:13.5px;color:#5A6A7A;line-height:1.9;">統一試験は年3回（6月・11月・2月）の紙の試験、ネット試験はテストセンターで日程を選んで受けるパソコンの試験です。<br>どちらを、いつ受けるかも、最初の面談で一緒に決めます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ② なぜ止まるのか -->
+  <section>
+    <div class="container">
+      <div style="text-align:center;max-width:760px;margin:0 auto 36px;">
+        <span class="eyebrow" style="justify-content:center;">02 ｜ なぜ止まるのか</span>
+        <h2 class="section-title">教材は、<span class="em">もう足りています。</span></h2>
+        <p class="section-subtitle" style="margin:16px auto 0;">3級の講義は、YouTubeで全部見られます。それでも止まる人がいるのは、教材のせいではありません。</p>
+      </div>
+      <div style="max-width:820px;margin:0 auto;display:grid;gap:12px;">
+        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start;"><span style="flex:0 0 auto;font-size:20px;color:#B9C2CC;line-height:1.4;">✕</span><div><strong style="color:#1A2B4A;">教材の差？</strong><p style="margin:4px 0 0;color:#5A6A7A;font-size:14.5px;line-height:1.9;">講義は無料で見られて、問題集も市販のもので足ります。ここで大きな差はつきません。</p></div></div>
+        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start;"><span style="flex:0 0 auto;font-size:20px;color:#B9C2CC;line-height:1.4;">✕</span><div><strong style="color:#1A2B4A;">頭の良さ？</strong><p style="margin:4px 0 0;color:#5A6A7A;font-size:14.5px;line-height:1.9;">私は3級に4回落ちています。頭の良さで決まる試験なら、私はここにいません。</p></div></div>
+        <div style="background:#fff;border:2px solid #2D6A4F;border-radius:14px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start;"><span style="flex:0 0 auto;font-size:20px;color:#2D6A4F;line-height:1.4;">〇</span><div><strong style="color:#1A2B4A;">続け方と、やり方を変えられたかどうか。</strong><p style="margin:4px 0 0;color:#5A6A7A;font-size:14.5px;line-height:1.9;">見るだけで終わらせず、手を動かす日を毎日つくれるか。<strong>差がつくのは、ここでした。</strong></p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ③ 私の場合（本人の事実だけ：3級は5回目で合格・2級は一発合格・つまずいたのは連結会計・工業簿記・仕訳の暗記。97点・2か月84点は1級LPの記載どおり） -->
+  <section style="background:var(--cream);">
+    <div class="container">
+      <div style="text-align:center;max-width:760px;margin:0 auto;">
+        <span class="eyebrow" style="justify-content:center;">03 ｜ 私の場合</span>
+        <h2 class="section-title">3級に、<span class="em">4回落ちました。</span></h2>
+        <p style="margin:20px auto 0;color:#38455A;font-size:16px;line-height:2;">世間が「簡単」と言う3級に、私は4回落ちています。<strong style="color:#1A2B4A;">合格できたのは5回目</strong>でした（97点）。<br>だから、落ちたときの気持ちも、「自分には向いてない」と思うあの感じも分かります。</p>
+        <p style="margin:18px auto 0;color:#5A6A7A;font-size:14.5px;line-height:1.9;max-width:620px;">簿記で私がつまずいたのは、連結会計・工業簿記・仕訳の暗記でした。3級の範囲でいえば、<strong style="color:#1A2B4A;">仕訳の暗記</strong>です。覚えたはずなのに出てこない——そこで止まる人を、置いていきません。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 悩み ===== -->
+  <section>
+    <div class="container">
+      <div style="text-align:center;max-width:760px;margin:0 auto 40px;">
+        <span class="eyebrow" style="justify-content:center;">PROBLEM</span>
+        <h2 class="section-title">いま、こんな状態になっていませんか？</h2>
+        <p class="section-subtitle" style="margin:16px auto 0;">知識の問題に見えて、実は進め方の問題であることが多いです。</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:16px;max-width:900px;margin:0 auto;">
+        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:22px;"><strong style="color:#1A2B4A;">YouTubeや教材を見ても、手が止まる</strong><p style="margin:8px 0 0;color:#5A6A7A;font-size:14px;">説明は分かった気がするのに、問題になると解けない。</p></div>
+        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:22px;"><strong style="color:#1A2B4A;">仕訳が、覚えられない</strong><p style="margin:8px 0 0;color:#5A6A7A;font-size:14px;">勘定科目と借方・貸方が、何度やっても頭に残らない。</p></div>
+        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:22px;"><strong style="color:#1A2B4A;">「簡単な試験」と言われて、余計につらい</strong><p style="margin:8px 0 0;color:#5A6A7A;font-size:14px;">落ちたことを、人に言えないでいる。</p></div>
+        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:22px;"><strong style="color:#1A2B4A;">決算整理で、手が止まる</strong><p style="margin:8px 0 0;color:#5A6A7A;font-size:14px;">最後の精算表や財務諸表まで、たどり着けない。</p></div>
+        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:22px;"><strong style="color:#1A2B4A;">いつ受けるか、決めきれない</strong><p style="margin:8px 0 0;color:#5A6A7A;font-size:14px;">統一試験かネット試験か。決めないまま、だらだら時間が過ぎている。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 中間CTA（価格は出さず、無料面談だけ） ===== -->
+  <section style="background:var(--cream);">
+    <div class="container">
+      <div class="mid-cta">
+        <p class="mid-cta-title">続けられるかどうかは、<br><span class="em">一人で決めなくていい。</span></p>
+        <p class="mid-cta-sub">いまの状況を聞かせてください。合う・合わないも含めて、正直にお伝えします。<strong style="color:#fff;">30分の個別面談を、無料でやっています。</strong></p>
+        <div class="mid-cta-buttons">
+          <a href="/boki3-line?utm_source=lp&amp;utm_medium=boki3&amp;utm_campaign=boki3_lp" class="btn btn-orange btn-large">
+            <svg viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Z"/></svg>
+            無料のZoom面談（30分）を申し込む
+          </a>
+          <a href="#pricing" class="btn btn-outline btn-large">
+            料金を見る
+            <svg viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+          </a>
+        </div>
+        <p class="mid-cta-note">「3級伴走 無料面談 希望」と送るだけで大丈夫です。日程はLINEで調整します。売り込みはしません。<br><strong>簿記3級の伴走が合うかを確かめる場です。</strong>個別の問題の解き方のご質問は、伴走の中でお受けします。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 伴走の中身（1級と同じ） ===== -->
+  <section class="method">
+    <div class="container">
+      <div class="method-header">
+        <span class="eyebrow">WHAT YOU GET</span>
+        <p style="margin:0 0 10px;font-size:16px;font-weight:700;opacity:.9;">講義は無料。だから、<span class="em">お金をいただくのは伴走だけ。</span></p>
+        <h2 class="method-title">中身は、簿記1級の伴走と<br><span class="em">まったく同じです。</span></h2>
+        <p class="section-subtitle" style="margin:16px auto 0;">毎日の学習記録の確認、Zoom面談、LINE質問、受講生サイト（学習ツリー・AIのミニぶんぶん・講義動画）。1級の受講生に渡しているものを、そのまま3級で使います。<br><span style="font-size:13px;">※ 問題集・過去問は、市販のものを別途ご用意ください（どれを使うかは面談で一緒に決めます）。</span></p>
+      </div>
+      <div class="method-grid">
+        <div class="method-card">
+          <span class="method-num-badge">01</span>
+          <h3 class="method-card-title">まずヒアリング。あなた専用の計画を作る</h3>
+          <p class="method-card-text">生活のどこに時間があるか、統一試験とネット試験のどちらを、いつ受けるか。<strong style="color:var(--navy);">1日2時間取れる人と30分の人では、組み方が違います。</strong>あなたの現実に合う形に組んでから始めます。</p>
+        </div>
+        <div class="method-card">
+          <span class="method-num-badge">02</span>
+          <h3 class="method-card-title">平日は毎日、学習記録を確認する</h3>
+          <p class="method-card-text">受講生サイトで学習時間を記録すると、講師が平日は毎日確認します。<strong style="color:var(--navy);">止まっていたら、講師から声をかけます。</strong>見てくれている人がいる——それだけで、机に向かう理由になります。</p>
+        </div>
+        <div class="method-card">
+          <span class="method-num-badge">03</span>
+          <h3 class="method-card-title">Zoom面談で、計画を立て直す</h3>
+          <p class="method-card-text">月1回30〜40分、画面共有で進み具合と悩みを一緒に整理します。ズレたら、計画のほうを直します。平日夜／土日が中心で、カメラオフでOKです。</p>
+        </div>
+        <div class="method-card">
+          <span class="method-num-badge">04</span>
+          <h3 class="method-card-title">受講生サイトで、次の1本が決まっている</h3>
+          <p class="method-card-text">目標の点数から逆算した<strong style="color:var(--navy);">学習ツリー</strong>で、次にやる論点が見えます。講義動画（YouTubeで公開している全25本）もサイトから見られて、見た回をチェックできます。分からないところは、AIのミニぶんぶんにその場で聞けます。</p>
+        </div>
+        <div class="method-card">
+          <span class="method-num-badge">05</span>
+          <h3 class="method-card-title">詰まりは、その日のうちに外す</h3>
+          <p class="method-card-text">LINEで「どの問題・どこで迷ったか・自分の考え」を送るだけ。AIも活用し、最終回答は1級合格者の私が確認して、その日のうちに返します（夜遅い時間の質問は翌朝）。<strong style="color:var(--navy);">分からないまま1週間放置する——これがやる気を殺す一番の原因</strong>なので、ここは速さを優先します。</p>
+        </div>
+        <div style="max-width:640px;margin:44px auto 0;text-align:center;">
+          <p style="margin:0 0 16px;font-size:15.5px;font-weight:700;color:var(--navy);line-height:1.8;">この5つを、あなたの生活に合う形に組み直してから始めます。</p>
+          <a href="/boki3-line?utm_source=lp&amp;utm_medium=boki3&amp;utm_campaign=boki3_lp" class="btn btn-orange">
+            <svg viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Z"/></svg>
+            無料のZoom面談（30分）を申し込む
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== なぜこの伴走か ===== -->
+  <section>
+    <div class="container">
+      <div style="text-align:center;max-width:760px;margin:0 auto 40px;">
+        <span class="eyebrow" style="justify-content:center;">WHY US</span>
+        <h2 class="section-title">なぜ、<span class="em">この伴走</span>なのか。</h2>
+        <p class="section-subtitle" style="margin:16px auto 0;">簿記3級の教材は、無料でもたくさんあります。そのうえで、ここでしか渡せないものを4つに絞りました。</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:18px;max-width:960px;margin:0 auto;">
+        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:26px 24px;">
+          <span style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;color:#D4700A;margin-bottom:10px;">01</span>
+          <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;color:#1A2B4A;line-height:1.6;">分からない側にいた人間が、<br>1ステップも飛ばさない</h3>
+          <p style="margin:0;color:#5A6A7A;font-size:14px;line-height:1.9;">私は3級に4回落ちています。<strong style="color:#1A2B4A;">どこで詰まるか、何を飛ばされると分からなくなるかを、自分の失敗のぶんだけ知っています。</strong>「ここは分かるでしょう」をやりません。</p>
+        </div>
+        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:26px 24px;">
+          <span style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;color:#D4700A;margin-bottom:10px;">02</span>
+          <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;color:#1A2B4A;line-height:1.6;">講義は無料。<br>払うのは伴走のぶんだけ</h3>
+          <p style="margin:0;color:#5A6A7A;font-size:14px;line-height:1.9;">講義は全25本をYouTubeで公開しているので、<strong style="color:#1A2B4A;">申し込む前に中身を全部確かめられます。</strong>合うと思った方だけ、伴走を申し込んでください。</p>
+        </div>
+        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:26px 24px;">
+          <span style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;color:#D4700A;margin-bottom:10px;">03</span>
+          <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;color:#1A2B4A;line-height:1.6;">AIと受講生サイトで、<br>迷う時間を減らす</h3>
+          <p style="margin:0;color:#5A6A7A;font-size:14px;line-height:1.9;">学習ツリーで次にやる論点が見え、▷を押せばそのまま学習時間を記録できます。分からないところは<strong style="color:#1A2B4A;">AIのミニぶんぶんにその場で聞けます</strong>。<strong style="color:#1A2B4A;">平日は毎日、学習記録を確認します。</strong></p>
+        </div>
+        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:26px 24px;">
+          <span style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;color:#D4700A;margin-bottom:10px;">04</span>
+          <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;color:#1A2B4A;line-height:1.6;">あなたに合うやり方で、<br>コーチングします</h3>
+          <p style="margin:0;color:#5A6A7A;font-size:14px;line-height:1.9;">使える時間も、いま止まっている場所も、人によって違います。<strong style="color:#1A2B4A;">ヒアリングしたうえで、あなた用の順番と進め方を組みます。</strong>合わなければ、途中で組み替えます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--cream);">
+    <div class="container">
+      <div style="text-align:center;max-width:760px;margin:0 auto 32px;">
+        <span class="eyebrow" style="justify-content:center;">COACHING</span>
+        <h2 class="section-title">きちんとヒアリングして、<br>あなたに合った<span class="em">計画とコーチング</span>をします。</h2>
+      </div>
+      <div style="max-width:820px;margin:0 auto;display:grid;gap:12px;">
+        <div style="background:#fff;border-radius:12px;padding:18px 22px;"><strong style="color:#2D6A4F;">初回面談で、まず徹底的に聞きます</strong><span style="color:#5A6A7A;font-size:14px;"> — 1日に使える時間、狙う試験（統一試験かネット試験か・いつか）、これまでの勉強のやり方、どこで手が止まったか。</span></div>
+        <div style="background:#fff;border-radius:12px;padding:18px 22px;"><strong style="color:#2D6A4F;">計画は、面談のたびに作り直します</strong><span style="color:#5A6A7A;font-size:14px;"> — 仕事も生活も変わります。計画のほうを合わせ直すのが私の仕事です。</span></div>
+        <div style="background:#fff;border-radius:12px;padding:18px 22px;"><strong style="color:#2D6A4F;">こんな方が対象</strong><span style="color:#5A6A7A;font-size:14px;"> — ①簿記3級に合格したい方（はじめての方も歓迎） ②経理・事務の仕事で簿記が必要になった方 ③一度落ちて、立て直したい方。</span></div>
+        <div style="background:#fff;border-radius:12px;padding:18px 22px;"><strong style="color:#2D6A4F;">対象外の方</strong><span style="color:#5A6A7A;font-size:14px;"> — 丸投げで受かりたい方、勉強そのものを代行してほしい方。</span></div>
+        <div style="background:#fff;border-radius:12px;padding:18px 22px;"><strong style="color:#2D6A4F;">7日以内なら全額返金</strong><span style="color:#5A6A7A;font-size:14px;"> — 始めてみて合わないと思ったら、7日以内のお申し出で¥9,800を全額返金します。</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 約束（合格保証は書かない） ===== -->
+  <section>
+    <div class="container">
+      <div style="text-align:center;max-width:760px;margin:0 auto 34px;">
+        <span class="eyebrow" style="justify-content:center;">PROMISE</span>
+        <h2 class="section-title">約束できることを、<br><span class="em">正直に書きます。</span></h2>
+      </div>
+      <div style="max-width:820px;margin:0 auto 34px;background:#fff;border:1px solid #E5E9EF;border-left:4px solid #2D6A4F;border-radius:14px;padding:26px 28px;">
+        <p style="margin:0;font-size:16px;line-height:1.95;color:#38455A;">目指すのは合格です。<strong style="color:#1A2B4A;">合否を分けるのは才能ではなく、続け方です。</strong><br>だから私は、<em style="color:#2D6A4F;font-style:normal;font-weight:700;">合格まで、追加料金なしで伴走します</em>。続けられる形を一緒に作り、<strong style="color:#1A2B4A;">どんな質問でも受け付けます。</strong></p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:18px;max-width:960px;margin:0 auto;">
+        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:26px 24px;">
+          <span style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;color:#D4700A;margin-bottom:10px;">01</span>
+          <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;color:#1A2B4A;line-height:1.6;">できるまで、伴走します</h3>
+          <p style="margin:0;color:#5A6A7A;font-size:14px;line-height:1.9;">「分かった」で終わりにしません。手が動かないうちは、<strong style="color:#1A2B4A;">動くようになるまで付き合います。</strong></p>
+        </div>
+        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:26px 24px;">
+          <span style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;color:#D4700A;margin-bottom:10px;">02</span>
+          <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;color:#1A2B4A;line-height:1.6;">どんな質問でも、受け付けます</h3>
+          <p style="margin:0;color:#5A6A7A;font-size:14px;line-height:1.9;">講義の中身でも、勉強の進め方でも、教材の選び方でも。<strong style="color:#1A2B4A;">聞ける内容に制限はありません。</strong></p>
+        </div>
+        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:26px 24px;">
+          <span style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;color:#D4700A;margin-bottom:10px;">03</span>
+          <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;color:#1A2B4A;line-height:1.6;">今は勧めない理由まで言います</h3>
+          <p style="margin:0;color:#5A6A7A;font-size:14px;line-height:1.9;">状況をうかがって、<strong style="color:#1A2B4A;">私の伴走が合わないと思えば、そう言います。</strong>無料講義と市販の教材で足りる方には、そちらを勧めます。</p>
+        </div>
+      </div>
+      <p style="max-width:820px;margin:26px auto 0;text-align:center;color:#9AA7B5;font-size:13px;">※ 試験の合否は日本商工会議所・各地商工会議所の判定によるもので、合格を保証するものではありません。</p>
+      <div style="max-width:560px;margin:34px auto 0;background:#fff;border:1px solid #E5E9EF;border-radius:14px;padding:20px 22px;display:flex;gap:18px;align-items:center;">
+        <img src="assets/bunbun-avatar-v2.jpg" width="72" height="72" alt="運営者 ぶんぶん" loading="lazy" style="width:72px;height:72px;border-radius:50%;object-fit:cover;flex:0 0 72px;">
+        <div style="min-width:0;">
+          <b style="display:block;font-size:16px;color:#1A2B4A;">ぶんぶん</b>
+          <span style="display:block;margin:4px 0 8px;font-size:13px;color:#5A6A7A;line-height:1.7;">日商簿記1級／全経簿記上級／証券アナリスト(CMA)1次合格<br>簿記3級は5回目、2級は一発で合格。</span>
+          <a href="https://x.com/a3aByulmQvDRNSU" target="_blank" rel="noopener" style="font-size:13px;color:#2D6A4F;font-weight:600;">Xで日々の発信を見る（@a3aByulmQvDRNSU）→</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 向き不向き -->
+  <section style="background:var(--cream);">
+    <div class="container" style="max-width:860px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:16px;">
+        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:16px;padding:24px;">
+          <p style="margin:0 0 12px;font-size:15px;font-weight:700;color:#1A2B4A;">こういう方に向いています</p>
+          <ul style="margin:0;padding-left:18px;color:#5A6A7A;font-size:13.5px;line-height:2;">
+            <li>簿記がはじめてで、何から始めればいいか分からない</li>
+            <li>YouTubeや教材はあるのに、続かない・進み方が分からない</li>
+            <li>仕訳の暗記で止まっている</li>
+            <li>一度落ちて、立て直し方を一緒に決めたい</li>
+          </ul>
+        </div>
+        <div style="background:#fff;border:1px solid #E5E9EF;border-radius:16px;padding:24px;">
+          <p style="margin:0 0 12px;font-size:15px;font-weight:700;color:#1A2B4A;">いまは、ほかの選択肢を勧めます</p>
+          <ul style="margin:0;padding-left:18px;color:#5A6A7A;font-size:13.5px;line-height:2;">
+            <li>すでに3級に合格している方 … 2級の伴走へ</li>
+            <li>教室に通って強制力がほしい方 … 予備校のほうが向いています</li>
+            <li>質問できる相手が要らず、教材だけ欲しい方 … YouTubeの無料講義と市販の教材で足ります</li>
+            <li>次の試験まで1か月を切っている方 … いまは詰め込みに集中してください</li>
+          </ul>
+          <p style="margin:14px 0 0;color:#5A6A7A;font-size:12.5px;line-height:1.9;">当てはまるか迷ったら、申し込む前にLINEで聞いてください。合わないと思えば、そうお伝えします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 料金 ===== -->
+  <section id="pricing">
+    <div class="container">
+      <div style="text-align:center;max-width:760px;margin:0 auto 40px;">
+        <span class="eyebrow" style="justify-content:center;">PRICING</span>
+        <h2 class="section-title">一括で、合格まで</h2>
+        <p class="section-subtitle" style="margin:16px auto 0;">講義はYouTubeで無料です。お支払いいただくのは<strong>伴走のぶんだけ</strong>。一括<strong>¥9,800</strong>（税込）で、<strong>合格まで追加料金はかかりません。</strong><br><span style="color:#D4700A;font-weight:600;">※1対1で見るため、2級・3級あわせて同時に10人までです。</span></p>
+      </div>
+      <div class="pricing-grid one">
+        <div class="pricing-card featured">
+          <div class="pricing-card-label">PLAN</div>
+          <h3 class="pricing-card-name">簿記3級 合格伴走</h3>
+          <div class="pricing-price"><span class="tax">一括</span><span class="yen">¥</span><span class="num">9,800</span><span class="tax">（税込）</span></div>
+          <p class="pricing-card-sub"><strong>1回のお支払いで、合格まで伴走します（月額なし）。</strong><strong>7日以内なら全額返金。</strong></p>
+          <ul class="pricing-features">
+            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>初回ヒアリング＋あなた専用の計画づくり</span></li>
+            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>平日は毎日、学習記録を確認（止まっていたら声をかけます）</span></li>
+            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>月1回30〜40分のZoom面談＋LINE個別質問</span></li>
+            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>受講生サイト（学習ツリー・AIのミニぶんぶん・講義動画 全25本）</span></li>
+            <li class="pricing-feature"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>合格まで追加料金なし</span></li>
+          </ul>
+          <a href="https://buy.stripe.com/3cI8wOcl6dAm1EH1NhgA80C" class="pricing-cta" target="_blank" rel="noopener">申し込む（一括¥9,800）</a>
+        </div>
+      </div>
+
+      <div class="pricing-compare-wrap" style="max-width:760px;">
+        <table class="pricing-compare">
+          <thead>
+            <tr><th>項目</th><th>簿記3級 合格伴走</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>価格（税込）</th><td>一括¥9,800（月額なし）</td></tr>
+            <tr><th>期間</th><td>合格まで（追加料金なし）</td></tr>
+            <tr><th>講義動画</th><td>全25本（YouTubeで無料公開・受講生サイトでも見られる）</td></tr>
+            <tr><th>学習記録の確認</th><td>平日は毎日</td></tr>
+            <tr><th>Zoom面談（画面共有）</th><td>月1回30〜40分</td></tr>
+            <tr><th>LINEで個別質問</th><td><span class="compare-check"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg></span></td></tr>
+            <tr><th>返金</th><td><strong>7日以内なら全額返金</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="max-width:760px;margin:20px auto 0;background:#fff;border:1px solid #E5E9EF;border-left:4px solid #D4700A;border-radius:14px;padding:20px 22px;">
+        <p style="margin:0;font-weight:700;color:#1A2B4A;font-size:15.5px;">そのあと簿記1級へ進む方へ</p>
+        <p style="margin:8px 0 0;color:#5A6A7A;font-size:14px;line-height:1.9;">2級・3級の伴走を受けた方は、そのあと簿記1級の伴走に進むとき、<strong>1級の初回（通常¥29,800）を¥19,800</strong>でお申し込みいただけます（お申し込み前に簿記ラボLINEでお知らせください。割引のコードをお渡しします）。</p>
+      </div>
+
+      <div class="pricing-trust-band" style="max-width:760px;">
+        <span class="trust-item">
+          <span class="trust-item-icon"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></svg></span>
+          <span class="trust-item-text"><strong>7日間 全額返金</strong><span>ご購入日から7日以内</span></span>
+        </span>
+        <a href="#legal-tokuho" class="trust-item">
+          <span class="trust-item-icon"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48Z"/></svg></span>
+          <span class="trust-item-text"><strong>運営者情報を開示</strong><span>特定商取引法に基づく表記</span></span>
+        </a>
+        <span class="trust-item">
+          <span class="trust-item-icon"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Z"/></svg></span>
+          <span class="trust-item-text"><strong>安全な決済</strong><span>Stripeによる暗号化決済</span></span>
+        </span>
+      </div>
+      <p class="section-subtitle" style="max-width:760px;margin:24px auto 0;text-align:center;font-size:13px;">※ <strong style="color:#2D6A4F;">一括¥9,800は、ご購入日から7日以内のお申し出で、理由を問わず全額返金します。7日を過ぎたあとの返金はありません。</strong>（詳細はFAQ・特商法表記）</p>
+    </div>
+  </section>
+
+  <!-- ===== 申込の流れ ===== -->
+  <section style="background:var(--cream);">
+    <div class="container">
+      <div style="text-align:center;max-width:760px;margin:0 auto 32px;">
+        <span class="eyebrow" style="justify-content:center;">HOW TO START</span>
+        <h2 class="section-title">申し込みまでの流れ</h2>
+      </div>
+      <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;text-align:center;">
+        <div style="background:#fff;border-radius:12px;padding:20px;"><div style="color:#D4700A;font-weight:700;font-size:13px;">STEP 1</div><strong style="color:#1A2B4A;">申し込む</strong><p style="margin:6px 0 0;color:#5A6A7A;font-size:13px;">一括¥9,800。7日以内なら全額返金</p></div>
+        <div style="background:#fff;border-radius:12px;padding:20px;"><div style="color:#D4700A;font-weight:700;font-size:13px;">STEP 2</div><strong style="color:#1A2B4A;">初回ヒアリング</strong><p style="margin:6px 0 0;color:#5A6A7A;font-size:13px;">30分のZoom。試験日と計画を決めます</p></div>
+        <div style="background:#fff;border-radius:12px;padding:20px;"><div style="color:#D4700A;font-weight:700;font-size:13px;">STEP 3</div><strong style="color:#1A2B4A;">7日間、記録する</strong><p style="margin:6px 0 0;color:#5A6A7A;font-size:13px;">決めた「1日ぶん」が実際に回るか確かめ、一緒に直します</p></div>
+        <div style="background:#fff;border-radius:12px;padding:20px;"><div style="color:#D4700A;font-weight:700;font-size:13px;">STEP 4</div><strong style="color:#1A2B4A;">合格まで</strong><p style="margin:6px 0 0;color:#5A6A7A;font-size:13px;">追加料金なしで伴走を続けます</p></div>
+      </div>
+      <p style="max-width:860px;margin:14px auto 0;text-align:center;color:#5A6A7A;font-size:13.5px;line-height:1.9;">先に話してから決めたい方は、<a href="/boki3-line?utm_source=lp&amp;utm_medium=boki3&amp;utm_campaign=boki3_lp" style="color:#D4700A;font-weight:600;">簿記ラボLINE</a>に「3級伴走 無料面談 希望」と送ってください。無料の面談から始められます。</p>
+    </div>
+  </section>
+
+  <!-- ===== ほかの級 ===== -->
+  <section>
+    <div class="container">
+      <div style="max-width:760px;margin:0 auto;text-align:center;background:#fff;border:1px solid #E5E9EF;border-radius:16px;padding:32px;">
+        <span class="eyebrow" style="justify-content:center;">ほかの級の方へ</span>
+        <h2 class="section-title" style="font-size:24px;">簿記2級・1級の伴走もあります</h2>
+        <p class="section-subtitle" style="margin:12px auto 0;">中身は同じ伴走です。いまの級に合わせて選んでください。</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:20px;">
+          <a href="boki2.html" class="btn btn-outline">簿記2級 合格伴走を見る</a>
+          <a href="/boki" class="btn btn-outline">簿記1級 合格伴走を見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LINE（簿記ラボ） ===== -->
+  <section class="line-broadcast">
+    <div class="container">
+      <div class="line-broadcast-inner">
+        <span class="eyebrow">LINE</span>
+        <h2 class="section-title">まずは簿記ラボLINEで相談・情報を受け取る</h2>
+        <p class="section-subtitle">3級伴走の相談も、YouTube講義の質問も、この窓口から。<br>「3級伴走 希望」と送るだけで、ご案内をします。</p>
+        <div style="display:flex;justify-content:center;margin-top:24px;">
+          <a href="/boki3-line?utm_source=lp&amp;utm_medium=boki3&amp;utm_campaign=boki3_lp" class="btn btn-line btn-large">
+            <svg viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Z"/></svg>
+            簿記ラボLINEを開く
+          </a>
+        </div>
+        <p class="line-broadcast-note">※ 登録・相談は無料です。不要になればブロックでいつでも停止できます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <div class="faq-header">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="section-title">よくある質問</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q1.</span><span class="faq-q-text">講義が無料なのに、何にお金を払うのですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">講義動画（全25本）はYouTubeで無料公開していて、伴走を申し込まなくても全部見られます。<strong>お支払いいただくのは伴走のぶんだけ</strong>です。初回ヒアリングと計画づくり、平日毎日の学習記録の確認、月1回のZoom面談、LINEの個別質問、受講生サイト（学習ツリー・AIのミニぶんぶん）が入っています。</div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q2.</span><span class="faq-q-text">料金はいくらで、追加料金はかかりますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a"><strong>一括¥9,800（税込）</strong>です。月額はなく、<strong>合格まで追加料金はかかりません。</strong>（試験の合否そのものは商工会議所の判定によるため、当方が保証できるものではありません。）</div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q3.</span><span class="faq-q-text">伴走では、どう面倒を見てもらえますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">初回にしっかりヒアリングして、あなたの生活に合う計画を作ります。そのうえで平日は毎日学習記録を確認し、止まっていたら講師から声をかけます。月1回の面談とLINEで進み具合を一緒に見て、ズレたら計画のほうを直します。中身は簿記1級の伴走とまったく同じです。</div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q4.</span><span class="faq-q-text">面談の頻度・時間は？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">月1回30〜40分のZoom（画面共有・カメラオフOK）です。面談のあいだの質問は、LINEでいつでも受けます。平日夜・土日が中心です。</div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q5.</span><span class="faq-q-text">合わなかったら、返金してもらえますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a"><strong>ご購入日から7日以内にLINEかメールで「返金希望」とお伝えいただければ、理由を問わず¥9,800を全額返金します。</strong>理由の説明もアンケートも要りません。7日を過ぎたあとの返金はありません。</div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q6.</span><span class="faq-q-text">統一試験とネット試験、どちらで受ければいいですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">どちらも試験時間60分・70点以上で合格です。統一試験は年3回（6月・11月・2月）、ネット試験はテストセンターで日程を選べます。生活の予定と仕上がりの時期から、初回面談で一緒に決めます。</div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q7.</span><span class="faq-q-text">テキストや問題集は、こちらで用意されますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">講義動画（全25本）はこちらで用意しています（YouTube・受講生サイト）。<strong>問題集・過去問は市販のものを別途ご用意ください。</strong>どれを使うかは、面談で一緒に決めます。</div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q8.</span><span class="faq-q-text">「同時に10人まで」とありますが、なぜですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">毎日の学習記録の確認と面談・LINE質問を1対1でお受けするためです。<strong>2級・3級あわせて同時に10人</strong>に達した時点で、募集を止めます。</div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q9.</span><span class="faq-q-text">そのあと簿記1級に進むときは？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">2級・3級の伴走を受けた方は、そのあと簿記1級の伴走に進むとき、<strong>1級の初回（通常¥29,800）を¥19,800</strong>でお申し込みいただけます（お申し込み前に簿記ラボLINEでお知らせください。割引のコードをお渡しします）。</div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q10.</span><span class="faq-q-text">申し込む前に、無料の面談はできますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">できます。<strong>30分のZoom（カメラオフOK）を無料</strong>で行っています。簿記ラボLINEに「3級伴走 無料面談 希望」と送っていただければ、日程を調整します（平日夜・土日が中心です）。<br>やらないこと＝その場で契約をお願いすることはしません。持ち帰って決めていただいて大丈夫です。</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Final CTA ===== -->
+  <section class="final-cta">
+    <div class="container">
+      <h2 class="final-cta-title"><span class="em">「向いてない」で、終わらせない。</span><br>今日から、一緒に。</h2>
+      <p class="final-cta-sub">一括¥9,800（税込）・合格まで追加料金なし。<br>7日以内なら全額返金します。</p>
+      <div class="final-cta-buttons">
+        <a href="https://buy.stripe.com/3cI8wOcl6dAm1EH1NhgA80C" target="_blank" rel="noopener" class="btn btn-orange btn-large">
+          申し込む（一括¥9,800）
+        </a>
+        <a href="/boki3-line?utm_source=lp&amp;utm_medium=boki3&amp;utm_campaign=boki3_lp" class="btn btn-outline btn-large" style="color:#fff;border-color:rgba(255,255,255,.75);background:rgba(255,255,255,.06);">
+          <svg viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Z"/></svg>
+          無料のZoom面談（30分）を申し込む
+        </a>
+      </div>
+      <p style="margin:12px 0 0;color:rgba(255,255,255,.85);font-size:12.5px;line-height:1.8;text-align:center;">面談はLINEで受け付けています。友だち追加のあと「3級伴走 無料面談 希望」と送ってください。</p>
+    </div>
+  </section>
+
+  <!-- ===== 法務 ===== -->
+  <section id="legal" class="legal">
+    <div class="container">
+      <h2 class="legal-title">特定商取引法に基づく表記・各種ポリシー</h2>
+
+      <article id="legal-tokuho" class="legal-block">
+        <h3>特定商取引法に基づく表記</h3>
+        <dl class="legal-dl">
+          <dt>販売事業者</dt>
+          <dd>数字の資格ラボ（屋号）</dd>
+          <dt>運営責任者</dt>
+          <dd>池原 允大</dd>
+          <dt>所在地</dt>
+          <dd>ご請求があれば遅滞なく開示いたします。下記のお問い合わせ先までご連絡ください。</dd>
+          <dt>電話番号</dt>
+          <dd>ご請求があれば遅滞なく開示いたします。お問い合わせは下記のメールまたはLINEにて承ります。</dd>
+          <dt>メールアドレス</dt>
+          <dd><a href="mailto:cmaacademy.info@gmail.com">cmaacademy.info@gmail.com</a></dd>
+          <dt>販売価格</dt>
+          <dd>簿記3級 合格伴走：一括 ¥9,800（税込）。合格まで追加料金はかかりません。その他の講座の価格は、それぞれの販売ページに表示します。</dd>
+          <dt>商品代金以外の必要料金</dt>
+          <dd>インターネット接続料金・通信料金等はお客様のご負担となります。市販の問題集・過去問の代金、試験の受験料はお客様のご負担となります。</dd>
+          <dt>お支払い方法</dt>
+          <dd>クレジットカード決済（Stripe）</dd>
+          <dt>お支払い時期</dt>
+          <dd>お申し込み手続きの完了時に、一括¥9,800を請求します。以後の請求はありません。</dd>
+          <dt>商品の引き渡し時期</dt>
+          <dd>ご決済の確認後、受講生サイトへのログイン用のご案内メールをお送りします（通常は数分以内、遅くとも24時間以内）。</dd>
+          <dt>返品・キャンセル</dt>
+          <dd><strong>簿記3級 合格伴走（¥9,800・一括）は、ご購入日から7日以内にお申し出いただければ、理由を問わず全額返金いたします。</strong>返金はご購入時の決済手段（Stripe）へ、お申し出の確認後7営業日以内に手続きします。7日を過ぎたあとの返金はありません。詳細は本ページ内「返金について」をご確認ください。</dd>
+          <dt>動作環境</dt>
+          <dd>動画再生とインターネット接続が可能な環境、および最新版のブラウザ（Google Chrome / Safari / Microsoft Edge 等）を推奨します。</dd>
+        </dl>
+        <p class="legal-note">所在地および電話番号は、消費者からのご請求があった場合、遅滞なく書面または電子メールにて開示いたします。</p>
+      </article>
+
+      <!-- プライバシーポリシー -->
+      <article id="legal-privacy" class="legal-block">
+        <h3>プライバシーポリシー</h3>
+        <p>数字の資格ラボ（以下「当方」）は、提供するサービス（以下「本サービス」）における利用者の個人情報の取扱いについて、以下のとおり定めます。</p>
+        <h4>1. 取得する情報</h4>
+        <p>氏名、メールアドレス、決済に関する情報（クレジットカード番号等は決済代行会社が取り扱い、当方では保持しません）、LINE連携時のアカウント情報、本サービスの利用状況・アクセスログ等を取得する場合があります。個別指導（面談）では、指導内容の記録と品質改善のため、映像・音声の録画および文字起こしを取得する場合があります。録画を行う際は、事前にご本人へお知らせし、同意をいただいたうえで実施します。</p>
+        <h4>2. 利用目的</h4>
+        <ul>
+          <li>本サービス（講座・受講生サイト）の提供および本人確認のため</li>
+          <li>お問い合わせ・連絡対応のため</li>
+          <li>料金の請求・決済処理のため</li>
+          <li>個別指導の記録・振り返り、および教材の改善のため</li>
+          <li>サービスの維持・改善および新サービスのご案内のため</li>
+        </ul>
+        <h4>3. 第三者提供・業務委託</h4>
+        <p>法令に基づく場合を除き、ご本人の同意なく個人情報を第三者へ提供しません。ただし、本サービスの提供に必要な範囲で、以下の外部サービスに業務を委託し、情報を取り扱わせる場合があります。</p>
+        <ul>
+          <li>Stripe（決済処理）</li>
+          <li>Supabase（認証・データ保管）</li>
+          <li>Vercel（サイトのホスティング）</li>
+          <li>LINE（お問い合わせ・連絡）</li>
+          <li>Google（オンライン面談の録画・文字起こし・記録の保管）</li>
+        </ul>
+        <p>各サービスにおける情報の取扱いは、それぞれの事業者が定めるプライバシーポリシーに従います。</p>
+        <h4>4. Cookie等の利用</h4>
+        <p>ログイン状態の保持やサービスの品質向上のため、Cookie等を利用する場合があります。</p>
+        <h4>5. 開示・訂正・削除の請求</h4>
+        <p>ご自身の個人情報の開示・訂正・利用停止・削除をご希望の場合は、本ページ記載のお問い合わせ窓口までご連絡ください。本人確認のうえ、合理的な範囲で速やかに対応いたします。</p>
+        <h4>6. 改定</h4>
+        <p>本ポリシーは、法令の変更やサービス内容の変更に応じて改定することがあります。重要な変更は本ページ上でお知らせします。</p>
+        <p class="legal-updated">制定日：2026年6月17日</p>
+      </article>
+
+      <article id="legal-terms" class="legal-block">
+        <h3>利用規約</h3>
+        <p>本規約は、数字の資格ラボ（以下「当方」）が提供する講座および受講生サイト（以下「本サービス」）の利用条件を定めるものです。利用者は、本サービスを利用することで本規約に同意したものとみなします。</p>
+        <h4>1. アカウント</h4>
+        <p>本サービスは、ご決済の完了後に発行されるアカウントでご利用いただけます。ログイン情報の管理は利用者の責任で行うものとし、第三者への貸与・共有・譲渡はできません。</p>
+        <h4>2. 料金・支払い</h4>
+        <p>利用者は、各講座に定める料金を所定の方法でお支払いいただきます。簿記3級 合格伴走は一括払い（¥9,800・税込）で、合格まで追加料金はかかりません。</p>
+        <h4>3. 禁止事項</h4>
+        <p>利用者は、以下の行為を行ってはなりません。</p>
+        <ul>
+          <li>法令または公序良俗に反する行為</li>
+          <li>本サービスのコンテンツ（動画・スライド・テキスト等）の複製・転載・再配布・販売・公衆送信</li>
+          <li>アカウントの共有・貸与・譲渡</li>
+          <li>本サービスの運営を妨害する行為、不正アクセス、リバースエンジニアリング</li>
+          <li>第三者または当方の権利・利益を侵害する行為</li>
+        </ul>
+        <h4>4. 知的財産権</h4>
+        <p>本サービスで提供する動画・スライド・テキスト等の著作権その他の知的財産権は、当方または正当な権利者に帰属します。私的利用の範囲を超える複製・配布等はできません。</p>
+        <h4>5. 免責事項</h4>
+        <p>本サービスは学習教材であり、試験の合格や特定の成果を保証するものではありません。当方は、提供する情報の正確性・有用性に努めますが、その完全性を保証しません。通信回線やシステム等の障害により生じた損害について、当方の故意または重大な過失による場合を除き、責任を負いません。</p>
+        <h4>6. サービスの変更・中断・終了</h4>
+        <p>当方は、利用者への事前の通知により、本サービスの内容の変更・中断・終了を行うことがあります。</p>
+        <h4>7. 規約の変更</h4>
+        <p>当方は、必要に応じて本規約を変更することがあります。変更後の規約は、本ページに掲示した時点から効力を生じます。</p>
+        <h4>8. 準拠法・管轄</h4>
+        <p>本規約は日本法に準拠します。本サービスに関して紛争が生じた場合、当方の所在地を管轄する裁判所を第一審の専属的合意管轄裁判所とします。</p>
+        <p class="legal-updated">制定日：2026年6月17日</p>
+      </article>
+
+      <article id="legal-refund" class="legal-block">
+        <h3>返金について</h3>
+        <h4>一括（¥9,800）は、7日以内のお申し出で全額返金します</h4>
+        <p><strong>ご購入日から7日以内</strong>に簿記ラボLINEまたはメールで「返金希望」とお申し出いただいた場合、理由を問わず<strong>¥9,800を全額返金いたします</strong>。理由の説明や、アンケートへのご回答は不要です。返金はご購入時の決済手段（Stripe）へ返金処理を行い、当方がお申し出を確認してから7営業日以内に手続きします。着金までの日数はカード会社により異なります。7日を過ぎたあとの返金はありません。月額の請求はないため、解約の手続きは要りません。</p>
+        <h4>買う前に確かめていただく流れ</h4>
+        <ol>
+          <li>講義動画はYouTubeで無料公開しています。まず中身をご確認ください。</li>
+          <li>簿記ラボLINEでご相談ください（相談・無料面談は無料です）。合わないと感じた場合は正直にお伝えします。</li>
+          <li>ご購入日から7日以内であれば、理由を問わず全額返金します。</li>
+        </ol>
+        <h4>ご注意</h4>
+        <ul>
+          <li>当方の他の講座（簿記1級 合格伴走・証券アナリスト(CMA)対策講座・AI実践編）の返金条件は、それぞれの販売ページの記載が適用されます。本ページの条件は簿記3級 合格伴走にのみ適用されます。</li>
+        </ul>
+        <p class="legal-updated">制定日：2026年10月28日</p>
+      </article>
+
+      <article id="legal-contact" class="legal-block">
+        <h3>お問い合わせ</h3>
+        <dl class="legal-dl">
+          <dt>メール</dt>
+          <dd><a href="mailto:cmaacademy.info@gmail.com">cmaacademy.info@gmail.com</a></dd>
+          <dt>LINE</dt>
+          <dd><a href="https://lin.ee/wDWTB5b" target="_blank" rel="noopener">簿記ラボLINEからのお問い合わせ</a></dd>
+          <dt>受付・回答</dt>
+          <dd>お問い合わせには、その日のうちにご返信します（夜遅い時間にいただいた場合は翌朝）。</dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-nav" aria-label="法務・ポリシー">
+        <a href="#legal-tokuho">特定商取引法に基づく表記</a>
+        <a href="#legal-privacy">プライバシーポリシー</a>
+        <a href="#legal-terms">利用規約</a>
+        <a href="#legal-refund">返金について</a>
+        <a href="#legal-contact">お問い合わせ</a>
+      </nav>
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 5"/><polyline points="15 5 21 5 21 11"/></svg></div>
+          <span>数字の資格ラボ</span>
+        </div>
+        <div class="footer-copy">
+          運営：数字の資格ラボ ｜ 提供講座：CMA Academy（証券アナリスト1次）／簿記ラボ（簿記1級・2級・3級 合格伴走）／AI実践編（副業・会計・金融）<br>
+          © 2026 数字の資格ラボ. 数学嫌いを置いていかない。理解して進む、AI時代の学び方。
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-cta">
+    <a href="https://buy.stripe.com/3cI8wOcl6dAm1EH1NhgA80C" target="_blank" rel="noopener" class="sticky-cta-sub">申し込む</a>
+    <a href="/boki3-line?utm_source=lp&amp;utm_medium=boki3&amp;utm_campaign=boki3_lp" class="sticky-cta-main">
+      <svg viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Z"/></svg>
+      無料Zoom面談（30分）
+    </a>
+  </div>
+
+  <!-- 入口の識別（2026-09-05 追加） -->
+  <!-- どの入口から来た人が申し込んだかを数えるための仕組み。
+       ①URLの utm_source / utm_medium を読む → ②Stripeの決済リンクに client_reference_id として引き継ぐ。
+       GA4は「訪問」までしか見えず、申込はStripe側で起きるので、両方に同じ印を付けて初めて入口別の申込数が数えられる。
+       印は sessionStorage に残すので、ページ内を動いても消えない。 -->
+  <script>
+    (function () {
+      var KEY = 'entry_ref';
+
+      // utm を安全な文字だけの短い印に変換する（例：x-profile）
+      function readRef() {
+        try {
+          var p = new URLSearchParams(location.search);
+          var src = p.get('utm_source');
+          if (!src) return null;
+          var med = p.get('utm_medium');
+          var raw = med ? src + '-' + med : src;
+          return raw.replace(/[^a-zA-Z0-9_-]/g, '').slice(0, 60) || null;
+        } catch (e) { return null; }
+      }
+
+      // utm が無い訪問は、参照元のドメインで入口を寄せる（2026-10-06 追加）
+      // X本文のリンクは t.co を通るので utm が付かず、印が空のまま決済されていた。
+      // 自サイト内の移動・参照元なしは null（＝前に残した印を使う）。
+      function readReferrer() {
+        try {
+          if (!document.referrer) return null;
+          var h = new URL(document.referrer).hostname.toLowerCase().replace(/^www\./, '');
+          if (h === location.hostname.toLowerCase().replace(/^www\./, '') || /(^|\.)sujilab\.net$/.test(h)) return null;
+          var rules = [
+            [/^t\.co$/, 'x-tco'],
+            [/(^|\.)(x|twitter)\.com$/, 'x-web'],
+            [/(^|\.)(youtube\.com|youtu\.be)$/, 'youtube'],
+            [/(^|\.)(line\.me|lin\.ee)$/, 'line'],
+            [/(^|\.)ukkarihachibee\.com$/, 'blog'],
+            [/(^|\.)note\.com$/, 'note'],
+            [/(^|\.)google\.[a-z.]+$/, 'google'],
+            [/(^|\.)yahoo\.(co\.jp|com)$/, 'yahoo'],
+            [/(^|\.)bing\.com$/, 'bing'],
+            [/(^|\.)(chatgpt\.com|openai\.com)$/, 'chatgpt'],
+            [/(^|\.)amazon\.(co\.jp|com)$/, 'kindle']
+          ];
+          for (var i = 0; i < rules.length; i++) if (rules[i][0].test(h)) return rules[i][1];
+          // 決めていない参照元は「ref-ドメイン」で残す（例：ref-crowdworks_jp）
+          return ('ref-' + h.replace(/\./g, '_')).replace(/[^a-zA-Z0-9_-]/g, '').slice(0, 60);
+        } catch (e) { return null; }
+      }
+
+      // 印を決める順：①URLの utm → ②外部サイトの参照元 → ③同じタブで前に残した印
+      // Stripe の client_reference_id は英数字・-・_ の200字以内（外れた値は黙って捨てられる）ので、60字までの安全な文字だけにしている
+      var ref = readRef() || readReferrer();
+      try {
+        if (ref) sessionStorage.setItem(KEY, ref);
+        else ref = sessionStorage.getItem(KEY);
+      } catch (e) { /* プライベートモード等で使えなくても止めない */ }
+      if (!ref) return;
+
+      // Stripeの決済リンクに印を付ける
+      var links = document.querySelectorAll('a[href*="buy.stripe.com"]');
+      for (var i = 0; i < links.length; i++) {
+        var href = links[i].getAttribute('href');
+        if (!href || href.indexOf('client_reference_id=') !== -1) continue;
+        links[i].setAttribute('href', href + (href.indexOf('?') === -1 ? '?' : '&') + 'client_reference_id=' + encodeURIComponent(ref));
+      }
+    })();
+  </script>
+</body>
+</html>
