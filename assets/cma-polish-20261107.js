@@ -65,11 +65,8 @@
     }
 
     steps.forEach(button => button.addEventListener('click', () => setStep(Number(button.dataset.demoStep), true)));
-    function showOnNarrowScreen(selector) {
-      if (window.innerWidth <= 900) demo.querySelector(selector).scrollIntoView({ behavior: reduced.matches ? 'auto' : 'smooth', block: 'nearest' });
-    }
-    demo.querySelector('.demo-question-open').addEventListener('click', () => { setStep(1, true); showOnNarrowScreen('.demo-chat'); });
-    demo.querySelector('.demo-chip').addEventListener('click', () => { setStep(2, true); showOnNarrowScreen('.demo-answer'); });
+    demo.querySelector('.demo-question-open').addEventListener('click', () => setStep(1, true));
+    demo.querySelector('.demo-chip').addEventListener('click', () => setStep(2, true));
     play.addEventListener('click', () => {
       if (playing) { stop(); return; }
       if (reduced.matches) return;
