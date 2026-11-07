@@ -7,7 +7,7 @@
   const activeAnimations = new Set();
 
   function animate(element, frames, options) {
-    if (reduced.matches || !element || !element.animate) return;
+    if (reduced.matches || document.documentElement.classList.contains('cma-motion-paused') || !element || !element.animate) return;
     const animation = element.animate(frames, options);
     activeAnimations.add(animation);
     animation.finished.then(() => activeAnimations.delete(animation)).catch(() => activeAnimations.delete(animation));
@@ -57,6 +57,11 @@
       animate(target, [{ opacity: .75, transform: 'translateY(8px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 280, easing: 'cubic-bezier(.2,.75,.25,1)' });
     }
 
+    demo.addEventListener('cma:scroll-step', event => {
+      stop();
+      setStep(event.detail.step);
+    });
+
     function advance() {
       if (!playing) return;
       if (step >= 2) { stop(); return; }
@@ -98,6 +103,11 @@
       view.observe(demo);
     }
     reduced.addEventListener('change', syncMotionPreference);
+    document.addEventListener('cma:motion-preference', event => {
+      stop();
+      play.disabled = event.detail.stopped;
+      if (event.detail.stopped) play.textContent = '手順を選んで確認';
+    });
   }
 
   // 主要情報を隠さず、表示された時に一度だけ短く動かす。
@@ -106,8 +116,8 @@
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         animate(entry.target,
-          [{ opacity: .72, transform: 'translateY(14px)' }, { opacity: 1, transform: 'translateY(0)' }],
-          { duration: 440, easing: 'cubic-bezier(.2,.75,.25,1)' });
+          [{ opacity: .3 }, { opacity: 1 }],
+          { duration: 800, easing: 'cubic-bezier(.2,.75,.25,1)' });
         reveal.unobserve(entry.target);
       });
     }, { threshold: .08 });
@@ -115,7 +125,7 @@
     const cards = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
-        animate(entry.target, [{ transform: 'translateY(8px)' }, { transform: 'translateY(0)' }], { duration: 400, easing: 'cubic-bezier(.2,.75,.25,1)' });
+        animate(entry.target, [{ opacity: .3 }, { opacity: 1 }], { duration: 800, easing: 'cubic-bezier(.2,.75,.25,1)' });
         cards.unobserve(entry.target);
       });
     }, { threshold: .08 });
@@ -135,5 +145,8 @@
 
   reduced.addEventListener('change', () => {
     if (reduced.matches) activeAnimations.forEach(animation => animation.cancel());
+  });
+  document.addEventListener('cma:motion-preference', event => {
+    if (event.detail.stopped) activeAnimations.forEach(animation => animation.cancel());
   });
 })();
