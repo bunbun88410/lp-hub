@@ -56,7 +56,7 @@
  .courses .course-story h2{font-size:36px;margin-top:20px}
  .courses .course-story .section-head p{font-size:15px;max-width:550px;margin-top:22px}
  .course-story .course-grid{gap:30px}
- .course-story .course{min-height:0;padding:32px;position:sticky;top:var(--course-pin-top,100px);box-shadow:0 -10px 25px #173b3120!important}
+ .course-story .course{min-height:0;padding:32px;position:relative;top:auto;box-shadow:none!important}
  .course-story .course h3{font-size:30px;margin:18px 0}
  .course-story .course .desc{font-size:16px}
  .course-story .course ul{font-size:15px;padding-top:20px;margin-top:20px}

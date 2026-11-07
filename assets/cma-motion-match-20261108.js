@@ -194,7 +194,6 @@
       windowTrack.style.setProperty('--window-clip','polygon('+from.map((xy,i)=>xy.map((v,j)=>lerp(v,to[i][j]).toFixed(2)+'%').join(' ')).join(',')+')');
       heroArt.dataset.windowProgress=p.toFixed(4);
     }
-    courses.forEach(card=>{card.style.setProperty('--course-pin-top',Math.min(100,vh-card.getBoundingClientRect().height-20).toFixed(2)+'px');});
     if(editorial){
       const r=editorial.getBoundingClientRect();
       const p=clamp((vh*.85-r.top)/Math.max(vh*.55,r.height*.75));
