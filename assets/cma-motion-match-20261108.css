@@ -89,10 +89,13 @@
  .header-inner{gap:8px}.brand{flex:none}.brand strong{font-size:15px;white-space:nowrap}.brand small{font-size:8px;letter-spacing:.06em}
  .motion-switch{width:44px;min-width:44px;height:44px}.mobile-nav{flex:none}.mobile-nav>summary{font-size:10px;gap:6px;padding:7px 9px;white-space:nowrap;min-height:44px}.mobile-nav>summary:after{font-size:12px}
 }
-.cma-motion-paused .hero-art{will-change:auto}
+.cma-motion-paused .hero-art{will-change:auto;left:47%;top:19%;width:56%;height:70%;clip-path:polygon(50% 0%,100% 22%,100% 78%,50% 100%,0% 78%,0% 22%);--window-fold:0}
+.cma-motion-paused .graph-caption{top:auto;bottom:58px}
+.cma-motion-paused .course-story .course{position:relative;top:auto}
+@media(max-width:900px){.cma-motion-paused .hero-art{left:auto;top:94px;width:92%;height:auto;aspect-ratio:1.32}.cma-motion-paused .graph-caption{position:relative;top:auto;bottom:auto}}
 .cma-motion-paused .hero-graph text:not(.graph-fx),.cma-motion-paused .hero-graph .graph-dot,.cma-motion-paused .hero-graph .graph-dot-halo{opacity:1}
 @media(prefers-reduced-motion:reduce){
  .hero-story{height:auto}.hero-stage{position:relative;height:auto}.hero-art{left:47%;top:19%;width:56%;height:70%;clip-path:none;will-change:auto}
  #learning:before{transform:none}.course-story .course{position:relative;top:auto}
 }
-@media(max-width:900px) and (prefers-reduced-motion:reduce){.hero-visual-track{height:auto}.hero-art{position:relative;top:auto;left:auto;width:100%;height:auto;aspect-ratio:1.4}.hero-composition{padding-bottom:55px}}
+@media(max-width:900px) and (prefers-reduced-motion:reduce){.hero-visual-track{height:auto}.hero-art,.cma-motion-paused .hero-art{position:relative;top:auto;left:auto;width:100%;height:auto;aspect-ratio:1.4}.hero-composition{padding-bottom:55px}}
