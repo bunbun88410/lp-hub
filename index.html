@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>選べるようになるための、資格とAI｜簿記1級・証券アナリスト対策</title>
-  <meta name="description" content="辞めても、続けてもいい。選べるようになるための場所です。資格で本業の選択肢を、AIで副業の選択肢を増やす。講義を止めてその場でAIに質問できる簿記1級・証券アナリスト(CMA)対策と、積んだ知識を副業の形にするAI実践編。偏差値40から積み上げた、凡人の正直な学びを。">
+  <meta name="description" content="簿記1級の合格伴走と証券アナリスト(CMA)1次対策。途中式と意味から学び、講義を止めた場面からAIへ質問できます。金融AI実践編・副業×AI実践編の新規受付は停止しています。">
 
   <!-- 検索・SNS最適化 -->
   <link rel="canonical" href="https://sujilab.net/">
@@ -21,7 +21,7 @@
   <meta property="og:site_name" content="数字の資格ラボ">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:title" content="選べるようになるための、資格とAI｜簿記1級・証券アナリスト対策">
-  <meta property="og:description" content="辞めるためじゃない。選べるようになるため。資格で本業の選択肢を、AIで副業の選択肢を増やす。講義を止めてその場でAIに質問できる簿記1級・証券アナリスト(CMA)対策と、積んだ知識を副業の形にするAI実践編。偏差値40から積み上げた、凡人の正直な学びを。">
+  <meta property="og:description" content="簿記1級の合格伴走と証券アナリスト(CMA)1次対策。途中式と意味から学び、講義を止めた場面からAIへ質問できます。金融AI実践編・副業×AI実践編の新規受付は停止しています。">
   <meta property="og:url" content="https://sujilab.net/">
   <meta property="og:image" content="https://sujilab.net/assets/og-image-v4.jpg">
   <meta property="og:image:type" content="image/jpeg">
@@ -30,7 +30,7 @@
   <meta property="og:image:alt" content="数字の資格ラボ｜簿記1級・証券アナリスト(CMA)・AI実践　資格を、使える武器に">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="選べるようになるための、資格とAI｜簿記1級・証券アナリスト対策">
-  <meta name="twitter:description" content="辞めるためじゃない。選べるようになるため。資格で本業の選択肢を、AIで副業の選択肢を増やす。講義を止めてその場でAIに質問できる簿記1級・証券アナリスト(CMA)対策と、積んだ知識を副業の形にするAI実践編。偏差値40から積み上げた、凡人の正直な学びを。">
+  <meta name="twitter:description" content="簿記1級の合格伴走と証券アナリスト(CMA)1次対策。途中式と意味から学び、講義を止めた場面からAIへ質問できます。金融AI実践編・副業×AI実践編の新規受付は停止しています。">
   <meta name="twitter:image" content="https://sujilab.net/assets/og-image-v4.jpg">
   <meta name="twitter:image:alt" content="数字の資格ラボ｜簿記1級・証券アナリスト(CMA)・AI実践　資格を、使える武器に">
   <script type="application/ld+json">
@@ -41,7 +41,7 @@
         "@type": "Organization",
         "name": "数字の資格ラボ",
         "url": "https://sujilab.net/",
-        "description": "簿記1級・証券アナリスト(CMA)の理解重視型オンライン講座と、学んだ会計・金融をAIで実務に使うAI実践編。"
+        "description": "簿記1級の合格伴走と証券アナリスト(CMA)の理解重視型オンライン講座。AI実践編は新規販売を停止しています。"
       },
       {
         "@type": "Course",
@@ -3064,8 +3064,8 @@
 
   <script>
   (function () {
-    // 診断の中身（設問・配点・判定）は、これまでの実装をそのまま引き継いでいる。
-    // 変わったのは「どこで答えるか」だけ。数字を触るときは 事業ハブ/コース診断_設計.md も直すこと。
+    // 2026-11-07：新規受付停止したAI実践編は推薦せず、資格2コースの候補を示す。
+    // すでに簿記1級を持つ方へ同じ資格を勧めない条件は維持する。
     var Q = [
       { t: 'いま一番実現したいことは何ですか？', o: [
         ['自分の知識を収入に変えたい', 0,0,3], ['経理で転職・昇進したい', 3,0,0],
@@ -3080,26 +3080,9 @@
         ['5時間より少ない', 0,0,2], ['5〜10時間', 0,2,1], ['10〜20時間', 2,1,0], ['20時間以上', 3,0,0]] },
       { t: '勉強と実践、どっちを優先したいですか？', o: [
         ['まず資格を取りたい', 2,2,0], ['まず動かして結果を出したい', 0,0,3], ['半々でいい', 0,1,1]] },
-      // ⚠ 「できればやりたくない」でもAI実践編を0点にしない。
-      //    発信しない人向けの回（副業×AI実践編の経理まわり・金融AI）があるので、行き先を変えるだけでよい
       { t: '発信や営業に抵抗はありますか？', o: [
         ['抵抗はない', 0,0,2], ['少しある', 0,0,1], ['できればやりたくない', 1,1,1]] }
     ];
-    // AI実践編は3コースある。どれを出すかは「目的（Q1）」と「発信への抵抗（Q7）」で決める
-    var AI = {
-      side:  { name: '副業×AI実践編（全23回）',        keyword: '副業AI 希望' },
-      // 2026-08-24：会計×AI実践編は副業×AI実践編へ統合して畳んだ。経理まわりの自動化は side に入っている
-      // 2026-08-24：金融AI実践編はCMA講座のページへ移設したので、行き先だけ /cma に差し替える
-      kinyu: { name: '金融AI実践編・投資分析（全9回）', keyword: '金融AI 希望', href: '/cma', cta: '金融AI実践編を見る' }
-    };
-    // card() からも参照するので、描画関数の外に置く
-    var ac = null;
-    function aiCourse(ans) {
-      if (ans[0] === 2) return AI.kinyu;               // 財務・IR・金融へ進みたい
-      // 経理で転職・昇進したい／発信はやりたくない＝どちらも「経理まわりの自動化」が要る。
-      // その回は副業×AI実践編に入っているので side へ送る（2026-08-24の統合）
-      return AI.side;                                  // 収入に変えたい／まだ決まっていない
-    }
     var C = {
       B: { label: '簿記ラボ', name: '簿記1級 合格伴走', href: '/boki', cta: '簿記の伴走を見る',
         r1: '経理・会計で専門性を高めたいという目的と、確保できる勉強時間がしっかり噛み合っています。',
@@ -3111,14 +3094,10 @@
         r1: '分析する側へ進みたいという目的に合っていて、会計の基礎もすでにあります。',
         r2: '会計の土台ができたあと、財務・投資まで広げる段階で効いてきます。',
         r3: 'いまは金融分析より、会計の基盤を固めるほうが目的に近いからです。',
-        r3income: '収入をつくるのが目的なら、CMAは要りません。財務・IR・金融など、本業のポジションを動かしたくなったときに、はじめて意味が出てきます。' },
-      A: { label: 'AI実践編', name: '知識を、AIで収入に変える', href: '/ai', cta: 'AI実践を見る',
-        r1: '早く結果を出したいという条件と、いま持っている知識をそのまま使える点が合っています。',
-        r2: '資格でつくった専門性を、売れる形に変える段階で効いてきます。',
-        r3: 'まず土台になる知識をつくったほうが、結果的に早いと思います。' }
+        r3income: '収入をつくるのが目的なら、CMAは要りません。財務・IR・金融など、本業のポジションを動かしたくなったときに、はじめて意味が出てきます。' }
     };
     var SWAP = '簿記1級は、模擬試験で合格点を連発できてようやくスタートラインの試験です。いま確保できる時間から見ると、先にCMAへ進むほうが届きやすい！ CMAは簿記1級より目指しやすくて、財務・投資の知識は実務でそのまま使えます。';
-    var PREF = { 0: 'A', 1: 'B', 2: 'C' }, ORDER = ['B','C','A'];
+    var PREF = { 0: 'C', 1: 'B', 2: 'C' }, ORDER = ['B','C'];
 
     var world = document.getElementById('dxw');
     var panel = document.getElementById('dxw-panel');
@@ -3236,9 +3215,8 @@
     // name は差し替えできる（AI実践編だけは3コースあるので、どれかを名指しする）
     function card(rank, key, why, name) {
       var c = C[key];
-      // AI実践編だけは行き先が枝分かれする（金融AIはCMA講座のページ）
-      var href = (key === 'A' && ac && ac.href) ? ac.href : c.href;
-      var cta  = (key === 'A' && ac && ac.cta)  ? ac.cta  : c.cta;
+      var href = c.href;
+      var cta = c.cta;
       var head = rank === 1 ? '★ 今すぐ始めるならここ' : (rank === 2 ? '次に効いてくる' : '今は急がなくていい');
       var s = '<div class="dxw-card dxw-card-' + rank + '"><span class="dxw-rank">' + head + '</span>'
         + '<p class="dxw-name">' + esc(name || c.name) + '</p><p class="dxw-why">' + why + '</p>';
@@ -3250,7 +3228,7 @@
       var sc = { B: 0, C: 0, A: 0 };
       ans.forEach(function (i, qi) { var o = Q[qi].o[i]; sc.B += o[1]; sc.C += o[2]; sc.A += o[3]; });
 
-      var pool = (ans[2] === 3) ? ['C','A'] : ORDER.slice();   // 簿記1級を持っている人にBは勧めない
+      var pool = (ans[2] === 3) ? ['C'] : ORDER.slice();   // 簿記1級を持っている人にBは勧めない
       var pref = PREF[ans[0]];
       pool.sort(function (x, y) {
         if (sc[y] !== sc[x]) return sc[y] - sc[x];
@@ -3261,22 +3239,17 @@
       if (pool[0] === 'B' && (ans[4] === 0 || ans[1] === 0) && pool.indexOf('C') > 0) {
         pool.splice(pool.indexOf('C'), 1); pool.unshift('C'); swapped = true;
       }
-      // 収入が目的の人に、CMAを2番手として見せない（財務・金融を選んだ人は除く）
-      var incomeAxis = (pool[0] === 'A' && ans[0] !== 2);
-      if (incomeAxis) { pool = ['A', 'B', 'C']; }
+      var incomeAxis = false;
+      function nameOf(key) { return C[key].name; }
 
-      // AI実践編は3コースある。名前を確定させてから結果に出す
-      ac = aiCourse(ans);
-      function nameOf(key) { return key === 'A' ? ac.name : C[key].name; }
-
-      var h = '<div class="dxw-lead"><span>YOUR ROUTE</span><h3>あなたは、ここから始めるのがいちばん早い！</h3></div>';
+      var h = '<div class="dxw-lead"><span>YOUR ROUTE</span><h3>資格を学ぶ場合の候補はこちらです</h3></div>';
       // ⚠ 1位がAI実践編（＝資格を待たずに動く道）のときにこれを出すと、
       //    下の「資格はいま要りません」と真逆のことを言ってしまうので出さない
       if (ans[2] === 0 && pool[0] !== 'A') {
         h += '<div class="dxw-alert">まずは<strong>簿記3級・2級</strong>からいきましょう（<a href="https://coconala.com/services/3501081" target="_blank" rel="noopener" style="color:#F2C879;font-weight:700;">ココナラの個別サポート</a>）。下の結果は、その次に進む先として読んでください。</div>';
       }
       h += card(1, pool[0], swapped && pool[0] === 'C' ? SWAP : C[pool[0]].r1, nameOf(pool[0]));
-      h += card(2, pool[1], C[pool[1]].r2, nameOf(pool[1]));
+      if (pool[1]) h += card(2, pool[1], C[pool[1]].r2, nameOf(pool[1]));
       if (pool[2]) {
         var why3 = C[pool[2]].r3;
         if (incomeAxis && pool[2] === 'C') why3 = C.C.r3income;
@@ -3284,22 +3257,10 @@
         h += card(3, pool[2], why3, nameOf(pool[2]));
       }
 
-      h += '<div class="dxw-route">';
-      if (pool[0] === 'A') {
-        if (incomeAxis) {
-          h += '<p><strong>まずは、収入をつくるところから。</strong><br>資格はいま要りません。案件や発信を進めるうちに「会計の知識が足りない」と感じたら、そのとき簿記1級へ戻ってくれば十分です。</p>';
-        } else {
-          h += '<p><strong>まずは、収入をつくるところから。</strong><br>ただし、あなたが進みたい財務・金融の方向では <strong>' + esc(C[pool[1]].name) + '</strong> が本線になります。先に収入をつくってから取りにいっても、並行しても構いません。</p>';
-        }
-      } else {
-        h += '<p>あなたの順番は <strong>' + esc(C[pool[0]].name) + '</strong> → <strong>' + esc(ac.name) + '</strong>。<br>資格で専門性をつくって、AIでそれを収入に変える。この向きだと、学んだことがそのまま指示力になります。</p>';
-      }
-      if (pool[0] === 'C' && ac !== AI.kinyu) {
-        h += '<p style="margin:12px 0 0;font-size:13.5px;">CMAで学んだ指標を実際の決算で動かす「金融AI実践編・投資分析（全9回）」もあります。<a href="/ai" style="color:#F2C879;font-weight:700;">こちら</a></p>';
-      }
+      h += '<div class="dxw-route"><p>資格を学ぶ場合の候補です。金融AI実践編・副業×AI実践編は新規販売を停止しています。資格がいまの目的でなければ、無理に選ぶ必要はありません。</p>';
       // 🔴 結果を持ったままLINEへ渡す。LINEは本文を先に入れられないので、
       //    送る合言葉を出しておく（boki.html の「1級伴走 希望」と同じやり方）
-      var kw = pool[0] === 'A' ? ac.keyword : (pool[0] === 'B' ? '1級伴走 希望' : 'CMA対策 希望');
+      var kw = pool[0] === 'B' ? '1級伴走 希望' : 'CMA対策 希望';
       h += '<p style="margin:12px 0 0;font-size:13.5px;">この結果のまま相談するなら、<a href="https://line.me/R/ti/p/@159qegdx" target="_blank" rel="noopener" style="color:#F2C879;font-weight:700;">LINE</a>で <strong style="color:#F2C879;">「' + esc(kw) + '」</strong> と送ってください。いまの状況をうかがって、一緒に決めます！</p></div>'
         + '<div class="dxw-foot"><button type="button" id="dxw-tochat">この結果、ちょっと違うかも？ ミニぶんぶんに相談する</button>'
         + '<button type="button" id="dxw-again">もう一度やる</button>'
@@ -3312,8 +3273,8 @@
       var inner = document.querySelector('.dxw-inner');
       if (inner) inner.scrollTop = 0;
       // 閉じても結果が消えないよう、ページ側にも同じ結論を残しておく
-      var topHref = (pool[0] === 'A' && ac.href) ? ac.href : C[pool[0]].href;
-      var topCta  = (pool[0] === 'A' && ac.cta)  ? ac.cta  : C[pool[0]].cta;
+      var topHref = C[pool[0]].href;
+      var topCta = C[pool[0]].cta;
       echo(nameOf(pool[0]), topHref, topCta, kw);
       document.getElementById('dxw-again').addEventListener('click', function () {
         step = 0; ans = []; render(); speak('もう一回いこう。ここからが面白い。');
@@ -3363,8 +3324,8 @@
       <div style="text-align:center;max-width:760px;margin:0 auto 40px;">
         <span class="eyebrow" style="justify-content:center;">COURSES</span>
         <!-- 2026-09-14 本人決定：主力＝簿記1級伴走とCMA。AI実践編は「置くだけ」（新しい章・記事は作らない） -->
-        <h2 class="section-title">主力は、<span class="em">資格の2つ</span>。<br>AIは、必要になったら。</h2>
-        <p class="section-subtitle" style="margin:16px auto 0;">全部やる必要はありません。ただし<strong>順番はあります。知識と肩書きが無いなら、まず資格で箔をつける。</strong>すでに積んだものがあって、それを副業の形にしたい方はAI実践編から。</p>
+        <h2 class="section-title"><span class="em">資格の2つ</span>から、目的に近いほうを。</h2>
+        <p class="section-subtitle" style="margin:16px auto 0;">会計の専門性なら簿記1級、金融・投資分析まで広げるならCMA。目的に合わせて選べます。</p>
       </div>
       <div class="tr-grid tr-grid-main">
         <!-- ① 簿記1級 -->
@@ -3404,25 +3365,10 @@
       </div>
 
       <!-- ③ AI実践編＝主力2枚の下に細い帯で置く（2026-09-14 本人決定「置くだけ」で再開） -->
-      <div class="tr-side">
-        <div class="tr-side-body">
-          <div class="tr-brand tr-brand-accent">AI実践編</div>
-          <h3 class="tr-side-name">積んだ知識を、AIで副業の形にする</h3>
-          <p class="tr-side-text">もう知識がある方へ。<strong>分野は問いません。</strong>教材・記事・ツールの形にするところをAIが持つので、プログラミングの知識は要りません。面談はありませんが、<strong>3コースとも購入から6ヶ月・LINEで回数制限なしの質問対応</strong>つきです。</p>
-          <p class="tr-price">副業×AI実践編 全23回 ¥99,800（税込）</p>
-        </div>
-        <a href="/ai.html" class="btn btn-outline tr-side-cta">AI実践を見る →</a>
-      </div>
+      <p class="tr-side-text" style="margin:28px 0">金融AI実践編・副業×AI実践編は新規受付を停止しています。<a href="/ai">既存受講者へのご案内</a></p>
 
       <!-- 進む順番（複合ルート）＝旧 .hub-router。診断だけに任せず、代表的な並べ方をここに残す -->
-      <div class="tr-router">
-        <p class="tr-router-lead">順番を間違えると遠回りになります。よくある並べ方はこの3つです。</p>
-        <div class="tr-router-grid">
-          <div class="tr-router-card"><strong>会計を、強くしたい方</strong><p>簿記1級 → AI実践編</p><span>会計の土台を先に作って、それをAIで仕事の形に変える。</span></div>
-          <div class="tr-router-card"><strong>金融まで、広げたい方</strong><p>簿記1級 → 証券アナリスト(CMA)</p><span>会計のあとに、金融・経済まで伸ばす。数字の守備範囲が広がる。</span></div>
-          <div class="tr-router-card"><strong>すでに、積んだものがある方</strong><p>AI実践編 → 簿記1級</p><span><b>もう中身がある方だけ</b>、先に形にしにいけます。厚みを足したくなったら資格へ。</span></div>
-        </div>
-      </div>
+
 
       <p style="margin:32px auto 0;max-width:660px;text-align:center;color:var(--text-muted);font-size:13.5px;">どれを選んでも、後から変えて構いません。決めきれないときは<a href="https://line.me/R/ti/p/@159qegdx" target="_blank" rel="noopener" style="color:#2D6A4F;font-weight:600;">LINEでご相談</a>ください。いまの状況をうかがって、一緒に決めます。</p>
     </div>
@@ -3438,8 +3384,8 @@
         <h2 class="section-title">よくある質問</h2>
       </div>
       <div class="faq-list">
-        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q1.</span><span class="faq-q-text">何から始めればいいですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">迷うようでしたら、<strong>7つの質問の診断</strong>を先にどうぞ。目安としては、<strong>これから会計・金融の知識をつける方</strong>は簿記1級か証券アナリスト(CMA)のうち近いほうから、<strong>すでに知識や実務がある方</strong>はAI実践編から（こちらは分野を問いません）。順番に両方を進めても、後から足しても構いません。LINEでの無料相談もできます。</div></details>
-        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q2.</span><span class="faq-q-text">簿記・証券アナリスト・AI実践は、何が違いますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">簿記は会計の基礎、証券アナリスト(CMA)は金融・投資分析の資格、AI実践は「学んだ知識をAIで実務の道具にする」トラックです。会計・金融で学んだことは、そのままAIを使いこなす力になります。AI実践は会計・金融に限らず、ほかの分野で積んだ知識でも使えます。</div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q1.</span><span class="faq-q-text">何から始めればいいですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">簿記1級と証券アナリスト(CMA)1次対策から、目的に近いほうを選べます。迷ったら7つの質問の診断やLINEの無料相談をご利用ください。金融AI実践編・副業×AI実践編の新規受付は停止しています。</div></details>
+        <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q2.</span><span class="faq-q-text">簿記・証券アナリスト・AI実践は、何が違いますか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">簿記1級は会計の専門性を、CMAは金融・投資分析を学ぶ資格講座です。AI実践編は学んだ知識を実務の道具にする教材ですが、現在は新規販売を停止しています。既存受講者の教材と約束したサポートは継続します。</div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q3.</span><span class="faq-q-text">数学や勉強が苦手でも大丈夫ですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">大丈夫です。運営者自身が偏差値40から3回落ちて4回目で合格した凡人です。丸暗記ではなく、途中式や意味まで高卒レベルから噛み砕く方針で、数学嫌いを置いていきません。</div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q4.</span><span class="faq-q-text">支払い方法は？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">クレジットカード決済（Stripe）です。各講座の販売ページに税込価格を表示しています。詳細は本ページ下部の「特定商取引法に基づく表記」をご確認ください。</div></details>
         <details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q5.</span><span class="faq-q-text">本業を辞めるための講座ですか？</span><span class="faq-toggle"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></summary><div class="faq-a">いいえ。<strong>辞めるためではなく、選べるようになるため</strong>の講座です。辞めても、続けてもいい。どこまでリスクを取れるか、何が楽しいか、副業の収入がどうなっているかを見て、あとから決められる状態をつくります。どの講座も、働きながら続けられる形で作っています。</div></details>
@@ -3465,7 +3411,7 @@
           </a>
           <a href="https://lin.ee/O2xa9mP" target="_blank" rel="noopener" class="btn btn-line btn-large">
             <svg viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Z"/></svg>
-            AI実践を学ぶ方（会計・金融AI）
+            AI実践編の既存受講者の方
           </a>
         </div>
         <p class="line-broadcast-note">※ 登録・相談はすべて無料です。不要になればブロックでいつでも停止できます。</p>
@@ -3591,7 +3537,7 @@
           <dt>メールアドレス</dt>
           <dd><a href="mailto:cmaacademy.info@gmail.com">cmaacademy.info@gmail.com</a></dd>
           <dt>販売価格</dt>
-          <dd>各講座の販売ページに税込価格を表示します（販売中：証券アナリスト1次 科目Ⅰ（証券分析）¥24,800／科目Ⅱ（簿記＋ファンダメンタル分析）¥14,800／科目Ⅲ（経済＋数学＋確率統計）¥14,800／伴走あり（3科目・模擬試験・合格まで伴走）¥89,800／簿記1級 合格伴走 初回 ¥29,800・2〜6ヶ月目は月額 ¥7,800・7ヶ月目から月額 ¥2,980（解約のお申し出まで毎月。上限回数なし）・モニター枠（先着5人・月払いとは別枠）一括 ¥98,000／金融AI実践編 ¥29,800／副業×AI実践編 ¥99,800。いずれも税込。その他の近日発売の講座は、販売開始時に販売ページで価格を表示します）。</dd>
+          <dd>各講座の販売ページに税込価格を表示します（販売中：証券アナリスト1次 科目Ⅰ（証券分析）¥24,800／科目Ⅱ（簿記＋ファンダメンタル分析）¥14,800／科目Ⅲ（経済＋数学＋確率統計）¥14,800／伴走あり（3科目・模擬試験・合格まで伴走）¥89,800／簿記1級 合格伴走 初回 ¥29,800・2〜6ヶ月目は月額 ¥7,800・7ヶ月目から月額 ¥2,980（解約のお申し出まで毎月。上限回数なし）・モニター枠（先着5人・月払いとは別枠）一括 ¥98,000。いずれも税込。金融AI実践編・副業×AI実践編は新規販売を停止しています。その他の近日発売の講座は、販売開始時に販売ページで価格を表示します）。</dd>
           <dt>商品代金以外の必要料金</dt>
           <dd>インターネット接続料金・通信料金等はお客様のご負担となります。</dd>
           <dt>お支払い方法</dt>
