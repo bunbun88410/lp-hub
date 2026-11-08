@@ -1,0 +1,57 @@
+/* ZBの固定背景開口と余白の構図をCMAの実教材へ適用。heroには適用しない。 */
+.sample-section .sample-window{transform:none;will-change:auto}
+.zb-opening{position:relative;height:clamp(580px,80vh,800px);overflow:hidden;background:#183e33;color:#f3f5ed;isolation:isolate;margin:80px 0 0}
+.zb-opening-photo{position:absolute;inset:0;min-height:100%;height:var(--zb-viewport-height,100%);transform:translateY(var(--zb-photo-offset,0px));display:flex;align-items:center;justify-content:center;background:linear-gradient(125deg,#173d31,#386050);z-index:-1;will-change:transform}
+.zb-opening-photo img{display:block;width:min(72%,1040px);height:auto;max-height:68%;object-fit:contain;margin-left:15%;box-shadow:0 30px 75px #081c2440;border:1px solid #ffffff24}
+.zb-opening-copy{position:absolute;left:clamp(28px,6vw,100px);top:50%;transform:translateY(-50%);margin:0;writing-mode:vertical-rl;font-size:clamp(26px,2.8vw,42px);line-height:1.85;letter-spacing:.18em;font-weight:500}
+.zb-opening-copy span{display:block}
+.zb-opening-label{position:absolute;bottom:30px;right:4%;margin:0;font:400 12px/1.8 Inter,sans-serif;letter-spacing:.12em;color:#d4e3d9}
+.zb-opening-caption{position:absolute;top:28px;right:4%;margin:0;font-size:13px;letter-spacing:.06em;color:#d4e3d9}
+.zb-opening + #learning{margin-top:0}
+.courses .course-story>.section-head{top:122px}
+.courses .course-story>.section-head:before{font-weight:400;letter-spacing:-.055em;color:#b7ccbc}
+.course-story .course{border-radius:0;background:#f5f7f0;border-width:1px 0 0;box-shadow:none}
+.course-story .course+.course{border-left:0}
+.course-story .course-no{letter-spacing:.15em;font-size:13px}
+.course-story .course h3{font-weight:500}
+.course-story .course .amount{font-weight:500}
+.course-story .course .btn{border-radius:0}
+#faq{position:relative;isolation:isolate;padding-block:130px 110px;overflow:visible;background:#f0f3ea}
+#faq:before{content:'QUESTIONS';position:absolute;top:16px;left:3%;right:0;overflow:hidden;font:400 clamp(95px,16vw,220px)/1 Inter,sans-serif;letter-spacing:-.06em;color:#e0e7db;z-index:-1;pointer-events:none}
+#faq .faq-grid{position:relative;grid-template-columns:.7fr 1.3fr;gap:90px;align-items:start}
+#faq .section-head{position:sticky;top:140px;display:block;margin-top:18px}
+#faq .section-head h2{font-weight:500;line-height:1.8}
+#faq .faq-list details{padding:25px 0}
+#faq .faq-list summary{font-weight:500}
+#consult{padding-block:95px 80px;position:relative}
+#consult:before{content:'LET’S TALK';display:block;font:400 clamp(58px,9vw,120px)/1 Inter,sans-serif;letter-spacing:-.05em;color:#b4cbb6;margin-bottom:35px}
+#consult .consult{border-top:1px solid #a9bfac;padding:40px 0 0;align-items:start}
+#consult .consult h3{font-size:clamp(25px,3vw,38px);font-weight:500;line-height:1.7;margin-bottom:20px}
+#consult .consult>.btn{border-radius:0;margin-top:8px;background:#183e33;color:#fff;border-color:#183e33;min-height:64px}
+#consult .line-news{max-width:680px}
+@media(max-width:900px){
+ .zb-opening{margin-top:55px}
+ #faq .faq-grid{gap:45px;grid-template-columns:.8fr 1.2fr}
+ #faq .section-head h2{font-size:29px}
+ #consult .consult{display:block}
+ #consult .consult>.btn{margin-top:30px;min-width:260px}
+}
+@media(max-width:760px){
+ .zb-opening{height:620px;max-height:84vh;min-height:500px;margin-top:44px}
+ .zb-opening-photo img{width:69%;margin-left:27%;max-height:62%;box-shadow:0 15px 35px #081c2430}
+ .zb-opening-copy{left:20px;font-size:22px;line-height:1.45;letter-spacing:.12em;top:42%}
+ .zb-opening-caption{top:24px;left:24px;right:auto;font-size:12px}
+ .zb-opening-label{bottom:24px;right:24px;font-size:10px;letter-spacing:.08em}
+ #faq{padding-block:100px 70px}
+ #faq:before{top:12px;font-size:98px}
+ #faq .faq-grid{display:block}
+ #faq .section-head{position:relative;top:auto;margin:0 0 35px}
+ #faq .section-head h2{font-size:31px}
+ #faq .faq-list details{padding:22px 0}
+ #consult{padding-block:65px}
+ #consult:before{margin-bottom:28px;font-size:65px}
+ #consult .consult{padding-top:30px}
+ #consult .consult>.btn{width:100%;min-width:0}
+}
+.cma-motion-paused .zb-opening-photo{height:100%!important;transform:none!important;will-change:auto}
+@media(prefers-reduced-motion:reduce){.zb-opening-photo{height:100%!important;transform:none!important;will-change:auto}}

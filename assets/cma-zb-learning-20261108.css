@@ -1,0 +1,80 @@
+/* ZB最新mainの不規則な工程配置・縦コピー・静かなフェードを、CMAの教材で構成する。 */
+#learning{position:relative;isolation:isolate;margin-top:0;padding-top:120px;overflow:visible;background:#fff}
+#learning:before{content:"LEARN";top:15px;left:3%;width:94%;overflow:hidden;font:500 clamp(110px,18vw,230px)/1 Inter,sans-serif;letter-spacing:-.065em;color:#edf1e9;transform:none;z-index:-1}
+#learning>.container{position:relative}
+#learning .learning-layout{position:relative;display:block}
+#learning .learning-layout>.section-head{position:static;display:block;max-width:400px;margin:0 0 84px;transform:none!important;opacity:1!important}
+#learning .learning-layout>.section-head h2{position:absolute;left:48%;top:360px;z-index:2;width:max-content;margin:0;padding:10px 0;background:#fff;writing-mode:vertical-rl;text-orientation:upright;white-space:nowrap;font-size:27px;font-weight:700;line-height:1.25;letter-spacing:.11em}
+#learning .learning-layout>.section-head h2 span{display:block}
+#learning .learning-layout>.section-head p{max-width:400px;margin:25px 0 0;font-size:16px;line-height:2;color:#425b4e}
+#learning .learning-column{position:relative;margin:0}
+#learning .zb-flow-svg{position:absolute;inset:0;z-index:0;width:100%;height:100%;overflow:visible;pointer-events:none;opacity:1!important;transform:none!important;transition:none}
+#learning .zb-flow-connector{fill:none;stroke:#95b29b;stroke-width:1.2;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--zb-line-progress,1));transition:none}
+#learning .learning{position:relative;z-index:1;display:flex;flex-direction:column;gap:104px;padding:0}
+#learning .learning .step{position:relative;display:block;min-height:0;width:40%;padding:0;margin:0 0 0 58%;border:0;transform:none!important;opacity:var(--zb-step-opacity,1)!important;transition:opacity 1.2s ease-out;will-change:auto}
+#learning .learning .step:nth-child(2){width:34%;margin-left:14%}
+#learning .learning .step:nth-child(3){width:40%;margin-left:59%}
+#learning .step .step-copy{position:relative;z-index:1;display:grid;grid-template-columns:84px minmax(0,1fr);column-gap:20px;align-items:start;order:initial;max-width:none;padding:8px 0;margin:0;background:#fff}
+#learning .step .step-number{position:static;grid-column:1;grid-row:1/5;padding:0;margin:0;background:none;font:400 clamp(72px,7.5vw,104px)/.82 Inter,sans-serif;letter-spacing:-.08em;color:#a7c2ae}
+#learning .step .step-kicker{grid-column:2;font-size:10px;line-height:1.6;letter-spacing:.13em;margin:0 0 12px}
+#learning .step h3{grid-column:2;font-size:24px;line-height:1.65;margin:0 0 16px;letter-spacing:-.035em}
+#learning .step-copy>p{grid-column:2;font-size:16px;line-height:2;margin:0;color:#425b4e}
+#learning .step .step-visual{position:relative;z-index:1;order:initial;width:calc(100% - 104px);margin:0 0 0 104px;padding:24px 0 0}
+#learning .study-visual-card{transform:none!important;will-change:auto;opacity:1}
+#learning .study-visual-card>a{border-radius:0;box-shadow:none}
+#learning .study-visual-card figcaption{font-size:12px;line-height:1.8;margin-top:13px}
+#learning .study-note,#learning .study-question{border-radius:0;box-shadow:none;padding:24px}
+#learning .study-note h4{font-size:22px;line-height:1.6}
+#learning .study-note li{font-size:15px;line-height:1.9;gap:13px}
+#learning .study-note p.note-caption{font-size:13px;line-height:1.9}
+#learning .question-example-label{font-size:12px;line-height:1.8;padding:3px 9px;margin-bottom:17px}
+#learning .study-question p.example-question{font-size:16px;line-height:1.8;padding:13px 15px}
+#learning .study-question p.example-answer{font-size:15px;line-height:1.95}
+#learning .study-question p.example-context{font-size:13px;line-height:1.9}
+#learning .experience-disclosure{position:relative;z-index:2;margin-top:76px}
+@media(min-width:761px) and (max-width:1100px){
+ #learning .learning-layout>.section-head{max-width:340px}
+ #learning .learning-layout>.section-head h2{font-size:25px;left:49%}
+ #learning .step .step-copy{grid-template-columns:64px minmax(0,1fr);column-gap:17px}
+ #learning .step .step-number{font-size:72px}
+ #learning .step h3{font-size:21px}
+ #learning .step-copy>p{font-size:15px}
+ #learning .step .step-visual{width:calc(100% - 81px);margin-left:81px}
+ #learning .study-note,#learning .study-question{padding:20px}
+}
+@media(max-width:760px){
+ #learning{margin-top:0;padding-top:80px}
+ #learning:before{top:0;left:0;width:100%;font-size:96px}
+ #learning .learning-layout>.section-head{max-width:none;margin:0 0 50px}
+ #learning .learning-layout>.section-head p{max-width:290px;margin-top:22px;font-size:15px;line-height:2}
+ #learning .learning-layout>.section-head h2{top:190px;right:0;left:auto;padding:8px 0;font-size:22px;line-height:1.2;letter-spacing:.08em}
+ #learning .learning{gap:72px;padding:0}
+ #learning .learning .step,#learning .learning .step:nth-child(2),#learning .learning .step:nth-child(3){display:block;width:calc(100% - 74px);min-height:0;margin:0 0 0 24px;padding:0}
+ #learning .step .step-copy{display:block;padding:8px 0;margin:0;max-width:none}
+ #learning .step .step-number{font-size:65px;margin:0 0 20px}
+ #learning .step .step-kicker{font-size:10px;line-height:1.8;margin:0 0 10px}
+ #learning .step h3{font-size:22px;line-height:1.65;margin:0 0 14px}
+ #learning .step-copy>p{font-size:15px;line-height:1.95}
+ #learning .step .step-visual{width:100%;margin:0;padding:19px 0 0}
+ #learning .study-note,#learning .study-question{padding:22px 19px}
+ #learning .study-note h4{font-size:21px;margin:12px 0 18px}
+ #learning .study-note li{font-size:14px;gap:11px;padding:12px 0}
+ #learning .study-note p.note-caption,#learning .study-question p.example-context{font-size:12px;line-height:1.9}
+ #learning .study-question p.example-question{font-size:15px;line-height:1.8;padding:12px 13px}
+ #learning .study-question p.example-answer{font-size:14px;line-height:1.95}
+ #learning .study-visual-card figcaption{font-size:11px;line-height:1.9}
+ #learning .experience-disclosure{margin-top:54px}
+}
+@media(max-width:350px){
+ #learning .learning-layout>.section-head p{max-width:none;font-size:14px}
+ #learning .learning-layout>.section-head h2{top:200px;font-size:20px}
+ #learning .learning .step,#learning .learning .step:nth-child(2),#learning .learning .step:nth-child(3){width:calc(100% - 67px)}
+ #learning .step h3{font-size:20px}
+ #learning .step-copy>p{font-size:14px}
+ #learning .study-note,#learning .study-question{padding:20px 16px}
+ #learning .study-note h4{font-size:19px}
+ #learning .question-example-label{font-size:11px}
+}
+.cma-motion-paused #learning .learning .step{opacity:1!important;transition:none}
+.cma-motion-paused #learning .zb-flow-connector{stroke-dashoffset:0!important}
+@media(prefers-reduced-motion:reduce){#learning .learning .step{opacity:1!important;transition:none}#learning .zb-flow-connector{stroke-dashoffset:0!important}}
