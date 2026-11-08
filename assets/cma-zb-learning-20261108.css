@@ -49,7 +49,7 @@
  #learning .learning-layout>.section-head p{max-width:290px;margin-top:22px;font-size:15px;line-height:2}
  #learning .learning-layout>.section-head h2{top:190px;right:0;left:auto;padding:8px 0;font-size:22px;line-height:1.2;letter-spacing:.08em}
  #learning .learning{gap:72px;padding:0}
- #learning .learning .step,#learning .learning .step:nth-child(2),#learning .learning .step:nth-child(3){display:block;width:calc(100% - 74px);min-height:0;margin:0 0 0 24px;padding:0}
+ #learning .learning .step,#learning .learning .step:nth-child(2),#learning .learning .step:nth-child(3){display:block;width:calc(100% - 84px);min-height:0;margin:0 0 0 24px;padding:0}
  #learning .step .step-copy{display:block;padding:8px 0;margin:0;max-width:none}
  #learning .step .step-number{font-size:65px;margin:0 0 20px}
  #learning .step .step-kicker{font-size:10px;line-height:1.8;margin:0 0 10px}
@@ -68,7 +68,7 @@
 @media(max-width:350px){
  #learning .learning-layout>.section-head p{max-width:none;font-size:14px}
  #learning .learning-layout>.section-head h2{top:200px;font-size:20px}
- #learning .learning .step,#learning .learning .step:nth-child(2),#learning .learning .step:nth-child(3){width:calc(100% - 67px)}
+ #learning .learning .step,#learning .learning .step:nth-child(2),#learning .learning .step:nth-child(3){width:calc(100% - 80px)}
  #learning .step h3{font-size:20px}
  #learning .step-copy>p{font-size:14px}
  #learning .study-note,#learning .study-question{padding:20px 16px}
