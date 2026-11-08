@@ -1,0 +1,67 @@
+/* 教材と文章は通常フロー。ZB由来の背面固定は装飾背景へ限定する。 */
+.zb-opening{height:auto;max-height:none;min-height:0;margin-top:72px;padding:100px 0;background:#173d33;color:#f7f7ee}
+.zb-opening-photo{display:block;background-color:#173d33;background-image:linear-gradient(#d3e6cf08 1px,transparent 1px),linear-gradient(90deg,#d3e6cf08 1px,transparent 1px),radial-gradient(ellipse at 80% 30%,#6f937829,transparent 65%);background-size:80px 80px,80px 80px,100% 100%;border:0}
+.zb-opening-grid{position:relative;z-index:1;display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+.zb-opening-content{min-width:0;padding:10px 0}
+.zb-opening-eyebrow{display:flex;gap:14px;align-items:center;margin:0 0 28px;color:#b8cfbc;font:400 11px/1.6 Inter,sans-serif;letter-spacing:.18em}
+.zb-opening-eyebrow:before{content:'';width:36px;height:1px;background:#8faf98;flex:none}
+.zb-opening .zb-opening-copy{position:static;inset:auto;width:auto;max-width:none;margin:0;transform:none;writing-mode:horizontal-tb;text-orientation:mixed;font-size:clamp(32px,3.05vw,48px);font-weight:500;line-height:1.55;letter-spacing:-.035em}
+.zb-opening .zb-opening-copy span{display:block;white-space:nowrap}
+.zb-opening-description{max-width:27em;margin:28px 0 0;color:#d1dfd2;font-size:16px;line-height:2.1}
+.zb-opening-next{display:inline-flex;align-items:center;gap:35px;min-height:48px;margin-top:30px;padding:7px 0;border-bottom:1px solid #a5c0aa;color:#f7f7ee;font-size:14px}
+.zb-opening-next span{font-size:18px;line-height:1;transition:transform .2s}
+.zb-opening-next:hover span{transform:translateY(3px)}
+.zb-opening-lesson{min-width:0;width:100%;max-width:620px;justify-self:end;margin:0}
+.zb-opening-frame{padding:16px;background:#f6f7f2;box-shadow:0 24px 65px #071f2130;border:1px solid #dce5d7}
+.zb-opening-lesson-head{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:0;padding:0 1px 13px;color:#45614f;font-size:12px;line-height:1.6}
+.zb-opening-lesson-head span{font:400 10px/1.6 Inter,sans-serif;letter-spacing:.15em;color:#6c8370}
+.zb-opening-lesson img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#f8f9fb;border:1px solid #dbe2d9}
+.zb-opening-lesson figcaption{display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:8px 20px;margin-top:16px;color:#b8cfbc;font-size:12px;line-height:1.8}
+.zb-opening-lesson figcaption a{color:#f3f5eb;text-decoration:underline;text-underline-offset:4px}
+#learning .learning-layout>.section-head{position:relative;display:grid;grid-template-columns:1.1fr .9fr;align-items:end;gap:70px;max-width:none;margin:0 0 80px}
+#learning .learning-layout>.section-head h2{position:static;inset:auto;width:auto;max-width:none;margin:18px 0 0;padding:0;background:none;writing-mode:horizontal-tb;text-orientation:mixed;white-space:normal;font-size:40px;font-weight:500;line-height:1.65;letter-spacing:-.025em}
+#learning .learning-layout>.section-head h2 span{display:block}
+#learning .learning-layout>.section-head p{max-width:390px;margin:0 0 8px;font-size:16px;line-height:2}
+@media(min-width:761px) and (max-width:1000px){
+ .zb-opening-grid{gap:40px;grid-template-columns:1fr 1.1fr}
+ .zb-opening .zb-opening-copy{font-size:32px}
+ .zb-opening-description{font-size:15px}
+ #learning .learning-layout>.section-head{gap:45px}
+ #learning .learning-layout>.section-head h2{font-size:34px}
+}
+@media(min-width:761px) and (max-width:900px){
+ #learning .learning .step,#learning .learning .step:nth-child(2),#learning .learning .step:nth-child(3){display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;width:calc(100% - 28px);margin-left:28px;align-items:center}
+ #learning .step .step-copy{display:block;padding:8px 0}
+ #learning .step .step-number{font-size:68px;margin-bottom:20px}
+ #learning .step .step-visual{width:100%;margin:0;padding:0}
+}
+@media(max-width:760px){
+ .zb-opening{height:auto;max-height:none;min-height:0;margin-top:48px;padding:64px 0}
+ .zb-opening-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:38px}
+ .zb-opening-content{padding:0}
+ .zb-opening-eyebrow{font-size:10px;letter-spacing:.13em;margin-bottom:22px;gap:12px}
+ .zb-opening-eyebrow:before{width:25px}
+ .zb-opening .zb-opening-copy{font-size:clamp(29px,6.6vw,38px);line-height:1.6;letter-spacing:-.04em}
+ .zb-opening-description{font-size:15px;line-height:2;margin-top:22px;max-width:32em}
+ .zb-opening-next{font-size:14px;margin-top:22px}
+ .zb-opening-lesson{max-width:620px;justify-self:center}
+ .zb-opening-frame{padding:10px}
+ .zb-opening-lesson-head{padding:1px 1px 10px;font-size:11px}
+ .zb-opening-lesson-head span{font-size:9px;letter-spacing:.1em}
+ .zb-opening-lesson figcaption{font-size:11px;margin-top:13px}
+ #learning .learning-layout>.section-head{display:block;margin-bottom:52px;max-width:none}
+ #learning .learning-layout>.section-head h2{font-size:32px;line-height:1.65;margin-top:16px}
+ #learning .learning-layout>.section-head p{max-width:36em;font-size:15px;line-height:2;margin:22px 0 0}
+ #learning .learning .step,#learning .learning .step:nth-child(2),#learning .learning .step:nth-child(3){width:calc(100% - 28px);margin-left:28px}
+}
+@media(max-width:350px){
+ .zb-opening{padding-block:54px}
+ .zb-opening .zb-opening-copy{font-size:27px}
+ .zb-opening-description{font-size:14px}
+ .zb-opening-eyebrow{font-size:9px;letter-spacing:.09em}
+ #learning .learning-layout>.section-head h2{font-size:28px}
+ #learning .learning-layout>.section-head p{font-size:14px}
+ #learning .learning .step,#learning .learning .step:nth-child(2),#learning .learning .step:nth-child(3){width:calc(100% - 24px);margin-left:24px}
+}
+.cma-motion-paused .zb-opening-next span{transform:none;transition:none}
+@media(prefers-reduced-motion:reduce){.zb-opening-next span{transform:none!important;transition:none}}
