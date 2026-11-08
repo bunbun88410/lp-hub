@@ -4,12 +4,20 @@
   const root=document.documentElement;
   const button=document.querySelector('.motion-switch');
   const hero=document.querySelector('.hero');
+  const headings=[...document.querySelectorAll('.intro-title[data-boki-ink],.section-head h2[data-boki-ink]')];
   const media=matchMedia('(prefers-reduced-motion: reduce)');
   let paused=false,frame=0;
   const stopped=()=>paused||media.matches;
   function paint(){
     frame=0;
     if(hero){const travel=Math.max(0,Math.min(36,-hero.getBoundingClientRect().top*.12));hero.style.setProperty('--hero-shift',stopped()?'0px':travel.toFixed(3)+'px');}
+    // CMAのdata-inkと同じ、読む位置で文字を濃くする進行。逆スクロールでも復元する。
+    headings.forEach(heading=>{
+      const p=stopped()?1:Math.max(0,Math.min(1,(innerHeight*.85-heading.getBoundingClientRect().top)/Math.max(1,innerHeight*.55)));
+      const start=[111,134,145],end=[15,44,68];
+      heading.style.setProperty('--boki-ink','rgb('+start.map((v,i)=>Math.round(v+(end[i]-v)*p)).join(',')+')');
+      heading.style.setProperty('--boki-heading-y',((1-p)*20).toFixed(3)+'px');
+    });
   }
   function schedule(){if(!frame)frame=requestAnimationFrame(paint);}
   function sync(){

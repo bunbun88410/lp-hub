@@ -3,6 +3,7 @@
 .header .motion-switch{order:3;display:grid;place-items:center;flex:none;width:44px;height:44px;border:1px solid #b8c2c6;border-radius:50%;background:transparent;color:var(--navy);font:inherit;cursor:pointer;line-height:1}
 .header .motion-switch:hover{background:var(--cream)}.header .motion-switch:disabled{opacity:.5;cursor:default}
 .hero .hero-photo{transform:translateY(var(--hero-shift,0px)) scale(1.12);will-change:transform}
+.intro-title[data-boki-ink],.section-head h2[data-boki-ink]{color:var(--boki-ink,var(--navy));transform:translateY(var(--boki-heading-y,0px))}
 #support .support-layout{display:block}#support .section-head{position:static;max-width:690px;margin-bottom:50px}#support .section-head .btn{margin-top:24px}
 #support .learning-column{position:relative;margin-top:8px}#support .zb-flow-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
 #support .zb-flow-connector{fill:none;stroke:#bbb7a7;stroke-width:1.5;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--zb-line-progress,1))}
