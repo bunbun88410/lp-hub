@@ -1,0 +1,8 @@
+/* Only the two learning photos move; their layout and the hero stay intact. */
+#learning .learning-photo-window{display:block;position:relative;aspect-ratio:4/3;overflow:hidden;background:#edf2e9}
+#learning .learning-photo-window img{display:block;width:100%;height:100%;aspect-ratio:auto;object-fit:cover}
+#learning .learning-photo-window[data-photo-motion="scroll"] img{position:absolute;inset:0 0 auto;height:var(--photo-plane-height,100%);transform:translate3d(0,var(--photo-offset,0px),0);will-change:transform}
+html.cma-motion-paused #learning .learning-photo-window img{position:static;height:100%;transform:none;will-change:auto}
+@media(prefers-reduced-motion:reduce){
+ #learning .learning-photo-window[data-photo-motion] img{position:static;height:100%;transform:none;will-change:auto}
+}
