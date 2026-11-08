@@ -1,0 +1,188 @@
+/* 簿記1級LP v2（boki-v2.html）の動き。
+   元：本番のCMA LP（https://sujilab.net/cma ・2026-11-08版）の
+   cma-scroll-20261107.css / cma-refine-20261107.css / cma-zb-learning-20261108.css /
+   cma-zb-layout-20261108.css / cma-opening-refine-20261108.css から、動きに関わる規則だけを移植。
+   色は簿記LPの配色（navy / orange / cream）。2026-08-11 の本人指示「明暗を織り交ぜない」に合わせ、
+   CMAでは濃緑の「開口」節は明るい地にしてある。
+   停止ボタン＝html.boki-motion-paused、減らす設定＝prefers-reduced-motion で、すべて静止表示に戻る。 */
+
+:root{--bm-header-h:73px;--bm-word:#ece4d4;--bm-flow:#e6a888;--bm-num:#efbfa3}
+
+/* ---------- 1. ヘッダー：読んだ量のバー・動きの停止ボタン・スマホのメニュー ---------- */
+.site-header .header-right{gap:20px}
+.motion-switch{display:flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;border:1px solid #cbc2b0;border-radius:50%;background:transparent;color:var(--navy);cursor:pointer;font-size:15px;line-height:1;transition:background-color .2s}
+.motion-switch:hover{background:#efe9dc}
+.motion-switch:disabled{opacity:.45;cursor:default}
+.page-progress{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:rgba(15,44,68,.06);pointer-events:none}
+.page-progress span{display:block;height:100%;background:var(--orange);transform-origin:left;transform:scaleX(var(--page-progress,0))}
+.mobile-nav{display:none;position:relative}
+.mobile-nav>summary{list-style:none;display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 14px;border:1px solid var(--border);border-radius:30px;background:#fff;font-size:13px;font-weight:700;color:var(--navy);cursor:pointer;white-space:nowrap}
+.mobile-nav>summary::-webkit-details-marker{display:none}
+.mobile-nav>summary:after{content:"☰";font-size:15px}
+.mobile-nav[open]>summary:after{content:"×"}
+.mobile-nav>div{position:absolute;z-index:30;right:0;top:calc(100% + 12px);width:min(260px,calc(100vw - 32px));padding:10px;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 14px 35px rgba(15,44,68,.14)}
+.mobile-nav a{display:block;padding:12px 14px;font-size:15px;border-radius:6px;color:var(--navy);font-weight:600}
+.mobile-nav a:hover{background:var(--cream)}
+@media(max-width:768px){
+ .site-header .header-right{gap:8px}
+ .mobile-nav{display:block}
+ .motion-switch{width:44px;height:44px}
+}
+@media(max-width:420px){.site-header .logo{gap:8px}.site-header .logo span{font-size:15px;white-space:nowrap}.site-header .logo-mark{width:36px;height:36px}.motion-switch{width:40px;height:40px}.mobile-nav>summary{padding:8px 11px;font-size:12px;min-height:40px}}
+@media(max-width:340px){.site-header .logo span{font-size:13px}}
+
+/* ---------- 2. ヒーロー：画面に貼りついたまま、写真が少しずつ寄る（CMAの hero-story / hero-art） ---------- */
+/* 貼りつく余地は親の中身の高さにしか無いので、paddingではなく中身として45svhの余白を足す */
+.hero-story{position:relative;background:#0B1626}
+.hero-story::after{content:'';display:block;height:45svh}
+.hero-story>.hero{position:sticky;top:var(--bm-header-h);min-height:calc(100svh - var(--bm-header-h));isolation:isolate;overflow:hidden;background:#0B1626}
+.hero-photo{position:absolute;inset:0;z-index:-1;pointer-events:none;
+ background:
+  radial-gradient(1150px 900px at 8% 82%, rgba(8,16,28,0.96) 0%, rgba(8,16,28,0.78) 34%, rgba(8,16,28,0.30) 58%, rgba(8,16,28,0) 78%),
+  linear-gradient(to bottom, rgba(30,20,12,0.18) 0%, rgba(20,24,34,0.42) 52%, rgba(11,22,38,0.92) 86%, #0B1626 100%),
+  url('boki-hero-real.jpg');
+ background-size:cover,cover,cover;background-position:center,center,center 34%;background-repeat:no-repeat;
+ transform:translateY(calc(var(--hero-progress,0)*-3%)) scale(calc(1 + var(--hero-progress,0)*.14));transform-origin:72% 38%;will-change:transform}
+.hero-bottom{position:absolute;right:4%;bottom:18px;z-index:2;display:flex;gap:28px;align-items:center;margin:0;color:rgba(255,255,255,.62);font:400 11px/1.6 Inter,"Noto Sans JP",sans-serif;letter-spacing:.14em;pointer-events:none}
+.hero-bottom i{font-style:normal;display:inline-block;margin-left:6px}
+@media(max-width:900px){
+ .hero-story::after{display:none}
+ .hero-story>.hero{position:relative;top:auto;min-height:92vh}
+ .hero-photo{background-position:center,center,62% 32%;transform:translateY(calc(var(--hero-progress,0)*-2%)) scale(calc(1 + var(--hero-progress,0)*.04));transform-origin:50% 50%}
+ .hero-bottom{display:none}
+}
+
+/* ---------- 3. 大きな背景の英字が、スクロールで横へ流れる（CMAの CLASSROOM） ---------- */
+.has-bg-word{isolation:isolate;overflow-x:clip}
+.bg-word{position:absolute;top:14px;left:3%;z-index:-1;white-space:nowrap;font:800 clamp(78px,13vw,190px)/1 Inter,sans-serif;letter-spacing:-.06em;color:var(--bm-word);opacity:.8;transform:translateX(calc(var(--section-progress,0)*-90px));pointer-events:none;user-select:none}
+.method .bg-word{color:#efe2cf}
+@media(max-width:760px){.bg-word{top:8px;font-size:72px;transform:translateX(calc(var(--section-progress,0)*-60px))}}
+
+/* ---------- 4. 文字が読む位置に合わせて濃くなる（CMAの editorial / data-ink） ---------- */
+.editorial{background:var(--white)}
+.editorial-copy{max-width:920px;margin:0 auto;text-align:center;font-family:'Noto Serif JP',serif;font-size:clamp(23px,3.2vw,38px);font-weight:700;line-height:1.9;letter-spacing:.02em}
+[data-ink]{color:var(--ink-color,var(--navy));transition:none}
+[data-ink] strong{color:inherit;font-weight:900}
+.editorial-note{max-width:760px;margin:34px auto 0;text-align:center;color:#5A6A7A;font-size:15px;line-height:1.9}
+.editorial-note strong{color:var(--navy)}
+@media(max-width:600px){.editorial-copy{font-size:22px;line-height:1.85;text-align:left}.editorial-copy br{display:none}}
+
+/* ---------- 5. 線が描かれ、点が線の上を進む図（CMAのヒーロー図 graph-curve / graph-dot と同じ仕組み） ---------- */
+.story-graph{max-width:980px;margin:0 auto 48px}
+.story-graph svg{display:block;width:100%;height:auto;overflow:visible}
+.story-graph .graph-base{fill:none;stroke:#d8cdb6;stroke-width:2;stroke-dasharray:6 9}
+.story-graph .graph-curve{fill:none;stroke:var(--orange);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--curve-progress,1));will-change:stroke-dashoffset}
+.story-graph .graph-milestone{fill:#fff;stroke:var(--navy);stroke-width:3}
+.story-graph .graph-flag{fill:var(--orange)}
+.story-graph .graph-pole{stroke:var(--navy);stroke-width:3}
+.story-graph .graph-label{font:700 24px "Noto Sans JP",sans-serif;fill:var(--navy)}
+.story-graph .graph-label-sub{font:400 19px "Noto Sans JP",sans-serif;fill:#6B7280}
+.story-graph .graph-dot{fill:var(--navy);stroke:#fff;stroke-width:4}
+.story-graph .graph-dot-halo{fill:rgba(255,107,53,.2)}
+.story-graph figcaption{margin-top:12px;font-size:12px;line-height:1.8;color:#9AA7B5;text-align:center}
+.story-graph-legend{display:none;margin:14px 0 0;padding:0;list-style:none;font-size:13px;color:#38455A}
+.story-graph-legend li{display:flex;gap:10px;align-items:baseline;padding:6px 0;border-top:1px solid #e3dccd}
+.story-graph-legend b{color:var(--navy);min-width:3.2em}
+@media(max-width:600px){.story-graph .graph-label,.story-graph .graph-label-sub{display:none}.story-graph-legend{display:block}}
+
+/* ---------- 6. 明るい「開口」節：背景だけ画面に留まり、窓の中を流れる（CMAの zb-opening） ---------- */
+.zb-opening{position:relative;overflow:hidden;isolation:isolate;padding:110px 0;background:#EFE9DC;color:var(--navy)}
+.zb-opening-photo{position:absolute;inset:0;min-height:100%;height:var(--zb-viewport-height,100%);transform:translateY(var(--zb-photo-offset,0px));z-index:-1;pointer-events:none;background-color:#EFE9DC;background-image:linear-gradient(rgba(15,44,68,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(15,44,68,.07) 1px,transparent 1px),radial-gradient(ellipse at 80% 30%,rgba(255,107,53,.18),transparent 65%);background-size:80px 80px,80px 80px,100% 100%;will-change:transform}
+.zb-opening-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.zb-opening-content{min-width:0}
+.zb-opening-eyebrow{display:flex;gap:14px;align-items:center;margin:0 0 26px;color:var(--orange);font-size:13px;font-weight:700;letter-spacing:.08em}
+.zb-opening-eyebrow:before{content:'';width:36px;height:1px;background:var(--orange);flex:none}
+.zb-opening .zb-opening-copy{margin:0;font-size:clamp(28px,3vw,42px);line-height:1.55;font-weight:700;color:var(--navy)}
+.zb-opening-description{margin:22px 0 0;color:var(--text);font-size:16px;line-height:2}
+.zb-opening-lesson{min-width:0;margin:0;justify-self:end;width:100%;max-width:580px}
+.zb-opening-frame{padding:14px;background:#fff;box-shadow:0 24px 65px rgba(15,44,68,.14);border:1px solid #e3dccd}
+.zb-opening-lesson-head{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:0;padding:0 1px 12px;color:#5A6A7A;font-size:12px;line-height:1.6}
+.zb-opening-lesson-head span{font:400 10px/1.6 Inter,sans-serif;letter-spacing:.15em;color:#8a96a3}
+.zb-opening-lesson img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#efe9dc}
+.zb-opening-lesson figcaption{margin-top:12px;font-size:12px;color:#7a8794}
+@media(max-width:760px){
+ .zb-opening{padding:64px 0}
+ .zb-opening-grid{grid-template-columns:minmax(0,1fr);gap:36px}
+ .zb-opening .zb-opening-copy{font-size:clamp(25px,7vw,34px)}
+ .zb-opening-description{font-size:15px;line-height:1.95}
+ .zb-opening-lesson{justify-self:center}
+ .zb-opening-frame{padding:10px}
+}
+
+/* ---------- 7. 伴走の中身：不規則に並んだ5段を、読む位置に合わせて線がつなぐ（CMAの #learning / zb-flow） ---------- */
+#method .learning-column{position:relative;margin-top:8px}
+#method .zb-flow-svg{position:absolute;inset:0;z-index:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+#method .zb-flow-connector{fill:none;stroke:var(--bm-flow);stroke-width:1.4;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--zb-line-progress,1));transition:none}
+#method .learning{position:relative;z-index:1;display:flex;flex-direction:column;gap:96px;padding:0}
+#method .learning .step{position:relative;width:42%;margin:0 0 0 56%}
+#method .learning .step:nth-child(2){width:38%;margin-left:8%}
+#method .learning .step:nth-child(3){width:42%;margin-left:54%}
+#method .learning .step:nth-child(4){width:38%;margin-left:12%}
+#method .learning .step:nth-child(5){width:42%;margin-left:56%}
+#method .step-copy{position:relative;z-index:1;display:grid;grid-template-columns:84px minmax(0,1fr);column-gap:20px;align-items:start;padding:8px 0}
+#method .step-number{grid-column:1;grid-row:1/5;font:400 clamp(64px,7vw,96px)/.82 Inter,sans-serif;letter-spacing:-.08em;color:var(--bm-num)}
+#method .step-kicker{grid-column:2;display:block;font:700 10px/1.6 Inter,sans-serif;letter-spacing:.16em;color:var(--orange);margin:0 0 10px}
+#method .step .method-card-title{grid-column:2;margin:0 0 12px}
+#method .step .method-card-text{grid-column:2;margin:0}
+#method .step-visual{position:relative;z-index:1;width:calc(100% - 104px);margin-left:104px;padding-top:22px}
+#method .study-visual-card{margin:0}
+#method .study-visual-card img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--border);box-shadow:0 18px 40px rgba(15,44,68,.10);background:#efe9dc}
+#method .study-visual-card figcaption{font-size:12px;color:#7a8794;margin-top:10px}
+#method .method-flow-cta{max-width:640px;margin:84px auto 0;text-align:center;position:relative;z-index:1}
+@media(min-width:761px) and (max-width:1000px){
+ #method .learning .step,#method .learning .step:nth-child(n){display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;width:calc(100% - 28px);margin-left:28px}
+ #method .step-copy{display:block}
+ #method .step-number{display:block;font-size:64px;margin-bottom:16px}
+ #method .step-visual{width:100%;margin:0;padding:0}
+}
+@media(max-width:760px){
+ #method .learning{gap:64px}
+ #method .learning .step,#method .learning .step:nth-child(n){width:calc(100% - 40px);margin-left:40px}
+ #method .step-copy{display:block}
+ #method .step-number{display:block;font-size:58px;margin:0 0 14px}
+ #method .step-visual{width:100%;margin:0;padding-top:16px}
+ #method .method-flow-cta{margin-top:56px}
+}
+
+/* ---------- 8. 料金：左の見出しが貼りつき、右のカードだけが流れる（CMAの course-story） ---------- */
+.pricing-head::before{content:"MONITOR";display:block;font:400 clamp(46px,6vw,84px)/1 Inter,sans-serif;letter-spacing:-.055em;color:#e8cdbb;margin-bottom:24px}
+.pricing-head{text-align:center;max-width:760px;margin:0 auto 40px}
+@media(min-width:1101px){
+ .pricing-story{display:grid;grid-template-columns:.78fr 1.22fr;gap:64px;align-items:start}
+ .pricing-head{position:sticky;top:calc(var(--bm-header-h) + 40px);text-align:left;margin:0}
+ .pricing-head .eyebrow{justify-content:flex-start!important}
+ .pricing-head .section-subtitle{margin:20px 0 0!important;text-align:left}
+ .pricing-body .pricing-grid.one,.pricing-body .pricing-compare-wrap,.pricing-body .pricing-trust-band,.pricing-body>p{max-width:none!important;margin-left:0!important;margin-right:0!important}
+}
+
+/* ---------- 9. よくある質問：左の見出しが貼りつく（CMAの #faq） ---------- */
+@media(min-width:1101px){
+ #faq .faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:80px;align-items:start}
+ #faq .faq-header{position:sticky;top:calc(var(--bm-header-h) + 40px);text-align:left;margin:0}
+ #faq .faq-header .eyebrow{justify-content:flex-start}
+ #faq .faq-list{max-width:none;margin:0}
+}
+
+/* ---------- 10. ホバー（CMAの .btn:hover / .arrow） ---------- */
+@media(hover:hover) and (pointer:fine){
+ .btn,.pricing-cta{transition:transform .2s cubic-bezier(.2,.75,.25,1),background-color .2s,color .2s,border-color .2s,box-shadow .2s}
+ .btn:hover,.pricing-cta:hover{transform:translateY(-2px)}
+ .btn svg{transition:transform .2s cubic-bezier(.2,.75,.25,1)}
+ .btn:hover svg:last-child{transform:translateX(2px)}
+}
+
+/* ---------- 停止ボタン・減らす設定：すべて静止表示に ---------- */
+.boki-motion-paused .hero-photo,.boki-motion-paused .bg-word{transform:none!important;will-change:auto}
+.boki-motion-paused [data-ink]{color:var(--navy)!important}
+.boki-motion-paused .story-graph .graph-curve,.boki-motion-paused #method .zb-flow-connector{stroke-dashoffset:0!important}
+.boki-motion-paused .zb-opening-photo{height:100%!important;transform:none!important;will-change:auto}
+.boki-motion-paused .btn:hover,.boki-motion-paused .pricing-cta:hover,.boki-motion-paused .btn:hover svg{transform:none}
+@media(prefers-reduced-motion:reduce){
+ .hero-story::after{display:none}
+ .hero-story>.hero{position:relative;top:auto;min-height:calc(100vh - 124px)}
+ .hero-photo,.bg-word{transform:none!important;will-change:auto}
+ [data-ink]{color:var(--navy)!important}
+ .story-graph .graph-curve,#method .zb-flow-connector{stroke-dashoffset:0!important}
+ .zb-opening-photo{height:100%!important;transform:none!important;will-change:auto}
+ .btn:hover,.pricing-cta:hover,.btn:hover svg{transform:none!important}
+}
