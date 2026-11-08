@@ -8,6 +8,7 @@
 .zb-opening .zb-opening-copy{position:static;inset:auto;width:auto;max-width:none;margin:0;transform:none;writing-mode:horizontal-tb;text-orientation:mixed;font-size:clamp(32px,3.05vw,48px);font-weight:500;line-height:1.55;letter-spacing:-.035em}
 .zb-opening .zb-opening-copy span{display:block;white-space:nowrap}
 .zb-opening-description{max-width:27em;margin:28px 0 0;color:#d1dfd2;font-size:16px;line-height:2.1}
+.zb-opening-description span{display:inline-block}
 .zb-opening-next{display:inline-flex;align-items:center;gap:35px;min-height:48px;margin-top:30px;padding:7px 0;border-bottom:1px solid #a5c0aa;color:#f7f7ee;font-size:14px}
 .zb-opening-next span{font-size:18px;line-height:1;transition:transform .2s}
 .zb-opening-next:hover span{transform:translateY(3px)}
