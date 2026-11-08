@@ -1,14 +1,4 @@
-/* FIVE実画面で観察した窓→帯の構図変化と、固定見出し＋縦カード。教材と文章はCMA固有。 */
-.hero-story{height:185svh}
-.hero-visual-track{display:contents}
-.hero-art{right:auto;left:var(--window-left,47%);top:var(--window-top,19%);width:var(--window-width,56%);height:var(--window-height,70%);transform:none;transform-origin:center;background:#e5eddf;clip-path:var(--window-clip,polygon(50% 0%,100% 22%,100% 78%,50% 100%,0% 78%,0% 22%));will-change:clip-path,width,height,left,top;overflow:hidden}
-.hero-graph{display:block;width:100%;height:100%;overflow:visible}
-.hero-graph text:not(.graph-fx),.hero-graph .graph-dot,.hero-graph .graph-dot-halo{opacity:calc(1 - var(--window-fold,0)*2)}
-.hero-graph .graph-fx{opacity:calc(.26*(1 - var(--window-fold,0)))}
-.graph-caption{display:block;position:absolute;top:calc(var(--window-top,19%) + var(--window-height,70%) + 8px);bottom:auto;right:0;font-size:10px;color:#5b7463}
-.hero-bottom{z-index:4}
-.hero-message{background:none}
-.hero-message .hero-copy{max-width:480px}
+/* 固定見出しと縦カード。ヒーロー図は本人指定でcma-refineの比率/曲線連動へ戻す。 */
 .sample-window{transform:scale(var(--window-scale,1));transform-origin:50% 50%}
 
 #learning{position:relative;isolation:isolate;padding-top:155px;overflow:clip}
@@ -38,14 +28,6 @@
 
 @media(min-width:901px) and (max-width:1100px){.course-story{gap:45px;grid-template-columns:.8fr 1.2fr}.courses .course-story h2{font-size:34px}.course-story .course{padding:35px 30px}.course-story .course h3{font-size:31px}.course-story .course-bottom{display:block}.course-story .course .btn{width:100%;margin-top:22px}}
 @media(max-width:900px){
- .hero-story{height:auto}
- .hero-stage{position:relative;height:auto;min-height:0;overflow:visible}
- .hero-composition{padding-bottom:55px}
- .hero-visual-track{display:block;position:relative;height:calc(55svh + 200px);margin:22px -20px 0;width:calc(100% + 40px)}
- .hero-art{position:sticky;top:100px;left:auto;right:auto;width:var(--window-width,92%);height:var(--window-height,320px);aspect-ratio:auto;margin:0 auto;background:#e5eddf}
- .graph-caption{position:sticky;top:calc(100px + var(--window-height,320px) + 8px);margin:9px 20px 0;right:auto;text-align:right;font-size:9px;line-height:1.8}
- .hero-story h1{font-size:56px}
- .hero-message .hero-copy{max-width:580px}
  #learning{padding-top:105px}
  #learning:before{top:-2px;font-size:100px;transform:translateX(calc(var(--section-progress,0)*-80px))}
  .learning-flow{top:0;height:100%}
@@ -67,10 +49,6 @@
  .course-foot{font-size:14px;margin-top:35px}
 }
 @media(max-width:600px){
- .hero-story h1{font-size:43px}
- .hero-art{top:94px}
- .hero-visual-track{height:calc(38svh + 140px);margin-top:30px}
- .hero-bottom>span:first-child{font-size:8px}
  #learning{padding-top:96px}
  #learning:before{font-size:83px;top:0}
  .learning-flow{top:12px;height:calc(100% - 30px)}
@@ -85,17 +63,11 @@
  .course-foot{font-size:14px;line-height:2}
 }
 @media(max-width:350px){
- .hero-story h1{font-size:36px}.course-story .course{padding:27px 21px}.course-story .course h3{font-size:25px}.course-story>.section-head:before{font-size:53px}
+ .course-story .course{padding:27px 21px}.course-story .course h3{font-size:25px}.course-story>.section-head:before{font-size:53px}
  .header-inner{gap:8px}.brand{flex:none}.brand strong{font-size:15px;white-space:nowrap}.brand small{font-size:8px;letter-spacing:.06em}
  .motion-switch{width:44px;min-width:44px;height:44px}.mobile-nav{flex:none}.mobile-nav>summary{font-size:10px;gap:6px;padding:7px 9px;white-space:nowrap;min-height:44px}.mobile-nav>summary:after{font-size:12px}
 }
-.cma-motion-paused .hero-art{will-change:auto;left:47%;top:19%;width:56%;height:70%;clip-path:polygon(50% 0%,100% 22%,100% 78%,50% 100%,0% 78%,0% 22%);--window-fold:0}
-.cma-motion-paused .graph-caption{top:auto;bottom:58px}
 .cma-motion-paused .course-story .course{position:relative;top:auto}
-@media(max-width:900px){.cma-motion-paused .hero-art{left:auto;top:94px;width:92%;height:auto;aspect-ratio:1.32}.cma-motion-paused .graph-caption{position:relative;top:auto;bottom:auto}}
-.cma-motion-paused .hero-graph text:not(.graph-fx),.cma-motion-paused .hero-graph .graph-dot,.cma-motion-paused .hero-graph .graph-dot-halo{opacity:1}
 @media(prefers-reduced-motion:reduce){
- .hero-story{height:auto}.hero-stage{position:relative;height:auto}.hero-art{left:47%;top:19%;width:56%;height:70%;clip-path:none;will-change:auto}
  #learning:before{transform:none}.course-story .course{position:relative;top:auto}
 }
-@media(max-width:900px) and (prefers-reduced-motion:reduce){.hero-visual-track{height:auto}.hero-art,.cma-motion-paused .hero-art{position:relative;top:auto;left:auto;width:100%;height:auto;aspect-ratio:1.4}.hero-composition{padding-bottom:55px}}

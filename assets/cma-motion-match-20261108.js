@@ -135,10 +135,6 @@
   const graphPath = document.querySelector('.graph-curve');
   const graphLength = graphPath?.getTotalLength?.()||0;
   const artworks = [...document.querySelectorAll('[data-scroll-art]')];
-  const windowTrack = document.querySelector('.hero-visual-track');
-  const heroArt = document.querySelector('.hero-art');
-  const composition = document.querySelector('.hero-composition');
-  const stage = document.querySelector('.hero-stage');
   const previousY = new WeakMap();
   let paused = false, frame = 0;
   const clamp = (x,a=0,b=1) => Math.max(a,Math.min(b,x));
@@ -168,31 +164,6 @@
       const {x,y}=point;
       for(const dot of [graphDot,graphHalo])if(dot){dot.setAttribute('cx',x.toFixed(2));dot.setAttribute('cy',y.toFixed(2));}
       if(graphLabel){graphLabel.setAttribute('x',(x+27).toFixed(2));graphLabel.setAttribute('y',(y-27).toFixed(2));}
-    }
-    if(windowTrack && heroArt && composition && stage){
-      const desktop=innerWidth>900;
-      const stageHeight=stage.getBoundingClientRect().height;
-      const cw=composition.getBoundingClientRect().width;
-      const track=windowTrack.getBoundingClientRect();
-      const mobileHeight=Math.min(360,track.width*.76);
-      const p=desktop?clamp(-hero.getBoundingClientRect().top/Math.max(1,hero.getBoundingClientRect().height-vh)):clamp((94-track.top)/Math.max(1,track.height-125));
-      const t=p*p*(3-2*p);
-      windowTrack.style.setProperty('--window-fold',t.toFixed(4));
-      const lerp=(a,b)=>a+(b-a)*t;
-      const client=document.documentElement.clientWidth;
-      if(desktop){
-        windowTrack.style.setProperty('--window-left',lerp(cw*.47,-(client-cw)/2).toFixed(2)+'px');
-        windowTrack.style.setProperty('--window-top',lerp(stageHeight*.19,stageHeight*.74).toFixed(2)+'px');
-        windowTrack.style.setProperty('--window-width',lerp(cw*.56,client).toFixed(2)+'px');
-        windowTrack.style.setProperty('--window-height',lerp(stageHeight*.70,stageHeight*.22).toFixed(2)+'px');
-      }else{
-        windowTrack.style.setProperty('--window-width',lerp(track.width*.92,track.width).toFixed(2)+'px');
-        windowTrack.style.setProperty('--window-height',lerp(mobileHeight,125).toFixed(2)+'px');
-      }
-      const from=[[50,0],[100,22],[100,78],[50,100],[0,78],[0,22]];
-      const to=[[0,28],[100,0],[100,70],[100,72],[0,100],[0,98]];
-      windowTrack.style.setProperty('--window-clip','polygon('+from.map((xy,i)=>xy.map((v,j)=>lerp(v,to[i][j]).toFixed(2)+'%').join(' ')).join(',')+')');
-      heroArt.dataset.windowProgress=p.toFixed(4);
     }
     if(editorial){
       const r=editorial.getBoundingClientRect();
