@@ -47,6 +47,9 @@
     html{scroll-padding-top:0}#main{scroll-margin-top:80px}#support,#faq,#consult{scroll-margin-top:88px}.legal-body ul{list-style:disc;padding-left:22px}.legal-body h4{font-size:13px;margin:20px 0 8px;color:var(--ink)}
     @media(max-width:768px){html{scroll-padding-top:0}.hero h1{font-size:clamp(28px,8.4vw,56px)}.plan-first .price small{display:block;margin:7px 0 0;font-size:11px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+    /* Approved SUJI LAB brand mark: preserve its aspect ratio in the existing header. */
+    .header .brand--sujilab{min-width:0;flex-shrink:1}.header .brand-logo{display:block;width:216px;height:auto;max-height:72px;object-fit:contain}.header .menu-button{flex-shrink:0}
+    @media(max-width:768px){.header .brand-logo{width:min(192px,calc(100vw - 150px));max-height:64px}}
   </style>
   <script type="application/ld+json">
 {
@@ -287,9 +290,8 @@
   <a class="skip" href="#main">本文へ進む</a>
   <header class="header">
     <div class="wrap header-inner">
-      <a class="brand" href="#main" aria-label="簿記ラボ・ページの先頭へ">
-        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M6 6h20v20H6zM6 13h20M13 6v20M18 19h4M20 17v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-        <span><span class="brand-name">簿記ラボ</span><span class="brand-sub" style="display:block">by 数字の資格ラボ</span></span>
+      <a class="brand brand--sujilab" href="#main" aria-label="SUJI LAB 数字の資格ラボ・ページの先頭へ">
+        <img class="brand-logo" src="/assets/suji-lab-logo-v14.png" width="2172" height="724" alt="SUJI LAB｜数字の資格ラボ" decoding="async">
       </a>
       <button class="motion-switch" type="button" aria-label="動きを停止" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button>
     <button class="menu-button" type="button" aria-label="メニューを開く" aria-controls="site-nav" aria-expanded="false">☰</button>
