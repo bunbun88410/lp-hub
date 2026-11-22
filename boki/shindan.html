@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>簿記の勉強タイプ診断｜簿記ラボ</title>
+<meta name="description" content="10問・約2分。あなたの勉強が止まりやすい理由と、合う進め方が分かります。">
+<style>
+:root{--ac:#c0702a;--ink:#3a332a;--sub:#8a7a62;--bg:#faf6ef;--card:#fff;--line:#e3dccf}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.8}
+.wrap{max-width:560px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-size:13px;color:var(--sub);letter-spacing:.1em;margin:0 0 8px}
+h1{font-size:24px;line-height:1.5;margin:0 0 12px}
+.lead{margin:0 0 20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 18px}
+.btn{display:block;width:100%;border:0;border-radius:999px;background:var(--ac);color:#fff;font-size:17px;font-weight:700;padding:14px;cursor:pointer;text-align:center;text-decoration:none}
+.btn.sub{background:#fff;color:var(--ac);border:1.5px solid var(--ac);margin-top:12px}
+.note{font-size:13px;color:var(--sub);margin:12px 0 0}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin:0 0 6px}
+.bar i{display:block;height:100%;background:var(--ac);transition:width .3s}
+.count{font-size:13px;color:var(--sub);margin:0 0 14px}
+.q{font-size:19px;font-weight:700;line-height:1.6;margin:0 0 16px}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:13px 14px;margin:0 0 10px;font-size:16px;color:var(--ink);cursor:pointer;line-height:1.6}
+.opt:hover,.opt:focus{border-color:var(--ac);outline:none}
+.back{background:none;border:0;color:var(--sub);font-size:14px;padding:6px 0;cursor:pointer}
+.type-tag{display:inline-block;background:var(--ac);color:#fff;font-size:13px;border-radius:6px;padding:2px 10px;margin:0 0 8px}
+.type{font-size:22px;font-weight:700;line-height:1.5;margin:0 0 12px}
+.fit{display:inline-block;margin:0 0 12px;padding:6px 12px;border-radius:8px;background:#fdf1e4;color:var(--ac);font-weight:700;font-size:15px}
+.box{border-left:4px solid var(--ac);background:#fdf8f1;border-radius:6px;padding:12px 14px;margin:16px 0}
+.box h3{font-size:14px;color:var(--ac);margin:0 0 4px}
+.box p{margin:0}
+.me{display:flex;gap:12px;align-items:flex-start;margin:16px 0}
+.me .face{flex:0 0 48px;width:48px;height:48px;border-radius:50%;background:#e8eef3;object-fit:cover;object-position:top}
+.me p{margin:0;background:#e8eef3;border-radius:12px;padding:10px 12px;font-size:15px}
+.also{font-size:14px;color:var(--sub);margin:8px 0 0}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="brand">簿記ラボ</p>
+
+  <section id="start">
+    <h1>簿記の勉強タイプ診断</h1>
+    <p class="lead">10問・約2分。あなたの勉強が止まりやすい理由と、合う進め方が分かります。</p>
+    <div class="card">
+      <p style="margin:0 0 16px">いまの自分にいちばん近いものを、1つずつ選んでください。答えはこの画面の中だけで使い、どこにも送りません。</p>
+      <button class="btn" id="go">はじめる</button>
+    </div>
+  </section>
+
+  <section id="quiz" class="hidden">
+    <div class="bar"><i id="prog"></i></div>
+    <p class="count" id="count"></p>
+    <div class="card">
+      <p class="q" id="qtext"></p>
+      <div id="opts"></div>
+    </div>
+    <button class="back" id="back">← ひとつ前に戻る</button>
+  </section>
+
+  <section id="result" class="hidden">
+    <div class="card" id="rcard"></div>
+    <button class="btn sub" id="again">もう一度やる</button>
+  </section>
+</main>
+
+<script>
+// 特徴：1 自己管理 2 講座が合わなかった 3 不安 4 やり方 5 1対1 6 自信 7 考え方が近い
+const Q = [
+  ["勉強の予定を立てたあと、たいていどうなる？", [
+    ["計画どおり進む", []],
+    ["最初の数日だけ守れる", [1]],
+    ["そもそも何から立てればいいか分からない", [4]],
+    ["立てても、守れなかった自分が嫌になる", [6]]]],
+  ["予備校や通信講座を使ったことは？", [
+    ["使っていて、順調", []],
+    ["講義についていけなくなった", [2]],
+    ["量が多すぎて消化できなかった", [2, 1]],
+    ["まだ使ったことがない", [4]]]],
+  ["勉強が止まる一番の理由は？", [
+    ["仕事・家事で時間がない", [1]],
+    ["分からない所で詰まって、そのまま止まる", [4, 5, 2]],
+    ["「このままで受かるのか」と不安になる", [3]],
+    ["誰にも見られていないと、つい休む", [1, 5]]]],
+  ["試験が近づくと？", [
+    ["落ち着いている", []],
+    ["眠れなくなるほど不安になる", [3]],
+    ["不安で、別の教材に手を出したくなる", [3, 4]],
+    ["「どうせ自分は」と思い始める", [6]]]],
+  ["質問できる相手がいたら、何を聞きたい？", [
+    ["特にない", []],
+    ["講義で分からなかった解き方・論点のこと", [5, 2]],
+    ["今の勉強のやり方で合っているか", [4, 3]],
+    ["毎日の量をどう決めればいいか", [1, 4]]]],
+  ["一人で勉強していて、一番つらいのは？", [
+    ["特につらくない", []],
+    ["寂しい・相談相手がいない", [5, 6]],
+    ["進んでいるのか分からない", [3, 4]],
+    ["自分を甘やかしてしまう", [1]]]],
+  ["勉強を始めた頃の自分に近いのは？", [
+    ["もともと勉強が得意だった", []],
+    ["学歴や過去の自分に自信がなかった", [6]],
+    ["何かを変えたくて飛び込んだ", [6, 7]],
+    ["人に言われて始めた", []]]],
+  ["「不合格になっても、また受ければいい」と聞いて、どう思う？", [
+    ["そう思える", [7]],
+    ["頭では分かるけど、怖い", [3, 7]],
+    ["一回で受からないと意味がない", []],
+    ["落ちたら、やめてしまいそう", [3, 6]]]],
+  ["合格に一番大事なのは？", [
+    ["才能・地頭", []],
+    ["教材の良さ", []],
+    ["続けられる仕組みと、一緒に走る人", [7, 5]],
+    ["自分に合った、毎日続けられる量", [7, 1]]]],
+  ["伴走してもらうなら、どんな形がいい？", [
+    ["一人で進めたい", []],
+    ["進み具合を毎日見てほしい", [1, 5]],
+    ["迷った時にすぐ聞きたい", [5, 4]],
+    ["同じように悩んだ人に話を聞いてほしい", [6, 7]]]]
+];
+
+// 結果。support＝伴走のどの仕組みが合うか（LPに書いてある中身だけ）／me＝ぶんぶんの実体験
+const T = {
+  1: {name: "ひとりだと流されやすいタイプ",
+      about: "やる気はあるのに、見られていないと予定が崩れやすいタイプです。意志の弱さではなく、続ける仕組みが無いだけかもしれません。",
+      support: "毎日の学習記録を講師が確認します。止まっていたら声をかけ、うまく進まない理由を一緒に整理します。",
+      me: "僕も家だと集中できなくて、毎日カフェに通っていました。何時に机に向かうかを決めて、習慣にしてから続くようになりました。"},
+  2: {name: "講座の量に飲まれたタイプ",
+      about: "講義や教材がいいものでも、量とペースが生活に合わないと手が止まります。足りないのは教材ではなく、自分に合わせた量かもしれません。",
+      support: "あなたの生活に合う一日ぶんの量を一緒に決めて、月1回の面談で計画のほうを組み直します。",
+      me: "机に6〜7時間座っていても、本当に集中できていたのは2〜3時間くらいでした。量より、集中できる時間に合わせるようになって変わりました。"},
+  3: {name: "不安で手が止まるタイプ",
+      about: "「このままで受かるのか」が気になって、勉強そのものより不安に時間を取られやすいタイプです。",
+      support: "今のやり方で合っているか、LINEでいつでも聞けます。講師がその日のうちに答えます。月1回の面談で進み具合を一緒に確かめます。",
+      me: "4回の受験のうち3回は、本番で頭が真っ白になっています。それでも合格できました。不安になるのは、全然めずらしいことじゃないです。"},
+  4: {name: "何から始めるか迷うタイプ",
+      about: "やる気はあるのに、何をどの順番でやればいいかが見えず、迷っている時間が長くなりやすいタイプです。",
+      support: "あなた専用の計画を一緒に作り、今日やることが決まった状態で机に向かえるようにします。",
+      me: "僕の1級は28点、55点、68点で、4回目で合格です。やり方を変えるたびに、点数が動きました。"},
+  5: {name: "一緒に走る人がほしいタイプ",
+      about: "一人で抱え込むより、誰かと話しながらのほうが力が出るタイプです。",
+      support: "月1回のZoom面談と、LINEの個別質問で1対1で伴走します。講義の内容も、問題の考え方も、勉強の進め方も相談できます。",
+      me: "受験生のころの僕は、受験仲間がいなくて、ひたすら一人でした。あのころ欲しかった「相談できる相手」になろうと思って、この伴走を始めました。"},
+  6: {name: "自分を信じきれないタイプ",
+      about: "「どうせ自分は」と思いやすいけれど、何かを変えたくて勉強を始めた人に多いタイプです。実はこれ、昔の僕です。",
+      support: "毎日の記録を一緒に見ながら、小さく進めます。できていない日も、見ている人がいます。",
+      me: "学歴も取り柄もなく、毎日のように怒られていた会社員でした。そこから1級に挑戦して、3回落ちて、4回目で合格しました。"},
+  7: {name: "考え方が近いタイプ",
+      about: "合格に大事なのは才能より、続けられる仕組みと量だと感じているタイプです。簿記ラボの伴走と、考え方がとても近いです。",
+      support: "あなたの生活に合う量を一緒に決めて、毎日の確認・月1回の面談・LINE質問で、続く形を作ります。",
+      me: "僕も、もしダメなら5回でも6回でも受けるつもりでいました。落ちても、また受ければいいと思っています。"}
+};
+const LINE_URL = "https://lin.ee/wDWTB5b";
+const LP_URL = "https://sujilab.net/boki";
+const LOW = 2; // これ未満（ほぼ全問「順調」側）なら「今のやり方で大丈夫そう」
+
+// 特徴ごとの「出番のある問の数」で割って比べる（出番の多い特徴ばかり出ないように）
+const CAP = {1:0,2:0,3:0,4:0,5:0,6:0,7:0};
+Q.forEach(([, o]) => new Set(o.flatMap(x => x[1])).forEach(t => CAP[t]++));
+function rankTypes(sc){
+  return Object.keys(sc).sort((a, b) => (sc[b] / Math.sqrt(CAP[b])) - (sc[a] / Math.sqrt(CAP[a])) || sc[b] - sc[a] || a - b);
+}
+const $ = id => document.getElementById(id);
+let i = 0, ans = [];
+
+function show(id){["start","quiz","result"].forEach(s => $(s).classList.toggle("hidden", s !== id)); window.scrollTo(0,0);}
+function render(){
+  const [q, opts] = Q[i];
+  $("prog").style.width = (i / Q.length * 100) + "%";
+  $("count").textContent = `${i + 1} / ${Q.length}`;
+  $("qtext").textContent = q;
+  const box = $("opts"); box.textContent = "";
+  opts.forEach(([label], k) => {
+    const b = document.createElement("button");
+    b.className = "opt"; b.textContent = label;
+    b.onclick = () => { ans[i] = k; i++; i < Q.length ? render() : result(); };
+    box.appendChild(b);
+  });
+  $("back").style.visibility = i ? "visible" : "hidden";
+}
+function result(){
+  const sc = {1:0,2:0,3:0,4:0,5:0,6:0,7:0};
+  ans.forEach((k, qi) => Q[qi][1][k][1].forEach(t => sc[t]++));
+  const total = Object.values(sc).reduce((a, b) => a + b, 0);
+  const rank = rankTypes(sc);
+  const c = $("rcard"); c.textContent = "";
+  const add = (tag, cls, text) => { const el = document.createElement(tag); if (cls) el.className = cls; el.textContent = text; c.appendChild(el); return el; };
+  if (total < LOW) {
+    add("p", "type-tag", "診断結果");
+    add("p", "type", "今のやり方で、順調に進めそうです");
+    add("p", "", "計画を守れていて、一人で進めることにも大きな不安がないようです。今のやり方を続けるのがいちばんだと思います。");
+    add("p", "", "もし途中で手が止まったり、不安になったりしたら、そのときは気軽にLINEで声をかけてください。");
+    const a = add("a", "btn sub", "簿記ラボのLINEをのぞいてみる"); a.href = LINE_URL; a.target = "_blank"; a.rel = "noopener";
+  } else {
+    const t = T[rank[0]];
+    add("p", "type-tag", "あなたは");
+    add("p", "type", t.name);
+    add("p", "fit", total >= 6 ? "伴走との相性　◎ とても合っています" : "伴走との相性　○ 合っています");
+    add("p", "", t.about);
+    const box = add("div", "box", "");
+    const h = document.createElement("h3"); h.textContent = "簿記ラボの伴走なら"; box.appendChild(h);
+    const p = document.createElement("p"); p.textContent = t.support; box.appendChild(p);
+    const me = add("div", "me", "");
+    const f = document.createElement("img"); f.className = "face"; f.alt = "ぶんぶん"; f.src = "/assets/minibunbun-chibi.png"; me.appendChild(f);
+    const mp = document.createElement("p"); mp.textContent = t.me; me.appendChild(mp);
+    if (sc[rank[1]] > 0) add("p", "also", `次に近いのは「${T[rank[1]].name}」でした。`);
+    add("p", "", "無料面談（30分・Zoom・カメラオフ可）で、いまの状況を聞かせてください。この診断の結果を見せてもらえたら、そこから話を始められます。");
+    const a = add("a", "btn", "LINEで無料面談を申し込む"); a.href = LINE_URL; a.target = "_blank"; a.rel = "noopener";
+    add("p", "note", "LINEを追加したら、トークに『無料面談 希望』と送ってください。");
+    const l = add("a", "btn sub", "伴走の内容と料金を見る"); l.href = LP_URL; l.target = "_blank"; l.rel = "noopener";
+  }
+  $("prog").style.width = "100%";
+  show("result");
+}
+$("go").onclick = () => { i = 0; ans = []; show("quiz"); render(); };
+$("back").onclick = () => { if (i > 0) { i--; render(); } };
+$("again").onclick = () => { show("start"); };
+</script>
+</body>
+</html>
